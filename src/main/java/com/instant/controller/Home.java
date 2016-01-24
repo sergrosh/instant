@@ -1,7 +1,9 @@
 package com.instant.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * @author sroshchupkin
@@ -13,4 +15,21 @@ public class Home {
     public String index() {
         return "landing";
     }
+
+    @RequestMapping("/clients")
+    public String getClients(@RequestParam("location") String location, @RequestParam("speciality") String speciality, Model model) {
+        return "index";
+    }
+
+    @RequestMapping("/account")
+    public String getAccount(String speciality, Model model) {
+        return "account";
+    }
+
+    @RequestMapping("/user")
+    public String getUser(String speciality, Model model) {
+        return "user";
+    }
+
+
 }
