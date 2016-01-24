@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.springframework.org/schema/jdbc">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Bootstrap 3, from LayoutIt!</title>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900,200' rel='stylesheet' type='text/css'> -->
+    <link href="https://fonts.googleapis.com/css?family=IM+Fell+English:400,400italic|Product+Sans" rel="stylesheet" type="text/css"/>
+
+    <meta name="description" content="Source code generated using layoutit.com"/>
+    <meta name="author" content="LayoutIt!"/>
+
+    <link href="css/bootstrap.min.css" th:href="@{/resources/oc_css/bootstrap.min.css}" rel="stylesheet"/>
+    <link href="css/style.css" th:href="@{/resources/oc_css/style.css}" rel="stylesheet"/>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'/>
+
+
+</head>
+<body>
+
+
+<div class="container-fluid" style="padding-top: 0px;">
+    <div class="row">
+        <div class="col-md-12">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <div class="navbar-header">
+
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+                            class="icon-bar"></span><span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <a class="navbar-brand" href="#" th:href="@{/}" style="font-family: 'Pacifico', cursive; font-size: 2.2em; font-weight: 100;">instant</a>
+                    </ul>
+
+                </div>
+
+            </nav>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row" style="background-color: white; border-bottom: 1px solid rgba(204, 204, 204, 0.57);">
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-10">
+                    <div class="row" style="background-color: white;">
+
+
+                        <style>
+
+                            .container {
+                            max-width: 997px !important;
+                            }
+
+                            .jumbotron.home-search {
+                            background: transparent;
+                            }
+
+                            .home-search {
+                            padding-bottom: 0;
+                            padding-top: 120px;
+                            }
+
+                            .home-search .main_description {
+                            text-align: center;
+                            }
+
+                            .home-search .form-control {
+                            padding: 20px 8px;
+                            }
+
+                            .home-search .input-group-addon {
+                            padding: 0;
+                            }
+
+
+                            .home-search .input-group-addon.input-group-addon-text {
+                            background: #ffffff;
+                            color: #000;
+                            border: none;
+                            padding-right: 20px;
+                            }
+
+                            .home-search .input-group-addon .btn {
+                            padding: 9px 18px;
+                            }
+                            .home-search .input-group-addon li a {
+                            text-align: left;
+                            padding: 10px 18px;
+                            }
+                            .home-search .input-group-addon .btn {
+                            text-transform: none;
+                            }
+
+                            .home-search .input-group-addon .btn {
+                            color: #000;
+                            font-weight: 400;
+                            background-color: transparent;
+                            }
+
+                            .search-btn {
+                            width: 180px;
+                            float: none;
+                            }
+
+                            .btn-primary {
+                            background-image: -webkit-linear-gradient(top, #007fff 0%, #0066cc 100%);
+                            background-image: linear-gradient(to bottom, #007fff 0%, #0066cc 100%);
+                            background-repeat: repeat-x;
+                            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff007fff', endColorstr='#ff0066cc', GradientType=0);
+                            border-color: #0061c2;
+                            }
+
+                        </style>
+
+                        <div class="jumbotron home-search" style="">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <br/>
+                                        <p class="main_description">Search thousands of stores, brands, products and user classifieds all in one place</p>
+
+                                        <br/><br/>
+                                        <div class="row">
+
+                                            <div class="col-sm-8 col-sm-offset-2" style="text-align: center">
+                                                <div class="row">
+
+                                                    <div class="col-sm-10 col-sm-offset-1">
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon input-group-addon-text">Find me a</span>
+
+                                                            <input type="text" class="form-control col-sm-3" placeholder="e.g. BMW, 2 bed flat, sofa "/>
+                                                            <div class=" input-group-addon hidden-xs">
+                                                                <div class="btn-group">
+                                                                    <button type="button" class="btn  dropdown-toggle" data-toggle="dropdown">
+                                                                        All categories <span class="caret"></span>
+                                                                    </button>
+                                                                    <ul class="dropdown-menu" role="menu">
+                                                                        <li><a href="#">Cars, Vans &amp; Motorbikes</a></li>
+                                                                        <li><a href="#">Community</a></li>
+                                                                        <li><a href="#">Flats &amp; Houses</a></li>
+                                                                        <li><a href="#">For Sale</a></li>
+                                                                        <li><a href="#">Jobs</a></li>
+                                                                        <li><a href="#">Pets</a></li>
+                                                                        <li><a href="#">Services</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <br/>
+                                        <div class="row">
+                                            <div class="col-sm-12" style="text-align: center">
+                                                <a href="listings.html" th:href="@{/clients(location=3,speciality=1)}" class="btn btn-primary search-btn">Search</a>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <br/>
+                                        <div class="row">
+                                            <div class="col-sm-12" style="text-align: center">
+
+                                                <div id="quotes">
+                                                    <div class="text-item" style="display: none;">Boom! <strong>Vince</strong> just sold a <strong>Washing Machine</strong> in <strong>Sheffield</strong></div>
+                                                    <div class="text-item" style="display: none;"><strong>Julia</strong> is availiable for <strong>home cleaning</strong> in <strong>Manchester</strong></div>
+                                                    <div class="text-item" style="display: none;">Success! <strong>Paul</strong> has just sold a <strong>Mercedes-Benz E-class</strong> in <strong>Liverpool</strong></div>
+                                                    <div class="text-item" style="display: none;">Hey, <strong>Uber</strong> has a <strong>job opening</strong> in <strong>London</strong></div>
+                                                </div>
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <div class="row" style="background-color: white;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p style="text-align: center; margin-top:50px; color: #999; line-height: normal; font-size: 17px;">
+        Recommended for you! go Nuts.</p>
+
+    <div class="row" style="margin-top:50px;">
+        <div class="col-md-12">
+
+            <div class="row">
+                <div class="col-md-1">
+                </div>
+
+                <div class="col-md-2">
+                </div>
+
+                <div class="col-md-6"
+                     style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; ">
+
+
+                    <style>
+                        .seo-primary{
+                        border-bottom:1px solid rgba(204, 204, 204, 0.57);
+                        }
+                    </style>
+                    <div class="row seo-primary">
+                        <div class="col-md-4">
+                            <br/>
+                            <div class="thumbnail" style="border:none;">
+                                <img src="../../../../main/webapp/resources/img/img01.jpg" th:src="@{/resources/img/img01.jpg}" alt="..."/>
+                                <div class="caption">
+                                    <h3>Thumbnail label</h3>
+                                    <p style="text-align: center;color: #999; line-height: normal; font-size: 12px;">
+                                        instant lets you search stuff and do other stuff. There are 5,382 stuff open in City Name.
+                                        Search stuff in City Name with instant. Be social. Have fun.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <br/>
+                            <div class="thumbnail">
+                                <img src="../../../../main/webapp/resources/img/img02.jpg" th:src="@{/resources/img/img02.jpg}" alt="..."/>
+                                <div class="caption">
+                                    <h3>Thumbnail label</h3>
+                                    <p style="text-align: center; color: #999; line-height: normal; font-size: 12px;">
+                                        instant lets you search stuff and do other stuff. There are 5,382 stuff open in City Name.
+                                        Search stuff in City Name with instant. Be social. Have fun.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <br/>
+                            <div class="thumbnail">
+                                <img src="../../../../main/webapp/resources/img/img03.jpg" th:src="@{/resources/img/img03.jpg}" alt="..."/>
+                                <div class="caption">
+                                    <h3>Thumbnail label</h3>
+                                    <p style="text-align: center; color: #999; line-height: normal; font-size: 12px;">
+                                        instant lets you search stuff and do other stuff. There are 5,382 stuff open in City Name.
+                                        Search stuff in City Name with instant. Be social. Have fun.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row seo-secondary-row">
+                        <div class="col-md-4">
+                            <br/>
+                            <div class="thumbnail" style="border:none;">
+                                <img src="../../../../main/webapp/resources/img/img01.jpg" th:src="@{/resources/img/img04.jpg}" alt="..."/>
+                                <div class="caption">
+                                    <h3>Thumbnail label</h3>
+                                    <p style="text-align: center;color: #999; line-height: normal; font-size: 12px;">
+                                        instant lets you search stuff and do other stuff. There are 5,382 stuff open in City Name.
+                                        Search stuff in City Name with instant. Be social. Have fun.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <br/>
+                            <div class="thumbnail">
+                                <img src="../../../../main/webapp/resources/img/img02.jpg" th:src="@{/resources/img/img05.jpg}" alt="..."/>
+                                <div class="caption">
+                                    <h3>Thumbnail label</h3>
+                                    <p style="text-align: center; color: #999; line-height: normal; font-size: 12px;">
+                                        instant lets you search stuff and do other stuff. There are 5,382 stuff open in City Name.
+                                        Search stuff in City Name with instant. Be social. Have fun.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <br/>
+                            <div class="thumbnail">
+                                <img src="../../../../main/webapp/resources/img/img03.jpg" th:src="@{/resources/img/img06.jpg}" alt="..."/>
+                                <div class="caption">
+                                    <h3>Thumbnail label</h3>
+                                    <p style="text-align: center; color: #999; line-height: normal; font-size: 12px;">
+                                        instant lets you search stuff and do other stuff. There are 5,382 stuff open in City Name.
+                                        Search stuff in City Name with instant. Be social. Have fun.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-3">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row footer">
+        <div class="col-md-3"></div>
+        <div class="col-md-6" style="margin-top:10px;">
+            <div>
+                <p style="max-width: 728px; text-align: center; margin: 21px auto; color: #999; line-height: normal; font-size: 12px;">instant lets you search stuff and do other stuff. There are 5,382 stuff open in City Name. Search stuff in City Name with instant. Be social. Have fun.</p>
+            </div>
+
+            <div>
+                <hr style="line-height: 1em; margin: 21px 14px; width: auto; box-sizing: border-box; border-top: 1px #ccc solid;"/>
+            </div>
+
+            <nav style="margin-bottom: 14px; margin: 0; padding: 0; border: 0; font: inherit; font-size: 100%; vertical-align: baseline;">
+                <ul class="flex-grid notranslate" style="padding: 0; vertical-align: baseline; list-style: none; width: 100%; max-width: 1024px; margin: 0 auto;">
+
+                    <li style="margin: 21px 0; display: block;" class="span-1-3 col">
+                        <ul class="flex-grid noFold">
+                            <li class="span-1-2 col"><p>Glassdoor</p>
+                                <ul>
+                                    <li><a href="/about/index_input.htm" target="_top" rel="nofollow"> About Us </a>
+                                    </li>
+                                    <li class="SL_norewrite"><a href="http://jobs.glassdoor.com/home?id=GLASA001M"
+                                                                target="_top" rel="nofollow"> Careers</a></li>
+                                    <li class="SL_norewrite"><a href="https://www.glassdoor.co.uk/blog" target="_top">
+                                        Blog</a></li>
+                                </ul>
+                            </li>
+                            <li class="span-1-2 col"><p>Employers</p>
+                                <ul>
+                                    <li><a href="http://employers.glassdoor.co.uk?src=gdfoot" target="_top"
+                                           rel="nofollow"> Talent Solutions</a></li>
+                                    <li><a href="/partners/index.htm" target="_top" rel="nofollow"> Employer Centre</a>
+                                    </li>
+                                    <li><a href="/post-job?src=site-footer" target="_top" rel="nofollow"> Post a Job</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li style="margin: 21px 0; display: block;" class="span-1-3 col">
+                        <ul class="flex-grid noFold">
+                            <li class="span-1-2 col"><p>Community</p>
+                                <ul>
+                                    <li><a href="http://help.glassdoor.com/GlassDoorHome/en_US" target="_blank"> Help
+                                        Centre</a></li>
+                                    <li><a href="http://help.glassdoor.com/article/Community-Guidelines/en_US"
+                                           target="_blank"> Guidelines</a></li>
+                                    <li><a href="/about/terms.htm" target="_top" rel="nofollow"> Terms of Use</a></li>
+                                    <li><a href="/about/privacy.htm" target="_top" rel="nofollow"> Privacy &amp;
+                                        Cookies</a></li>
+                                </ul>
+                            </li>
+                            <li class="span-1-2 col"><p>Work With Us</p>
+                                <ul>
+                                    <li><a href="/partners/jobs/dailyReport.htm" target="_top" rel="nofollow">Job
+                                        Boards</a></li>
+                                    <li><a href="http://resources.glassdoor.com/advertising-on-glassdoor.html"
+                                           target="_blank" rel="nofollow"> Advertisers</a></li>
+                                    <li><a href="/developer/index.htm" target="_top" rel="nofollow"> Developers</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li style="vertical-align: middle; margin-bottom: 0; margin: 21px 0; display: block;" class="span-1-3 col tldSelector">
+                        <div class="ib noFold last fillMob">
+                            <div class="appStoreCTA notranslate noWrap">
+                                <a class="app-store ios " style="border-right-width: 0; vertical-align: baseline; text-decoration: none;" href="https://itunes.apple.com/us/app/glassdoor-job-search-salaries/id589698942?mt=8&amp;uo=4" target="_blank">
+                                    <i class="lazy" data-original="https://static.glassdoor.co.uk/static/img/sprites/app-stores-en.png?v=610ed48n4" style="position: relative; background-image: url(&quot;https://static.glassdoor.co.uk/static/img/sprites/app-stores-en.png?v=610ed48n4&quot;);">
+                                        <span>Available on the App Store</span>
+                                    </i>
+                            </a> <a class="app-store android "
+                                    href="https://play.google.com/store/apps/details?id=com.glassdoor.app"
+                                    target="_blank"> <i class="lazy"
+                                                        data-original="https://static.glassdoor.co.uk/static/img/sprites/app-stores-en.png?v=610ed48n4"
+                                                        style="position: relative; background-image: url(&quot;https://static.glassdoor.co.uk/static/img/sprites/app-stores-en.png?v=610ed48n4&quot;);"><span>Android App available on Google Play</span></i>
+                            </a></div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+            <div>
+                <hr style="line-height: 1em; margin: 21px 14px; width: auto; box-sizing: border-box; border-top: 1px #ccc solid;"/>
+            </div>
+
+            <style>
+
+            </style>
+
+            <div class="browseLinks" style="width: 100%; margin: 21px auto; text-align: left; margin-bottom: 10px; line-height: 1em; font-size: 14px;
+    color: #666; border-width: 0; padding: 0; border: 0;">
+                <ul class="linkList" style="display: block; margin: 0; padding: 0; list-style: none; text-align: center;
+                vertical-align: baseline; font-size: 100%; font: inherit; border: 0; color: #666;">
+                    <li class="newLine" style="display: inline-block; margin: 0; padding: 0;white-space: nowrap;
+                    line-height: 1em; border: 0;font: inherit; font-size: 100%; vertical-align: baseline;">
+                        <a href="/site-directory/job-salaries.htm" target="_top" data-ajax="false"
+                                           class="minor">Salaries by Job</a>
+                    </li>
+                    <li><a href="/site-directory/company-salaries.htm" target="_top" data-ajax="false" class="minor">Salaries
+                        by Company</a></li>
+                    <li class="endLine"><a href="/site-directory/city-salaries.htm" target="_top" data-ajax="false"
+                                           class="minor">Salaries by City</a></li>
+                    <li class="newLine"><a href="/site-directory/company-reviews.htm" target="_top" data-ajax="false"
+                                           class="minor">Reviews by Company</a></li>
+                    <li class="endLine"><a href="/site-directory/job-interviews.htm" target="_top" data-ajax="false"
+                                           class="minor">Interview Questions by Job</a></li>
+                    <li class="newLine endLine"><a href="/site-directory/company-interviews.htm" target="_top"
+                                                   data-ajax="false" class="minor">Interviews by Company</a></li>
+                    <li class="endLine"><a href="/site-directory/company-benefits.htm" target="_top" data-ajax="false"
+                                           class="minor">Benefits by Company</a></li>
+                    <li class="newLine"><a href="/site-directory/title-jobs.htm" target="_top" data-ajax="false"
+                                           class="minor">Jobs by Title</a></li>
+                    <li><a href="/site-directory/company-jobs.htm" target="_top" data-ajax="false" class="minor">Jobs by
+                        Company</a></li>
+                    <li class="endLine"><a href="/site-directory/city-jobs.htm" target="_top" data-ajax="false"
+                                           class="minor">Jobs by City</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <hr style="line-height: 1em; margin: 21px 14px; width: auto; box-sizing: border-box; border-top: 1px #ccc solid;"/>
+            </div>
+
+            <div>
+                <p style="max-width: 728px; text-align: center; margin: 21px auto; color: #999; line-height: normal; font-size: 12px;">Copyright © xxxx–2016, instant. instant ® is a registered trademark of Instant Shpk.</p>
+            </div>
+
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+
+
+
+<script src="js/jquery.min.js" th:src="@{/resources/oc_js/jquery.min.js}"></script>
+<script src="js/bootstrap.min.js" th:src="@{/resources/oc_js/bootstrap.min.js}"></script>
+<script src="js/scripts.js" th:src="@{/resources/oc_js/scripts.js}"></script>
+<script src="js/global.js" th:src="@{/resources/oc_js/global.js}"></script>
+</body>
+</html>

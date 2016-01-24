@@ -1,0 +1,166 @@
+@media (min-width: 768px) {
+.navbar .navbar-nav {
+display: inline-block;
+float: none;
+vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+text-align: center;
+}
+}
+
+
+.righty{
+float:right;
+}
+
+.lefty{
+float:left;}
+.padded{
+margin-left:5px;}
+
+
+section {
+width: 100%;
+height: 40px;
+//background: aqua;
+margin: auto;
+padding: 10px;
+}
+
+
+.seo-primary{
+border-bottom:1px solid rgba(204, 204, 204, 0.57);
+}
+
+
+.thumbnail{
+border:none;
+}
+
+
+
+div.browseLinks ul li{
+display: inline-block;
+margin: 0;
+padding: 0;
+white-space: nowrap;
+line-height: 1em;
+}
+
+div.browseLinks ul li a {
+display: inline-block;
+padding: 3px;
+text-decoration: underline;
+color: #999;
+
+}
+
+.minor {
+font-size: 12px;
+line-height: normal;
+color: #999;
+}
+
+
+
+.flex-grid .col {
+min-height: 1px;
+float: left;
+margin: 0;
+padding: 0 7px;
+position: relative;
+}
+
+.flex-grid .span-1-3 {
+width: 33.33333333%;
+}
+
+.flex-grid.noFold .col.span-1-2 {
+width: 50%;
+}
+
+.flex-grid.noFold .col {
+float: left !important;
+}
+
+nav ul {
+padding: 0;
+vertical-align: baseline;
+list-style: none;
+}
+
+.flex-grid:after, .flex-grid .col:after, .cf:after, .ui-helper-clearfix:after {
+content: '';
+display: table;
+clear: both;
+}
+
+nav li.col.tldSelector {
+vertical-align: middle;
+margin-bottom: 0;
+}
+
+.noWrap {
+white-space: nowrap;
+}
+
+.appStoreCTA {
+font-size: 0;
+line-height: 0;
+}
+
+.appStoreCTA .app-store {
+display: inline-block !important;
+}
+
+.appStoreCTA .app-store i {
+width: 125px;
+height: 41px;
+background: transparent no-repeat 0 0;
+background-size: 250px 41px;
+}
+
+.appStoreCTA .app-store.android i {
+background-position: -125px 0 !important;
+}
+
+
+@media (min-width: 768px) {
+.navbar .navbar-nav {
+display: inline-block;
+float: none;
+vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+text-align: center;
+}
+}
+
+
+.list-group li {
+    list-style: none;
+}
+.panel-info, .panel-rating, .panel-more1 {
+    float: left;
+    margin: 0 10px;
+}
+
+/*
+.right-line{
+border-right: 1px solid rgba(204, 204, 204, 0.57); }
+*/
+
+.panel-body{
+padding-left:inherit;}
+
+.panel-default{
+margin-left:10px;
+margin-right:10px;
+margin-bottom:0px;}
+
+
+.table-responsive{
+margin-bottom:-3%;}
