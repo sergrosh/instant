@@ -11,6 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Restaurant {
     @Id
     private String id;
+
     String name;
     String address;
 

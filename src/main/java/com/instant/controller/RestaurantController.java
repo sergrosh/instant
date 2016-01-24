@@ -18,25 +18,25 @@ import java.util.Map;
 @Controller
 public class RestaurantController {
 
-    @Autowired
-    RestaurantValidator restaurantValidator;
+//    @Autowired
+//    RestaurantValidator restaurantValidator;
 
     @Autowired
     RestaurantRepository restaurantRepository;
 
     @RequestMapping(value = Mappings.RESTAURANT_CREATE_DO, method = RequestMethod.POST)
     public ModelAndView save(Restaurant restaurant) {
-        Map<String, String> errorsMap=restaurantValidator.isValid(restaurant);
-        if(errorsMap.isEmpty())
-        {
+//        Map<String, String> errorsMap=restaurantValidator.isValid(restaurant);
+//        if(errorsMap.isEmpty())
+//        {
             ModelAndView view = new ModelAndView("success");
             restaurantRepository.save(restaurant);
             return view;
-        }
-        else {
-            ModelAndView view = new ModelAndView("fail");
-            return view;
-        }
+//        }
+//        else {
+//            ModelAndView view = new ModelAndView("fail");
+//            return view;
+//        }
 
     }
 
