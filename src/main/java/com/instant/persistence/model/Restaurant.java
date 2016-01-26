@@ -9,11 +9,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
  */
 @Document
 public class Restaurant {
-    @Id
-    private String id;
-
     String name;
     String address;
+    @Id
+    private String id;
 
     public String getId() {
         return id;

@@ -1,6 +1,5 @@
 package com.instant.web;
 
-import com.instant.common.Constants;
 import com.instant.persistence.model.Restaurant;
 import org.springframework.core.MethodParameter;
 import org.springframework.stereotype.Component;
@@ -13,7 +12,7 @@ import org.springframework.web.method.support.ModelAndViewContainer;
  */
 
 @Component
-public class RestaurantArgumentResolver extends AbstractHandlerMethodArgumentResolver{
+public class RestaurantArgumentResolver extends AbstractHandlerMethodArgumentResolver {
     @Override
     public boolean supportsParameter(MethodParameter parameter) {
         return parameter.getParameterType().equals(Restaurant.class);
