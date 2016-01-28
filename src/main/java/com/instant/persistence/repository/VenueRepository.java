@@ -10,7 +10,11 @@ import java.util.List;
  */
 public interface VenueRepository extends MongoRepository<Venue, String> {
     List<Venue> findByName(String name);
+
     Venue findByAddress(String address);
-    List<Venue> findByTags(String tag);
+
+    List<Venue> findByType(String type);
+
     List<Venue> findByNameAndAddressAllIgnoreCase(String name, String address);
+
 }

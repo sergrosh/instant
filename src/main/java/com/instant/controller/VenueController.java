@@ -26,15 +26,13 @@ public class VenueController {
 
     @RequestMapping(value = Mappings.RESTAURANT_CREATE_DO, method = RequestMethod.POST)
     public ModelAndView save(Venue venue) {
-        Map<String, String> errorsMap= venueValidator.isValid(venue);
-        if(errorsMap.isEmpty())
-        {
-        ModelAndView view = new ModelAndView("index");
-        venueRepository.save(venue);
-        venueRepository.findByName("name");
-        return view;
-        }
-        else {
+        Map<String, String> errorsMap = venueValidator.isValid(venue);
+        if (errorsMap.isEmpty()) {
+            ModelAndView view = new ModelAndView("index");
+            venueRepository.save(venue);
+            venueRepository.findByName("name");
+            return view;
+        } else {
             ModelAndView view = new ModelAndView("index");
             return view;
         }
