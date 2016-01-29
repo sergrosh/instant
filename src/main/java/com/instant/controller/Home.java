@@ -17,7 +17,7 @@ public class Home {
     }
 
     @RequestMapping("/clients")
-    public String getClients(@RequestParam("location") String location, @RequestParam("speciality") String speciality, Model model) {
+    public String getClients(@RequestParam("query") String query, Model model) {
         return "index";
     }
 
