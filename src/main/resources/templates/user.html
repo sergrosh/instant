@@ -274,7 +274,7 @@
                                         <!--</div>-->
 
                                         <br/>
-                                        <button onclick="postToJira()">Save profile</button>
+                                        <button type="submit">Save profile</button>
 
 
                                     </fieldset>
@@ -322,27 +322,24 @@
 <script src="js/scripts.js" th:src="@{/resources/oc_js/scripts.js}"></script>
 
 <script th:inline="javascript">
-/*<![CDATA[*/
-        // this is the id of the form
-function postToJira() {
+    /*<![CDATA[*/
 
-console.log($("#saveVenueForm").serialize());
+    $('#saveVenueForm').on('submit', function(e) {
+        console.log($("#saveVenueForm").serialize());
 
-$.ajax({
-    type: 'POST',
-    url: "./saveVenue",
-    data: $("#saveVenueForm").serialize(),
-    success: function(data)
-        {
-            console.log(data);
-        }
-});
-
-return false;
-}
-/*]]>*/
-
-    </script>
+        $.ajax({
+            type: 'POST',
+            url: "./saveVenue",
+            data: $("#saveVenueForm").serialize(),
+            success: function(data)
+            {
+                console.log("Sucessfull Ajax Post");
+            }
+        });
+        return false;
+    });
+    /*]]>*/
+</script>
 
 
 </body>
