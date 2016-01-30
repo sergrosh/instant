@@ -16,7 +16,7 @@
     <link href="css/style.css" th:href="@{/resources/oc_css/style.css}" rel="stylesheet"/>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'/>
     <link href="css/font-awesome.min.css" th:href="@{/resources/oc_css/font-awesome.min.css}" rel="stylesheet"/>
-
+    <link href="css/bootstrap-social.css" th:href="@{/resources/oc_css/bootstrap-social.css}" rel="stylesheet"/>
 
 </head>
 <body>
@@ -43,18 +43,22 @@
                     &nbsp;
                 </div>
                 <div class="collapse navbar-collapse" id="navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right" style="padding: 5px 15px 5px 5px">
-                        <li><a href="#">Link</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                            </ul>
+                    <ul class="nav navbar-nav navbar-right" style="padding: 0px 15px 0px 5px">
+                        <li>
+                            <a class="btn btn-block">
+                                <span class="fa fa-facebook" style="color:#3B5998;"></span> Login
+                            </a>
                         </li>
+                        <!--<li class="dropdown">-->
+                            <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>-->
+                            <!--<ul class="dropdown-menu">-->
+                                <!--<li><a href="#">Action</a></li>-->
+                                <!--<li><a href="#">Another action</a></li>-->
+                                <!--<li><a href="#">Something else here</a></li>-->
+                                <!--<li class="divider"></li>-->
+                                <!--<li><a href="#">Separated link</a></li>-->
+                            <!--</ul>-->
+                        <!--</li>-->
                     </ul>
                 </div>
 
@@ -75,7 +79,7 @@
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <br/>
-                                        <p class="main_description">Search thousands of stores, brands, products and user classifieds all in one place</p>
+                                        <p class="main_description" style="font-size:30px;">Find the perfect place to party, eat or just have fun!</p>
 
                                         <br/><br/>
                                         <form action="#" th:action="@{/clients}" method="GET">
