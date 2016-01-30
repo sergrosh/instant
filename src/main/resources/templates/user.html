@@ -83,16 +83,13 @@
                             <div class="panel-body" style="border-radius: 0px">
                                 <ul class="nav">
                                     <li>
-                                        <a class="active" href="account_dashboard.html">Dashboard</a>
+                                        <a class="active" href="account_dashboard.html" th:href="@{/user}">Dashboard</a>
                                     </li>
                                     <li>
-                                        <a class="active" href="account_profile.html" >My profile</a>
+                                        <a class="active" href="account_profile.html" th:href="@{/profile}">My profile</a>
                                     </li>
                                     <li>
-                                        <a class="active" href="account_account.html" th:href="@{/footer2}">My account</a>
-                                    </li>
-                                    <li>
-                                        <a class="active" href="account_ads.html">Manage venues</a>
+                                        <a class="active" href="account_ads.html" th:href="@{/user/list}">Manage venues</a>
                                     </li>
                                     <li>
                                         <a class="active" th:href="@{/user/add}">Register Venue</a>
