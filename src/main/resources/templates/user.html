@@ -113,7 +113,7 @@
 
                             <div class="panel-body">
 
-                                <form class="form-horizontal" action="#" th:action="@{/saveVenue}" method="POST">
+                                <form role="form" name="saveVenueForm" class="form-horizontal" id="saveVenueForm" method="post">
                                     <fieldset>
 
                                         <!--<div class="form-group">-->
@@ -274,7 +274,7 @@
                                         <!--</div>-->
 
                                         <br/>
-                                        <button type="submit" class="btn btn-primary">Save profile</button>
+                                        <button onclick="postToJira()">Save profile</button>
 
 
                                     </fieldset>
@@ -320,5 +320,30 @@
 <script src="js/jquery.min.js" th:src="@{/resources/oc_js/jquery.min.js}"></script>
 <script src="js/bootstrap.min.js" th:src="@{/resources/oc_js/bootstrap.min.js}"></script>
 <script src="js/scripts.js" th:src="@{/resources/oc_js/scripts.js}"></script>
+
+<script th:inline="javascript">
+/*<![CDATA[*/
+        // this is the id of the form
+function postToJira() {
+
+console.log($("#saveVenueForm").serialize());
+
+$.ajax({
+    type: 'POST',
+    url: "./saveVenue",
+    data: $("#saveVenueForm").serialize(),
+    success: function(data)
+        {
+            console.log(data);
+        }
+});
+
+return false;
+}
+/*]]>*/
+
+    </script>
+
+
 </body>
 </html>
