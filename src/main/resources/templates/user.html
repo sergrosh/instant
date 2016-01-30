@@ -113,7 +113,7 @@
 
                             <div class="panel-body">
 
-                                <form class="form-horizontal" action="#" th:action="@{/saveVenue}" method="POST">
+                                <form role="form" name="saveVenueForm" class="form-horizontal" id="saveVenueForm" method="post">
                                     <fieldset>
 
                                         <!--<div class="form-group">-->
@@ -274,7 +274,7 @@
                                         <!--</div>-->
 
                                         <br/>
-                                        <button type="submit" class="btn btn-primary">Save profile</button>
+                                        <button type="submit">Save profile</button>
 
 
                                     </fieldset>
@@ -320,5 +320,35 @@
 <script src="js/jquery.min.js" th:src="@{/resources/oc_js/jquery.min.js}"></script>
 <script src="js/bootstrap.min.js" th:src="@{/resources/oc_js/bootstrap.min.js}"></script>
 <script src="js/scripts.js" th:src="@{/resources/oc_js/scripts.js}"></script>
+
+<script th:inline="javascript">
+    /*<![CDATA[*/
+
+    //http://stackoverflow.com/questions/8517071/send-json-data-via-post-ajax-and-receive-json-response-from-controller-mvc
+
+    $('#saveVenueForm').on('submit', function(e) {
+        console.log(JSON.stringify($("#saveVenueForm").serialize()));
+        var venue = {
+            VENUE_CATEGORY : $('#venue_category').val(),
+            VENUE_NAME : $('#venue_name').val(),
+            VENUE_DESCRIPTION : $('#venue_description').val()
+        }
+
+        $.ajax({
+            type: 'POST',
+            url: "./saveVenue",
+            dataType: 'json',
+            data: venue,
+            success: function(data)
+            {
+                console.log("Sucessfull Ajax Post");
+            }
+        });
+        return false;
+    });
+    /*]]>*/
+</script>
+
+
 </body>
 </html>
