@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<head>
+
+
+
+</head>
+<body>
+
+
+
+<div class="panel panel-default" th:fragment="accounts_add_venue" style="background-color:#ffffff; border-radius: 0px">
+    <div class="panel-heading" style="background-color: #ffffff;">My account</div>
+
+    <div class="panel-body" style="padding: 15px;">
+
+        <div class="row">
+            <div class="col-sm-12">
+
+                <style>
+
+                    .alert {
+                    padding: 15px;
+                    margin-bottom: 18px;
+                    border: 1px solid transparent;
+                    border-radius: 0px;
+                    }
+
+                    .alert-info {
+                    background-color: #d9edf7;
+                    border-color: #bce8f1;
+                    color: #000000;
+                    }
+
+                    .alert {
+                    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+                    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 2px rgba(0, 0, 0, 0.05);
+                    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 2px rgba(0, 0, 0, 0.05);
+                    }
+
+                    .alert-info {
+                    background-image: -webkit-linear-gradient(top, #d9edf7 0%, #b9def0 100%);
+                    background-image: linear-gradient(to bottom, #d9edf7 0%, #b9def0 100%);
+                    background-repeat: repeat-x;
+                    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9edf7', endColorstr='#ffb9def0', GradientType=0);
+                    border-color: #9acfea;
+                    background: #d9edf7;
+                    }
+
+
+                </style>
+
+                <div class="alert alert-info">
+                    <h3 style="margin: 0; font-size: 16px; line-height: 20px;">Note:</h3>
+                    <p>Leave the password fields blank if you don't want to change your password.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <form class="form-horizontal" action="#" th:action="@{/saveVenue}" method="POST">
+            <fieldset>
+
+                <!--<div class="form-group">-->
+
+                <!--<div class="col-sm-4">-->
+                <!--<div class="form-group">-->
+                <!--<label for="inputEmail1" class="col-sm-12 control-label">Your logo</label>-->
+                <!--<div class="col-sm-11">-->
+                <!--<img id="file-select" src="http://lorempixel.com/180/100" width="100%"/><br/>-->
+
+                <!--<span class="btn btn-default btn-file">-->
+                <!--Click to upload <input type="file"/>-->
+                <!--</span>-->
+
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-sm-8">-->
+                <!--<br/>-->
+                <!--<div class="form-group">-->
+                <!--<label for="inputEmail1" class="col-sm-4 control-label">Display name</label>-->
+                <!--<div class="col-sm-8">-->
+                <!--<input type="email" class="form-control" id="inputEmail1" placeholder="The name you want other people to see"/>-->
+                <!--</div>-->
+                <!--</div>-->
+
+                <!--<div class="form-group">-->
+                <!--<label for="inputEmail1" class="col-sm-4 control-label">Company name</label>-->
+                <!--<div class="col-sm-8">-->
+                <!--<input type="email" class="form-control" id="inputEmail1" placeholder="Your company name"/>-->
+                <!--</div>-->
+                <!--</div>-->
+
+
+                <!--<div class="form-group">-->
+                <!--<label for="inputEmail1" class="col-sm-4 control-label">Website</label>-->
+                <!--<div class="col-sm-8">-->
+                <!--<input type="email" class="form-control" id="inputEmail1" placeholder="http://"/>-->
+                <!--</div>-->
+                <!--</div>-->
+
+                <!--</div>-->
+                <!--</div>-->
+
+                <!--<div class="form-group">-->
+                <!--<div class="col-sm-12">-->
+                <!--<label for="inputEmail1" style="width: 100%" class="control-label">About you</label><br/><br/>-->
+                <!--<textarea class="form-control col-sm-8" rows="6" style="width: 99%"></textarea>-->
+                <!--</div>-->
+                <!--</div>-->
+
+                <div class="form-group">
+                    <label for="venue_category" class="col-sm-2 control-label">Category</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="venue_category" name="VENUE_CATEGORY" placeholder="Category"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="venue_name" class="col-sm-2 control-label">Title</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="venue_name" name="VENUE_NAME" placeholder="Title"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="venue_description" class="col-sm-2 control-label">Description</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="venue_description" name="VENUE_DESCRIPTION" placeholder="Description"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="venue_company" class="col-sm-2 control-label">Company Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="venue_company" name="VENUE_COMPANY" placeholder="Company"/>
+                    </div>
+                </div>
+
+
+                <hr/>
+
+                <div class="form-group">
+                    <label for="venue_email" class="col-sm-2 control-label">Email</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" id="venue_email" name="VENUE_EMAIL" placeholder="Email Address"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="venue_telephone_primary" class="col-sm-2 control-label">Telephone (Primary)</label>
+                    <div class="col-sm-10">
+                        <input type="tel" class="form-control" id="venue_telephone_primary" name="VENUE_TELEPHONE_PRIMARY" placeholder="Primary Phone Number"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="venue_telephone_secondary" class="col-sm-2 control-label">Telephone (Secondary)</label>
+                    <div class="col-sm-10">
+                        <input type="tel" class="form-control" id="venue_telephone_secondary" name="VENUE_TELEPHONE_SECONDARY" placeholder="Secondary Phone Number"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="venue_mobile_primary" class="col-sm-2 control-label">Mobile (Primary)</label>
+                    <div class="col-sm-10">
+                        <input type="tel" class="form-control" id="venue_mobile_primary" name="VENUE_MOBILE_PRIMARY" placeholder="Primary Mobile Number"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="venue_mobile_secondary" class="col-sm-2 control-label">Mobile (Secondary)</label>
+                    <div class="col-sm-10">
+                        <input type="tel" class="form-control" id="venue_mobile_secondary" name="VENUE_MOBILE_SECONDARY" placeholder="Secondary Mobile Number"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="venue_facebook_pagey" class="col-sm-2 control-label">Facebook Page</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="venue_facebook_pagey" name="VENUE_FACEBOOK_PAGE" placeholder="Facebook Page"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="venue_website" class="col-sm-2 control-label">Website</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="venue_website" name="VENUE_WEBSITE" placeholder="Website"/>
+                    </div>
+                </div>
+
+                <!--<div class="form-group">-->
+                <!--<label for="inputEmail1" class="col-sm-2 control-label">Email address</label>-->
+                <!--<div class="col-sm-10">-->
+                <!--<input type="email" class="form-control" id="inputEmail1" placeholder="Must be valid, we'll send you a validation message"/>-->
+                <!--</div>-->
+                <!--</div>-->
+
+                <!--<div class="form-group">-->
+                <!--<label for="inputEmail1" class="col-sm-2 control-label">Mobile</label>-->
+                <!--<div class="col-sm-10">-->
+                <!--<input type="email" class="form-control" id="inputEmail1" placeholder="Your mobile number"/>-->
+                <!--</div>-->
+                <!--</div>-->
+
+                <!--<div class="form-group">-->
+                <!--<label for="inputEmail1" class="col-sm-2 control-label">Home phone</label>-->
+                <!--<div class="col-sm-10">-->
+                <!--<input type="email" class="form-control" id="inputEmail1" placeholder="Don't forget to include the area code"/>-->
+                <!--</div>-->
+                <!--</div>-->
+
+                <!--<div class="form-group">-->
+                <!--<label for="inputEmail1" class="col-sm-2 control-label">Fax</label>-->
+                <!--<div class="col-sm-10">-->
+                <!--<input type="email" class="form-control" id="inputEmail1" placeholder="If you still use a fax machine"/>-->
+                <!--</div>-->
+                <!--</div>-->
+
+                <br/>
+                <button type="submit" class="btn btn-primary">Save profile</button>
+
+
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>
