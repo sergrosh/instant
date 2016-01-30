@@ -141,11 +141,11 @@ text-align: center;
 
 
 .list-group li {
-    list-style: none;
+list-style: none;
 }
 .panel-info, .panel-rating, .panel-more1 {
-    float: left;
-    margin: 0 10px;
+float: left;
+margin: 0 10px;
 }
 
 /*
@@ -167,64 +167,81 @@ margin-bottom:-3%;}
 
 
 .container {
-                            max-width: 997px !important;
-                            }
+max-width: 997px !important;
+}
 
-                            .jumbotron.home-search {
-                            background: transparent;
-                            }
+.jumbotron.home-search {
+background: transparent;
+}
 
-                            .home-search {
-                            padding-bottom: 0;
-                            padding-top: 120px;
-                            }
+.home-search {
+padding-bottom: 0;
+padding-top: 120px;
+}
 
-                            .home-search .main_description {
-                            text-align: center;
-                            }
+.home-search .main_description {
+text-align: center;
+}
 
-                            .home-search .form-control {
-                            padding: 20px 8px;
-                            }
+.home-search .form-control {
+padding: 20px 8px;
+}
 
-                            .home-search .input-group-addon {
-                            padding: 0;
-                            }
+.home-search .input-group-addon {
+padding: 0;
+}
 
 
-                            .home-search .input-group-addon.input-group-addon-text {
-                            background: #ffffff;
-                            color: #000;
-                            border: none;
-                            padding-right: 20px;
-                            }
+.home-search .input-group-addon.input-group-addon-text {
+background: #ffffff;
+color: #000;
+border: none;
+padding-right: 20px;
+}
 
-                            .home-search .input-group-addon .btn {
-                            padding: 9px 18px;
-                            }
-                            .home-search .input-group-addon li a {
-                            text-align: left;
-                            padding: 10px 18px;
-                            }
-                            .home-search .input-group-addon .btn {
-                            text-transform: none;
-                            }
+.home-search .input-group-addon .btn {
+padding: 9px 18px;
+}
+.home-search .input-group-addon li a {
+text-align: left;
+padding: 10px 18px;
+}
+.home-search .input-group-addon .btn {
+text-transform: none;
+}
 
-                            .home-search .input-group-addon .btn {
-                            color: #000;
-                            font-weight: 400;
-                            background-color: transparent;
-                            }
+.home-search .input-group-addon .btn {
+color: #000;
+font-weight: 400;
+background-color: transparent;
+}
 
-                            .search-btn {
-                            width: 180px;
-                            float: none;
-                            }
+.search-btn {
+width: 180px;
+float: none;
+}
 
-                            .btn-primary {
-                            background-image: -webkit-linear-gradient(top, #007fff 0%, #0066cc 100%);
-                            background-image: linear-gradient(to bottom, #007fff 0%, #0066cc 100%);
-                            background-repeat: repeat-x;
-                            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff007fff', endColorstr='#ff0066cc', GradientType=0);
-                            border-color: #0061c2;
-                            }
+.btn-primary {
+background-image: -webkit-linear-gradient(top, #007fff 0%, #0066cc 100%);
+background-image: linear-gradient(to bottom, #007fff 0%, #0066cc 100%);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff007fff', endColorstr='#ff0066cc', GradientType=0);
+border-color: #0061c2;
+}
+
+
+.index_logo {
+margin-left: 62.5%;
+}
+
+@media (max-width: 900px) and (min-width: 730px) {
+.index_logo {
+margin-left: 60%;
+}
+}
+
+@media (max-width: 730px) {
+.index_logo {
+margin-left: 48%;
+}
+}
