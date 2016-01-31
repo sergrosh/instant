@@ -13,7 +13,7 @@ public interface VenueRepository extends MongoRepository<Venue, String> {
 
     Venue findByAddress(String address);
 
-    List<Venue> findByType(String type);
+    List<Venue> findByCategory(String category);
 
     List<Venue> findByNameAndAddressAllIgnoreCase(String name, String address);
 

@@ -22,9 +22,17 @@ public class VenueArgumentResolver extends AbstractHandlerMethodArgumentResolver
     public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer,
                                   NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws Exception {
         Venue venue = new Venue();
-        venue.setId(getTrimmedParameter(webRequest, VENUE_ID));
+//        venue.setId(getTrimmedParameter(webRequest, VENUE_ID));
         venue.setName(getTrimmedParameter(webRequest, VENUE_NAME));
-        venue.setType(getTrimmedParameter(webRequest, VENUE_TYPE));
+        venue.setCategory(getTrimmedParameter(webRequest, VENUE_CATEGORY));
+        venue.setCompany(getTrimmedParameter(webRequest, VENUE_COMPANY));
+        venue.setEmail(getTrimmedParameter(webRequest, VENUE_EMAIL));
+        venue.setPhonePrimary(getTrimmedParameter(webRequest, VENUE_TELEPHONE_PRIMARY));
+        venue.setPhoneSecondary(getTrimmedParameter(webRequest, VENUE_TELEPHONE_SECONDARY));
+        venue.setMobilePrimary(getTrimmedParameter(webRequest, VENUE_MOBILE_PRIMARY));
+        venue.setMobileSecondary(getTrimmedParameter(webRequest, VENUE_MOBILE_SECONDARY));
+        venue.setFacebookPage(getTrimmedParameter(webRequest, VENUE_FACEBOOK_PAGE));
+        venue.setWebsite(getTrimmedParameter(webRequest, VENUE_WEBSITE));
         venue.setAddress(getTrimmedParameter(webRequest, VENUE_ADDRESS));
         venue.setImagePath(getTrimmedParameter(webRequest, VENUE_IMAGE_PATH));
         venue.setDescription(getTrimmedParameter(webRequest, VENUE_DESCRIPTION));

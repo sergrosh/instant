@@ -16,7 +16,15 @@ public class Venue {
     @Id
     private String id;
     private String name;
-    private String type;
+    private String category;
+    private String company;
+    private String email;
+    private String phonePrimary;
+    private String phoneSecondary;
+    private String mobilePrimary;
+    private String mobileSecondary;
+    private String facebookPage;
+    private String website;
     private String address;
     private String imagePath;
     private String description;
@@ -42,12 +50,12 @@ public class Venue {
         this.name = name;
     }
 
-    public String getType() {
-        return type;
+    public String getCategory() {
+        return category;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setCategory(String type) {
+        this.category = category;
     }
 
     public String getAddress() {
@@ -112,5 +120,69 @@ public class Venue {
 
     public void setLikes(int likes) {
         this.likes = likes;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhonePrimary() {
+        return phonePrimary;
+    }
+
+    public void setPhonePrimary(String phonePrimary) {
+        this.phonePrimary = phonePrimary;
+    }
+
+    public String getPhoneSecondary() {
+        return phoneSecondary;
+    }
+
+    public void setPhoneSecondary(String phoneSecondary) {
+        this.phoneSecondary = phoneSecondary;
+    }
+
+    public String getMobilePrimary() {
+        return mobilePrimary;
+    }
+
+    public void setMobilePrimary(String mobilePrimary) {
+        this.mobilePrimary = mobilePrimary;
+    }
+
+    public String getMobileSecondary() {
+        return mobileSecondary;
+    }
+
+    public void setMobileSecondary(String mobileSecondary) {
+        this.mobileSecondary = mobileSecondary;
+    }
+
+    public String getFacebookPage() {
+        return facebookPage;
+    }
+
+    public void setFacebookPage(String facebookPage) {
+        this.facebookPage = facebookPage;
+    }
+
+    public String getWebsite() {
+        return website;
+    }
+
+    public void setWebsite(String website) {
+        this.website = website;
     }
 }
