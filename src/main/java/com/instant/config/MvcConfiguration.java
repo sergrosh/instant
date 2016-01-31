@@ -14,11 +14,11 @@ import java.util.List;
 @Configuration
 public class MvcConfiguration extends WebMvcConfigurerAdapter {
 
-    @Autowired
-    private ArgumentResolverComposite argumentResolverComposite;
-
-    @Override
-    public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
-        argumentResolvers.add(argumentResolverComposite);
-    }
+//    @Autowired
+//    private ArgumentResolverComposite argumentResolverComposite;
+//
+//    @Override
+//    public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
+//        argumentResolvers.add(argumentResolverComposite);
+//    }
 }
