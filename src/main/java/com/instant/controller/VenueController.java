@@ -39,6 +39,8 @@ public class VenueController {
 
     }
 
+
+
 //    @RequestMapping(value = Mappings.VENUE_SAVE, method = RequestMethod.POST)
 //    public ModelAndView saveVenue(@RequestBody Venue venue) {
 //        Map<String, String> errorsMap = venueValidator.isValid(venue);

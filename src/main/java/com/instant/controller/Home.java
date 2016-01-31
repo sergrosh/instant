@@ -16,10 +16,10 @@ public class Home {
         return "landing";
     }
 
-    @RequestMapping("/clients")
-    public String getClients(@RequestParam("query") String query, Model model) {
-        return "index";
-    }
+//    @RequestMapping("/clients")
+//    public String getClients(@RequestParam("query") String query, Model model) {
+//        return "index";
+//    }
 
     @RequestMapping("/item")
     public String getClients(Model model) {
