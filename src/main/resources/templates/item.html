@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Bootstrap 3, from LayoutIt!</title>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900,200' rel='stylesheet' type='text/css'> -->
+    <link href="https://fonts.googleapis.com/css?family=IM+Fell+English:400,400italic|Product+Sans" rel="stylesheet"
+          type="text/css"/>
+
+    <meta name="description" content="Source code generated using layoutit.com"/>
+    <meta name="author" content="LayoutIt!"/>
+
+    <link href="css/bootstrap.min.css" th:href="@{/resources/oc_css/bootstrap.min.css}" rel="stylesheet"/>
+    <link href="css/style.css" th:href="@{/resources/oc_css/style.css}" rel="stylesheet"/>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'/>
+    <link href="css/font-awesome.min.css" th:href="@{/resources/oc_css/font-awesome.min.css}" rel="stylesheet"/>
+    <link href="css/bootstrap-social.css" th:href="@{/resources/oc_css/bootstrap-social.css}" rel="stylesheet"/>
+
+
+</head>
+<body>
+
+
+<div class="container-fluid" style="padding-top: 65px;">
+    <div class="row">
+        <div class="col-md-12">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <div class="" style="float:left;width:75%;overflow: hidden; ">
+                    <ul class="nav navbar-nav index_logo">
+                        <a class="navbar-brand" href="#" th:href="@{/}"
+                           style="font-family: 'Pacifico', cursive; font-size: 2em; font-weight: 400;">instant
+                        </a>
+                    </ul>
+                </div>
+
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <i class="fa fa-facebook"></i>
+                    </button>
+                    &nbsp;
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right" style="padding: 0px 15px 0px 5px">
+                        <li>
+                            <a class="btn btn-block">
+                                <span class="fa fa-facebook" style="color:#3B5998;"></span> Login
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+
+            </nav>
+
+
+            <div class="row">
+                <div class="col-md-1">
+                </div>
+
+                <div class="col-md-2 hidden-xs" style="border:none; padding-right: 0px; padding-left: 0px; background-color: rgb(248, 248, 249)">
+
+                    <style type="text/css">
+                        .panel-default {
+                        border-left: 1px solid rgba(204, 204, 204, 0.57);
+                        border-top: 1px solid rgba(204, 204, 204, 0.57);
+                        border-bottom: 1px solid rgba(204, 204, 204, 0.57) ;
+                        }
+                    </style>
+
+                    <div>
+                        <div class="panel panel-default" style="background-color:#ffffff; border-right: 1px solid rgba(204, 204, 204, 0.57) ; border-radius: 0px; ">
+
+                            <div class="panel-heading" style="background-color: #ffffff;">My account</div>
+                            <div class="panel-body" style="border-radius: 0px">
+                                <ul class="nav">
+                                    <li>
+                                        <a class="active" href="account_dashboard.html" th:href="@{/user}">Dashboard</a>
+                                    </li>
+                                    <li>
+                                        <a class="active" href="account_profile.html" th:href="@{/profile}">My profile</a>
+                                    </li>
+                                    <li>
+                                        <a class="active" href="account_ads.html" th:href="@{/user/list}">Manage venues</a>
+                                    </li>
+                                    <li>
+                                        <a class="active" th:href="@{/user/add}">Register Venue</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6"
+                     style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:5px; padding-right:5px;">
+                    <div class="row"
+                         style="margin-left: 15px; margin-right: 15px; margin-top: 15px;">
+                        <div class="row" style="border:none;">
+
+                            <div class="panel panel-default" style="border:none;">
+                                <div class="panel-heading" style="background-color:#fff; border:none;">
+                                    <h3 style="margin-top:0px;">Thumbnail label</h3>
+                                </div>
+                                <div class="panel-body nopadding paddingbottom10" style="border:none;">
+
+                                    <div class="col-md-12">
+                                        <img style="width:100%;height:100%; background:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)); " src="../../../../main/webapp/resources/img/img02.jpg" th:src="@{/resources/img/img02.jpg}" alt="..."/>
+                                    </div>
+                                    <div class="col-md-12" style="width:100%;height:100%;" >
+                                        <div class="row">
+                                            <div class="col-xs-4 col-md-2 no-margin-right">
+                                                <a href="#" class="thumbnail">
+                                                    <img src="../../../../main/webapp/resources/img/img01.jpg" th:src="@{/resources/img/img01.jpg}" alt="..."/>
+                                                </a>
+                                            </div>
+                                            <div class="col-xs-4 col-md-2 no-margin-right" >
+                                                <a href="#" class="thumbnail">
+                                                    <img src="../../../../main/webapp/resources/img/img02.jpg" th:src="@{/resources/img/img02.jpg}" alt="..."/>
+                                                </a>
+                                            </div>
+                                            <div class="col-xs-4 col-md-2 no-margin-right" >
+                                                <a href="#" class="thumbnail">
+                                                    <img src="../../../../main/webapp/resources/img/img03.jpg" th:src="@{/resources/img/img03.jpg}" alt="..."/>
+                                                </a>
+                                            </div>
+                                            <div class="col-xs-4 col-md-2 no-margin-right">
+                                                <a href="#" class="thumbnail">
+                                                    <img src="../../../../main/webapp/resources/img/img04.jpg" th:src="@{/resources/img/img04.jpg}" alt="..."/>
+                                                </a>
+                                            </div>
+                                            <div class="col-xs-4 col-md-2 no-margin-right">
+                                                <a href="#" class="thumbnail">
+                                                    <img src="../../../../main/webapp/resources/img/img02.jpg" th:src="@{/resources/img/img02.jpg}" alt="..."/>
+                                                </a>
+                                            </div>
+                                            <div class="col-xs-4 col-md-2 no-margin-right">
+                                                <a href="#" class="thumbnail">
+                                                    <img src="../../../../main/webapp/resources/img/img02.jpg" th:src="@{/resources/img/img02.jpg}" alt="..."/>
+                                                </a>
+                                            </div>
+                                            <div class="col-xs-4 col-md-2 no-margin-right">
+                                                <a href="#" class="thumbnail">
+                                                    <img src="../../../../main/webapp/resources/img/img02.jpg" th:src="@{/resources/img/img02.jpg}" alt="..."/>
+                                                </a>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-10 col-md-offset-1" style="padding-top:15px;">
+                                        <h4>Description</h4>
+                                        <p>
+                                            Bacon ipsum dolor amet turkey filet mignon fatback cupim ground round tenderloin sirloin, prosciutto pork chop landjaeger doner. Spare ribs sausage hamburger, pastrami doner turkey pork belly bresaola leberkas ham. Sirloin venison kielbasa tri-tip alcatra ground round. Leberkas tongue tenderloin, bacon landjaeger flank cow corned beef drumstick ribeye turducken pork loin shankle filet mignon brisket. Sausage drumstick picanha swine jerky meatloaf corned beef. Bresaola capicola landjaeger andouille ball tip. Fatback filet mignon andouille kielbasa pork chop beef, prosciutto porchetta turkey biltong strip steak short loin meatball beef ribs boudin.
+                                        </p>
+                                    </div>
+
+
+
+
+                                    <!--<div id="landing-wrapper">Lorem ipsum dolor ismet.</div>-->
+
+                                    <br/>
+
+
+                                    <!--<div id="slideshow-wrap">-->
+                                        <!--<input type="radio" id="button-1" name="controls" checked="checked"/>-->
+                                        <!--<label for="button-1"></label>-->
+                                        <!--<input type="radio" id="button-2" name="controls"/>-->
+                                        <!--<label for="button-2"></label>-->
+                                        <!--<input type="radio" id="button-3" name="controls"/>-->
+                                        <!--<label for="button-3"></label>-->
+                                        <!--<input type="radio" id="button-4" name="controls"/>-->
+                                        <!--<label for="button-4"></label>-->
+                                        <!--<input type="radio" id="button-5" name="controls"/>-->
+                                        <!--<label for="button-5"></label>-->
+                                        <!--<label for="button-1" class="arrows" id="arrow-1">></label>-->
+                                        <!--<label for="button-2" class="arrows" id="arrow-2">></label>-->
+                                        <!--<label for="button-3" class="arrows" id="arrow-3">></label>-->
+                                        <!--<label for="button-4" class="arrows" id="arrow-4">></label>-->
+                                        <!--<label for="button-5" class="arrows" id="arrow-5">></label>-->
+                                        <!--<div id="slideshow-inner">-->
+                                            <!--<ul>-->
+                                                <!--<li id="slide1">-->
+                                                    <!--<img src="http://lorempixel.com/300/300" />-->
+                                                    <!--<div class="description">-->
+                                                        <!--<input type="checkbox" id="show-description-1"/>-->
+                                                        <!--<label for="show-description-1" class="show-description-label">I</label>-->
+                                                        <!--<div class="description-text">-->
+                                                            <!--<h2>Flower power</h2>-->
+                                                            <!--<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</p>-->
+                                                        <!--</div>-->
+                                                    <!--</div>-->
+                                                <!--</li>-->
+                                                <!--<li id="slide2">-->
+                                                    <!--<img src="http://lorempixel.com/300/300" />-->
+                                                    <!--<div class="description">-->
+                                                        <!--<input type="checkbox" id="show-description-2"/>-->
+                                                        <!--<label for="show-description-2" class="show-description-label">I</label>-->
+                                                        <!--<div class="description-text">-->
+                                                            <!--<h2>Golden sunset</h2>-->
+                                                            <!--<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</p>-->
+                                                        <!--</div>-->
+                                                    <!--</div>-->
+                                                <!--</li>-->
+                                                <!--<li id="slide3">-->
+                                                    <!--<img src="http://lorempixel.com/300/300" />-->
+                                                    <!--<div class="description">-->
+                                                        <!--<input type="checkbox" id="show-description-3"/>-->
+                                                        <!--<label for="show-description-3" class="show-description-label">I</label>-->
+                                                        <!--<div class="description-text">-->
+                                                            <!--<h2>Flower power again</h2>-->
+                                                            <!--<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</p>-->
+                                                        <!--</div>-->
+                                                    <!--</div>-->
+                                                <!--</li>-->
+                                                <!--<li id="slide4">-->
+                                                    <!--<img src="http://lorempixel.com/150/150" />-->
+                                                    <!--<div class="description">-->
+                                                        <!--<input type="checkbox" id="show-description-4"/>-->
+                                                        <!--<label for="show-description-4" class="show-description-label">I</label>-->
+                                                        <!--<div class="description-text">-->
+                                                            <!--<h2>Stormy coast</h2>-->
+                                                            <!--<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</p>-->
+                                                        <!--</div>-->
+                                                    <!--</div>-->
+                                                <!--</li>-->
+                                                <!--<li id="slide5">-->
+                                                    <!--<img src="http://lorempixel.com/300/300" />-->
+                                                    <!--<div class="description">-->
+                                                        <!--<input type="checkbox" id="show-description-5"/>-->
+                                                        <!--<label for="show-description-5" class="show-description-label">I</label>-->
+                                                        <!--<div class="description-text">-->
+                                                            <!--<h2>Splash!</h2>-->
+                                                            <!--<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</p>-->
+                                                        <!--</div>-->
+                                                    <!--</div>-->
+                                                <!--</li>-->
+                                            <!--</ul>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-2 hidden-xs" style="border:none; padding-right: 0px; padding-left: 0px; background-color: rgb(248, 248, 249)">
+
+                    <style type="text/css">
+                        .panel-default {
+                        border-left: 1px solid rgba(204, 204, 204, 0.57);
+                        border-top: 1px solid rgba(204, 204, 204, 0.57);
+                        border-bottom: 1px solid rgba(204, 204, 204, 0.57) ;
+                        }
+                    </style>
+
+                    <div>
+                        <div class="panel panel-default" style="background-color:#ffffff; border-right: 1px solid rgba(204, 204, 204, 0.57) ; border-radius: 0px; ">
+
+                            <div class="panel-heading" style="background-color: #ffffff;">My account</div>
+                            <div class="panel-body" style="border-radius: 0px">
+                                <ul class="nav">
+                                    <li>
+                                        <a class="active" href="account_dashboard.html" th:href="@{/user}">Dashboard</a>
+                                    </li>
+                                    <li>
+                                        <a class="active" href="account_profile.html" th:href="@{/profile}">My profile</a>
+                                    </li>
+                                    <li>
+                                        <a class="active" href="account_ads.html" th:href="@{/user/list}">Manage venues</a>
+                                    </li>
+                                    <li>
+                                        <a class="active" th:href="@{/user/add}">Register Venue</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-1">
+                </div>
+            </div>
+
+
+            <div class="row">
+
+                <div class="col-md-1">
+
+                </div>
+
+
+                <div class="col-md-2">
+                </div>
+
+
+                <div class="col-md-6" style="border-right: 1px solid rgba(204, 204, 204, 0.57); border-bottom: 1px solid rgba(204, 204, 204, 0.57); border-left: 1px solid rgba(204, 204, 204, 0.57); background-color: white; ">
+                    <div class="col-md-12 nopadding"
+                         style="padding-right:none; padding-left:none;">
+
+                        <div class="col-md-10 col-md-offset-1" style="padding-top:15px;">
+                            <h4>Information</h4>
+                            <div class="info-section">
+                                <i class="fa fa-map-marker" style="padding-right:5px;"></i> Berliner Allee 1, 10000 Berlin | View in Map
+                            </div>
+                            <div class="info-section">
+                                <i class="fa fa-phone" style="padding-right:5px;"></i> 0100000000000007
+                            </div>
+                            <div class="info-section">
+                                <i class="fa fa-envelope" style="padding-right:5px;"></i> <a href="mailto:abc@def.com">Contact us.</a>
+                            </div>
+                            <br/>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                </div>
+
+                <div class="col-md-1">
+                </div>
+
+
+
+
+
+             </div>
+            </div>
+
+
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+    <br/>
+    <br/>
+    <p style="max-width: 728px; text-align: center; margin: 21px auto; color: #999; line-height: normal; font-size: 12px;">
+        SEO Block</p>
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="row">
+                <div class="col-md-1">
+                </div>
+
+                <div class="col-md-2">
+                </div>
+
+                <div class="col-md-6"
+                     style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; ">
+
+                    <div class="row seo-primary">
+                        <div class="col-md-4">
+                            <br/>
+                            <div class="thumbnail" style="border:none; text-align:center;">
+                                <img src="../../../../main/webapp/resources/img/img01.jpg" th:src="@{/resources/img/img01.jpg}" alt="..."/>
+                                <div class="caption">
+                                    <h3>Thumbnail label</h3>
+                                    <p style="text-align: center;color: #999; line-height: normal; font-size: 12px;">
+                                        instant lets you search stuff and do other stuff. There are 5,382 stuff open in City Name.
+                                        Search stuff in City Name with instant. Be social. Have fun.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <br/>
+                            <div class="thumbnail" style="border:none; text-align:center;">
+                                <img src="../../../../main/webapp/resources/img/img02.jpg" th:src="@{/resources/img/img02.jpg}" alt="..."/>
+                                <div class="caption">
+                                    <h3>Thumbnail label</h3>
+                                    <p style="text-align: center; color: #999; line-height: normal; font-size: 12px;">
+                                        instant lets you search stuff and do other stuff. There are 5,382 stuff open in City Name.
+                                        Search stuff in City Name with instant. Be social. Have fun.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <br/>
+                            <div class="thumbnail" style="border:none; text-align:center;">
+                                <img src="../../../../main/webapp/resources/img/img03.jpg" th:src="@{/resources/img/img03.jpg}" alt="..."/>
+                                <div class="caption">
+                                    <h3>Thumbnail label</h3>
+                                    <p style="text-align: center; color: #999; line-height: normal; font-size: 12px;">
+                                        instant lets you search stuff and do other stuff. There are 5,382 stuff open in City Name.
+                                        Search stuff in City Name with instant. Be social. Have fun.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row seo-secondary-row">
+                        <div class="col-md-4">
+                            <br/>
+                            <div class="thumbnail" style="border:none; text-align:center;">
+                                <img src="../../../../main/webapp/resources/img/img01.jpg" th:src="@{/resources/img/img01.jpg}" alt="..."/>
+                                <div class="caption">
+                                    <h3>Thumbnail label</h3>
+                                    <p style="text-align: center;color: #999; line-height: normal; font-size: 12px;">
+                                        instant lets you search stuff and do other stuff. There are 5,382 stuff open in City Name.
+                                        Search stuff in City Name with instant. Be social. Have fun.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <br/>
+                            <div class="thumbnail" style="border:none; text-align:center;">
+                                <img src="../../../../main/webapp/resources/img/img02.jpg" th:src="@{/resources/img/img02.jpg}"  alt="..."/>
+                                <div class="caption">
+                                    <h3>Thumbnail label</h3>
+                                    <p style="text-align: center; color: #999; line-height: normal; font-size: 12px;">
+                                        instant lets you search stuff and do other stuff. There are 5,382 stuff open in City Name.
+                                        Search stuff in City Name with instant. Be social. Have fun.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <br/>
+                            <div class="thumbnail" style="border:none; text-align:center;">
+                                <img src="../../../../main/webapp/resources/img/img03.jpg" th:src="@{/resources/img/img03.jpg}"  alt="..."/>
+                                <div class="caption">
+                                    <h3>Thumbnail label</h3>
+                                    <p style="text-align: center; color: #999; line-height: normal; font-size: 12px;">
+                                        instant lets you search stuff and do other stuff. There are 5,382 stuff open in City Name.
+                                        Search stuff in City Name with instant. Be social. Have fun.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-3">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row footer">
+        <div class="col-md-3"></div>
+        <div class="col-md-6" style="margin-top:10px;">
+            <div>
+                <p style="max-width: 728px; text-align: center; margin: 21px auto; color: #999; line-height: normal; font-size: 12px;">
+                    instant lets you search stuff and do other stuff. There are 5,382 stuff open in City Name. Search
+                    stuff in City Name with instant. Be social. Have fun.</p>
+            </div>
+            <div>
+                <hr style="line-height: 1em; margin: 21px 14px; width: auto; box-sizing: border-box; border-top: 1px #ccc solid;"/>
+            </div>
+
+            <div>
+                <hr style="line-height: 1em; margin: 21px 14px; width: auto; box-sizing: border-box; border-top: 1px #ccc solid;"/>
+            </div>
+
+            <div class="browseLinks"
+                 style="width: 100%; margin: 21px auto; text-align: left; margin-bottom: 10px; color: #666; font-size: 14px;">
+                <ul class="linkList"
+                    style="display: block; margin: 0; padding: 0; list-style: none; text-align: center;">
+                    <li class="newLine"
+                        style="display: inline-block; white-space: nowrap; line-height: 1em;     padding: 0; margin: 0; vertical-align: baseline; font-size: 100%;">
+                        <a href="/site-directory/job-salaries.htm" target="_top" data-ajax="false" class="minor">Salaries
+                            by Job</a>
+                    </li>
+                    <li>
+                        <a href="/site-directory/company-salaries.htm" target="_top" data-ajax="false" class="minor">Salaries
+                            by Company</a>
+                    </li>
+                    <li class="endLine">
+                        <a href="/site-directory/city-salaries.htm" target="_top" data-ajax="false" class="minor">Salaries
+                            by City</a>
+                    </li>
+                    <li class="newLine">
+                        <a href="/site-directory/company-reviews.htm" target="_top" data-ajax="false" class="minor">Reviews
+                            by Company</a>
+                    </li>
+                    <li class="endLine">
+                        <a href="/site-directory/job-interviews.htm" target="_top" data-ajax="false" class="minor">Interview
+                            Questions by Job</a>
+                    </li>
+                    <li class="newLine endLine">
+                        <a href="/site-directory/company-interviews.htm" target="_top" data-ajax="false" class="minor">Interviews
+                            by Company</a>
+                    </li>
+                    <li class="endLine">
+                        <a href="/site-directory/company-benefits.htm" target="_top" data-ajax="false" class="minor">Benefits
+                            by Company</a>
+                    </li>
+                    <li class="newLine">
+                        <a href="/site-directory/title-jobs.htm" target="_top" data-ajax="false" class="minor">Jobs by
+                            Title</a>
+                    </li>
+                    <li>
+                        <a href="/site-directory/company-jobs.htm" target="_top" data-ajax="false" class="minor">Jobs by
+                            Company</a>
+                    </li>
+                    <li class="endLine"><a href="/site-directory/city-jobs.htm" target="_top" data-ajax="false"
+                                           class="minor">Jobs by City</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <hr style="line-height: 1em; margin: 21px 14px; width: auto; box-sizing: border-box; border-top: 1px #ccc solid;"/>
+            </div>
+
+            <div>
+                <p style="max-width: 728px; text-align: center; margin: 21px auto; color: #999; line-height: normal; font-size: 12px;">
+                    Copyright © xxxx–2016, instant. instant ® is a registered trademark of Instant Shpk.</p>
+            </div>
+
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+
+
+<script src="js/jquery.min.js" th:src="@{/resources/oc_js/jquery.min.js}"></script>
+<script src="js/bootstrap.min.js" th:src="@{/resources/oc_js/bootstrap.min.js}"></script>
+<script src="js/scripts.js" th:src="@{/resources/oc_js/scripts.js}"></script>
+</body>
+</html>

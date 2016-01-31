@@ -21,6 +21,11 @@ public class Home {
         return "index";
     }
 
+    @RequestMapping("/item")
+    public String getClients(Model model) {
+        return "item";
+    }
+
     @RequestMapping("/account")
     public String getAccount(String speciality, Model model) {
         return "account";
