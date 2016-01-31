@@ -2,6 +2,7 @@ package com.instant.persistence.repository;
 
 import com.instant.persistence.model.Venue;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.mongodb.core.query.TextCriteria;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;
@@ -14,6 +15,7 @@ public interface VenueRepository extends MongoRepository<Venue, String> {
 
     List<Venue> findByName(String name, Pageable pageable);
 
+    List<Venue> findByName(TextCriteria textCriteria, Pageable pageable);
 
     Venue findByAddress(String address);
 

@@ -3,6 +3,7 @@ package com.instant.controller;
 import com.instant.common.PaginationBean;
 import com.instant.persistence.repository.VenueRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.query.TextCriteria;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,7 +31,8 @@ public class SearchController {
             modelAndView.addObject("venues", venueRepository.findAll(paginationBean.defaultPageable(pageNum - 1)));
             return modelAndView;
         } else {
-            modelAndView.addObject("venues", venueRepository.findByName(query, paginationBean.defaultPageable(pageNum - 1)));
+            TextCriteria criteria = TextCriteria.forDefaultLanguage().matchingAny(query);
+            modelAndView.addObject("venues", venueRepository.findByName(criteria, paginationBean.defaultPageable(pageNum - 1)));
             modelAndView.addObject("searchString", query);
         }
 
