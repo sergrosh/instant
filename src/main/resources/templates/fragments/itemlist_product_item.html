@@ -7,79 +7,54 @@
 <body>
     <div class="row" th:fragment="itemlist_product_item" style="margin-left: 15px; margin-right: 15px; margin-top: 15px;">
         <div class="row">
-            <div class="panel panel-default">
+            <!--item starts here-->
+            <div class="panel panel-default" style="border:0px;">
                 <div class="panel-body">
-                    <div class="panel-more1">
+                    <div class="panel-more1" style="border:1px  solid rgba(204, 204, 204, 0.57); ">
                         <img src="http://lorempixel.com/150/150" />
-                        <br /><span th:text="${venue.name}">Demo</span>
+                        <span th:text="${venue.name}">Demo</span>
                     </div>
                     <div class="table-responsive">
                         <table class="table">
                             <tr>
-                                <td>
-                                    <div class="panel-info right-line">
-                                        <p><strong>Tel: 011-345-898</strong></p>
-                                        <p>9182 Lorem Ipsum<br />
-                                            consectetur adipiscing elit.<br />
-                                            Nullam vel lacus felis.</p>
+                                <td style="border:0px;">
+                                    <div class="panel-info right-line" >
+                                        <p ><strong style="font-height:16px;line-height:1;font-style:normal;">Title | Company</strong></p>
+                                        <p style="color:#777777;"><i class="fa fa-map-marker"></i> Berlin 1</p>
+                                        <p style="color:#777777;margin-top:-10px;"><i class="fa fa-phone"></i> +123456789</p>
+                                        <p style="color:#999999;margin-top:-10px;">Lorem Ipsum Bacon Bacon Bacon</p>
+                                        <div class="col-md-12" style="padding:0px;">
+                                            <div class="col-md-4" style="padding-left:0px;border-right:2px solid rgba(204, 204, 204, 0.57);">
+                                                <span style="color:#777777;text-decoration:none;font-weight:bold; line-height:1;font-size:12px;">280</span>
+                                                <br/>
+                                                <span style="color:#999999;text-decoration:none;font-size:12px;line-height: 1;margin-top: 76px;">Type of Foods</span>
+
+
+                                            </div>
+
+                                            <div class="col-md-4 col-md-offset-1" style="padding-left:0px;">
+                                                <a style="color:#777777;text-decoration:none;font-weight:bold; line-height:1;font-size:12px;">280</a>
+                                                <br/>
+                                                <a style="color:#999999;text-decoration:none;font-size:12px;line-height:1;">Type of Foods</a>
+                                            </div>
+
+                                        </div>
+
 
                                     </div>
-                                </td>
-                                <td>
-                                    <div class="panel-rating" style="float:left;">
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <p>Rating of the Restaurant</p>
-                                    </div>
-                                    <div class="panel-info" style="float:left; clear: left;">
-                                        <p>Price: €50</p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <button class="btn btn-default btn-lg" >
-                                        <span class="glyphicon glyphicon-new-window" arial-hidden="true"></span>
-                                    </button>
-
                                 </td>
 
                             </tr>
-                            <tr>
-                                <td>
-                                    <div class="panel-info right-line">
-                                        <p><strong>Tel: 011-345-898</strong></p>
-                                        <p>9182 Lorem Ipsum<br />
-                                            consectetur adipiscing elit.<br />
-                                            Nullam vel lacus felis.</p>
 
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="panel-rating" style="float:left;">
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <p>Rating of the Restaurant</p>
-                                    </div>
-                                    <div class="panel-info" style="float:left; clear: left;">
-                                        <p>Price: €50</p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <button class="btn btn-default btn-lg" >
-                                        <span class="glyphicon glyphicon-new-window" arial-hidden="true"></span>
-                                    </button>
-
-                                </td>
-
-                            </tr>
 
                         </table>
+
+
                     </div>
+                    <br/>
+
+                    <button type="button" class="btn btn-primary btn-lg-cool btn-block" style="margin-left:7px;">Website</button>
+
                 </div>
             </div>
         </div>
