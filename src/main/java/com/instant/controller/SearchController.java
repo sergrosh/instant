@@ -31,8 +31,8 @@ public class SearchController {
             modelAndView.addObject("venues", venueRepository.findAll(paginationBean.defaultPageable(pageNum - 1)));
             return modelAndView;
         } else {
-            TextCriteria criteria = TextCriteria.forDefaultLanguage().matchingAny(query);
-            modelAndView.addObject("venues", venueRepository.findByName(criteria, paginationBean.defaultPageable(pageNum - 1)));
+            TextCriteria criteria = TextCriteria.forDefaultLanguage().matchingPhrase(query);
+            modelAndView.addObject("venues", venueRepository.findAllBy(criteria, paginationBean.defaultPageable(pageNum - 1)));
             modelAndView.addObject("searchString", query);
         }
 

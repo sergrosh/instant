@@ -11,6 +11,9 @@ import java.util.List;
  * @author sroshchupkin
  */
 public interface VenueRepository extends MongoRepository<Venue, String> {
+
+    List<Venue> findAllBy(TextCriteria textCriteria, Pageable pageable);
+
     List<Venue> findByName(String name);
 
     List<Venue> findByName(String name, Pageable pageable);

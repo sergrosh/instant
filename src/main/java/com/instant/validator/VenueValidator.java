@@ -21,8 +21,12 @@ public class VenueValidator {
             errors.put("Venue title", "is required!");
         }
 
-        if (StringUtils.isEmpty(venue.getAddress())) {
-            errors.put("Venue address", "is required");
+        if (StringUtils.isEmpty(venue.getCompany())) {
+            errors.put("Venue company name", "is required");
+        }
+
+        if(StringUtils.isEmpty(venue.getDescription())){
+            errors.put("Venue description","is required");
         }
         return errors;
     }

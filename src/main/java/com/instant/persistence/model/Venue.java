@@ -2,6 +2,7 @@ package com.instant.persistence.model;
 
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.TextIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
@@ -15,7 +16,7 @@ public class Venue {
 
     @Id
     private String id;
-    private String name;
+    private @TextIndexed(weight = 3) String name;
     private String category;
     private String company;
     private String email;
