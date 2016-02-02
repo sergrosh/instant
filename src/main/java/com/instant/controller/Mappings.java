@@ -5,5 +5,9 @@ package com.instant.controller;
  */
 public interface Mappings {
     String VENUE_SAVE = "/saveVenue";
-    String CLIENTS="/clients";
+    String CLIENTS = "/clients";
+    String ITEM = "/item";
+    String ACCOUNT = "/account";
+    String USER = "/user";
+    String USER_ADD = "/user/add";
 }

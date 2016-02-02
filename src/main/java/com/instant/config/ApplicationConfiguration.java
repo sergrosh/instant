@@ -25,7 +25,7 @@ import org.springframework.stereotype.Controller;
 @EnableMongoRepositories("com.instant.persistence.repository")
 public class ApplicationConfiguration {
     @Bean
-    public EhCacheManagerFactoryBean  ehCacheManagerFactoryBean() {
+    public EhCacheManagerFactoryBean ehCacheManagerFactoryBean() {
         EhCacheManagerFactoryBean ehCacheManagerFactoryBean = new EhCacheManagerFactoryBean();
         ehCacheManagerFactoryBean.setConfigLocation(new ClassPathResource("ehcache.xml"));
         return ehCacheManagerFactoryBean;

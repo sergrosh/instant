@@ -16,7 +16,9 @@ public class Venue {
 
     @Id
     private String id;
-    private @TextIndexed(weight = 3) String name;
+    private
+    @TextIndexed(weight = 3)
+    String name;
     private String category;
     private String company;
     private String email;

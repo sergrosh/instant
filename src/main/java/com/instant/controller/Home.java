@@ -3,47 +3,40 @@ package com.instant.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * @author sroshchupkin
  */
+
 @Controller
 public class Home {
 
     @RequestMapping("/")
     public String index() {
-        return "landing";
+        return TilesDefinition.LANDING;
     }
 
-//    @RequestMapping("/clients")
-//    public String getClients(@RequestParam("query") String query, Model model) {
-//        return "index";
-//    }
-
-    @RequestMapping("/item")
+    @RequestMapping(Mappings.ITEM)
     public String getClients(Model model) {
-        return "item";
+        return TilesDefinition.ITEM;
     }
 
-    @RequestMapping("/account")
+    @RequestMapping(Mappings.ACCOUNT)
     public String getAccount(String speciality, Model model) {
-        return "account";
+        return TilesDefinition.ACCOUNT;
     }
 
-    @RequestMapping("/user")
+    @RequestMapping(Mappings.USER)
     public String getUser(String speciality, Model model) {
-        model.addAttribute("accounts_section","accounts_dashboard");
-        return "user";
+        model.addAttribute("accounts_section", "accounts_dashboard");
+        return Mappings.USER;
     }
 
-    @RequestMapping("/user/add")
+    @RequestMapping(Mappings.USER_ADD)
     public String getUserAddVenuFragment(String speciality, Model model) {
-        model.addAttribute("accounts_section","accounts_add_venue");
-        return "user";
+        model.addAttribute("accounts_section", "accounts_add_venue");
+        return TilesDefinition.USER;
     }
-
-
 
 
 }

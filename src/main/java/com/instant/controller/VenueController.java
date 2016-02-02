@@ -28,11 +28,11 @@ public class VenueController {
     public ModelAndView save(Venue venue) {
         Map<String, String> errorsMap = venueValidator.isValid(venue);
         if (errorsMap.isEmpty()) {
-            ModelAndView view = new ModelAndView("landing");
+            ModelAndView view = new ModelAndView(TilesDefinition.LANDING);
             venueRepository.save(venue);
             return view;
         } else {
-            ModelAndView view = new ModelAndView("landing");
+            ModelAndView view = new ModelAndView(TilesDefinition.LANDING);
             return view;
         }
 

@@ -11,7 +11,7 @@ import org.springframework.web.method.support.ModelAndViewContainer;
 import java.util.List;
 
 /**
- * Created by Sergey on 1/25/2016.
+ * @author sroshchupkin
  */
 @Component
 public class ArgumentResolverComposite implements HandlerMethodArgumentResolver {

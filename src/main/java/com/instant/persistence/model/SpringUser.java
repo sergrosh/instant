@@ -129,6 +129,12 @@ public class SpringUser extends BaseModel implements UserDetails {
         this.roles = roles;
     }
 
+    @Override
+    public int hashCode() {
+        int result = username != null ? username.hashCode() : 0;
+        result = 31 * result + (email != null ? email.hashCode() : 0);
+        return result;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -140,12 +146,5 @@ public class SpringUser extends BaseModel implements UserDetails {
         if (email != null ? !email.equals(that.email) : that.email != null) return false;
         return !(username != null ? !username.equals(that.username) : that.username != null);
 
-    }
-
-    @Override
-    public int hashCode() {
-        int result = username != null ? username.hashCode() : 0;
-        result = 31 * result + (email != null ? email.hashCode() : 0);
-        return result;
     }
 }
