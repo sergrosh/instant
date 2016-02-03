@@ -20,6 +20,8 @@ public interface VenueRepository extends MongoRepository<Venue, String> {
 
     List<Venue> findByName(TextCriteria textCriteria, Pageable pageable);
 
+    Venue findById(String id);
+
     Venue findByAddress(String address);
 
     List<Venue> findByCategory(String category);

@@ -1,8 +1,12 @@
 package com.instant.controller;
 
+import org.springframework.data.mongodb.core.query.TextCriteria;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * @author sroshchupkin
@@ -16,10 +20,6 @@ public class Home {
         return TilesDefinition.LANDING;
     }
 
-    @RequestMapping(Mappings.ITEM)
-    public String getClients(Model model) {
-        return TilesDefinition.ITEM;
-    }
 
     @RequestMapping(Mappings.ACCOUNT)
     public String getAccount(String speciality, Model model) {

@@ -38,4 +38,17 @@ public class SearchController {
 
         return modelAndView;
     }
+
+    @RequestMapping(Mappings.ITEM)
+    public ModelAndView getItemById(@RequestParam("id") String id) {
+        ModelAndView modelAndView;
+        if (StringUtils.isEmpty(id)) {
+            modelAndView = new ModelAndView(TilesDefinition.HOME);
+            return modelAndView;
+        } else {
+            modelAndView = new ModelAndView(TilesDefinition.ITEM);
+            modelAndView.addObject("venue", venueRepository.findById(id));
+        }
+        return modelAndView;
+    }
 }
