@@ -5,10 +5,14 @@ import com.instant.persistence.repository.VenueRepository;
 import com.instant.validator.VenueValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -37,6 +41,17 @@ public class VenueController {
         }
 
     }
+
+//    @RequestMapping(value = "/filters", method = RequestMethod.GET)
+//    @ResponseBody
+//    public ModelAndView filter(@RequestParam("query") String query, @RequestParam("option1") String opt1, @RequestParam("option2") String opt2,
+//                              @RequestParam("option3") String opt3, @RequestParam("option4") String opt4) {
+//        ModelAndView modelAndView = new ModelAndView("redirect:/clients?query=" + query + "&view=2");
+//        List<Venue> venueList = venueRepository.findAll();
+//        venueList.clear();
+//        modelAndView.addObject("venues", venueList);
+//        return modelAndView;
+//    }
 
 
 }

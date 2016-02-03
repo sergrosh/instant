@@ -106,7 +106,7 @@
 
                             <div class="panel panel-default" style="border:none;">
                                 <div class="panel-heading" style="background-color:#fff; border:none;">
-                                    <h3 style="margin-top:0px;">Thumbnail label</h3>
+                                    <h3 style="margin-top:0px;" th:text="${venue.name}">Thumbnail label</h3>
                                 </div>
                                 <div class="panel-body nopadding paddingbottom10" style="border:none;">
 
@@ -157,8 +157,8 @@
                                     </div>
 
                                     <div class="col-md-10 col-md-offset-1" style="padding-top:15px;">
-                                        <h4 th:text="${venue.name}">Description</h4>
-                                        <p>
+                                        <h4 >Description</h4>
+                                        <p th:text="${venue.description}">
                                             Bacon ipsum dolor amet turkey filet mignon fatback cupim ground round tenderloin sirloin, prosciutto pork chop landjaeger doner. Spare ribs sausage hamburger, pastrami doner turkey pork belly bresaola leberkas ham. Sirloin venison kielbasa tri-tip alcatra ground round. Leberkas tongue tenderloin, bacon landjaeger flank cow corned beef drumstick ribeye turducken pork loin shankle filet mignon brisket. Sausage drumstick picanha swine jerky meatloaf corned beef. Bresaola capicola landjaeger andouille ball tip. Fatback filet mignon andouille kielbasa pork chop beef, prosciutto porchetta turkey biltong strip steak short loin meatball beef ribs boudin.
                                         </p>
                                     </div>
@@ -316,7 +316,7 @@
 
                         <div class="col-md-10 col-md-offset-1" style="padding-top:15px;">
                             <h4>Information</h4>
-                            <div class="col-md-6">
+                            <div style="margin-bottom: 10px;" class="col-md-6">
                                 <div class="info-section">
                                     <i class="fa fa-phone" style="padding-right:5px;"></i> 0100000000000007
                                 </div>
@@ -331,7 +331,7 @@
                                 </div>
 
                             </div>
-                            <div class="col-md-6">
+                            <div style="margin-bottom: 10px;" class="col-md-6">
                                 <div class="info-section">
                                     <i class="fa fa-phone" style="padding-right:5px;"></i> 0100000000000007
                                 </div>

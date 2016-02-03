@@ -25,8 +25,18 @@ public class SearchController {
 
     @RequestMapping(Mappings.CLIENTS)
     public ModelAndView search(@RequestParam("query") String query,
-                               @RequestParam(value = "page", required = false, defaultValue = "1") Integer pageNum) {
+                               @RequestParam(value = "view", required = false, defaultValue = "1") Integer view,
+                               @RequestParam(value = "page", required = false, defaultValue = "1") Integer pageNum,
+                               @RequestParam(value = "option1", required = false, defaultValue = "1") String opt1,
+                               @RequestParam(value = "option2", required = false, defaultValue = "1") String opt2,
+                               @RequestParam(value = "option3", required = false, defaultValue = "1") String opt3,
+                               @RequestParam(value = "option4", required = false, defaultValue = "1") String opt4) {
         ModelAndView modelAndView = new ModelAndView(TilesDefinition.HOME);
+
+        if (view == 2) {
+            modelAndView = new ModelAndView("fragments/itemlist_product_list :: itemlist_product_list");
+        }
+
         if (StringUtils.isEmpty(query)) {
             modelAndView.addObject("venues", venueRepository.findAll(paginationBean.defaultPageable(pageNum - 1)));
             return modelAndView;
