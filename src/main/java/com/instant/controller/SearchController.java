@@ -24,7 +24,7 @@ public class SearchController {
     private PaginationBean paginationBean;
 
     @RequestMapping(Mappings.CLIENTS)
-    public ModelAndView search(@RequestParam("query") String query,
+    public ModelAndView search(@RequestParam("query") String query, @RequestParam("category") String category,
                                @RequestParam(value = "view", required = false, defaultValue = "1") Integer view,
                                @RequestParam(value = "page", required = false, defaultValue = "1") Integer pageNum,
                                @RequestParam(value = "option1", required = false, defaultValue = "1") String opt1,

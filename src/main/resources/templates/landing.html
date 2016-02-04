@@ -84,18 +84,16 @@
                                                                 <input type="text" name="query" class="form-control col-sm-3" placeholder="e.g. BMW, 2 bed flat, sofa "/>
                                                                 <div class=" input-group-addon">
                                                                     <div class="btn-group">
-                                                                        <button type="button" class="btn  dropdown-toggle" data-toggle="dropdown">
-                                                                            All categories <span class="caret"></span>
+                                                                        <button type="button" class="btn  dropdown-toggle" data-toggle="dropdown" id="category_visible">
+                                                                            All <span class="caret"></span>
                                                                         </button>
-                                                                        <ul class="dropdown-menu" role="menu">
-                                                                            <li><a href="#">Cars, Vans &amp; Motorbikes</a></li>
-                                                                            <li><a href="#">Community</a></li>
-                                                                            <li><a href="#">Flats &amp; Houses</a></li>
-                                                                            <li><a href="#">For Sale</a></li>
-                                                                            <li><a href="#">Jobs</a></li>
-                                                                            <li><a href="#">Pets</a></li>
-                                                                            <li><a href="#">Services</a></li>
+                                                                        <ul class="dropdown-menu" role="menu" name="category" >
+                                                                            <li><a href="#" onclick="setCategoryValue('all')">All</a></li>
+                                                                            <li><a href="#" onclick="setCategoryValue('bars')">Bars</a></li>
+                                                                            <li><a href="#" onclick="setCategoryValue('restaurant')">Restaurant</a></li>
+                                                                            <li><a href="#" onclick="setCategoryValue('pub')">Pub (Club)</a></li>
                                                                         </ul>
+                                                                        <input type="text" name="category" class="form-control col-sm-3 hidden" id="category_hidden"/>
                                                                     </div>
                                                                 </div>
 
@@ -390,5 +388,25 @@
 <script src="js/bootstrap.min.js" th:src="@{/resources/oc_js/bootstrap.min.js}"></script>
 <script src="js/scripts.js" th:src="@{/resources/oc_js/scripts.js}"></script>
 <script src="js/global.js" th:src="@{/resources/oc_js/global.js}"></script>
+
+<script type="text/javascript" th:inline="javascript">
+/*<![CDATA[*/
+    $(function () {
+      $('#category_hidden').val("all");
+    });
+
+    function setCategoryValue(data){
+        $('#category_hidden').val(data);
+        $('#category_visible').text(data);
+    }
+
+    function retrieveGuests() {
+        var url = '/clients?query=' + $('#search_query').val();
+        var data = $('#filterForm').serialize();
+        url = url + '&view=2&' + data;
+        $("#itemlist_results").load(url);
+    }
+/*]]>*/
+</script>
 </body>
 </html>
