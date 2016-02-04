@@ -14,7 +14,7 @@
     <http use-expressions="true">
         <intercept-url pattern="/*" access="permitAll()"/>
         <!--<intercept-url pattern="//*" access="permitAll()"/>-->
-        <!--<intercept-url pattern="/user" access="isAuthenticated()"/>-->
+        <intercept-url pattern="/user" access="isAuthenticated()"/>
         <form-login authentication-failure-url="/index.page"
                     login-page="/index.page"
                     default-target-url="/index.page"/>
