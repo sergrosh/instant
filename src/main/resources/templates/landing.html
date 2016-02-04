@@ -81,13 +81,13 @@
                                                             <div class="input-group">
                                                                 <!--<span class="input-group-addon input-group-addon-text">Find me a</span>-->
 
-                                                                <input type="text" name="query" id="query_input" class="form-control col-sm-3" placeholder="e.g. restaurant Berlin or pizza"/>
-                                                                <div id = "suggestionBox" style = "display:none; background-color: rgb(248, 248, 249); border: 1px solid rgb(226, 226, 226);">
-                                                                    <a href="#" style="padding:5px;">Some Result Name Here</a>
-                                                                    <hr/>
-                                                                    <a href="#">Some Result Name Here</a>
-                                                                    <hr/>
-                                                                    <a href="#">Some Result Name Here</a>
+                                                                <input autocomplete="off" type="text" name="query" id="query_input" class="form-control col-sm-3" placeholder="e.g. restaurant Berlin or pizza"/>
+                                                                <div id = "suggestionBox" style = "z-index:1; display:none; background-color: rgb(248, 248, 249); border: 1px solid rgb(226, 226, 226);">
+                                                                    <ul class="list-unstyled" style="display: table; margin-bottom:5px;">
+                                                                        <li style="margin: 4px; padding: 4px;">
+                                                                            <a href="#" style="padding:5px;">Some Result Name Here</a>
+                                                                        </li>
+                                                                    </ul>
                                                                 </div>
                                                                 <div class=" input-group-addon">
                                                                     <div class="btn-group">
@@ -429,6 +429,25 @@
             left: this.offsetLeft + "px"
         });
         $('#suggestionBox').show();
+    });
+
+    $( "#query_input" ).keyup(function() {
+        if($("#query_input").val().trim().length===0){
+          $('#suggestionBox').hide();
+        }
+
+        else{
+            dynamic_width = $('#query_input').width() + 18;
+            $('#suggestionBox').css({
+                position: "absolute",
+                top: (this.offsetTop + this.offsetHeight) + "px",
+                left: this.offsetLeft + "px",
+                width: dynamic_width + "px"
+            });
+            $('#suggestionBox').show();
+
+        }
+
     });
 /*]]>*/
 </script>
