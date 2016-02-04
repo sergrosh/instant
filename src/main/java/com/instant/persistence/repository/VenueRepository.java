@@ -21,8 +21,8 @@ public interface VenueRepository extends MongoRepository<Venue, String> {
 
     List<Venue> findByNameLike(TextCriteria criteria);
 
-    @Query(fields="{ 'name' : 1}")
-    List<Venue> findNamesByNameLike(String venueName);
+    @Query(fields = "{ 'name' : 1}")
+    List<Venue> findTop10ByNameLike(String venueName);
 
     List<Venue> findByName(String name);
 

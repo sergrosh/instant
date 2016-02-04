@@ -5,14 +5,12 @@ import com.instant.persistence.repository.VenueRepository;
 import com.instant.validator.VenueValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -27,6 +25,19 @@ public class VenueController {
 
     @Autowired
     VenueRepository venueRepository;
+
+    @RequestMapping(Mappings.ITEM)
+    public ModelAndView getItemById(@RequestParam("id") String id) {
+        ModelAndView modelAndView;
+        if (StringUtils.isEmpty(id)) {
+            modelAndView = new ModelAndView(TilesDefinition.HOME);
+            return modelAndView;
+        } else {
+            modelAndView = new ModelAndView(TilesDefinition.ITEM);
+            modelAndView.addObject("venue", venueRepository.findById(id));
+        }
+        return modelAndView;
+    }
 
     @RequestMapping(value = Mappings.VENUE_SAVE, method = RequestMethod.POST)
     public ModelAndView save(Venue venue) {

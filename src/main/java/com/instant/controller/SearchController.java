@@ -1,13 +1,17 @@
 package com.instant.controller;
 
 import com.instant.common.PaginationBean;
+import com.instant.persistence.model.Venues;
 import com.instant.persistence.repository.VenueRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.query.TextCriteria;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -49,16 +53,12 @@ public class SearchController {
         return modelAndView;
     }
 
-    @RequestMapping(Mappings.ITEM)
-    public ModelAndView getItemById(@RequestParam("id") String id) {
-        ModelAndView modelAndView;
-        if (StringUtils.isEmpty(id)) {
-            modelAndView = new ModelAndView(TilesDefinition.HOME);
-            return modelAndView;
-        } else {
-            modelAndView = new ModelAndView(TilesDefinition.ITEM);
-            modelAndView.addObject("venue", venueRepository.findById(id));
-        }
-        return modelAndView;
+
+    @RequestMapping(path = Mappings.SUGGESTIONS, method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @ResponseBody
+    public Venues getVenueNameSuggestions(@RequestParam("query") String query) {
+       Venues venues = new Venues();
+        venues.getVenues().addAll(venueRepository.findTop10ByNameLike(query));
+        return venues;
     }
 }
