@@ -81,7 +81,14 @@
                                                             <div class="input-group">
                                                                 <!--<span class="input-group-addon input-group-addon-text">Find me a</span>-->
 
-                                                                <input type="text" name="query" class="form-control col-sm-3" placeholder="e.g. BMW, 2 bed flat, sofa "/>
+                                                                <input type="text" name="query" id="query_input" class="form-control col-sm-3" placeholder="e.g. restaurant Berlin or pizza"/>
+                                                                <div id = "suggestionBox" style = "display:none; background-color: rgb(248, 248, 249); border: 1px solid rgb(226, 226, 226);">
+                                                                    <a href="#" style="padding:5px;">Some Result Name Here</a>
+                                                                    <hr/>
+                                                                    <a href="#">Some Result Name Here</a>
+                                                                    <hr/>
+                                                                    <a href="#">Some Result Name Here</a>
+                                                                </div>
                                                                 <div class=" input-group-addon">
                                                                     <div class="btn-group">
                                                                         <button type="button" class="btn  dropdown-toggle" data-toggle="dropdown" id="category_visible">
@@ -395,6 +402,14 @@
       $('#category_hidden').val("all");
     });
 
+    $(function () {
+      $('#suggestionText').css({
+            position: "absolute",
+            top: ($('#query_input').offsetTop + $('#query_input').offsetHeight) + "px",
+            left: $('#query_input').offsetLeft + "px"
+        });
+    });
+
     function setCategoryValue(data){
         $('#category_hidden').val(data);
         $('#category_visible').text(data);
@@ -406,6 +421,15 @@
         url = url + '&view=2&' + data;
         $("#itemlist_results").load(url);
     }
+
+    $( "#query_input" ).keyup(function() {
+          $('#suggestionBox').css({
+            position: "absolute",
+            top: (this.offsetTop + this.offsetHeight) + "px",
+            left: this.offsetLeft + "px"
+        });
+        $('#suggestionBox').show();
+    });
 /*]]>*/
 </script>
 </body>
