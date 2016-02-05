@@ -58,7 +58,7 @@ public class SearchController {
     @ResponseBody
     public Venues getVenueNameSuggestions(@RequestParam("query") String query) {
        Venues venues = new Venues();
-        venues.getVenues().addAll(venueRepository.findTop10ByNameLike(query));
+        venues.getVenues().addAll(venueRepository.findTop10ByNameLikeIgnoreCase(query));
         return venues;
     }
 }
