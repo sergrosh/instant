@@ -83,7 +83,7 @@
 
                                                                 <input autocomplete="off" type="text" name="query" id="query_input" class="form-control col-sm-3" placeholder="e.g. restaurant Berlin or pizza"/>
                                                                 <div id = "suggestionBox" style = "z-index:1; display:none; background-color: rgb(248, 248, 249); border: 1px solid rgb(226, 226, 226);">
-                                                                    <ul id="suggestionList" class="list-unstyled" style="display: table; margin-bottom:5px;">
+                                                                    <ul id="suggestionList" class="list-unstyled" style="display: table; margin-bottom:5px; text-align:left;">
                                                                         <li style="margin: 4px; padding: 4px;"> <a href="..." style="padding:5px;" onclick="triggerSearch('teodor'); return false;">DEMO</a> </li>
                                                                     </ul>
                                                                 </div>
@@ -449,7 +449,7 @@
               cache: false,
               success: function(data){
                 for (var i = 0; i < data.venues.length; i++) {
-                    $('#suggestionList').append( '<li style="margin: 4px; padding: 4px;"> <a href="..." style="padding:5px;" onClick="triggerSearch(); return false;">' + data.venues[i].name + '</a> </li>' );
+                    $('#suggestionList').append( '<li style="margin: 4px; padding: 4px;"> <a href="..." style="padding:5px;" onClick="triggerSearch(' + (data.venues[i].name).toString() + '); return false;">' + data.venues[i].name + '</a> </li>' );
                 }
               }
             });
@@ -465,8 +465,8 @@
         $( "#suggestionList" ).empty();
     })
 
-    function triggerSearch(){
-        $('#query_input').val('Ted');
+    function triggerSearch(data){
+        $('#query_input').val(data);
         $('#search_form').trigger('submit');
     }
 
