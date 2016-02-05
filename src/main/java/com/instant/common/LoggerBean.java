@@ -21,18 +21,18 @@ public abstract class LoggerBean {
         logger.info(format(message, args));
     }
 
+    protected String format(String message, Object... args) {
+        for (Object arg : args) {
+            message = StringUtils.replaceOnce(message, "%s", arg.toString());
+        }
+        return message;
+    }
+
     protected void error(Exception e, String message, Object... args) {
         logger.error(format(message, args), e);
     }
 
     protected void error(String message, Object... args) {
         logger.error(format(message, args));
-    }
-
-    protected String format(String message, Object... args) {
-        for (Object arg : args) {
-            message = StringUtils.replaceOnce(message, "%s", arg.toString());
-        }
-        return message;
     }
 }

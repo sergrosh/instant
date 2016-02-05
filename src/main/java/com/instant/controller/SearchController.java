@@ -56,9 +56,19 @@ public class SearchController {
 
     @RequestMapping(path = Mappings.SUGGESTIONS, method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ResponseBody
-    public Venues getVenueNameSuggestions(@RequestParam("query") String query) {
-       Venues venues = new Venues();
-        venues.getVenues().addAll(venueRepository.findTop10ByNameLikeIgnoreCase(query));
+    public Venues getVenueNameSuggestions(@RequestParam(value="query") String query,
+                                          @RequestParam(value="city", required = false, defaultValue = "Berlin") String city,
+                                          @RequestParam(value = "category",required = false, defaultValue = "ALL") String category) {
+        Venues venues = new Venues();
+        if(category.toUpperCase().equals("ALL")&&city.equals("Berlin")){
+            venues.getVenues().addAll(venueRepository.
+                    findTop10ByNameLikeIgnoreCase(query));
+        }
+        else {
+            venues.getVenues().addAll(venueRepository.
+                    findTop10ByCityAndCategoryAndNameLikeIgnoreCase(city,category,query));
+        }
+
         return venues;
     }
 }

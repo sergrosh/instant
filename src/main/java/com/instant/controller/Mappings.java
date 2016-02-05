@@ -6,7 +6,7 @@ package com.instant.controller;
 public interface Mappings {
     String VENUE_SAVE = "/saveVenue";
     String CLIENTS = "/clients";
-    String SUGGESTIONS="/suggestions";
+    String SUGGESTIONS = "/suggestions";
     String ITEM = "/item";
     String ACCOUNT = "/account";
     String USER = "/user";
