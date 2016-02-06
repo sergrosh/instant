@@ -73,7 +73,6 @@
                                         <form action="#" th:action="@{/clients}" method="GET" id="search_form">
                                         <fieldset>
                                             <div class="row">
-
                                                 <div class="col-sm-8 col-sm-offset-2" style="text-align: center">
                                                     <div class="row">
 
@@ -404,6 +403,28 @@
 
 <script type="text/javascript" th:inline="javascript">
 /*<![CDATA[*/
+
+    jQuery.ajax( {
+      url: '//freegeoip.net/json/',
+      type: 'POST',
+      dataType: 'jsonp',
+      success: function(location) {
+        // example where I update content on the page.
+        console.log(location.city);
+        jQuery('#city_input').val(location.city);
+        jQuery('#region-code').html(location.region_code);
+        jQuery('#region-name').html(location.region_name);
+        jQuery('#areacode').html(location.areacode);
+        jQuery('#ip').html(location.ip);
+        jQuery('#zipcode').html(location.zipcode);
+        jQuery('#longitude').html(location.longitude);
+        jQuery('#latitude').html(location.latitude);
+        jQuery('#country-name').html(location.country_name);
+        jQuery('#country-code').html(location.country_code);
+      }
+    } );
+
+
 
     var suggestionClicked=false;
     $(function () {
