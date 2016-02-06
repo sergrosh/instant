@@ -162,13 +162,9 @@
         <div class="col-md-12">
 
             <div class="row">
-                <div class="col-md-1">
-                </div>
 
-                <div class="col-md-2">
-                </div>
 
-                <div class="col-md-6"
+                <div class="col-md-6 col-md-offset-3"
                      style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; ">
 
 
@@ -181,7 +177,7 @@
                         <div class="col-md-4">
                             <br/>
                             <div class="thumbnail" style="border:none;">
-                                <a href="#">
+                                <a href="#" onmousedown="triggerSeoSearch('meat')">
                                     <img src="../../../../main/webapp/resources/img/img01.jpg" th:src="@{/resources/img/img-fish.jpg}" alt="..."/>
                                     <div class="caption">
                                     <h3 style="text-align: center;">Sea Food</h3>
@@ -194,7 +190,7 @@
                         <div class="col-md-4">
                             <br/>
                             <div class="thumbnail">
-                                <a href="#">
+                                <a href="#" onmousedown="triggerSeoSearch('meat')">
                                     <img src="../../../../main/webapp/resources/img/img02.jpg" th:src="@{/resources/img/img-meat.jpg}" alt="..."/>
                                     <div class="caption">
                                         <h3 style="text-align: center;">Meat Dishes</h3>
@@ -207,7 +203,7 @@
                         <div class="col-md-4">
                             <br/>
                             <div class="thumbnail">
-                                <a href="#">
+                                <a href="#" onmousedown="triggerSeoSearch('meat')">
                                     <img src="../../../../main/webapp/resources/img/img03.jpg" th:src="@{/resources/img/img-pizza.jpg}" alt="..."/>
                                     <div class="caption">
                                         <h3 style="text-align: center;">Pizza</h3>
@@ -223,7 +219,7 @@
                         <div class="col-md-4">
                             <br/>
                             <div class="thumbnail" style="border:none;">
-                                <a href="#">
+                                <a href="#" onmousedown="triggerSeoSearch('meat')">
                                     <img src="../../../../main/webapp/resources/img/img01.jpg" th:src="@{/resources/img/img-sushi.jpg}" alt="..."/>
                                     <div class="caption">
                                         <h3 style="text-align: center;">Oriental Food</h3>
@@ -249,7 +245,7 @@
                         <div class="col-md-4">
                             <br/>
                             <div class="thumbnail">
-                                <a href="#">
+                                <a href="#" onmousedown="triggerSeoSearch('meat')">
                                     <img src="../../../../main/webapp/resources/img/img03.jpg" th:src="@{/resources/img/img-bar.jpg}" alt="..."/>
                                     <div class="caption">
                                         <h3 style="text-align: center;">Bars</h3>
@@ -264,8 +260,7 @@
 
                 </div>
 
-                <div class="col-md-3">
-                </div>
+
             </div>
         </div>
     </div>
@@ -409,6 +404,8 @@
 
 <script type="text/javascript" th:inline="javascript">
 /*<![CDATA[*/
+
+    var suggestionClicked=false;
     $(function () {
       $('#category_hidden').val("all");
     });
@@ -464,7 +461,7 @@
               cache: false,
               success: function(data){
                 for (var i = 0; i < data.venues.length; i++) {
-                    $('#suggestionList').append( '<li style="margin: 4px; padding: 4px;"> <a href="..." style="padding:5px;" onClick="triggerSearch(' + (data.venues[i].name).toString() + '); return false;">' + data.venues[i].name + '</a> </li>' );
+                    $('#suggestionList').append( '<li style="margin: 4px; padding: 4px;"> <a href="javascript:void(0)" style="padding:5px;" onmousedown="triggerSearch(' + '&#39' + (data.venues[i].name).toString() + '&#39' +'); return false;">' + data.venues[i].name + '</a> </li>' );
                 }
               }
             });
@@ -474,16 +471,26 @@
 
     });
 
-
-    $( "#query_input" ).focusout(function() {
-        $('#suggestionBox').hide();
-        $( "#suggestionList" ).empty();
-    })
-
     function triggerSearch(data){
+        suggestionClicked = true;
         $('#query_input').val(data);
         $('#search_form').trigger('submit');
     }
+
+    function triggerSeoSearch(data){
+        $('#query_input').val(data);
+        $('#search_form').trigger('submit');
+    }
+
+    $( "#query_input" ).focusout(function() {
+        if(!suggestionClicked){
+            $('#suggestionBox').hide();
+            $( "#suggestionList" ).empty();
+        }
+
+    })
+
+
 
 
 
