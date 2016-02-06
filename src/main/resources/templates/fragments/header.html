@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<head lang="en">
+
+</head>
+
+
+<body>
+
+    <nav th:fragment="header" class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="" style="float:left;width:75%;overflow: hidden; ">
+            <ul class="nav navbar-nav index_logo">
+                <a class="navbar-brand" href="#" th:href="@{/}"
+                   style="font-family: 'Pacifico', cursive; font-size: 2em; font-weight: 400;">instant
+                </a>
+            </ul>
+        </div>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <i class="fa fa-facebook"></i>
+            </button>
+            &nbsp;
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right" style="padding: 0px 15px 0px 5px">
+            <li>
+                <a class="btn btn-block" style="font-family: 'Pacifico', cursive; font-size: 1.2em; padding-top: 9px; padding-bottom: 6px;">
+                    Login via
+                                <span class="fa-stack" style="color:#3B5998;">
+                                    <i class="fa fa-square-o fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x" ></i>
+                                </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    </nav>
+
+</body>
+</html>

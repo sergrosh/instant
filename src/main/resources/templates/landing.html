@@ -25,34 +25,7 @@
 <div class="container-fluid" style="padding-top: 0px;">
     <div class="row">
         <div class="col-md-12">
-            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-                <div class="" style="float:left;width:75%;overflow: hidden; ">
-                    <ul class="nav navbar-nav index_logo">
-                        <a class="navbar-brand" href="#" th:href="@{/}"
-                           style="font-family: 'Pacifico', cursive; font-size: 2em; font-weight: 400;">instant
-                        </a>
-                    </ul>
-                </div>
-
-
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <i class="fa fa-facebook"></i>
-                    </button>
-                    &nbsp;
-                </div>
-                <div class="collapse navbar-collapse" id="navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right" style="padding: 0px 15px 0px 5px">
-                        <li>
-                            <a class="btn btn-block">
-                                <span class="fa fa-facebook" style="color:#3B5998;"></span> Login
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-            </nav>
+            <div th:replace="fragments/header :: header"></div>
         </div>
     </div>
     <div class="row">
