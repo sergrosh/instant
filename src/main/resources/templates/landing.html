@@ -81,12 +81,19 @@
                                                             <div class="input-group">
                                                                 <!--<span class="input-group-addon input-group-addon-text">Find me a</span>-->
 
-                                                                <input autocomplete="off" type="text" name="query" id="query_input" class="form-control col-sm-3" placeholder="e.g. restaurant Berlin or pizza"/>
-                                                                <div id = "suggestionBox" style = "z-index:1; display:none; background-color: rgb(248, 248, 249); border: 1px solid rgb(226, 226, 226);">
+                                                                <input autocomplete="off" autofocus="autofocus" type="text" name="query" id="query_input" class="form-control col-sm-3" placeholder="e.g. restaurant Berlin or pizza"/>
+
+                                                                <div id ="suggestionBox" style = "z-index:1; display:none; background-color: rgb(248, 248, 249); border: 1px solid rgb(226, 226, 226);">
                                                                     <ul id="suggestionList" class="list-unstyled" style="display: table; margin-bottom:5px; text-align:left;">
                                                                         <li style="margin: 4px; padding: 4px;"> <a href="..." style="padding:5px;" onclick="triggerSearch('teodor'); return false;">DEMO</a> </li>
                                                                     </ul>
                                                                 </div>
+
+                                                                <div id="removing_keeps_structure" class=" input-group-addon" style="border: 0px solid #ccc;">
+                                                                </div>
+
+                                                                <input autocomplete="off" type="text" name="city" id="city_input" class="form-control col-sm-3" placeholder="&#xf041; Berlin" style="font-family:Arial, FontAwesome"/>
+
                                                                 <div class=" input-group-addon">
                                                                     <div class="btn-group">
                                                                         <button type="button" class="btn  dropdown-toggle" data-toggle="dropdown" id="category_visible">
@@ -405,7 +412,9 @@
     $(function () {
       $('#category_hidden').val("all");
     });
-
+/*
+    $('#removing_keeps_structure').remove();
+*/
     $(function () {
       $('#suggestionText').css({
             position: "absolute",
@@ -475,6 +484,8 @@
         $('#query_input').val(data);
         $('#search_form').trigger('submit');
     }
+
+
 
 
 
