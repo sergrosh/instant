@@ -1,5 +1,6 @@
 package com.instant.config;
 
+import com.instant.controller.Mappings;
 import com.instant.persistence.model.social.UserRoleType;
 import com.instant.persistence.repository.social.RememberMeTokenRepository;
 import com.instant.persistence.repository.social.impl.MongoPersistentTokenRepositoryImpl;
@@ -77,6 +78,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/public/**").permitAll()
                 .antMatchers("/suggestions/**").permitAll()
                 .antMatchers("/clients/**").permitAll()
+                .antMatchers("/item/**").permitAll()
                 .antMatchers("/resources/**").permitAll()
                 .antMatchers("/currentUser").permitAll()
                 .antMatchers("/signin/**").permitAll()
@@ -119,8 +121,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 usersConnectionRepository, socialAuthenticationServiceLocator);
         filter.setFilterProcessesUrl("/signin");  //TODO fix the deprecated call.
         filter.setSignupUrl(null);
-        filter.setConnectionAddedRedirectUrl("/#/myAccount");
-        filter.setPostLoginUrl("/#/myAccount"); //always open account profile page after login
+        filter.setConnectionAddedRedirectUrl(Mappings.USER);
+        filter.setPostLoginUrl(Mappings.USER); //always open account profile page after login
         filter.setRememberMeServices(rememberMeServices());
         return filter;
     }
