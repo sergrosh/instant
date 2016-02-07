@@ -25,11 +25,11 @@ public interface VenueRepository extends MongoRepository<Venue, String> {
     List<Venue> findTop10ByNameLikeIgnoreCase(String venueName);
 
     @Query(fields = "{'name':1,'city':1}")
-    List<Venue> findTop10ByCityAndNameLikeIgnoreCase(String city, String category,String name);
+    List<Venue> findTop10ByCityAndNameLikeIgnoreCase(String city, String category, String name);
 
 
     @Query(fields = "{'name':1,'city':1}")
-    List<Venue> findTop10ByCityAndCategoryAndNameLikeIgnoreCase(String city, String category,String name);
+    List<Venue> findTop10ByCityAndCategoryAndNameLikeIgnoreCase(String city, String category, String name);
 
     @Query(fields = "{ 'name' : 1}")
     List<Venue> findTop10ByNameOrCityLikeIgnoreCase(String venueName);

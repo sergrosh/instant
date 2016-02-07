@@ -1,6 +1,7 @@
-package com.instant.persistence.model;
+package com.instant.persistence.model.security;
 
 
+import com.instant.persistence.model.BaseModel;
 import com.instant.util.SecurityUtils;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.data.annotation.Transient;

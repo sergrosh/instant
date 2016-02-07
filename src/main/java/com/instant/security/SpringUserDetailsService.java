@@ -1,6 +1,6 @@
 package com.instant.security;
 
-import com.instant.persistence.model.SpringUser;
+import com.instant.persistence.model.security.SpringUser;
 import com.instant.persistence.repository.user.SpringUserRepository;
 import org.apache.log4j.Logger;
 import org.springframework.security.core.userdetails.UserDetails;

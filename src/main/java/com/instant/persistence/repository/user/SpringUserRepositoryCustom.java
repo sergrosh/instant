@@ -1,7 +1,7 @@
 package com.instant.persistence.repository.user;
 
 
-import com.instant.persistence.model.SpringUser;
+import com.instant.persistence.model.security.SpringUser;
 
 /**
  * @author sroshchupkin

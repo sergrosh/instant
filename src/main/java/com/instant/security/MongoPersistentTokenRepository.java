@@ -1,6 +1,6 @@
 package com.instant.security;
 
-import com.instant.persistence.model.MongoRememberMeToken;
+import com.instant.persistence.model.security.MongoRememberMeToken;
 import com.instant.persistence.repository.rememberme.MongoRememberMeTokenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.web.authentication.rememberme.PersistentRememberMeToken;

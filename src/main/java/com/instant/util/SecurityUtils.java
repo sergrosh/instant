@@ -1,7 +1,7 @@
 package com.instant.util;
 
 
-import com.instant.persistence.model.SpringUser;
+import com.instant.persistence.model.security.SpringUser;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

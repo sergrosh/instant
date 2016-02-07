@@ -1,7 +1,7 @@
 package com.instant.persistence.repository.user;
 
 
-import com.instant.persistence.model.SpringUser;
+import com.instant.persistence.model.security.SpringUser;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
