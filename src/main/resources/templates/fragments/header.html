@@ -25,27 +25,54 @@
         <div class="collapse navbar-collapse" id="navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right" style="padding: 0px 15px 0px 5px">
             <li>
-                <a class="btn btn-block" th:href="@{/user}" style="font-family: 'Pacifico', cursive; font-size: 1.2em; padding-top: 9px; padding-bottom: 6px;">
-                    Login via
-                    <span class="fa-stack" style="color:#3B5998;">
-                        <i class="fa fa-square-o fa-stack-2x"></i>
-                        <i class="fa fa-facebook fa-stack-1x" ></i>
-                    </span>
+                <form action="/signin/facebook" method="POST" class="connectForm">
+                    <input type="hidden" name="scope" value="" />
+                    <button type="submit" class="btn btn-block connectButton" id="connectFb" style="font-family: 'Pacifico', cursive; font-size: 1.2em; padding-top: 9px; padding-bottom: 6px;">
+                        Login via
+                        <span class="fa-stack" style="color:#3B5998;">
+                            <i class="fa fa-square-o fa-stack-2x"></i>
+                            <i class="fa fa-facebook fa-stack-1x" ></i>
+                        </span>
 
-                    <!-- TODO Authentication Implemented IF-AUTHENTICATED -->
-                    <!--<span class="fa-stack" style="color:#3B5998;">-->
-                        <!--<img src="http://lorempixel.com/33/33" style="border-radius: 18px;"/>-->
-                    <!--</span>-->
-                    <!--teodor rupi-->
-                    <!--<span class="fa-stack" style="color:#3B5998;">-->
-                        <!--<i class="fa fa-chevron-down fa-stack-1x"></i>-->
-                    <!--</span>-->
+                        <!-- TODO Authentication Implemented IF-AUTHENTICATED -->
+                        <!--<span class="fa-stack" style="color:#3B5998;">-->
+                            <!--<img src="http://lorempixel.com/33/33" style="border-radius: 18px;"/>-->
+                        <!--</span>-->
+                        <!--teodor rupi-->
+                        <!--<span class="fa-stack" style="color:#3B5998;">-->
+                            <!--<i class="fa fa-chevron-down fa-stack-1x"></i>-->
+                        <!--</span>-->
 
 
-                </a>
+                    </button>
+                </form>
             </li>
         </ul>
     </div>
+
+
+            <!--<div class="formInfo">-->
+                <!--You are not yet connected to Facebook.-->
+            <!--</div>-->
+            <!--<button class="connectButton" type="submit"><img src="/spring-social-popup/resources/social/facebook/connect_light_medium_short.gif"/></button>-->
+
+            <!--<p class="connectionOptions"><label for="postToWall"><input id="postToWall" type="checkbox" name="postToWall" /> Tell your friends about Spring Social Popup on your Facebook wall</label></p>-->
+
+
+
+        <script type="text/javascript" th:inline="javascript">
+            /*<![CDATA[*/
+            $(document).ready(function() {
+                $(".connectButton").click(function(event){
+                    event.preventDefault();
+                    window.open("", "connectWindow", "width=600,height=400");
+                    var cTP = $(event.currentTarget).parent();
+                    cTP[0].setAttribute("target", "connectWindow");
+                    cTP[0].submit();
+                });
+            });
+            /*]]>*/
+        </script>
     </nav>
 
 </body>
