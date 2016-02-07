@@ -1,16 +1,21 @@
-package com.instant.persistence.repository.social;
+package com.instant.persistence.repository.social.impl;
 
 import com.instant.persistence.model.social.UserSocialConnection;
+import com.instant.persistence.repository.social.UserSocialConnectionRepository;
 import org.springframework.security.crypto.encrypt.TextEncryptor;
 import org.springframework.social.connect.*;
 import org.springframework.social.security.SocialAuthenticationServiceLocator;
+import org.springframework.stereotype.Component;
 
 import java.util.*;
 
 /**
+ * Implementation for Spring Social {@link UsersConnectionRepository}.
  * @author sroshchupkin
  */
-public class MongoUsersConnectionRepository implements UsersConnectionRepository {
+
+@Component(value = "usersConnectionRepository")
+public class MongoUsersConnectionRepositoryImpl implements UsersConnectionRepository {
 
     private final UserSocialConnectionRepository userSocialConnectionRepository;
 
@@ -20,8 +25,8 @@ public class MongoUsersConnectionRepository implements UsersConnectionRepository
 
     private ConnectionSignUp connectionSignUp;
 
-    public MongoUsersConnectionRepository(UserSocialConnectionRepository userSocialConnectionRepository,
-                                          SocialAuthenticationServiceLocator socialAuthenticationServiceLocator, TextEncryptor textEncryptor){
+    public MongoUsersConnectionRepositoryImpl(UserSocialConnectionRepository userSocialConnectionRepository,
+                                              SocialAuthenticationServiceLocator socialAuthenticationServiceLocator, TextEncryptor textEncryptor){
         this.userSocialConnectionRepository = userSocialConnectionRepository;
         this.socialAuthenticationServiceLocator = socialAuthenticationServiceLocator;
         this.textEncryptor = textEncryptor;
@@ -72,7 +77,7 @@ public class MongoUsersConnectionRepository implements UsersConnectionRepository
         if (userId == null) {
             throw new IllegalArgumentException("userId cannot be null");
         }
-        return new MongoConnectionRepository(userId, userSocialConnectionRepository, socialAuthenticationServiceLocator, textEncryptor);
+        return new MongoConnectionRepositoryImpl(userId, userSocialConnectionRepository, socialAuthenticationServiceLocator, textEncryptor);
     }
 
 }

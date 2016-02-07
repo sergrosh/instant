@@ -13,11 +13,10 @@ import javax.inject.Inject;
 /**
  * @author sroshchupkin
  */
-public class AutoConnectionSignUp implements ConnectionSignUp {
+public class AutoConnectionSignUp implements ConnectionSignUp{
     private static final Logger logger = LoggerFactory.getLogger(AutoConnectionSignUp.class);
 
     private final UserAccountService userAccountService;
-
 
     @Inject
     public AutoConnectionSignUp(UserAccountService userAccountService){

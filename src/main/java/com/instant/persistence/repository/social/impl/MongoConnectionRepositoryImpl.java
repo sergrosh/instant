@@ -1,6 +1,7 @@
-package com.instant.persistence.repository.social;
+package com.instant.persistence.repository.social.impl;
 
 import com.instant.persistence.model.social.UserSocialConnection;
+import com.instant.persistence.repository.social.UserSocialConnectionRepository;
 import org.springframework.security.crypto.encrypt.TextEncryptor;
 import org.springframework.social.connect.*;
 import org.springframework.social.security.SocialAuthenticationServiceLocator;
@@ -13,18 +14,18 @@ import java.util.*;
 /**
  * @author sroshchupkin
  */
-public class MongoConnectionRepository implements ConnectionRepository {
+public class MongoConnectionRepositoryImpl implements ConnectionRepository {
 
     private final String userId;
 
     private final UserSocialConnectionRepository userSocialConnectionRepository;
 
-    private final SocialAuthenticationServiceLocator  socialAuthenticationServiceLocator;
+    private final SocialAuthenticationServiceLocator socialAuthenticationServiceLocator;
 
     private final TextEncryptor textEncryptor;
 
-    public MongoConnectionRepository(String userId, UserSocialConnectionRepository userSocialConnectionRepository,
-                                     SocialAuthenticationServiceLocator socialAuthenticationServiceLocator, TextEncryptor textEncryptor) {
+    public MongoConnectionRepositoryImpl(String userId, UserSocialConnectionRepository userSocialConnectionRepository,
+                                         SocialAuthenticationServiceLocator socialAuthenticationServiceLocator, TextEncryptor textEncryptor) {
         this.userId = userId;
         this.userSocialConnectionRepository = userSocialConnectionRepository;
         this.socialAuthenticationServiceLocator = socialAuthenticationServiceLocator;
@@ -137,7 +138,7 @@ public class MongoConnectionRepository implements ConnectionRepository {
                     this.userSocialConnectionRepository.findByProviderIdAndProviderUserId(
                             connection.getKey().getProviderId(), connection.getKey().getProviderUserId());
             if (storedConnections.size() > 0){
-                //not allow one providerId connect to multiple userId
+                //not allow one providerId/providerUserId connect to multiple userId
                 throw new DuplicateConnectionException(connection.getKey());
             }
         }
