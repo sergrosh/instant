@@ -24,28 +24,28 @@
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right" style="padding: 0px 15px 0px 5px">
-            <li>
-                <form action="/signin/facebook" method="POST" class="connectForm">
+            <li th:switch="${#authentication}? ${#authorization.expression('isAuthenticated()')} : ${false}">
+                <form th:case="${false}" action="/signin/facebook" method="POST" class="connectForm">
                     <input type="hidden" name="scope" value="" />
-                    <button type="submit" class="btn btn-block connectButton" id="connectFb" style="font-family: 'Pacifico', cursive; font-size: 1.2em; padding-top: 9px; padding-bottom: 6px;">
+                    <button type="submit" class="btn btn-block connectButton" id="connectFb" style="background-color: transparent; background-color: transparent; font-family: 'Pacifico', cursive; font-size: 1.2em; padding-top: 9px; padding-bottom: 6px;">
                         Login via
                         <span class="fa-stack" style="color:#3B5998;">
                             <i class="fa fa-square-o fa-stack-2x"></i>
                             <i class="fa fa-facebook fa-stack-1x" ></i>
                         </span>
-
-                        <!-- TODO Authentication Implemented IF-AUTHENTICATED -->
-                        <!--<span class="fa-stack" style="color:#3B5998;">-->
-                            <!--<img src="http://lorempixel.com/33/33" style="border-radius: 18px;"/>-->
-                        <!--</span>-->
-                        <!--teodor rupi-->
-                        <!--<span class="fa-stack" style="color:#3B5998;">-->
-                            <!--<i class="fa fa-chevron-down fa-stack-1x"></i>-->
-                        <!--</span>-->
-
-
                     </button>
                 </form>
+
+                <div th:case="${true}">
+                    <span class="fa-stack" style="color:#3B5998;">
+                        <img src="http://lorempixel.com/33/33" style="border-radius: 18px;"/>
+                    </span>
+                    teodor rupi
+                    <span class="fa-stack" style="color:#3B5998;">
+                        <i class="fa fa-chevron-down fa-stack-1x"></i>
+                    </span>
+                </div>
+
             </li>
         </ul>
     </div>
