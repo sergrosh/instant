@@ -27,7 +27,7 @@
             <li th:switch="${#authentication}? ${#authorization.expression('isAuthenticated()')} : ${false}">
                 <form th:case="${false}" action="/signin/facebook" method="POST" class="connectForm">
                     <input type="hidden" name="scope" value="" />
-                    <button type="submit" class="btn btn-block connectButton" id="connectFb" style="background-color: transparent; background-color: transparent; font-family: 'Pacifico', cursive; font-size: 1.2em; padding-top: 9px; padding-bottom: 6px;">
+                    <button type="submit" class="btn btn-block connectButton" id="connectFb" style="background-color: transparent; font-family: 'Pacifico', cursive; font-size: 1.2em; padding-top: 9px; padding-bottom: 6px;">
                         Login via
                         <span class="fa-stack" style="color:#3B5998;">
                             <i class="fa fa-square-o fa-stack-2x"></i>
@@ -58,21 +58,6 @@
 
             <!--<p class="connectionOptions"><label for="postToWall"><input id="postToWall" type="checkbox" name="postToWall" /> Tell your friends about Spring Social Popup on your Facebook wall</label></p>-->
 
-
-
-        <script type="text/javascript" th:inline="javascript">
-            /*<![CDATA[*/
-            $(document).ready(function() {
-                $(".connectButton").click(function(event){
-                    event.preventDefault();
-                    window.open("", "connectWindow", "width=600,height=400");
-                    var cTP = $(event.currentTarget).parent();
-                    cTP[0].setAttribute("target", "connectWindow");
-                    cTP[0].submit();
-                });
-            });
-            /*]]>*/
-        </script>
     </nav>
 
 </body>

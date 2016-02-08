@@ -270,5 +270,19 @@
 
 /*]]>*/
 </script>
+
+<script type="text/javascript" th:inline="javascript">
+    /*<![CDATA[*/
+    $(document).ready(function() {
+        $(".connectButton").click(function(event){
+            event.preventDefault();
+            window.open("", "connectWindow", "width=600,height=400");
+            var cTP = $(event.currentTarget).parent();
+            cTP[0].setAttribute("target", "connectWindow");
+            cTP[0].submit();
+        });
+    });
+    /*]]>*/
+</script>
 </body>
 </html>
