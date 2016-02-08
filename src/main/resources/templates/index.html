@@ -129,7 +129,30 @@
                 </div>
 
                 <div class="col-md-2 hidden-xs"
-                     style="border-left: 1px solid rgba(204, 204, 204, 0.57); border-top: 1px solid rgba(204, 204, 204, 0.57); border-bottom: 1px solid rgba(204, 204, 204, 0.57); background-color: white">
+                     style="border-left: 1px solid rgba(204, 204, 204, 0.57); border-top: 1px solid rgba(204, 204, 204, 0.57); border-bottom: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-right: 0px; padding-left: 0px;">
+
+                    <form class="form-horizontal" id="filterForm" style="padding: 15px 10px 10px 10px">
+                        <fieldset>
+                            <!-- Form Name -->
+                            <!-- <legend>Form Name</legend> -->
+
+                            <!-- Select Basic -->
+                            <div class="form-group">
+                                <label class="col-md-5 control-label" for="selectbasic">Select Basic</label>
+                                <div class="col-md-12">
+                                    <select id="option1" name="option1" class="form-control">
+                                        <option value="1">Option one</option>
+                                        <option value="2">Option two</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+
+                        </fieldset>
+                    </form>
+
+                    <hr style="border-top: 1px solid rgba(204, 204, 204, 0.57); margin-top: 0px; margin-bottom: 0px;"/>
 
                     <form class="form-horizontal" id="filterForm" style="padding: 15px 10px 10px 10px">
                         <fieldset>
@@ -192,7 +215,6 @@
 
                         </fieldset>
                     </form>
-
 
                 </div>
 
@@ -486,7 +508,7 @@
 <script type="text/javascript" th:inline="javascript">
 /*<![CDATA[*/
     function retrieveGuests() {
-        var url = '/clients?query=' + $('#search_query').val();
+        var url = '/clients?query=' + $('#search_query').val() + '&city=' + $('#search_query').val() + '&category=' + $('#search_query').val();
         var data = $('#filterForm').serialize();
         url = url + '&view=2&' + data;
         $("#itemlist_results").load(url);

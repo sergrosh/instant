@@ -525,3 +525,8 @@ button.connectButton:hover {
                             color: #5e5e5e;
                             background-color: transparent;
                         }
+
+a.suggestionClickout:hover{
+    text-decoration: none;
+    background-color: #ddd;
+}
