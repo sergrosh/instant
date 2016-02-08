@@ -131,14 +131,22 @@
                 <div class="col-md-2 hidden-xs"
                      style="border-left: 1px solid rgba(204, 204, 204, 0.57); border-top: 1px solid rgba(204, 204, 204, 0.57); border-bottom: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-right: 0px; padding-left: 0px;">
 
-                    <form class="form-horizontal" id="filterForm" style="padding: 15px 10px 10px 10px">
-                        <fieldset>
+                    <div class="row" style="padding:5px 10px 0px 10px; margin-right:0px; margin-left:0px;">
+                        <p style="margin: 0 0 5px; font-size: 1.5em; color:#777777;">Filter: <em style="font-size: 0.8em; color: #999999;">45 results</em></p>
+                    </div>
+
+
+                    <form class="form-horizontal" id="filterForm" >
+                        <fieldset style="padding: 0px 10px 10px 10px;">
                             <!-- Form Name -->
                             <!-- <legend>Form Name</legend> -->
 
                             <!-- Select Basic -->
+                            <div class="row" style="padding:5px 10px 5px 0px; margin-right:0px; margin-left:0px;">
+                                <small style="margin: 0 0 5px; font-weight: bold;"> Category</small>
+                            </div>
                             <div class="form-group">
-                                <label class="col-md-5 control-label" for="selectbasic">Select Basic</label>
+                                <!--<label class="col-md-5 control-label" for="selectbasic">Select Basic</label>-->
                                 <div class="col-md-12">
                                     <select id="option1" name="option1" class="form-control">
                                         <option value="1">Option one</option>
@@ -146,65 +154,144 @@
                                     </select>
                                 </div>
                             </div>
-
-
 
                         </fieldset>
-                    </form>
 
-                    <hr style="border-top: 1px solid rgba(204, 204, 204, 0.57); margin-top: 0px; margin-bottom: 0px;"/>
+                        <hr style="border-top: 1px solid rgba(204, 204, 204, 0.57); margin-top: 0px; margin-bottom: 0px;"/>
 
-                    <form class="form-horizontal" id="filterForm" style="padding: 15px 10px 10px 10px">
-                        <fieldset>
+                        <fieldset style="padding: 0px 10px 10px 10px;">
+                            <div class="row" style="padding:5px 10px 5px 0px; margin-right:0px; margin-left:0px;">
+                                <small style="margin: 0 0 5px; font-weight: bold;"> Reviews</small>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <style>
 
+                                        .checkbox-inline{
+                                        font-size: 90%;
+                                        padding-top: 0px;
+                                        color: #c7254e;
+                                        background-color: #999999;
+                                        border-radius: 4px;
+                                        font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+                                        }
+
+                                        .checkbox-inline:hover{
+                                            color: #c7254e;
+                                            background-color: #f9f2f4;
+                                        }
+                                    </style>
+
+                                    <!--<label class="checkbox-inline" style="margin-left: 5px;padding-top: 0px;">-->
+                                        <!--<input type="checkbox" id="inlineCheckbox1" value="option1"/> 1/5-->
+                                    <!--</label>-->
+                                    <!--<label class="checkbox-inline" style="margin-left: 5px;padding-top: 0px;">-->
+                                        <!--<input type="checkbox" id="inlineCheckbox2" value="option2"/> 2/5-->
+                                    <!--</label>-->
+                                    <!--<label class="checkbox-inline" style="margin-left: 5px;padding-top: 0px;">-->
+                                        <!--<input type="checkbox" id="inlineCheckbox3" value="option3"/> 3/5-->
+                                    <!--</label>-->
+                                    <!--<label class="checkbox-inline" style="margin-left: 5px;padding-top: 0px;">-->
+                                        <!--<input type="checkbox" id="inlineCheckbox4" value="option3"/> 4/5-->
+                                    <!--</label>-->
+                                    <!--<label class="checkbox-inline" style="margin-left: 5px;padding-top: 0px;">-->
+                                        <!--<input type="checkbox" id="inlineCheckbox5" value="option3"/> 5/5-->
+                                    <!--</label>-->
+
+                                    <!--<p><i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i> <em style="color: #999999;"> 13 results</em></p>-->
+                                    <!--<p><i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i>-->
+                                        <!--<i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i> <em style="color: #999999;"> 13 results</em></p>-->
+                                    <!--<p><i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i>-->
+                                        <!--<i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i>-->
+                                        <!--<i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i> <em style="color: #999999;"> 13 results</em></p>-->
+                                    <!--<p><i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i>-->
+                                        <!--<i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i>-->
+                                        <!--<i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i>-->
+                                        <!--<i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i> <em style="color: #999999;"> 13 results</em></p>-->
+                                    <p style="margin: 0 0 0px;"><i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i>
+                                        <i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i>
+                                        <i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i>
+                                        <i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i>
+                                        <i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i>
+                                        <i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i>
+                                        <em style="color: #999999; float:right;"> 13 results</em></p>
+
+
+                                </div>
+
+                            </div>
+
+                        </fieldset>
+
+                        <hr style="border-top: 1px solid rgba(204, 204, 204, 0.57); margin-top: 0px; margin-bottom: 0px;"/>
+
+                        <fieldset style="padding: 0px 10px 10px 10px;">
                             <!-- Form Name -->
                             <!-- <legend>Form Name</legend> -->
 
                             <!-- Select Basic -->
+                            <div class="row" style="padding:5px 10px 5px 0px; margin-right:0px; margin-left:0px;">
+                                <small style="margin: 0 0 5px; font-weight: bold;"> Category</small>
+                            </div>
                             <div class="form-group">
-                                <label class="col-md-5 control-label" for="selectbasic">Select Basic</label>
+                                <!--<label class="col-md-5 control-label" for="selectbasic">Select Basic</label>-->
                                 <div class="col-md-12">
-                                    <select id="option1" name="option1" class="form-control">
+                                    <select id="option1" name="option2" class="form-control">
                                         <option value="1">Option one</option>
                                         <option value="2">Option two</option>
                                     </select>
                                 </div>
                             </div>
+
+                        </fieldset>
+
+                        <hr style="border-top: 1px solid rgba(204, 204, 204, 0.57); margin-top: 0px; margin-bottom: 0px;"/>
+
+                        <fieldset style="padding: 0px 10px 10px 10px;">
+                            <!-- Form Name -->
+                            <!-- <legend>Form Name</legend> -->
 
                             <!-- Select Basic -->
+                            <div class="row" style="padding:5px 10px 5px 0px; margin-right:0px; margin-left:0px;">
+                                <small style="margin: 0 0 5px; font-weight: bold;"> Category</small>
+                            </div>
                             <div class="form-group">
-                                <label class="col-md-5 control-label" for="selectbasic">Select Basic</label>
+                                <!--<label class="col-md-5 control-label" for="selectbasic">Select Basic</label>-->
                                 <div class="col-md-12">
-                                    <select id="option2" name="option2" class="form-control">
+                                    <select id="option1" name="option3" class="form-control">
                                         <option value="1">Option one</option>
                                         <option value="2">Option two</option>
                                     </select>
                                 </div>
                             </div>
+
+                        </fieldset>
+
+                        <hr style="border-top: 1px solid rgba(204, 204, 204, 0.57); margin-top: 0px; margin-bottom: 0px;"/>
+
+                        <fieldset style="padding: 0px 10px 10px 10px;">
+                            <!-- Form Name -->
+                            <!-- <legend>Form Name</legend> -->
 
                             <!-- Select Basic -->
+                            <div class="row" style="padding:5px 10px 5px 0px; margin-right:0px; margin-left:0px;">
+                                <small style="margin: 0 0 5px; font-weight: bold;"> Category</small>
+                            </div>
                             <div class="form-group">
-                                <label class="col-md-5 control-label" for="selectbasic">Select Basic</label>
+                                <!--<label class="col-md-5 control-label" for="selectbasic">Select Basic</label>-->
                                 <div class="col-md-12">
-                                    <select id="option3" name="option3" class="form-control">
+                                    <select id="option1" name="option4" class="form-control">
                                         <option value="1">Option one</option>
                                         <option value="2">Option two</option>
                                     </select>
                                 </div>
                             </div>
 
-                            <!-- Select Basic -->
-                            <div class="form-group">
-                                <label class="col-md-5 control-label" for="selectbasic">Select Basic</label>
-                                <div class="col-md-12">
-                                    <select id="option4" name="option4" class="form-control">
-                                        <option value="1">Option one</option>
-                                        <option value="2">Option two</option>
-                                    </select>
-                                </div>
-                            </div>
+                        </fieldset>
 
-                            <!-- Button -->
+                        <hr style="border-top: 1px solid rgba(204, 204, 204, 0.57); margin-top: 0px; margin-bottom: 0px;"/>
+
+                        <fieldset>
                             <div class="form-group">
                                 <!-- <label class="col-md-4 control-label" for="singlebutton">Single Button</label> -->
                                 <div class="col-md-4">
@@ -212,9 +299,13 @@
                                     </button>
                                 </div>
                             </div>
-
                         </fieldset>
                     </form>
+
+                    <!--<div class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Supported</div>-->
+                    <!--<div class="text-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Not Supported</div>-->
+                    <!--<code class="">1/6</code> <code>2/6</code> <code>3/6</code> <code>4/6</code> <code>5/6</code> <code>6/6</code>-->
+
 
                 </div>
 
