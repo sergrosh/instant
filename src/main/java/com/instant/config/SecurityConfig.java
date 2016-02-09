@@ -27,6 +27,7 @@ import org.springframework.social.connect.UsersConnectionRepository;
 import org.springframework.social.security.SocialAuthenticationFilter;
 import org.springframework.social.security.SocialAuthenticationProvider;
 import org.springframework.social.security.SocialAuthenticationServiceLocator;
+import org.thymeleaf.extras.springsecurity4.dialect.SpringSecurityDialect;
 
 import javax.inject.Inject;
 
@@ -35,6 +36,11 @@ import javax.inject.Inject;
  */
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+    @Bean
+    public SpringSecurityDialect securityDialect() {
+        return new SpringSecurityDialect();
+    }
+
     @Inject
     private Environment environment;
 
@@ -72,6 +78,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable() // disable CSRF now.
                 .authorizeRequests()
+                .antMatchers("/").permitAll()
                 .antMatchers("/admin/**").hasAuthority(UserRoleType.ROLE_ADMIN.name())
                 .antMatchers("/company/**").hasAuthority(UserRoleType.ROLE_AUTHOR.name())
                 .antMatchers("/user/**").authenticated()
@@ -122,7 +129,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         filter.setFilterProcessesUrl("/signin");  //TODO fix the deprecated call.
         filter.setSignupUrl(null);
         filter.setConnectionAddedRedirectUrl(Mappings.USER);
-        filter.setPostLoginUrl(Mappings.USER); //always open account profile page after login
+        filter.setPostLoginUrl("/"); //always open account profile page after login
         filter.setRememberMeServices(rememberMeServices());
         return filter;
     }

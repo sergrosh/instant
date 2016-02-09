@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.springframework.org/schema/jdbc">
+<html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb">
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -265,18 +265,18 @@
 /*]]>*/
 </script>
 
-<script type="text/javascript" th:inline="javascript">
-    /*<![CDATA[*/
-    $(document).ready(function() {
-        $(".connectButton").click(function(event){
-            event.preventDefault();
-            window.open("", "connectWindow", "width=600,height=400");
-            var cTP = $(event.currentTarget).parent();
-            cTP[0].setAttribute("target", "connectWindow");
-            cTP[0].submit();
-        });
-    });
-    /*]]>*/
-</script>
+<!--<script type="text/javascript" th:inline="javascript">-->
+    <!--/*<![CDATA[*/-->
+    <!--$(document).ready(function() {-->
+        <!--$(".connectButton").click(function(event){-->
+            <!--event.preventDefault();-->
+            <!--window.open("", "connectWindow", "width=600,height=400");-->
+            <!--var cTP = $(event.currentTarget).parent();-->
+            <!--cTP[0].setAttribute("target", "connectWindow");-->
+            <!--cTP[0].submit();-->
+        <!--});-->
+    <!--});-->
+    <!--/*]]>*/-->
+<!--</script>-->
 </body>
 </html>
