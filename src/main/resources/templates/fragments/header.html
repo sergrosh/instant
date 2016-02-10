@@ -37,9 +37,12 @@
                 </form>
                 <div th:case="${true}">
                     <span class="fa-stack" style="color:#3B5998;">
-                        <img src="http://lorempixel.com/33/33" style="border-radius: 18px;"/>
+                        <img src="http://lorempixel.com/33/33" th:src="${#authentication.principal.imageUrl}" style="border-radius: 18px; height:33px; width:33px;"/>
                     </span>
-                    teodor rupi
+                    <!--<span th:text="${#authentication.email}"> some text</span>-->
+                    <span th:text="${#authentication.principal.displayName}"></span>
+                    <span sec:authentication="principal.email"></span>
+                    <!--<span th:text="${facebookProfile.name}">Some User</span>-->
                     <span class="fa-stack" style="color:#3B5998;">
                         <i class="fa fa-chevron-down fa-stack-1x"></i>
                     </span>
