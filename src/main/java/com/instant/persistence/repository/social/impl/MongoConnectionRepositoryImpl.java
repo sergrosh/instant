@@ -39,7 +39,7 @@ public class MongoConnectionRepositoryImpl implements ConnectionRepository {
         MultiValueMap<String, Connection<?>> connections = new LinkedMultiValueMap<String, Connection<?>>();
         Set<String> registeredProviderIds = socialAuthenticationServiceLocator.registeredProviderIds();
         for (String registeredProviderId : registeredProviderIds) {
-            connections.put(registeredProviderId, Collections.<Connection<?>> emptyList());
+            connections.put(registeredProviderId, Collections.<Connection<?>>emptyList());
         }
         for (UserSocialConnection userSocialConnection : userSocialConnectionList) {
             String providerId = userSocialConnection.getProviderId();
@@ -74,7 +74,7 @@ public class MongoConnectionRepositoryImpl implements ConnectionRepository {
 
         MultiValueMap<String, Connection<?>> connectionsForUsers = new LinkedMultiValueMap<String, Connection<?>>();
 
-        for (Iterator<Map.Entry<String, List<String>>> it = providerUsers.entrySet().iterator(); it.hasNext();) {
+        for (Iterator<Map.Entry<String, List<String>>> it = providerUsers.entrySet().iterator(); it.hasNext(); ) {
             Map.Entry<String, List<String>> entry = it.next();
             String providerId = entry.getKey();
             List<String> providerUserIds = entry.getValue();
@@ -133,11 +133,11 @@ public class MongoConnectionRepositoryImpl implements ConnectionRepository {
         SocialAuthenticationService<?> socialAuthenticationService =
                 this.socialAuthenticationServiceLocator.getAuthenticationService(connection.getKey().getProviderId());
         if (socialAuthenticationService.getConnectionCardinality() == SocialAuthenticationService.ConnectionCardinality.ONE_TO_ONE ||
-                socialAuthenticationService.getConnectionCardinality() == SocialAuthenticationService.ConnectionCardinality.ONE_TO_MANY){
+                socialAuthenticationService.getConnectionCardinality() == SocialAuthenticationService.ConnectionCardinality.ONE_TO_MANY) {
             List<UserSocialConnection> storedConnections =
                     this.userSocialConnectionRepository.findByProviderIdAndProviderUserId(
                             connection.getKey().getProviderId(), connection.getKey().getProviderUserId());
-            if (storedConnections.size() > 0){
+            if (storedConnections.size() > 0) {
                 //not allow one providerId/providerUserId connect to multiple userId
                 throw new DuplicateConnectionException(connection.getKey());
             }

@@ -9,11 +9,11 @@ import javax.inject.Inject;
 /**
  * @author sroshchupkin
  */
-public class InstantConnectController extends ConnectController{
+public class InstantConnectController extends ConnectController {
 
     @Inject
     public InstantConnectController(ConnectionFactoryLocator connectionFactoryLocator,
-                               ConnectionRepository connectionRepository) {
+                                    ConnectionRepository connectionRepository) {
         super(connectionFactoryLocator, connectionRepository);
     }
 

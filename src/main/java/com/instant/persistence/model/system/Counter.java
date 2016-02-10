@@ -14,6 +14,9 @@ public class Counter extends BaseEntity {
 
     private long sequence;
 
+    public Counter() {
+    }
+
     /**
      * @return the name
      */
@@ -41,7 +44,5 @@ public class Counter extends BaseEntity {
     public void setSequence(long sequence) {
         this.sequence = sequence;
     }
-
-    public Counter() {}
 }
 

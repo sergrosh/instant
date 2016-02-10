@@ -10,7 +10,7 @@ import java.io.Serializable;
  * @author sroshchupkin
  */
 @Document
-@JsonIgnoreProperties(ignoreUnknown=true)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @SuppressWarnings("serial")
 public abstract class BaseEntity implements Serializable {
     @Id

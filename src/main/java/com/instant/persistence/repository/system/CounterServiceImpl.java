@@ -19,7 +19,7 @@ public class CounterServiceImpl implements CounterService {
     private final MongoTemplate mongoTemplate;
 
     @Inject
-    public CounterServiceImpl(MongoTemplate mongoTemplate){
+    public CounterServiceImpl(MongoTemplate mongoTemplate) {
         this.mongoTemplate = mongoTemplate;
     }
 
@@ -28,11 +28,11 @@ public class CounterServiceImpl implements CounterService {
         return increaseCounter(USER_ID_SEQUENCE_NAME);
     }
 
-    private long increaseCounter(String counterName){
+    private long increaseCounter(String counterName) {
         Query query = new Query(Criteria.where("name").is(counterName));
         Update update = new Update().inc("sequence", 1);
         Counter counter = mongoTemplate.findAndModify(query, update, Counter.class); // return old Counter object
-        if (counter == null){
+        if (counter == null) {
             counter = new Counter();
             counter.setName(counterName);
             counter.setSequence(2); //should increase by one.

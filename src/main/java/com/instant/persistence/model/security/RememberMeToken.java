@@ -23,6 +23,16 @@ public class RememberMeToken extends BaseEntity {
 
     private Date date;
 
+    public RememberMeToken() {
+    }
+
+    public RememberMeToken(PersistentRememberMeToken token) {
+        this.series = token.getSeries();
+        this.username = token.getUsername();
+        this.tokenValue = token.getTokenValue();
+        this.date = token.getDate();
+    }
+
     public String getUsername() {
         return username;
     }
@@ -53,16 +63,6 @@ public class RememberMeToken extends BaseEntity {
 
     public void setDate(Date date) {
         this.date = date;
-    }
-
-    public RememberMeToken(){
-    }
-
-    public RememberMeToken(PersistentRememberMeToken token){
-        this.series = token.getSeries();
-        this.username = token.getUsername();
-        this.tokenValue = token.getTokenValue();
-        this.date = token.getDate();
     }
 
     @Override

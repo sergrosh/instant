@@ -11,6 +11,7 @@ import java.util.*;
 
 /**
  * Implementation for Spring Social {@link UsersConnectionRepository}.
+ *
  * @author sroshchupkin
  */
 
@@ -26,7 +27,7 @@ public class MongoUsersConnectionRepositoryImpl implements UsersConnectionReposi
     private ConnectionSignUp connectionSignUp;
 
     public MongoUsersConnectionRepositoryImpl(UserSocialConnectionRepository userSocialConnectionRepository,
-                                              SocialAuthenticationServiceLocator socialAuthenticationServiceLocator, TextEncryptor textEncryptor){
+                                              SocialAuthenticationServiceLocator socialAuthenticationServiceLocator, TextEncryptor textEncryptor) {
         this.userSocialConnectionRepository = userSocialConnectionRepository;
         this.socialAuthenticationServiceLocator = socialAuthenticationServiceLocator;
         this.textEncryptor = textEncryptor;
@@ -36,6 +37,7 @@ public class MongoUsersConnectionRepositoryImpl implements UsersConnectionReposi
      * The command to execute to create a new local user profile in the event no user id could be mapped to a connection.
      * Allows for implicitly creating a user profile from connection data during a provider sign-in attempt.
      * Defaults to null, indicating explicit sign-up will be required to complete the provider sign-in attempt.
+     *
      * @see #findUserIdsWithConnection(Connection)
      */
     public void setConnectionSignUp(ConnectionSignUp connectionSignUp) {
@@ -47,14 +49,13 @@ public class MongoUsersConnectionRepositoryImpl implements UsersConnectionReposi
         List<UserSocialConnection> userSocialConnectionList =
                 this.userSocialConnectionRepository.findByProviderIdAndProviderUserId(key.getProviderId(), key.getProviderUserId());
         List<String> localUserIds = new ArrayList<String>();
-        for (UserSocialConnection userSocialConnection : userSocialConnectionList){
+        for (UserSocialConnection userSocialConnection : userSocialConnectionList) {
             localUserIds.add(userSocialConnection.getUserId());
         }
 
         if (localUserIds.size() == 0 && connectionSignUp != null) {
             String newUserId = connectionSignUp.execute(connection);
-            if (newUserId != null)
-            {
+            if (newUserId != null) {
                 createConnectionRepository(newUserId).addConnection(connection);
                 return Arrays.asList(newUserId);
             }
@@ -67,7 +68,7 @@ public class MongoUsersConnectionRepositoryImpl implements UsersConnectionReposi
 
         List<UserSocialConnection> userSocialConnectionList =
                 this.userSocialConnectionRepository.findByProviderIdAndProviderUserIdIn(providerId, providerUserIds);
-        for (UserSocialConnection userSocialConnection : userSocialConnectionList){
+        for (UserSocialConnection userSocialConnection : userSocialConnectionList) {
             localUserIds.add(userSocialConnection.getUserId());
         }
         return localUserIds;

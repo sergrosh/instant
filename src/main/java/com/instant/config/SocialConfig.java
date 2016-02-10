@@ -5,19 +5,11 @@ import com.instant.persistence.repository.social.impl.MongoUsersConnectionReposi
 import com.instant.service.UserAccountService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
-import org.springframework.context.annotation.ScopedProxyMode;
-import org.springframework.core.env.Environment;
 import org.springframework.security.crypto.encrypt.Encryptors;
-import org.springframework.social.config.annotation.ConnectionFactoryConfigurer;
 import org.springframework.social.config.annotation.SocialConfigurerAdapter;
-import org.springframework.social.connect.*;
-import org.springframework.social.facebook.api.Facebook;
-import org.springframework.social.facebook.api.impl.FacebookTemplate;
-import org.springframework.social.facebook.connect.FacebookConnectionFactory;
-import org.springframework.social.google.api.Google;
-import org.springframework.social.google.api.impl.GoogleTemplate;
-import org.springframework.social.google.connect.GoogleConnectionFactory;
+import org.springframework.social.connect.ConnectionFactoryLocator;
+import org.springframework.social.connect.ConnectionSignUp;
+import org.springframework.social.connect.UsersConnectionRepository;
 import org.springframework.social.security.SocialAuthenticationServiceLocator;
 
 import javax.inject.Inject;
@@ -34,7 +26,6 @@ public class SocialConfig extends SocialConfigurerAdapter {
     private UserAccountService userAccountService;
 
 
-
     @Bean
     public ConnectionSignUp autoConnectionSignUp() {
         return new AutoConnectionSignUp(userAccountService);
@@ -43,7 +34,7 @@ public class SocialConfig extends SocialConfigurerAdapter {
     @Override
     public UsersConnectionRepository getUsersConnectionRepository(ConnectionFactoryLocator connectionFactoryLocator) {
         MongoUsersConnectionRepositoryImpl repository = new MongoUsersConnectionRepositoryImpl(
-                userSocialConnectionRepository, (SocialAuthenticationServiceLocator)connectionFactoryLocator, Encryptors.noOpText());
+                userSocialConnectionRepository, (SocialAuthenticationServiceLocator) connectionFactoryLocator, Encryptors.noOpText());
         repository.setConnectionSignUp(autoConnectionSignUp());
         return repository;
     }

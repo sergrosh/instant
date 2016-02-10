@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * @author sroshchupkin
  */
-public interface UserSocialConnectionRepository extends MongoRepository<UserSocialConnection, String>{
+public interface UserSocialConnectionRepository extends MongoRepository<UserSocialConnection, String> {
 
     List<UserSocialConnection> findByUserId(String userId);
 

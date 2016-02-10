@@ -13,7 +13,7 @@ import java.util.List;
  */
 public interface UserAccountRepository extends MongoRepository<UserAccount, String> {
 
-    UserAccount  findByUserId(String userId);
+    UserAccount findByUserId(String userId);
 
     List<UserAccount> findAll(Sort sort);
 

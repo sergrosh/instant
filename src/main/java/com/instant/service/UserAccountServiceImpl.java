@@ -6,7 +6,6 @@ import com.instant.persistence.repository.social.UserAccountRepository;
 import com.instant.persistence.repository.system.CounterService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.social.UserIdSource;
@@ -24,12 +23,10 @@ import java.util.Set;
  */
 @Service
 public class UserAccountServiceImpl implements UserAccountService {
-    private static final Logger LOGGER = LoggerFactory.getLogger(UserAccountServiceImpl.class);
-
     public static final String USER_ID_PREFIX = "user";
-
+    private static final Logger LOGGER = LoggerFactory.getLogger(UserAccountServiceImpl.class);
     private final UserAccountRepository accountRepository;
-    private final CounterService  counterService;
+    private final CounterService counterService;
     private final UserIdSource userIdSource = new AuthenticationNameUserIdSource();
 
     @Inject
@@ -43,8 +40,8 @@ public class UserAccountServiceImpl implements UserAccountService {
         long userIdSequence = this.counterService.getNextUserIdSequence();
 
         UserRoleType[] roles = (userIdSequence == 1l) ?
-                new UserRoleType[] { UserRoleType.ROLE_USER, UserRoleType.ROLE_AUTHOR, UserRoleType.ROLE_ADMIN } :
-                new UserRoleType[] { UserRoleType.ROLE_USER };
+                new UserRoleType[]{UserRoleType.ROLE_USER, UserRoleType.ROLE_AUTHOR, UserRoleType.ROLE_ADMIN} :
+                new UserRoleType[]{UserRoleType.ROLE_USER};
         UserAccount account = new UserAccount(USER_ID_PREFIX + userIdSequence, roles);
         account.setEmail(profile.getEmail());
         account.setDisplayName(data.getDisplayName());

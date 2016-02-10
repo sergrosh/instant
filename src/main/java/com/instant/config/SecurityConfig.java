@@ -7,13 +7,9 @@ import com.instant.persistence.repository.social.impl.MongoPersistentTokenReposi
 import com.instant.service.UserAccountService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.ImportResource;
 import org.springframework.core.env.Environment;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.RememberMeAuthenticationProvider;
-import org.springframework.security.authentication.dao.ReflectionSaltSource;
-import org.springframework.security.authentication.dao.SaltSource;
-import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -36,28 +32,23 @@ import javax.inject.Inject;
  */
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+    @Inject
+    private Environment environment;
+    @Inject
+    private UserAccountService userAccountService;
+    @Inject
+    private RememberMeTokenRepository rememberMeTokenRepository;
+    @Inject
+    private UsersConnectionRepository usersConnectionRepository;
+    @Inject
+    private SocialAuthenticationServiceLocator socialAuthenticationServiceLocator;
+    @Inject
+    private UserIdSource userIdSource;
+
     @Bean
     public SpringSecurityDialect securityDialect() {
         return new SpringSecurityDialect();
     }
-
-    @Inject
-    private Environment environment;
-
-    @Inject
-    private UserAccountService userAccountService;
-
-    @Inject
-    private RememberMeTokenRepository rememberMeTokenRepository;
-
-    @Inject
-    private UsersConnectionRepository usersConnectionRepository;
-
-    @Inject
-    private SocialAuthenticationServiceLocator socialAuthenticationServiceLocator;
-
-    @Inject
-    private UserIdSource userIdSource;
 
     @Override
     public void configure(WebSecurity web) throws Exception {
@@ -104,7 +95,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Override
-    protected void configure(AuthenticationManagerBuilder builder) throws Exception{
+    protected void configure(AuthenticationManagerBuilder builder) throws Exception {
         builder
                 .authenticationProvider(socialAuthenticationProvider())
                 .authenticationProvider(rememberMeAuthenticationProvider())
@@ -122,7 +113,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    public SocialAuthenticationFilter socialAuthenticationFilter() throws Exception{
+    public SocialAuthenticationFilter socialAuthenticationFilter() throws Exception {
         SocialAuthenticationFilter filter = new SocialAuthenticationFilter(
                 authenticationManager(), userIdSource,
                 usersConnectionRepository, socialAuthenticationServiceLocator);
@@ -135,12 +126,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    public SocialAuthenticationProvider socialAuthenticationProvider(){
+    public SocialAuthenticationProvider socialAuthenticationProvider() {
         return new SocialAuthenticationProvider(usersConnectionRepository, userAccountService);
     }
 
     @Bean
-    public RememberMeServices rememberMeServices(){
+    public RememberMeServices rememberMeServices() {
         PersistentTokenBasedRememberMeServices rememberMeServices = new PersistentTokenBasedRememberMeServices(
                 environment.getProperty("application.key"), userAccountService, persistentTokenRepository());
         rememberMeServices.setAlwaysRemember(true);
@@ -153,7 +144,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    public RememberMeAuthenticationProvider rememberMeAuthenticationProvider(){
+    public RememberMeAuthenticationProvider rememberMeAuthenticationProvider() {
         RememberMeAuthenticationProvider rememberMeAuthenticationProvider =
                 new RememberMeAuthenticationProvider(environment.getProperty("application.key"));
         return rememberMeAuthenticationProvider;

@@ -15,7 +15,7 @@ public class MongoPersistentTokenRepositoryImpl implements PersistentTokenReposi
 
     private final RememberMeTokenRepository rememberMeTokenRepository;
 
-    public MongoPersistentTokenRepositoryImpl(RememberMeTokenRepository  rememberMeTokenRepository){
+    public MongoPersistentTokenRepositoryImpl(RememberMeTokenRepository rememberMeTokenRepository) {
         this.rememberMeTokenRepository = rememberMeTokenRepository;
     }
 
@@ -28,7 +28,7 @@ public class MongoPersistentTokenRepositoryImpl implements PersistentTokenReposi
     @Override
     public void updateToken(String series, String tokenValue, Date lastUsed) {
         RememberMeToken token = this.rememberMeTokenRepository.findBySeries(series);
-        if (token != null){
+        if (token != null) {
             token.setTokenValue(tokenValue);
             token.setDate(lastUsed);
             this.rememberMeTokenRepository.save(token);
@@ -39,7 +39,7 @@ public class MongoPersistentTokenRepositoryImpl implements PersistentTokenReposi
     @Override
     public PersistentRememberMeToken getTokenForSeries(String seriesId) {
         RememberMeToken token = this.rememberMeTokenRepository.findBySeries(seriesId);
-        if (token == null){
+        if (token == null) {
             return null;
         }
         return new PersistentRememberMeToken(token.getUsername(), token.getSeries(), token.getTokenValue(), token.getDate());

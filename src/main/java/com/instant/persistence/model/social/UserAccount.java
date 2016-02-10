@@ -15,7 +15,7 @@ import java.util.Collection;
 @Document(collection = "UserAccount")
 public class UserAccount extends BaseAuditableEntity implements SocialUserDetails {
 
-    @Indexed(unique=true)
+    @Indexed(unique = true)
     private String userId;
 
     private UserRoleType[] roles;
@@ -32,11 +32,20 @@ public class UserAccount extends BaseAuditableEntity implements SocialUserDetail
 
     private boolean trustedAccount;
 
+    public UserAccount() {
+        this.roles = new UserRoleType[0];
+    }
+
+    public UserAccount(String userId, UserRoleType[] roles) {
+        this.userId = userId;
+        this.roles = roles;
+    }
+
     public String getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId){
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
@@ -96,15 +105,6 @@ public class UserAccount extends BaseAuditableEntity implements SocialUserDetail
         this.trustedAccount = trustedAccount;
     }
 
-    public UserAccount() {
-        this.roles = new UserRoleType[0];
-    }
-
-    public UserAccount(String userId, UserRoleType[] roles) {
-        this.userId = userId;
-        this.roles = roles;
-    }
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Arrays.asList(roles);
@@ -141,25 +141,25 @@ public class UserAccount extends BaseAuditableEntity implements SocialUserDetail
         return getUserId();
     }
 
-    public boolean isAuthor(){
+    public boolean isAuthor() {
         for (UserRoleType role : getRoles()) {
-            if (role == UserRoleType.ROLE_AUTHOR){
+            if (role == UserRoleType.ROLE_AUTHOR) {
                 return true;
             }
         }
         return false;
     }
 
-    public boolean isAdmin(){
+    public boolean isAdmin() {
         for (UserRoleType role : getRoles()) {
-            if (role == UserRoleType.ROLE_ADMIN){
+            if (role == UserRoleType.ROLE_ADMIN) {
                 return true;
             }
         }
         return false;
     }
 
-    public void updateProfile(String displayName, String email, String webSite){
+    public void updateProfile(String displayName, String email, String webSite) {
         setDisplayName(displayName);
         setEmail(email);
         setWebSite(webSite);
