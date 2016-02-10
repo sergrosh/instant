@@ -78,7 +78,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable() // disable CSRF now.
                 .authorizeRequests()
-                .antMatchers("/").permitAll()
+                .antMatchers("/home/**").permitAll()
                 .antMatchers("/admin/**").hasAuthority(UserRoleType.ROLE_ADMIN.name())
                 .antMatchers("/company/**").hasAuthority(UserRoleType.ROLE_AUTHOR.name())
                 .antMatchers("/user/**").authenticated()
