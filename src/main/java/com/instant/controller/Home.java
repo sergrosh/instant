@@ -3,6 +3,7 @@ package com.instant.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * @author sroshchupkin
@@ -12,10 +13,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class Home {
 
     @RequestMapping("/")
-    public String index() {
-        return TilesDefinition.LANDING;
+    public ModelAndView index() {
+        ModelAndView modelAndView = new ModelAndView("redirect:/home");
+        return modelAndView;
     }
 
+    @RequestMapping("/home")
+    public String reindex() {
+        return TilesDefinition.LANDING;
+    }
 
     @RequestMapping(Mappings.ACCOUNT)
     public String getAccount(String speciality, Model model) {
