@@ -23,7 +23,7 @@
             &nbsp;
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right" style="padding: 10px 15px 0px 5px">
+        <ul class="nav navbar-nav navbar-right" style="padding: 0px 15px 0px 5px">
             <li th:switch="${#authentication}? ${#authorization.expression('isAuthenticated()')} : ${false}">
                 <form th:case="${false}" action="/signin/facebook" method="POST" class="connectForm">
                     <input type="hidden" name="scope" value="" />
@@ -35,13 +35,13 @@
                         </span>
                     </button>
                 </form>
-                <div th:case="${true}">
+                <div th:case="${true}" style="padding-top: 8px;">
                     <span class="fa-stack" style="color:#3B5998;">
-                        <img src="http://lorempixel.com/33/33" style="border-radius: 18px; margin-left:-13px; height:33px; width:33px;"/>
+                        <img src="http://lorempixel.com/33/33" th:src="${#authentication.principal.imageUrl}" style="border-radius: 18px; margin-left:-13px; height:33px; width:33px;"/>
                     </span>
                     <!--<span th:text="${#authentication.email}"> some text</span>-->
                     <span th:text="${#authentication.principal.displayName}"></span>
-                    <span sec:authentication="principal.email"></span>
+                    <!--<span sec:authentication="principal.email"></span>-->
                     <!--<span th:text="${facebookProfile.name}">Some User</span>-->
 
                     <div class="btn-group" role="group">
