@@ -132,7 +132,7 @@
                      style="border-left: 1px solid rgba(204, 204, 204, 0.57); border-top: 1px solid rgba(204, 204, 204, 0.57); border-bottom: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-right: 0px; padding-left: 0px;">
 
                     <div class="row" style="padding:5px 10px 0px 10px; margin-right:0px; margin-left:0px;">
-                        <p style="margin: 0 0 5px; font-size: 1.5em; color:#777777;">Filter: <em style="font-size: 0.8em; color: #999999;">45 results</em></p>
+                        <p style="margin: 0 0 5px; font-size: 1.5em; color:#777777;">Filter: <em style="font-size: 0.8em; color: #999999;" id="resultsCountString">0 results</em></p>
                     </div>
 
 
@@ -353,6 +353,17 @@
     }
 /*]]>*/
 </script>
+
+<script th:inline="javascript">
+      /*<![CDATA[*/
+
+        var venuesListObject = /*[[${venues}]]*/ [{'a'}, {'b'}];
+        results_count = venuesListObject.content.length;
+        results_count_string = results_count + " results";
+        setResultsCountString(results_count_string);
+
+     /*]]>*/
+    </script>
 
 </body>
 </html>

@@ -1,4 +1,7 @@
-var suggestionClicked=false;
+    var suggestionClicked=false;
+    var results_count;
+    var results_count_string;
+
     $(function () {
       $('#category_hidden').val("all");
     });
@@ -82,3 +85,7 @@ var suggestionClicked=false;
         }
 
     })
+
+    function setResultsCountString(data){
+        $("#resultsCountString").text(data);
+    }
