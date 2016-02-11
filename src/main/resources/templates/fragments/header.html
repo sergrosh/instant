@@ -36,16 +36,16 @@
                     </button>
                 </form>
                 <div th:case="${true}" style="padding-top: 8px;">
-                    <span class="fa-stack" style="color:#3B5998;">
+                    <span style="color:#3B5998;">
                         <img src="http://lorempixel.com/33/33" th:src="${#authentication.principal.imageUrl}" style="border-radius: 18px; margin-left:-13px; height:33px; width:33px;"/>
                     </span>
                     <!--<span th:text="${#authentication.email}"> some text</span>-->
-                    <span th:text="${#authentication.principal.displayName}"></span>
                     <!--<span sec:authentication="principal.email"></span>-->
                     <!--<span th:text="${facebookProfile.name}">Some User</span>-->
 
                     <div class="btn-group" role="group">
-                        <button style="border:none;" type="button" class="btn btn-default dropdown-toggle topmenubutton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button style="border:none;     padding-left: 4px;" type="button" class="btn btn-default dropdown-toggle topmenubutton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span style="    padding-right: 5px;" th:text="${#authentication.principal.displayName}"></span>
                             <i class="fa fa-angle-down"></i>
                         </button>
                         <ul class="dropdown-menu">
