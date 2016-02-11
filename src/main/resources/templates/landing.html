@@ -147,14 +147,18 @@
 <script type="text/javascript" th:inline="javascript">
 /*<![CDATA[*/
 
+    //global
+    var local_city;
+
     jQuery.ajax( {
       url: '//freegeoip.net/json/',
       type: 'POST',
       dataType: 'jsonp',
       success: function(location) {
         // example where I update content on the page.
-        console.log(location.city);
+        local_city = location.city;
         jQuery('#city_input').val(location.city);
+        /*
         jQuery('#region-code').html(location.region_code);
         jQuery('#region-name').html(location.region_name);
         jQuery('#areacode').html(location.areacode);
@@ -164,6 +168,7 @@
         jQuery('#latitude').html(location.latitude);
         jQuery('#country-name').html(location.country_name);
         jQuery('#country-code').html(location.country_code);
+        */
       }
     } );
 
@@ -244,6 +249,8 @@
 
     function triggerSeoSearch(data){
         $('#query_input').val(data);
+        $('#city_input').val(local_city);
+        $('#category_hidden').val('all');
         $('#search_form').trigger('submit');
     }
 
