@@ -33,6 +33,7 @@ public class Venue {
     private String address;
     private String imagePath;
     private String description;
+    private List<String> speciality;
     private List<Product> menu;
     private List<String> gallery;
     private double rating;
@@ -101,6 +102,14 @@ public class Venue {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public List<String> getSpeciality() {
+        return speciality;
+    }
+
+    public void setSpeciality(List<String> speciality) {
+        this.speciality = speciality;
     }
 
     public List<Product> getMenu() {

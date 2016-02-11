@@ -1,4 +1,4 @@
-package com.instant.service;
+package com.instant.service.user;
 
 import com.instant.persistence.model.social.UserAccount;
 import com.instant.persistence.model.social.UserRoleType;

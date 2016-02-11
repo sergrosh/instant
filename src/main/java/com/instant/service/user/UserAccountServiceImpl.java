@@ -1,4 +1,4 @@
-package com.instant.service;
+package com.instant.service.user;
 
 import com.instant.persistence.model.social.UserAccount;
 import com.instant.persistence.model.social.UserRoleType;
@@ -88,13 +88,13 @@ public class UserAccountServiceImpl implements UserAccountService {
     }
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return loadUserByUserId(username);
+    public UserAccount getCurrentUser() {
+        return accountRepository.findByUserId(userIdSource.getUserId());
     }
 
     @Override
-    public UserAccount getCurrentUser() {
-        return accountRepository.findByUserId(userIdSource.getUserId());
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        return loadUserByUserId(username);
     }
 }
 

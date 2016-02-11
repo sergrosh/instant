@@ -16,39 +16,13 @@ public interface VenueRepository extends MongoRepository<Venue, String> {
 
     Page<Venue> findAllBy(TextCriteria textCriteria, Pageable pageable);
 
-    List<Venue> findAllByOrderByNameDesc(TextCriteria criteria);
-
-    List<Venue> findByNameLike(String venueName);
-
-    List<Venue> findByNameLike(TextCriteria criteria);
-
     @Query(fields = "{ 'name' : 1}")
     List<Venue> findTop10ByNameLikeIgnoreCase(String venueName);
 
     @Query(fields = "{'name':1,'city':1}")
-    List<Venue> findTop10ByCityAndNameLikeIgnoreCase(String city, String category, String name);
-
-
-    @Query(fields = "{'name':1,'city':1}")
     List<Venue> findTop10ByCityAndCategoryAndNameLikeIgnoreCase(String city, String category, String name);
 
-    @Query(fields = "{ 'name' : 1}")
-    List<Venue> findTop10ByNameOrCityLikeIgnoreCase(String venueName);
-
-    List<Venue> findByName(String name);
-
-    List<Venue> findByName(String name, Pageable pageable);
-
-    List<Venue> findByName(TextCriteria textCriteria, Pageable pageable);
-
     Venue findById(String id);
-
-    Venue findByAddress(String address);
-
-    List<Venue> findByCategory(String category);
-
-    List<Venue> findByNameAndAddressAllIgnoreCase(String name, String address);
-
 
     /**Geo location searching*/
     // {'geoNear' : 'location', 'near' : [x, y] }

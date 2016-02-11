@@ -50,19 +50,6 @@ public class VenueController {
             ModelAndView view = new ModelAndView(TilesDefinition.LANDING);
             return view;
         }
-
     }
-
-//    @RequestMapping(value = "/filters", method = RequestMethod.GET)
-//    @ResponseBody
-//    public ModelAndView filter(@RequestParam("query") String query, @RequestParam("option1") String opt1, @RequestParam("option2") String opt2,
-//                              @RequestParam("option3") String opt3, @RequestParam("option4") String opt4) {
-//        ModelAndView modelAndView = new ModelAndView("redirect:/clients?query=" + query + "&view=2");
-//        List<Venue> venueList = venueRepository.findAll();
-//        venueList.clear();
-//        modelAndView.addObject("venues", venueList);
-//        return modelAndView;
-//    }
-
 
 }

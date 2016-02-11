@@ -1,7 +1,7 @@
 package com.instant.config;
 
 import com.instant.persistence.model.social.UserAccount;
-import com.instant.service.UserAccountService;
+import com.instant.service.user.UserAccountService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.social.connect.Connection;

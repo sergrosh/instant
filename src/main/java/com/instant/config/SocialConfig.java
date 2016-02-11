@@ -2,7 +2,7 @@ package com.instant.config;
 
 import com.instant.persistence.repository.social.UserSocialConnectionRepository;
 import com.instant.persistence.repository.social.impl.MongoUsersConnectionRepositoryImpl;
-import com.instant.service.UserAccountService;
+import com.instant.service.user.UserAccountService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.encrypt.Encryptors;

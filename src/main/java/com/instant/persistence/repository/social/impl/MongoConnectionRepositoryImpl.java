@@ -190,15 +190,8 @@ public class MongoConnectionRepositoryImpl implements ConnectionRepository {
 
     // internal helpers
 
-    private Connection<?> buildConnection(UserSocialConnection userSocialConnection) {
-        ConnectionData connectionData = new ConnectionData(userSocialConnection.getProviderId(),
-                userSocialConnection.getProviderUserId(), userSocialConnection.getDisplayName(),
-                userSocialConnection.getProfileUrl(), userSocialConnection.getImageUrl(),
-                decrypt(userSocialConnection.getAccessToken()), decrypt(userSocialConnection.getSecret()),
-                decrypt(userSocialConnection.getRefreshToken()), userSocialConnection.getExpireTime());
-        ConnectionFactory<?> connectionFactory = this.socialAuthenticationServiceLocator.getConnectionFactory(connectionData
-                .getProviderId());
-        return connectionFactory.createConnection(connectionData);
+    private String encrypt(String text) {
+        return text != null ? textEncryptor.encrypt(text) : text;
     }
 
     private Connection<?> findPrimaryConnection(String providerId) {
@@ -212,8 +205,15 @@ public class MongoConnectionRepositoryImpl implements ConnectionRepository {
         return socialAuthenticationServiceLocator.getConnectionFactory(apiType).getProviderId();
     }
 
-    private String encrypt(String text) {
-        return text != null ? textEncryptor.encrypt(text) : text;
+    private Connection<?> buildConnection(UserSocialConnection userSocialConnection) {
+        ConnectionData connectionData = new ConnectionData(userSocialConnection.getProviderId(),
+                userSocialConnection.getProviderUserId(), userSocialConnection.getDisplayName(),
+                userSocialConnection.getProfileUrl(), userSocialConnection.getImageUrl(),
+                decrypt(userSocialConnection.getAccessToken()), decrypt(userSocialConnection.getSecret()),
+                decrypt(userSocialConnection.getRefreshToken()), userSocialConnection.getExpireTime());
+        ConnectionFactory<?> connectionFactory = this.socialAuthenticationServiceLocator.getConnectionFactory(connectionData
+                .getProviderId());
+        return connectionFactory.createConnection(connectionData);
     }
 
     private String decrypt(String encryptedText) {

@@ -4,7 +4,7 @@ import com.instant.controller.Mappings;
 import com.instant.persistence.model.social.UserRoleType;
 import com.instant.persistence.repository.social.RememberMeTokenRepository;
 import com.instant.persistence.repository.social.impl.MongoPersistentTokenRepositoryImpl;
-import com.instant.service.UserAccountService;
+import com.instant.service.user.UserAccountService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;

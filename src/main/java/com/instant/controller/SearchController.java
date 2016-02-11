@@ -1,9 +1,13 @@
 package com.instant.controller;
 
 import com.instant.common.PaginationBean;
+import com.instant.persistence.model.Venue;
 import com.instant.persistence.model.Venues;
 import com.instant.persistence.repository.VenueRepository;
+import com.instant.service.search.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoOperations;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.TextCriteria;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -13,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
 
 /**
  * @author sroshchupkin
@@ -27,14 +33,21 @@ public class SearchController {
     @Autowired
     private PaginationBean paginationBean;
 
+    @Autowired
+    SearchService searchService;
+
+    @Autowired
+    MongoOperations mongoOperations;
+
     @RequestMapping(Mappings.CLIENTS)
-    public ModelAndView search(@RequestParam("query") String query, @RequestParam("category") String category,
+    public ModelAndView search(@RequestParam("query") String query,
+                               @RequestParam(value="category", required = false, defaultValue = "") String category,
                                @RequestParam(value = "view", required = false, defaultValue = "1") Integer view,
                                @RequestParam(value = "page", required = false, defaultValue = "1") Integer pageNum,
-                               @RequestParam(value = "option1", required = false, defaultValue = "1") String opt1,
-                               @RequestParam(value = "option2", required = false, defaultValue = "1") String opt2,
-                               @RequestParam(value = "option3", required = false, defaultValue = "1") String opt3,
-                               @RequestParam(value = "option4", required = false, defaultValue = "1") String opt4) {
+                               @RequestParam(value = "city", required = false, defaultValue = "") String city,
+                               @RequestParam(value = "reviews", required = false, defaultValue = "0") int reviews,
+                               @RequestParam(value = "speciality", required = false, defaultValue = "") List<String> speciality,
+                               @RequestParam(value = "sortingType", required = false, defaultValue = "") String sortingType) {
         ModelAndView modelAndView = new ModelAndView(TilesDefinition.HOME);
 
         if (view == 2) {
@@ -45,11 +58,12 @@ public class SearchController {
             modelAndView.addObject("venues", venueRepository.findAll(paginationBean.defaultPageable(pageNum - 1)));
             return modelAndView;
         } else {
-            TextCriteria criteria = TextCriteria.forDefaultLanguage().matchingPhrase(query);
-            modelAndView.addObject("venues", venueRepository.findAllBy(criteria, paginationBean.defaultPageable(pageNum - 1)));
+            Query searchQuery = searchService.getQuery(query,city,category,reviews,speciality,
+                    sortingType, paginationBean.defaultPageable(pageNum - 1));
+            List<Venue> venues=mongoOperations.find(searchQuery, Venue.class);
+            modelAndView.addObject("venues", venues);
             modelAndView.addObject("searchString", query);
         }
-
         return modelAndView;
     }
 
