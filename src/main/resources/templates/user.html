@@ -16,6 +16,10 @@
     <link href="css/bootstrap.min.css" th:href="@{/resources/oc_css/bootstrap.min.css}" rel="stylesheet"/>
     <link href="css/style.css" th:href="@{/resources/oc_css/style.css}" rel="stylesheet"/>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'/>
+    <link href="css/font-awesome.min.css" th:href="@{/resources/oc_css/font-awesome.min.css}" rel="stylesheet"/>
+    <link href="css/bootstrap-social.css" th:href="@{/resources/oc_css/bootstrap-social.css}" rel="stylesheet"/>
+    <link th:href="@{/resources/oc_css/bootstrap-multiselect.css}" rel="stylesheet"/>
+
 
 
 </head>
@@ -113,5 +117,22 @@
 <script src="js/jquery.min.js" th:src="@{/resources/oc_js/jquery.min.js}"></script>
 <script src="js/bootstrap.min.js" th:src="@{/resources/oc_js/bootstrap.min.js}"></script>
 <script src="js/scripts.js" th:src="@{/resources/oc_js/scripts.js}"></script>
+<script src="js/search.js" th:src="@{/resources/oc_js/search.js}"></script>
+<script src="js/localization.js" th:src="@{/resources/oc_js/localization.js}"></script>
+<script th:src="@{/resources/oc_js/bootstrap-multiselect.js}"></script>
+
+<script th:inline="javascript" type="text/javascript">
+/*<![CDATA[*/
+    $(document).ready(function() {
+        $('#venue_speciality').multiselect();
+        $('.custom-filter-input.speciality > div > .btn-group').css("width", "100%");
+        $('.custom-filter-input.speciality > div > .btn-group > .multiselect.dropdown-toggle.btn.btn-default').css("width", "100%");
+    });
+
+
+     /*]]>*/
+</script>
+
+
 </body>
 </html>

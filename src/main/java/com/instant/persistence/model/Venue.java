@@ -76,7 +76,7 @@ public class Venue {
         return category;
     }
 
-    public void setCategory(String type) {
+    public void setCategory(String category) {
         this.category = category;
     }
 
