@@ -1,6 +1,7 @@
 package com.instant.persistence.model;
 
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.TextIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -39,6 +40,7 @@ public class Venue {
     private double rating;
     private int reviews;
     private int likes;
+    private String specialities;
 
     public String getId() {
         return id;
@@ -110,6 +112,7 @@ public class Venue {
 
     public void setSpeciality(List<String> speciality) {
         this.speciality = speciality;
+        setSpecialities(StringUtils.join(speciality, ", "));
     }
 
     public List<Product> getMenu() {
@@ -214,5 +217,13 @@ public class Venue {
 
     public void setWebsite(String website) {
         this.website = website;
+    }
+
+    public String getSpecialities() {
+        return specialities;
+    }
+
+    public void setSpecialities(String specialities) {
+        this.specialities = specialities;
     }
 }

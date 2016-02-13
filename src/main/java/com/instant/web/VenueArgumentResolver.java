@@ -25,6 +25,7 @@ public class VenueArgumentResolver extends AbstractHandlerMethodArgumentResolver
 //        venue.setId(getTrimmedParameter(webRequest, VENUE_ID));
         venue.setName(getTrimmedParameter(webRequest, VENUE_NAME));
         venue.setCategory(getTrimmedParameter(webRequest, VENUE_CATEGORY));
+        venue.setSpeciality(getTrimmedParameterList(webRequest, VENUE_SPECIALITIES));
         venue.setCompany(getTrimmedParameter(webRequest, VENUE_COMPANY));
         venue.setEmail(getTrimmedParameter(webRequest, VENUE_EMAIL));
         venue.setPhonePrimary(getTrimmedParameter(webRequest, VENUE_TELEPHONE_PRIMARY));

@@ -5,6 +5,9 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 
+import java.util.Arrays;
+import java.util.List;
+
 
 /**
  * @author sroshchupkin
@@ -18,5 +21,15 @@ public abstract class AbstractHandlerMethodArgumentResolver implements HandlerMe
         } else {
             return value.trim();
         }
+    }
+
+    public List<String> getTrimmedParameterList(NativeWebRequest webRequest, String paramName) {
+        List<String> value = Arrays.asList(webRequest.getParameterValues(paramName));
+        for(String element : value){
+            if (!StringUtils.isEmpty(element)) {
+                element.trim();
+            }
+        }
+        return value;
     }
 }
