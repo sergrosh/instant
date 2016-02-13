@@ -3,6 +3,8 @@ package com.instant.persistence.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
+
 /**
  * @author sroshchupkin
  */
@@ -13,7 +15,7 @@ public class City {
     @Id
     private String id;
     private String name;
-    private String zip;
+    private List<String> zip;
 
     public String getId() {
         return id;
@@ -31,11 +33,11 @@ public class City {
         this.name = name;
     }
 
-    public String getZip() {
+    public List<String> getZip() {
         return zip;
     }
 
-    public void setZip(String zip) {
+    public void setZip(List<String> zip) {
         this.zip = zip;
     }
 }

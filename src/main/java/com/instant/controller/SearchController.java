@@ -1,14 +1,15 @@
 package com.instant.controller;
 
 import com.instant.common.PaginationBean;
+import com.instant.persistence.model.Cities;
 import com.instant.persistence.model.Venue;
 import com.instant.persistence.model.Venues;
+import com.instant.persistence.repository.CityRepository;
 import com.instant.persistence.repository.VenueRepository;
 import com.instant.service.search.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Query;
-import org.springframework.data.mongodb.core.query.TextCriteria;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
@@ -29,6 +30,9 @@ public class SearchController {
 
     @Autowired
     VenueRepository venueRepository;
+
+    @Autowired
+    CityRepository cityRepository;
 
     @Autowired
     private PaginationBean paginationBean;
@@ -68,7 +72,7 @@ public class SearchController {
     }
 
 
-    @RequestMapping(path = Mappings.SUGGESTIONS, method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @RequestMapping(path = Mappings.VENUE_SUGGESTIONS, method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ResponseBody
     public Venues getVenueNameSuggestions(@RequestParam(value = "query") String query,
                                           @RequestParam(value = "city", required = false, defaultValue = "Berlin") String city,
@@ -84,4 +88,20 @@ public class SearchController {
 
         return venues;
     }
+
+    @RequestMapping(path = Mappings.CITY_SUGGESTIONS, method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @ResponseBody
+    public Cities getCityNameSuggestions(@RequestParam(value = "cityName") String cityName){
+        Cities cities = new Cities();
+        if (cityName.isEmpty()) {
+            cities.getCities().addAll(cityRepository.
+                    findTop10());
+        } else {
+            cities.getCities().addAll(cityRepository.
+                    findTop10ByName(cityName));
+        }
+
+        return cities;
+    }
+
 }
