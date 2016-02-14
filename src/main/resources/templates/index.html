@@ -146,7 +146,7 @@
                             <div class="row" style="padding:5px 10px 5px 0px; margin-right:0px; margin-left:0px;">
                                 <small style="margin: 0 0 5px; font-weight: bold;"> Category</small>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group custom-filter-input category">
                                 <!--<label class="col-md-5 control-label" for="selectbasic">Select Basic</label>-->
                                 <div class="col-md-12">
                                     <select id="filter_option_category" name="category" class="form-control">
@@ -160,71 +160,71 @@
 
                         <hr style="border-top: 1px solid rgba(204, 204, 204, 0.57); margin-top: 0px; margin-bottom: 0px;"/>
 
-                        <fieldset style="padding: 0px 10px 10px 10px;">
-                            <div class="row" style="padding:5px 10px 5px 0px; margin-right:0px; margin-left:0px;">
-                                <small style="margin: 0 0 5px; font-weight: bold;"> Reviews</small>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <style>
+                        <!--<fieldset style="padding: 0px 10px 10px 10px;">-->
+                            <!--<div class="row" style="padding:5px 10px 5px 0px; margin-right:0px; margin-left:0px;">-->
+                                <!--<small style="margin: 0 0 5px; font-weight: bold;"> Reviews</small>-->
+                            <!--</div>-->
+                            <!--<div class="form-group">-->
+                                <!--<div class="col-md-12">-->
+                                    <!--<style>-->
 
-                                        .checkbox-inline{
-                                        font-size: 90%;
-                                        padding-top: 0px;
-                                        color: #c7254e;
-                                        background-color: #999999;
-                                        border-radius: 4px;
-                                        font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-                                        }
+                                        <!--.checkbox-inline{-->
+                                        <!--font-size: 90%;-->
+                                        <!--padding-top: 0px;-->
+                                        <!--color: #c7254e;-->
+                                        <!--background-color: #999999;-->
+                                        <!--border-radius: 4px;-->
+                                        <!--font-family: Menlo, Monaco, Consolas, "Courier New", monospace;-->
+                                        <!--}-->
 
-                                        .checkbox-inline:hover{
-                                            color: #c7254e;
-                                            background-color: #f9f2f4;
-                                        }
-                                    </style>
+                                        <!--.checkbox-inline:hover{-->
+                                            <!--color: #c7254e;-->
+                                            <!--background-color: #f9f2f4;-->
+                                        <!--}-->
+                                    <!--</style>-->
 
-                                    <!--<label class="checkbox-inline" style="margin-left: 5px;padding-top: 0px;">-->
-                                        <!--<input type="checkbox" id="inlineCheckbox1" value="option1"/> 1/5-->
-                                    <!--</label>-->
-                                    <!--<label class="checkbox-inline" style="margin-left: 5px;padding-top: 0px;">-->
-                                        <!--<input type="checkbox" id="inlineCheckbox2" value="option2"/> 2/5-->
-                                    <!--</label>-->
-                                    <!--<label class="checkbox-inline" style="margin-left: 5px;padding-top: 0px;">-->
-                                        <!--<input type="checkbox" id="inlineCheckbox3" value="option3"/> 3/5-->
-                                    <!--</label>-->
-                                    <!--<label class="checkbox-inline" style="margin-left: 5px;padding-top: 0px;">-->
-                                        <!--<input type="checkbox" id="inlineCheckbox4" value="option3"/> 4/5-->
-                                    <!--</label>-->
-                                    <!--<label class="checkbox-inline" style="margin-left: 5px;padding-top: 0px;">-->
-                                        <!--<input type="checkbox" id="inlineCheckbox5" value="option3"/> 5/5-->
-                                    <!--</label>-->
+                                    <!--&lt;!&ndash;<label class="checkbox-inline" style="margin-left: 5px;padding-top: 0px;">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<input type="checkbox" id="inlineCheckbox1" value="option1"/> 1/5&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</label>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<label class="checkbox-inline" style="margin-left: 5px;padding-top: 0px;">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<input type="checkbox" id="inlineCheckbox2" value="option2"/> 2/5&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</label>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<label class="checkbox-inline" style="margin-left: 5px;padding-top: 0px;">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<input type="checkbox" id="inlineCheckbox3" value="option3"/> 3/5&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</label>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<label class="checkbox-inline" style="margin-left: 5px;padding-top: 0px;">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<input type="checkbox" id="inlineCheckbox4" value="option3"/> 4/5&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</label>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<label class="checkbox-inline" style="margin-left: 5px;padding-top: 0px;">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<input type="checkbox" id="inlineCheckbox5" value="option3"/> 5/5&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</label>&ndash;&gt;-->
 
-                                    <!--<p><i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i> <em style="color: #999999;"> 13 results</em></p>-->
-                                    <!--<p><i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i>-->
-                                        <!--<i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i> <em style="color: #999999;"> 13 results</em></p>-->
-                                    <!--<p><i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i>-->
+                                    <!--&lt;!&ndash;<p><i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i> <em style="color: #999999;"> 13 results</em></p>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<p><i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i> <em style="color: #999999;"> 13 results</em></p>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<p><i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i> <em style="color: #999999;"> 13 results</em></p>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<p><i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i> <em style="color: #999999;"> 13 results</em></p>&ndash;&gt;-->
+                                    <!--<p style="margin: 0 0 0px;"><i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i>-->
                                         <!--<i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i>-->
-                                        <!--<i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i> <em style="color: #999999;"> 13 results</em></p>-->
-                                    <!--<p><i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i>-->
                                         <!--<i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i>-->
                                         <!--<i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i>-->
-                                        <!--<i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i> <em style="color: #999999;"> 13 results</em></p>-->
-                                    <p style="margin: 0 0 0px;"><i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i>
-                                        <i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i>
-                                        <i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i>
-                                        <i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i>
-                                        <i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i>
-                                        <i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i>
-                                        <em style="color: #999999; float:right;"> 13 results</em></p>
+                                        <!--<i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i>-->
+                                        <!--<i class="fa fa-star-o" style="font-weight: bold; font-size: 1.5em; color: #777777;"></i>-->
+                                        <!--<em style="color: #999999; float:right;"> 13 results</em></p>-->
 
 
-                                </div>
+                                <!--</div>-->
 
-                            </div>
+                            <!--</div>-->
 
-                        </fieldset>
+                        <!--</fieldset>-->
 
-                        <hr style="border-top: 1px solid rgba(204, 204, 204, 0.57); margin-top: 0px; margin-bottom: 0px;"/>
+                        <!--<hr style="border-top: 1px solid rgba(204, 204, 204, 0.57); margin-top: 0px; margin-bottom: 0px;"/>-->
 
                         <fieldset style="padding: 0px 10px 10px 10px;">
                             <!-- Form Name -->
@@ -250,27 +250,96 @@
 
                         </fieldset>
 
-                        <!--<hr style="border-top: 1px solid rgba(204, 204, 204, 0.57); margin-top: 0px; margin-bottom: 0px;"/>-->
+                        <hr style="border-top: 1px solid rgba(204, 204, 204, 0.57); margin-top: 0px; margin-bottom: 0px;"/>
 
-                        <!--<fieldset style="padding: 0px 10px 10px 10px;">-->
-                            <!--&lt;!&ndash; Form Name &ndash;&gt;-->
-                            <!--&lt;!&ndash; <legend>Form Name</legend> &ndash;&gt;-->
+                        <fieldset style="padding: 0px 10px 10px 10px;">
 
-                            <!--&lt;!&ndash; Select Basic &ndash;&gt;-->
-                            <!--<div class="row" style="padding:5px 10px 5px 0px; margin-right:0px; margin-left:0px;">-->
-                                <!--<small style="margin: 0 0 5px; font-weight: bold;"> Category</small>-->
-                            <!--</div>-->
-                            <!--<div class="form-group">-->
-                                <!--&lt;!&ndash;<label class="col-md-5 control-label" for="selectbasic">Select Basic</label>&ndash;&gt;-->
-                                <!--<div class="col-md-12">-->
-                                    <!--<select id="filter_option_city" name="city" class="form-control">-->
-                                        <!--<option value="dusseldorf">Dusseldorf</option>-->
-                                        <!--<option value="berlin">Berlin</option>-->
-                                    <!--</select>-->
+                            <div class="row" style="padding:5px 10px 5px 0px; margin-right:0px; margin-left:0px;">
+                                <small style="margin: 0 0 5px; font-weight: bold;"> Ratings</small>
+                            </div>
+
+
+                            <div class="form-group custom-filter-input speciality">
+                                <!--<label class="col-md-5 control-label" for="selectbasic">Select Basic</label>-->
+                                <div class="col-md-12">
+                                    <style>
+                                        label.active{
+                                            background: #999999;
+                                        border-color: #CCCCCC;
+                                        }
+
+                                        .btn-primary.ratings.active {
+                                            background: #999999;
+                                        border-color: #CCCCCC;
+                                        }
+
+                                        label.ratings{
+                                            color: #020202;
+                                            background: white;
+                                            border-color: #CCCCCC;
+                                            width: 20%;
+                                        }
+
+                                        .btn-primary.ratings:hover {
+                                            color: #020202;
+                                            background-color: #CCCCCC;
+                                            border-color: #CCCCCC;
+                                        }
+
+                                        .btn.ratings{
+                                        padding: 6px 10px;
+                                        }
+
+                                    </style>
+                                    <div class="btn-group" data-toggle="buttons">
+                                        <label class="btn btn-primary ratings" >
+                                            <input type="checkbox" name="rating" value="1" autocomplete="off"/> 1 <i class="fa fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #777777;"></i>
+                                        </label>
+                                        <label class="btn btn-primary ratings" >
+                                            <input type="checkbox" name="rating" value="2" autocomplete="off"/> 2 <i class="fa fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #777777;"></i>
+                                        </label>
+                                        <label class="btn btn-primary ratings" >
+                                            <input type="checkbox" name="rating" value="3" autocomplete="off"/> 3 <i class="fa fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #777777;"></i>
+                                        </label>
+                                        <label class="btn btn-primary ratings" >
+                                            <input type="checkbox" name="rating" value="4" autocomplete="off"/> 4 <i class="fa fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #777777;"></i>
+                                        </label>
+                                        <label class="btn btn-primary ratings" >
+                                            <input type="checkbox" name="rating" value="5" autocomplete="off"/> 5 <i class="fa fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #777777;"></i>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+                            <!--<hr style="border-top: 1px solid rgba(204, 204, 204, 0.57); margin-top: 0px; margin-bottom: 0px;"/>-->
+
+                            <!--<fieldset style="padding: 0px 10px 10px 10px;">-->
+                                <!--&lt;!&ndash; Form Name &ndash;&gt;-->
+                                <!--&lt;!&ndash; <legend>Form Name</legend> &ndash;&gt;-->
+
+                                <!--&lt;!&ndash; Select Basic &ndash;&gt;-->
+                                <!--<div class="row" style="padding:5px 10px 5px 0px; margin-right:0px; margin-left:0px;">-->
+                                    <!--<small style="margin: 0 0 5px; font-weight: bold;"> Category</small>-->
                                 <!--</div>-->
-                            <!--</div>-->
+                                <!--<div class="form-group">-->
+                                    <!--&lt;!&ndash;<label class="col-md-5 control-label" for="selectbasic">Select Basic</label>&ndash;&gt;-->
+                                    <!--<div class="col-md-12">-->
+                                        <!--<select id="filter_option_city" name="city" class="form-control">-->
+                                            <!--<option value="dusseldorf">Dusseldorf</option>-->
+                                            <!--<option value="berlin">Berlin</option>-->
+                                        <!--</select>-->
+                                    <!--</div>-->
+                                <!--</div>-->
 
-                        <!--</fieldset>-->
+                            <!--</fieldset>-->
+                        </fieldset>
 
                         <hr style="border-top: 1px solid rgba(204, 204, 204, 0.57); margin-top: 0px; margin-bottom: 0px;"/>
 
@@ -359,8 +428,20 @@
         $('.custom-filter-input.speciality > div > .btn-group > .multiselect.dropdown-toggle.btn.btn-default').css("width", "100%");
     });
 
+    $(document).ready(function() {
+        $('#filter_option_category').multiselect();
+        $('.custom-filter-input.category > div > .btn-group').css("width", "100%");
+        $('.custom-filter-input.category > div > .btn-group > .multiselect.dropdown-toggle.btn.btn-default').css("width", "100%");
+    });
+
 
      /*]]>*/
+</script>
+
+<script th:inline="javascript" type="text/javascript">
+/*<![CDATA[*/
+
+/*]]>*/
 </script>
 
 </body>
