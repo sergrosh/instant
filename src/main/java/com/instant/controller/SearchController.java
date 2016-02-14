@@ -95,14 +95,13 @@ public class SearchController {
 
     @RequestMapping(path = Mappings.CITY_SUGGESTIONS, method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ResponseBody
-    public Cities getCityNameSuggestions(@RequestParam(value = "cityName") String cityName){
+    public Cities getCityNameSuggestions(@RequestParam(value = "query") String cityName){
         Cities cities = new Cities();
         if (cityName.isEmpty()) {
             List<City> topTen = cityRepository.findAll( new PageRequest(0, 10)).getContent();
             cities.getCities().addAll(topTen);
         } else {
-            cities.getCities().addAll(cityRepository.
-                    findTop10ByName(cityName));
+            cities.getCities().addAll(cityRepository.findTop10ByNameLikeIgnoreCase(cityName));
         }
         return cities;
     }

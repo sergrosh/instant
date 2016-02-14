@@ -9,6 +9,8 @@ public interface Constants {
     String VENUE_ID = "VENUE_ID";
     String VENUE_IMAGE_PATH = "VENUE_IMAGE_PATH";
     String VENUE_NAME = "VENUE_NAME";
+    String VENUE_COUNTRY="VENUE_COUNTRY";
+    String VENUE_CITY="VENUE_CITY";
     String VENUE_TYPE = "VENUE_TYPE";
     String VENUE_CATEGORY = "VENUE_CATEGORY";
     String VENUE_COMPANY = "VENUE_COMPANY";
