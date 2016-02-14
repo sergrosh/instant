@@ -11,9 +11,8 @@ import java.util.List;
 /**
  * @author sroshchupkin
  */
-public interface CityRepository extends MongoRepository<CityRepository, String> {
+public interface CityRepository extends MongoRepository<City, String> {
     Page<City> findAllBy(TextCriteria textCriteria, Pageable pageable);
-    public List<City> findCityByNameOrZip(String query);
-    public List<City> findTop10();
-    public List<City> findTop10ByName(String name);
+    List<City> findCityByNameOrZip(String query);
+    List<City> findTop10ByName(String name);
 }

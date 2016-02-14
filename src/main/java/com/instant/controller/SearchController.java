@@ -2,12 +2,16 @@ package com.instant.controller;
 
 import com.instant.common.PaginationBean;
 import com.instant.persistence.model.Cities;
+import com.instant.persistence.model.City;
 import com.instant.persistence.model.Venue;
 import com.instant.persistence.model.Venues;
 import com.instant.persistence.repository.CityRepository;
 import com.instant.persistence.repository.VenueRepository;
 import com.instant.service.search.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.http.MediaType;
@@ -94,14 +98,12 @@ public class SearchController {
     public Cities getCityNameSuggestions(@RequestParam(value = "cityName") String cityName){
         Cities cities = new Cities();
         if (cityName.isEmpty()) {
-            cities.getCities().addAll(cityRepository.
-                    findTop10());
+            List<City> topTen = cityRepository.findAll( new PageRequest(0, 10)).getContent();
+            cities.getCities().addAll(topTen);
         } else {
             cities.getCities().addAll(cityRepository.
                     findTop10ByName(cityName));
         }
-
         return cities;
     }
-
 }
