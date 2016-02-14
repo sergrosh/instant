@@ -20,8 +20,9 @@
                             <tr>
                                 <td style="border:0px; padding:0px;">
                                     <div class="panel-info right-line" >
-                                        <p ><strong style="font-size: 23px; font-height:16px;line-height:1;font-style:normal;" th:text="${venue.name}">Demo</strong><sup style="font-style:bold; color: #999999;" th:text="| by ${venue.company}|"> demo</sup></p>
-                                        <p style="color:#999999;margin-top:-10px;" th:utext="|${venue.category}; ${venue.specialities}|">Category; speciality, speciality, speciality</p>
+                                        <a style="text-decoration: none;" th:href="@{/item(id=${venue.id})}"><p><strong style="font-size: 23px; font-height:16px;line-height:1;font-style:normal;" th:text="${venue.name}">Demo</strong><sup style="font-style:bold; color: #999999;" th:text="| by ${venue.company}|"> demo</sup></p></a>
+                                        <p style="color:#999999;margin-top:-10px;" th:text="|${venue.category}; ${venue.specialities}|">Category; speciality, speciality, speciality</p>
+                                        <p style="color:#999999;margin-top:-10px;" th:text="${venue.description}">Some description</p>
                                         <p style="color:#777777;"><i class="fa fa-map-marker"></i> <span th:text="${venue.address}">Friendrichstr, near the stadium, Berlin, Germany</span> | <span>Map</span></p>
                                         <p style="color:#777777;margin-top:-10px;"><i class="fa fa-phone"></i> <span th:text="${venue.phonePrimary} + ' | ' + ${venue.phoneSecondary}">+0522 25965 | +0522 36507</span></p>
                                         <p style="color:#777777;margin-top:-10px;"><i class="fa fa-envelope"></i> <span th:text="${venue.email}">restaurant-abs@hotmail.com</span></p>

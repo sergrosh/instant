@@ -49,7 +49,7 @@
 
             $.ajax({
               type: "GET",
-              url: "/suggestions",
+              url: "/suggestions/venue",
               data:
               {
                 query: $('#query_input').val()
