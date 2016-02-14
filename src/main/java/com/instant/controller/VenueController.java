@@ -1,6 +1,8 @@
 package com.instant.controller;
 
+import com.instant.persistence.model.City;
 import com.instant.persistence.model.Venue;
+import com.instant.persistence.repository.CityRepository;
 import com.instant.persistence.repository.VenueRepository;
 import com.instant.validator.VenueValidator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +28,9 @@ public class VenueController {
     @Autowired
     VenueRepository venueRepository;
 
+    @Autowired
+    CityRepository cityRepository;
+
     @RequestMapping(Mappings.ITEM)
     public ModelAndView getItemById(@RequestParam("id") String id) {
         ModelAndView modelAndView;
@@ -45,6 +50,11 @@ public class VenueController {
         if (errorsMap.isEmpty()) {
             ModelAndView view = new ModelAndView(TilesDefinition.LANDING);
             venueRepository.save(venue);
+            if(cityRepository.findCityByName(venue.getCity()).isEmpty()){
+                City newCity=new City();
+                newCity.setName(venue.getCity());
+                cityRepository.save(newCity);
+            }
             return view;
         } else {
             ModelAndView view = new ModelAndView(TilesDefinition.LANDING);
