@@ -12,6 +12,7 @@ import java.util.List;
 
 @Document
 public class City {
+
     @Id
     private String id;
     private String name;
