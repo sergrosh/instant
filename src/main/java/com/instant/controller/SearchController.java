@@ -9,9 +9,7 @@ import com.instant.persistence.repository.CityRepository;
 import com.instant.persistence.repository.VenueRepository;
 import com.instant.service.search.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.http.MediaType;
@@ -49,7 +47,7 @@ public class SearchController {
 
     @RequestMapping(Mappings.CLIENTS)
     public ModelAndView search(@RequestParam("query") String query,
-                               @RequestParam(value="category", required = false, defaultValue = "") String category,
+                               @RequestParam(value = "category", required = false, defaultValue = "") String category,
                                @RequestParam(value = "view", required = false, defaultValue = "1") Integer view,
                                @RequestParam(value = "page", required = false, defaultValue = "1") Integer pageNum,
                                @RequestParam(value = "city", required = false, defaultValue = "") String city,
@@ -66,9 +64,9 @@ public class SearchController {
             modelAndView.addObject("venues", venueRepository.findAll(paginationBean.defaultPageable(pageNum - 1)));
             return modelAndView;
         } else {
-            Query searchQuery = searchService.getQuery(query,city,category,reviews,speciality,
+            Query searchQuery = searchService.getQuery(query, city, category, reviews, speciality,
                     sortingType, paginationBean.defaultPageable(pageNum - 1));
-            List<Venue> venues=mongoOperations.find(searchQuery, Venue.class);
+            List<Venue> venues = mongoOperations.find(searchQuery, Venue.class);
             modelAndView.addObject("venues", venues);
             modelAndView.addObject("searchString", query);
         }
@@ -95,10 +93,10 @@ public class SearchController {
 
     @RequestMapping(path = Mappings.CITY_SUGGESTIONS, method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ResponseBody
-    public Cities getCityNameSuggestions(@RequestParam(value = "query") String cityName){
+    public Cities getCityNameSuggestions(@RequestParam(value = "query") String cityName) {
         Cities cities = new Cities();
         if (cityName.isEmpty()) {
-            List<City> topTen = cityRepository.findAll( new PageRequest(0, 10)).getContent();
+            List<City> topTen = cityRepository.findAll(new PageRequest(0, 10)).getContent();
             cities.getCities().addAll(topTen);
         } else {
             cities.getCities().addAll(cityRepository.findTop10ByNameLikeIgnoreCase(cityName));

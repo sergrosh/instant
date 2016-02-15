@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -42,7 +42,7 @@
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <br/>
-                                        <p class="main_description" style="font-size:30px;">Find the perfect place to party, eat or just have fun!</p>
+                                        <p class="main_description" style="font-size:30px;" th:text="#{landingmoto}"></p>
 
                                         <br/><br/>
                                         <form action="#" th:action="@{/clients}" method="GET" id="search_form">

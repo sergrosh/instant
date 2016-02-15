@@ -13,6 +13,8 @@ import java.util.List;
  */
 public interface CityRepository extends MongoRepository<City, String> {
     Page<City> findAllBy(TextCriteria textCriteria, Pageable pageable);
+
     List<City> findCityByName(String cityName);
+
     List<City> findTop10ByNameLikeIgnoreCase(String name);
 }

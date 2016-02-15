@@ -50,8 +50,8 @@ public class VenueController {
         if (errorsMap.isEmpty()) {
             ModelAndView view = new ModelAndView(TilesDefinition.LANDING);
             venueRepository.save(venue);
-            if(cityRepository.findCityByName(venue.getCity()).isEmpty()){
-                City newCity=new City();
+            if (cityRepository.findCityByName(venue.getCity()).isEmpty()) {
+                City newCity = new City();
                 newCity.setName(venue.getCity());
                 cityRepository.save(newCity);
             }

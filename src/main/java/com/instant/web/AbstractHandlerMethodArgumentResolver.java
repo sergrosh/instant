@@ -25,7 +25,7 @@ public abstract class AbstractHandlerMethodArgumentResolver implements HandlerMe
 
     public List<String> getTrimmedParameterList(NativeWebRequest webRequest, String paramName) {
         List<String> value = Arrays.asList(webRequest.getParameterValues(paramName));
-        for(String element : value){
+        for (String element : value) {
             if (!StringUtils.isEmpty(element)) {
                 element.trim();
             }
