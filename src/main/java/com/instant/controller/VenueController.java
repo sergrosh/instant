@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.ServletContext;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.FileSystem;
 import java.util.Map;
 
 /**
@@ -27,7 +28,8 @@ import java.util.Map;
 @Controller
 public class VenueController {
 
-    private ServletContext servletContext;
+    @Autowired
+    ServletContext servletContext;
 
     @Autowired
     VenueValidator venueValidator;
@@ -70,11 +72,11 @@ public class VenueController {
     }
 
     @RequestMapping(value = Mappings.UPLOAD_VENUE_IMAGE, method = RequestMethod.POST)
-    public void uploadImage(@RequestParam(value = "image", required = false) MultipartFile image) throws IOException {
-        File file = new File(servletContext.getRealPath("/") + "/"
+    public void uploadImage(@RequestParam(value = "file", required = false) MultipartFile file) throws IOException {
+        File newFile = new File(servletContext.getRealPath(File.separator) + File.separator
                 + "demoName");
 
-        FileUtils.writeByteArrayToFile(file, image.getBytes());
+        FileUtils.writeByteArrayToFile(newFile, file.getBytes());
         System.out.println("Go to the location:  " + file.toString()
                 + " on your computer and verify that the image has been stored.");
     }
