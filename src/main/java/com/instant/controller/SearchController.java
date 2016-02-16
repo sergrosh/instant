@@ -1,10 +1,10 @@
 package com.instant.controller;
 
 import com.instant.common.PaginationBean;
-import com.instant.persistence.model.Cities;
-import com.instant.persistence.model.City;
-import com.instant.persistence.model.Venue;
-import com.instant.persistence.model.Venues;
+import com.instant.persistence.model.city.Cities;
+import com.instant.persistence.model.city.City;
+import com.instant.persistence.model.venue.Venue;
+import com.instant.persistence.model.venue.Venues;
 import com.instant.persistence.repository.CityRepository;
 import com.instant.persistence.repository.VenueRepository;
 import com.instant.service.search.SearchService;

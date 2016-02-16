@@ -1,6 +1,6 @@
 package com.instant.web;
 
-import com.instant.persistence.model.Venue;
+import com.instant.persistence.model.venue.Venue;
 import org.springframework.core.MethodParameter;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.support.WebDataBinderFactory;

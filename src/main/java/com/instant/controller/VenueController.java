@@ -1,24 +1,28 @@
 package com.instant.controller;
 
-import com.instant.persistence.model.City;
-import com.instant.persistence.model.Venue;
+import com.instant.component.FileComponent;
+import com.instant.persistence.model.city.City;
+import com.instant.persistence.model.UploadedFile;
+import com.instant.persistence.model.venue.Venue;
 import com.instant.persistence.repository.CityRepository;
+import com.instant.persistence.repository.UploadedFileRepository;
 import com.instant.persistence.repository.VenueRepository;
 import com.instant.validator.VenueValidator;
-import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.ServletContext;
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.FileSystem;
+import javax.servlet.http.HttpServletResponse;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -29,7 +33,7 @@ import java.util.Map;
 public class VenueController {
 
     @Autowired
-    ServletContext servletContext;
+    FileComponent fileComponent;
 
     @Autowired
     VenueValidator venueValidator;
@@ -39,6 +43,9 @@ public class VenueController {
 
     @Autowired
     CityRepository cityRepository;
+
+    @Autowired
+    UploadedFileRepository uploadedFileRepository;
 
     @RequestMapping(Mappings.ITEM)
     public ModelAndView getItemById(@RequestParam("id") String id) {
@@ -72,13 +79,18 @@ public class VenueController {
     }
 
     @RequestMapping(value = Mappings.UPLOAD_VENUE_IMAGE, method = RequestMethod.POST)
-    public void uploadImage(@RequestParam(value = "file", required = false) MultipartFile file) throws IOException {
-        File newFile = new File(servletContext.getRealPath(File.separator) + File.separator
-                + "demoName");
-
-        FileUtils.writeByteArrayToFile(newFile, file.getBytes());
-        System.out.println("Go to the location:  " + file.toString()
-                + " on your computer and verify that the image has been stored.");
+    public
+    @ResponseBody List<UploadedFile> upload(MultipartHttpServletRequest request,
+                HttpServletResponse response) throws IOException {
+        Map<String, MultipartFile> fileMap = request.getFileMap();
+        List<UploadedFile> uploadedFiles = new ArrayList<>();
+        for (MultipartFile multipartFile : fileMap.values()) {
+            fileComponent.saveFileToLocalDisk(multipartFile);
+            UploadedFile fileInfo = fileComponent.getUploadedFileInfo(multipartFile);
+            //fileInfo = uploadedFileRepository.save(fileInfo);
+            uploadedFiles.add(fileInfo);
+        }
+        return uploadedFiles;
     }
 
 }

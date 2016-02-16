@@ -252,8 +252,10 @@
                     </div>
                 </div>
 
+
+
                 <div class="form-group">
-                    <div id="my-dropzone" th:action="@{/upload/venue/image}" class="dropzone dz-clickable">
+                    <div id="my-dropzone" th:action="@{/upload/venue/image}" class="dropzone dz-clickable" enctype="multipart/form-data">
                         <div class="dz-default dz-message">
                             <span>Drop files here to upload</span>
                         </div>

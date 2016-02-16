@@ -1,6 +1,6 @@
 package com.instant.persistence.repository;
 
-import com.instant.persistence.model.Venue;
+import com.instant.persistence.model.venue.Venue;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.core.query.TextCriteria;

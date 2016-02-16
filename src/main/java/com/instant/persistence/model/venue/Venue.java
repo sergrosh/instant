@@ -1,6 +1,7 @@
-package com.instant.persistence.model;
+package com.instant.persistence.model.venue;
 
 
+import com.instant.persistence.model.Product;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.TextIndexed;

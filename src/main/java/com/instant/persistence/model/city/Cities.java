@@ -1,4 +1,4 @@
-package com.instant.persistence.model;
+package com.instant.persistence.model.city;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -10,15 +10,15 @@ import java.util.List;
  */
 
 @XmlRootElement
-public class Venues {
+public class Cities {
 
-    List<Venue> venues;
+    List<City> cities;
 
     @XmlElement
-    public List<Venue> getVenues() {
-        if (venues == null) {
-            venues = new ArrayList<>();
+    public List<City> getCities() {
+        if (cities == null) {
+            cities = new ArrayList<>();
         }
-        return venues;
+        return cities;
     }
 }

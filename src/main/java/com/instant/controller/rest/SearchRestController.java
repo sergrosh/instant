@@ -2,7 +2,7 @@ package com.instant.controller.rest;
 
 import com.instant.common.PaginationBean;
 import com.instant.controller.Mappings;
-import com.instant.persistence.model.Venue;
+import com.instant.persistence.model.venue.Venue;
 import com.instant.persistence.repository.VenueRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

@@ -1,6 +1,6 @@
 package com.instant.validator;
 
-import com.instant.persistence.model.Venue;
+import com.instant.persistence.model.venue.Venue;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 

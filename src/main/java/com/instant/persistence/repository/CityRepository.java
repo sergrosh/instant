@@ -1,6 +1,6 @@
 package com.instant.persistence.repository;
 
-import com.instant.persistence.model.City;
+import com.instant.persistence.model.city.City;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.core.query.TextCriteria;
