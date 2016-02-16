@@ -435,6 +435,13 @@
         $('.custom-filter-input.category > div > .btn-group > .multiselect.dropdown-toggle.btn.btn-default').css("width", "100%");
     });
 
+    $(".venue_description").each(function(){
+        console.log($( this ).text().length);
+        if($( this ).text().length > 190){
+            $(this).text($(this).text().substr(0,190) + " ...");
+        }
+    });
+
 
      /*]]>*/
 </script>

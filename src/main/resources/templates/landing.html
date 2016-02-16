@@ -282,7 +282,7 @@
               cache: false,
               success: function(data){
                 for (var i = 0; i < data.cities.length; i++) {
-                    $('#suggestionListCity').append( '<li style="margin: 4px; padding: 4px;"> <a href="javascript:void(0)" class="suggestionClickout" style="color: #999999; padding:5px;" onmousedown="triggerSearch(' + '&#39' + (data.cities[i].name).toString() + '&#39' +'); return false;"><i class="fa fa-coffee" style="color:#5e5e5e;"></i> ' + data.cities[i].name + '</a> </li>' );
+                    $('#suggestionListCity').append( '<li style="margin: 4px; padding: 4px;"> <a href="javascript:void(0)" class="suggestionClickout" style="color: #999999; padding:5px;" onmousedown="fillCitySearch(' + '&#39' + (data.cities[i].name).toString() + '&#39' +'); return false;"><i class="fa fa-coffee" style="color:#5e5e5e;"></i> ' + data.cities[i].name + '</a> </li>' );
                     //<hr/ style="margin: 0px; width: 95%; margin-left: 2.5%;">
                 }
               }
@@ -306,10 +306,18 @@
         $('#search_form').trigger('submit');
     }
 
+    function fillCitySearch(){
+        $('#city_input').val(data);
+        $('#suggestionBoxCity').hide();
+            $( "#suggestionListCity" ).empty();
+    }
+
+
+
     $( "#query_input" ).focusout(function() {
         if(!suggestionClicked){
             if(!($( "#query_input" ).val() === '') && !($("#suggestionBox > ul > li:nth-child(1) > a").size() === 0)){
-                triggerSearch($("#suggestionBox > ul > li:nth-child(1) > a").html())
+                triggerSearch($.trim($("#suggestionBox > ul > li:nth-child(1) > a").text()))
             }
             else{
                 $( "#query_input" ).val('');
