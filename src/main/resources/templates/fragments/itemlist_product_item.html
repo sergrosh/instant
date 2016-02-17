@@ -20,7 +20,7 @@
                             <tr>
                                 <td style="border:0px; padding:0px;" class="col-md-9">
                                     <div class="panel-info right-line" >
-                                        <a style="text-decoration: none;" th:href="@{/item(id=${venue.id})}"><p><strong style="color: black; font-size: 23px; font-height:16px;line-height:1;font-style:normal;" th:text="${venue.name}">Demo</strong><sup style="font-style:bold; color: #999999;" th:text="| by ${venue.company}|"> demo</sup></p></a>
+                                        <a style="text-decoration: none;" th:href="@{/item(id=${venue.id})}"><p><strong style="color: #444; font-size: 23px; font-height:16px;line-height:1;font-style:normal;" th:text="${venue.name}">Demo</strong><sup style="font-style:bold; color: #999999;" th:text="| by ${venue.company}|"> demo</sup></p></a>
                                         <p style="color:#999999;margin-top:-10px;" th:text="|${venue.category}; ${venue.specialities}|">Category; speciality, speciality, speciality</p>
                                         <p style="color:#999999; font-size: 0.9em;" th:text="${venue.description}" class="venue_description">Some description</p>
                                         <p style="margin-bottom: 0px; color:#777777;"><i class="fa fa-map-marker"></i> <span th:text="${venue.address}">Friendrichstr, near the stadium, Berlin, Germany</span> | <span>Map</span></p>
@@ -32,6 +32,10 @@
                                     <div class="panel-info right-line" style="width: 100%;">
 
                                         <!--<p ><strong style="font-size: 15px; font-height:16px;line-height:1;font-style:normal;" th:text="|${venue.rating} Stars|">Demo</strong></p>-->
+
+                                        <!--<div style="margin-top: 10px;">-->
+                                            <!--<p style="margin-bottom: 15px;"><strong style="font-size: 15px; font-height:16px;line-height:1;font-style:normal; color: #fff; background-color: #777; padding: .2em .6em .3em; border-radius: .25em;"><i class="fa fa-clock-o" style="color: #ADCC74;"></i> OPEN </strong></p>-->
+                                        <!--</div>-->
                                         <div style="width: 100%; margin-top: 10px;">
                                             <i class="fa fa-star" style="font-weight: bold; font-size: 1.2em; color: #777777;"></i>
                                              <i class="fa fa-star" style="font-weight: bold; font-size: 1.2em; color: #777777;"></i>
@@ -40,13 +44,17 @@
                                              <i class="fa fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #777777;"></i>
                                         </div>
                                         <div>
-                                            <label style="font-size: 1.3em; margin-bottom: 15px;">Good</label>
+                                            <label style="font-size: 1.0em; margin-bottom: 15px; color:#ADCC74;">Good</label>
+                                            <!--<label style="font-size: 1.0em; margin-bottom: 15px; color:#CC7474;">Bad</label>-->
                                         </div>
                                         <div>
-                                            <p style="margin-bottom: 15px;"><strong style="font-size: 15px; font-height:16px;line-height:1;font-style:normal;"><i class="fa fa-clock-o"></i> OPEN </strong></p>
-                                        </div>
-                                        <div>
-                                            <p ><strong style="font-size: 15px; font-height:16px;line-height:1;font-style:normal;"> <a style="color:black;" th:href="@{/item(id=${venue.id})}"><i class="fa fa-long-arrow-right"></i> Explore</a> </strong></p>
+                                            <p >
+                                                <strong style="font-size: 15px; font-height:16px;line-height:1;font-style:normal; color: #fff; background-color: #777; padding: .2em .2em .3em; border-radius: .25em;     border-top-right-radius: 0em;      border-bottom-right-radius: 0em;">
+                                                    <i class="fa fa-clock-o" style="color: #ADCC74;"></i> open </strong>
+                                                <strong style="font-size: 15px; font-height:16px;line-height:1;font-style:normal; padding: 10px 15px 10px 15px; background-color: #B0CE79; padding: .2em .6em .3em; border-radius: .25em;     border-bottom-left-radius: 0em;     border-top-left-radius: 0em;">
+                                                    <a style="color: #fff;" th:href="@{/item(id=${venue.id})}"><i class="fa fa-paper-plane-o"></i> Explore</a>
+                                                </strong>
+                                            </p>
                                         </div>
                                     </div>
                                 </td>
