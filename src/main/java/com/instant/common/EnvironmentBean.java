@@ -5,7 +5,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
 /**
- * @author Sergey
+ * @author sroshchupkin
  */
 
 @Component

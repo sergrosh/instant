@@ -168,6 +168,14 @@
               // Remove the file preview.
               _this.removeFile(file);
               counter = counter-1;
+              var naming = $(this).closest('.dz-preview').find('.dz-details > .dz-filename > span').text();
+              jQuery.ajax( {
+                url: '/delete/venue/image',
+                type: 'POST',
+                data: {
+                    name: naming
+                       }
+    } );
               // If you want to the delete the file on the server as well,
               // you can do the AJAX request here.
             });

@@ -10,4 +10,6 @@ import java.util.List;
  */
 public interface UploadedFileRepository extends MongoRepository<UploadedFile, String> {
     List<UploadedFile> findFileByName(String fileName);
+    List<UploadedFile> deleteByName(String filename);
+    List<UploadedFile> findFileByType(String fileType);
 }

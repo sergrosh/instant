@@ -67,16 +67,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-                .csrf().disable() // disable CSRF now.
+                .csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/admin/**").hasAuthority(UserRoleType.ROLE_ADMIN.name())
                 .antMatchers("/company/**").hasAuthority(UserRoleType.ROLE_AUTHOR.name())
+                .antMatchers(Mappings.UPLOAD_VENUE_IMAGE).hasAuthority(UserRoleType.ROLE_AUTHOR.name())
+                .antMatchers(Mappings.DELETE_VENUE_IMAGE).hasAuthority(UserRoleType.ROLE_AUTHOR.name())
+                .antMatchers(Mappings.CLIENTS+"/**").permitAll()
+                .antMatchers(Mappings.REST_CLIENTS+"/**").permitAll()
+                .antMatchers(Mappings.USER+"/**").authenticated()
+                .antMatchers(Mappings.ITEM+"/**").permitAll()
                 .antMatchers("/home/**").permitAll()
-                .antMatchers("/user/**").authenticated()
                 .antMatchers("/suggestions/**").permitAll()
-                .antMatchers("/clients/**").permitAll()
-                .antMatchers("/rest/clients/**").permitAll()
-                .antMatchers("/item/**").permitAll()
                 .antMatchers("/rest/item/**").permitAll()
                 .antMatchers("/resources/**").permitAll()
                 .antMatchers("/signin/**").permitAll()
@@ -115,7 +117,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         SocialAuthenticationFilter filter = new SocialAuthenticationFilter(
                 authenticationManager(), userIdSource,
                 usersConnectionRepository, socialAuthenticationServiceLocator);
-        filter.setFilterProcessesUrl("/signin");  //TODO fix the deprecated call.
+        filter.setFilterProcessesUrl("/signin");
         filter.setSignupUrl(null);
         filter.setConnectionAddedRedirectUrl(Mappings.USER);
         filter.setPostLoginUrl("/"); //always open account profile page after login
