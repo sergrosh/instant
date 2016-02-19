@@ -1,3 +1,16 @@
+$(function(){
+    var parameters = {
+        searchQuery     : "",
+        searchCity      : "",
+        searchCategory  : "all",
+    }
+
+
+
+
+
+});
+
 
 
 /**************************

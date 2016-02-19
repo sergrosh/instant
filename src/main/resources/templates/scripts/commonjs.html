@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head lang="en">
+
+</head>
+
+
+<body>
+
+    <th:block th:fragment="commonjs" class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <script src="js/jquery.min.js" th:src="@{/resources/oc_js/jquery.min.js}"></script>
+        <script src="js/bootstrap.min.js" th:src="@{/resources/oc_js/bootstrap.min.js}"></script>
+        <script src="js/scripts.js" th:src="@{/resources/oc_js/scripts.js}"></script>
+        <script src="js/global.js" th:src="@{/resources/oc_js/global.js}"></script>
+        <script type="text/javascript" th:inline="javascript">
+/*<![CDATA[*/
+
+    //global
+    var local_city;
+
+    jQuery.ajax( {
+      url: '//freegeoip.net/json/',
+      type: 'POST',
+      dataType: 'jsonp',
+      success: function(location) {
+        // example where I update content on the page.
+        local_city = location.city;
+        jQuery('#city_input').val(location.city);
+        /*
+        jQuery('#region-code').html(location.region_code);
+        jQuery('#region-name').html(location.region_name);
+        jQuery('#areacode').html(location.areacode);
+        jQuery('#ip').html(location.ip);
+        jQuery('#zipcode').html(location.zipcode);
+        jQuery('#longitude').html(location.longitude);
+        jQuery('#latitude').html(location.latitude);
+        jQuery('#country-name').html(location.country_name);
+        jQuery('#country-code').html(location.country_code);
+        */
+      }
+    } );
+
+
+
+    var suggestionClicked=false;
+    $(function () {
+      $('#category_hidden').val("all");
+    });
+/*
+    $('#removing_keeps_structure').remove();
+*/
+    $(function () {
+      $('#suggestionText').css({
+            position: "absolute",
+            top: ($('#query_input').offsetTop + $('#query_input').offsetHeight) + "px",
+            left: $('#query_input').offsetLeft + "px"
+        });
+
+      $('#suggestionTextCity').css({
+            position: "absolute",
+            top: ($('#city_input').offsetTop + $('#city_input').offsetHeight) + "px",
+            left: $('#city_input').offsetLeft + "px"
+        });
+
+    });
+
+    function setCategoryValue(data){
+        $('#category_hidden').val(data);
+        $('#category_visible').text(data);
+    }
+
+    function retrieveGuests() {
+        var url = '/clients?query=' + $('#search_query').val();
+        var data = $('#filterForm').serialize();
+        url = url + '&view=2&' + data;
+        $("#itemlist_results").load(url);
+    }
+
+
+    $( "#query_input" ).keyup(function() {
+
+        $( "#suggestionList" ).empty();
+
+        if($("#query_input").val().trim().length===0){
+          $('#suggestionBox').hide();
+          $( "#suggestionList" ).empty();
+        }
+
+        else{
+            dynamic_width = $('#query_input').width() + 18;
+            $('#suggestionBox').css({
+                position: "absolute",
+                top: (this.offsetTop + this.offsetHeight) + "px",
+                left: this.offsetLeft + "px",
+                width: dynamic_width + "px"
+            });
+
+            $.ajax({
+              type: "GET",
+              url: "/suggestions/venue",
+              data:
+              {
+                query: $('#query_input').val()
+              },
+              cache: false,
+              success: function(data){
+                for (var i = 0; i < data.venues.length; i++) {
+                    $('#suggestionList').append( '<li style="margin: 4px; padding: 4px;"> <a href="javascript:void(0)" class="suggestionClickout" style="color: #999999; padding:5px;" onmousedown="triggerSearch(' + '&#39' + (data.venues[i].name).toString() + '&#39' +'); return false;"><i class="fa fa-coffee" style="color:#5e5e5e;"></i> ' + data.venues[i].name + '</a> </li>' );
+                    //<hr/ style="margin: 0px; width: 95%; margin-left: 2.5%;">
+                }
+              }
+            });
+
+            $('#suggestionBox').show();
+        }
+
+    });
+
+    $( "#city_input" ).keyup(function() {
+
+        $( "#suggestionListCity" ).empty();
+
+        if($("#city_input").val().trim().length===0){
+          $('#suggestionBoxCity').hide();
+          $( "#suggestionListCity" ).empty();
+        }
+
+        else{
+            dynamic_width = $('#city_input').width() + 18;
+            $('#suggestionBoxCity').css({
+                position: "absolute",
+                top: (this.offsetTop + this.offsetHeight) + "px",
+                left: this.offsetLeft + "px",
+                width: dynamic_width + "px"
+            });
+
+            $.ajax({
+              type: "GET",
+              url: "/suggestions/city",
+              data:
+              {
+                query: $('#city_input').val()
+              },
+              cache: false,
+              success: function(data){
+                for (var i = 0; i < data.cities.length; i++) {
+                    $('#suggestionListCity').append( '<li style="margin: 4px; padding: 4px;"> <a href="javascript:void(0)" class="suggestionClickout" style="color: #999999; padding:5px;" onmousedown="fillCitySearch(' + '&#39' + (data.cities[i].name).toString() + '&#39' +'); return false;"><i class="fa fa-coffee" style="color:#5e5e5e;"></i> ' + data.cities[i].name + '</a> </li>' );
+                    //<hr/ style="margin: 0px; width: 95%; margin-left: 2.5%;">
+                }
+              }
+            });
+
+            $('#suggestionBoxCity').show();
+        }
+
+    });
+
+    function triggerSearch(data){
+        suggestionClicked = true;
+        $('#query_input').val(data);
+        $('#search_form').trigger('submit');
+    }
+
+    function triggerSeoSearch(data){
+        $('#query_input').val(data);
+        $('#city_input').val(local_city);
+        $('#category_hidden').val('all');
+        $('#search_form').trigger('submit');
+    }
+
+    function fillCitySearch(){
+        $('#city_input').val(data);
+        $('#suggestionBoxCity').hide();
+            $( "#suggestionListCity" ).empty();
+    }
+
+
+
+    $( "#query_input" ).focusout(function() {
+        if(!suggestionClicked){
+            if(!($( "#query_input" ).val() === '') && !($("#suggestionBox > ul > li:nth-child(1) > a").size() === 0)){
+                triggerSearch($.trim($("#suggestionBox > ul > li:nth-child(1) > a").text()))
+            }
+            else{
+                $( "#query_input" ).val('');
+            }
+            $('#suggestionBox').hide();
+            $( "#suggestionList" ).empty();
+        }
+
+    })
+
+
+/*]]>*/
+</script>
+    </th:block>
+
+</body>
+</html>
