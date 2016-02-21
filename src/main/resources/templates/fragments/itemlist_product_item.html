@@ -11,6 +11,55 @@
             <div class="panel panel-default" style="border:0px; -webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, .05); box-shadow: 0 0px 0px rgba(0, 0, 0, .05);">
                 <div class="panel-body" style="border:1px  solid rgba(204, 204, 204, 0.57); padding-top:10px; padding-bottom:10px;">
                     <div class="panel-more1" style="border:border:1px  solid rgba(204, 204, 204, 0.57); margin: 0 0 0 10px;">
+
+                        <div class="corner-ribbon top-right sticky instant">OPEN</div>
+
+                        <style type="text/css">
+                            @import url('http://fonts.googleapis.com/css?family=Noto+Sans:400,700');
+
+
+                            /* The ribbons */
+
+                            .corner-ribbon{
+                            width: 50px;
+                            background: #e43;
+                            position: absolute;
+                            top: 25px;
+                            left: -50px;
+                            text-align: center;
+                            line-height: 30px;
+                            letter-spacing: 1px;
+                            color: #f0f0f0;
+                            font-size:12px;
+                            font-weight:bold;
+                            }
+
+                            /* Custom styles */
+
+                            .corner-ribbon.sticky{
+                            margin-left: 135px;
+                            margin-top: 5px;
+                            }
+
+                            .corner-ribbon.shadow{
+                            box-shadow: 0 0 3px rgba(0,0,0,.3);
+                            }
+
+
+                            .corner-ribbon.top-right{
+                            top: inherit;
+                            right: inherit;
+                            left: inherit;
+                            }
+
+
+                            /* Colors */
+
+
+                            .corner-ribbon.instant{background:#ADCC74;}
+
+                        </style>
+
                         <img src="http://lorempixel.com/190/140" />
                         <!-- style="padding: 4px; border: 1px solid #e6e6e6;" FOR IMAGE CORNER.-->
                         <!--<span th:text="${venue.name}">Demo</span>-->
