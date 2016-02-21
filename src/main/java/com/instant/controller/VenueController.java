@@ -85,7 +85,7 @@ public class VenueController {
         for (MultipartFile multipartFile : fileMap.values()) {
             fileComponent.saveFileToLocalDisk(multipartFile);
             UploadedFile fileInfo = fileComponent.getUploadedFileInfo(multipartFile);
-            fileInfo = uploadedFileRepository.save(fileInfo);
+            //fileInfo = uploadedFileRepository.save(fileInfo);
             uploadedFiles.add(fileInfo);
         }
         return uploadedFiles;
@@ -97,8 +97,8 @@ public class VenueController {
         String fileName=request.getParameter("name");
         String name=fileName.split("\\.")[0];
         fileComponent.deleteFileFromLocalDisc(fileName);
-        if(uploadedFileRepository.findFileByName(name).size()>0)
-            uploadedFileRepository.deleteByName(name);
+//        if(uploadedFileRepository.findFileByName(name).size()>0)
+//            uploadedFileRepository.deleteByName(name);
         return name;
     }
 }
