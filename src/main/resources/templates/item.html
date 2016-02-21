@@ -31,313 +31,302 @@
 
 
             <div class="row">
-                <!--<div class="col-md-1">-->
-                <!--</div>-->
 
-                <!--<div class="col-md-2 hidden-xs" style="border:none; padding-right: 0px; padding-left: 0px; background-color: rgb(248, 248, 249)">-->
 
-                    <!--<style type="text/css">-->
-                        <!--.panel-default {-->
-                        <!--border-left: 1px solid rgba(204, 204, 204, 0.57);-->
-                        <!--border-top: 1px solid rgba(204, 204, 204, 0.57);-->
-                        <!--border-bottom: 1px solid rgba(204, 204, 204, 0.57) ;-->
-                        <!--}-->
-                    <!--</style>-->
+                <style type="text/css">
+                    div[class^="col-"]{
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    }
 
-                    <!--<div>-->
-                        <!--<div class="panel panel-default" style="background-color:#ffffff; border-right: 1px solid rgba(204, 204, 204, 0.57) ; border-radius: 0px; ">-->
+                    .stats{
+                    border-right:1px solid #ebeff2;
 
-                            <!--<div class="panel-heading" style="background-color: #ffffff;">My account</div>-->
-                            <!--<div class="panel-body" style="border-radius: 0px">-->
-                                <!--<ul class="nav">-->
-                                    <!--<li>-->
-                                        <!--<a class="active" href="account_dashboard.html" th:href="@{/user}">Dashboard</a>-->
-                                    <!--</li>-->
-                                    <!--<li>-->
-                                        <!--<a class="active" href="account_profile.html" th:href="@{/profile}">My profile</a>-->
-                                    <!--</li>-->
-                                    <!--<li>-->
-                                        <!--<a class="active" href="account_ads.html" th:href="@{/user/list}">Manage venues</a>-->
-                                    <!--</li>-->
-                                    <!--<li>-->
-                                        <!--<a class="active" th:href="@{/user/add}">Register Venue</a>-->
-                                    <!--</li>-->
-                                <!--</ul>-->
+                    border-left:1px solid #ebeff2;
+                    border-bottom:1px solid #ebeff2;
 
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
+                    background:rgba(248, 248, 249, 0.01);
+                    overflow:auto;
+                    padding:15px 0;
+                    font-size:16px;
+                    color:#59687f;
+                    font-weight:600;
+                    border-radius: 0 0 5px 5px;
+                    width:100%;
+                    height:60px;
+                    }
+                    .stats div{
+                    border-right:1px solid #ebeff2;
+                    width:20%;
+                    float:left;
+                    text-align:center
+                    }
+                    .stats div:nth-of-type(5){border:none;}
+
+
+
+                </style>
+
 
                 <div class="col-md-8 col-md-offset-2"
-                     style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:5px; padding-right:5px;">
+                     style="border: 1px solid #F8F8F9;">
                     <div class="row"
                          style="margin-left: 15px; margin-right: 15px; margin-top: 15px;">
                         <div class="row" style="border:none;">
 
                             <div class="panel panel-default" style="border:none;">
-                                <div class="panel-heading" style="background-color:#fff; border:none;">
-                                    <h3 style="margin-top:0px;" th:text="${venue.name}">Thumbnail label</h3>
-                                </div>
-                                <div class="panel-body nopadding paddingbottom10" style="border:none;">
+
+                                <!--Venue Name-->
+                                <!--<div class="panel-heading" style="background-color:#fff; border:none;">-->
+                                    <!--<h3 style="margin-top:0px;" th:text="${venue.name}">Thumbnail label</h3>-->
+                                <!--</div>-->
+                                <div class="panel-body nopadding" style="border:none;">
+
+
+
+                                    <style type="text/css">
+
+
+                                        /* The ribbons */
+
+                                        .corner-ribbon{
+                                        width: 250px;
+                                        position: absolute;
+                                        top: 25px;
+                                        left: -50px;
+                                        line-height: 30px;
+                                        letter-spacing: 1px;
+                                        color: #f0f0f0;
+                                        font-weight:bold;
+                                        border-radius:0.5em;
+                                        }
+
+                                        /* Custom styles */
+
+                                        .corner-ribbon.sticky{
+                                        margin-top: 5px;
+                                        }
+
+                                        .corner-ribbon.shadow{
+                                        box-shadow: 0 0 3px rgba(0,0,0,.3);
+                                        }
+
+
+                                        .corner-ribbon.bottom-left{
+                                        top: 340px;
+                                        right: inherit;
+                                        left: 20px;
+                                        }
+
+                                        .corner-ribbon.bottom-right{
+                                        top: 340px;
+                                        right: inherit;
+                                        left: 1000px;
+                                        }
+
+
+                                        /* Colors */
+
+
+                                        .corner-ribbon.bg{background:transparent;}
+
+                                        .stats > div > strong {
+                                        color:#777;}
+
+                                    </style>
+
+
+
+                                    <div class="col-md-12" style="height:420px">
+
+                                        <div class="corner-ribbon bottom-left sticky bg">
+                                            <div class="info-section" style="font-style: normal;font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 26px;line-height: normal; font-family: 'Open Sans', sans-serif;">
+                                                 Event Time
+                                            </div>
+                                            <div class="info-section" style="font-style: normal;font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 14px;line-height: normal; font-family: 'Open Sans', sans-serif;">
+                                                Berliner Allee 1, 10000 Berlin
+                                            </div>
+                                        </div>
+
+
+                                        <div class="corner-ribbon bottom-right sticky bg hidden-lg-down">
+                                            <div class="info-section" style="font-style: normal;font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 26px;line-height: normal; font-family: 'Open Sans', sans-serif;">
+                                                Event Time
+                                            </div>
+                                            <div class="info-section" style="font-style: normal;font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 14px;line-height: normal; font-family: 'Open Sans', sans-serif;">
+                                                Berliner Allee 1, 10000 Berlin
+                                            </div>
+                                        </div>
+
+
+                                        <img style="background-repeat: repeat-x; width:100%;height:100%; overflow:hidden;
+                                        background:linear-gradient( rgba(0, 0, 0, 0.45), rgba(90, 89, 89, 0.45), rgba(4, 4, 4, 0.82) ), url(/resources/img/img01.jpg)"/>
+
+
+
+
+                                    </div>
+
+                                    <br/>
 
                                     <div class="col-md-12">
-                                        <img style="width:50%;height:100%; background:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)); " src="../../../../main/webapp/resources/img/img02.jpg" th:src="@{/resources/img/img02.jpg}" alt="..."/>
-                                    </div>
-                                    <div class="col-md-12" style="width:100%;height:100%;" >
-                                        <div class="row">
-                                            <div class="col-xs-4 col-md-2 no-margin-right">
-                                                <a href="#" class="thumbnail">
-                                                    <img src="../../../../main/webapp/resources/img/img01.jpg" th:src="@{/resources/img/img01.jpg}" alt="..."/>
-                                                </a>
-                                            </div>
-                                            <div class="col-xs-4 col-md-2 no-margin-right" >
-                                                <a href="#" class="thumbnail">
-                                                    <img src="../../../../main/webapp/resources/img/img02.jpg" th:src="@{/resources/img/img02.jpg}" alt="..."/>
-                                                </a>
-                                            </div>
-                                            <div class="col-xs-4 col-md-2 no-margin-right" >
-                                                <a href="#" class="thumbnail">
-                                                    <img src="../../../../main/webapp/resources/img/img03.jpg" th:src="@{/resources/img/img03.jpg}" alt="..."/>
-                                                </a>
-                                            </div>
-                                            <div class="col-xs-4 col-md-2 no-margin-right">
-                                                <a href="#" class="thumbnail">
-                                                    <img src="../../../../main/webapp/resources/img/img04.jpg" th:src="@{/resources/img/img04.jpg}" alt="..."/>
-                                                </a>
-                                            </div>
-                                            <div class="col-xs-4 col-md-2 no-margin-right">
-                                                <a href="#" class="thumbnail">
-                                                    <img src="../../../../main/webapp/resources/img/img02.jpg" th:src="@{/resources/img/img02.jpg}" alt="..."/>
-                                                </a>
-                                            </div>
-                                            <div class="col-xs-4 col-md-2 no-margin-right">
-                                                <a href="#" class="thumbnail">
-                                                    <img src="../../../../main/webapp/resources/img/img02.jpg" th:src="@{/resources/img/img02.jpg}" alt="..."/>
-                                                </a>
-                                            </div>
-                                            <div class="col-xs-4 col-md-2 no-margin-right">
-                                                <a href="#" class="thumbnail">
-                                                    <img src="../../../../main/webapp/resources/img/img02.jpg" th:src="@{/resources/img/img02.jpg}" alt="..."/>
-                                                </a>
+                                        <div class="stats">
+
+                                            <div>
+                                                <strong>button</strong>
                                             </div>
 
+                                            <div>
+                                                <strong>button</strong>
+                                            </div>
 
+                                            <div>
+                                                <strong>button</strong>
+                                            </div>
+
+                                            <div>
+                                                <strong>button</strong>
+                                            </div>
+
+                                            <div>
+                                                <strong>button</strong>
+                                            </div>
 
                                         </div>
+
                                     </div>
-
-                                    <div class="col-md-10 col-md-offset-1" style="padding-top:15px;">
-                                        <h4 >Description</h4>
-                                        <p th:text="${venue.description}">
-                                            Bacon ipsum dolor amet turkey filet mignon fatback cupim ground round tenderloin sirloin, prosciutto pork chop landjaeger doner. Spare ribs sausage hamburger, pastrami doner turkey pork belly bresaola leberkas ham. Sirloin venison kielbasa tri-tip alcatra ground round. Leberkas tongue tenderloin, bacon landjaeger flank cow corned beef drumstick ribeye turducken pork loin shankle filet mignon brisket. Sausage drumstick picanha swine jerky meatloaf corned beef. Bresaola capicola landjaeger andouille ball tip. Fatback filet mignon andouille kielbasa pork chop beef, prosciutto porchetta turkey biltong strip steak short loin meatball beef ribs boudin.
-                                        </p>
-                                    </div>
-
-
 
 
                                     <!--<div id="landing-wrapper">Lorem ipsum dolor ismet.</div>-->
 
                                     <br/>
 
-
-                                    <!--<div id="slideshow-wrap">-->
-                                        <!--<input type="radio" id="button-1" name="controls" checked="checked"/>-->
-                                        <!--<label for="button-1"></label>-->
-                                        <!--<input type="radio" id="button-2" name="controls"/>-->
-                                        <!--<label for="button-2"></label>-->
-                                        <!--<input type="radio" id="button-3" name="controls"/>-->
-                                        <!--<label for="button-3"></label>-->
-                                        <!--<input type="radio" id="button-4" name="controls"/>-->
-                                        <!--<label for="button-4"></label>-->
-                                        <!--<input type="radio" id="button-5" name="controls"/>-->
-                                        <!--<label for="button-5"></label>-->
-                                        <!--<label for="button-1" class="arrows" id="arrow-1">></label>-->
-                                        <!--<label for="button-2" class="arrows" id="arrow-2">></label>-->
-                                        <!--<label for="button-3" class="arrows" id="arrow-3">></label>-->
-                                        <!--<label for="button-4" class="arrows" id="arrow-4">></label>-->
-                                        <!--<label for="button-5" class="arrows" id="arrow-5">></label>-->
-                                        <!--<div id="slideshow-inner">-->
-                                            <!--<ul>-->
-                                                <!--<li id="slide1">-->
-                                                    <!--<img src="http://lorempixel.com/300/300" />-->
-                                                    <!--<div class="description">-->
-                                                        <!--<input type="checkbox" id="show-description-1"/>-->
-                                                        <!--<label for="show-description-1" class="show-description-label">I</label>-->
-                                                        <!--<div class="description-text">-->
-                                                            <!--<h2>Flower power</h2>-->
-                                                            <!--<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</p>-->
-                                                        <!--</div>-->
-                                                    <!--</div>-->
-                                                <!--</li>-->
-                                                <!--<li id="slide2">-->
-                                                    <!--<img src="http://lorempixel.com/300/300" />-->
-                                                    <!--<div class="description">-->
-                                                        <!--<input type="checkbox" id="show-description-2"/>-->
-                                                        <!--<label for="show-description-2" class="show-description-label">I</label>-->
-                                                        <!--<div class="description-text">-->
-                                                            <!--<h2>Golden sunset</h2>-->
-                                                            <!--<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</p>-->
-                                                        <!--</div>-->
-                                                    <!--</div>-->
-                                                <!--</li>-->
-                                                <!--<li id="slide3">-->
-                                                    <!--<img src="http://lorempixel.com/300/300" />-->
-                                                    <!--<div class="description">-->
-                                                        <!--<input type="checkbox" id="show-description-3"/>-->
-                                                        <!--<label for="show-description-3" class="show-description-label">I</label>-->
-                                                        <!--<div class="description-text">-->
-                                                            <!--<h2>Flower power again</h2>-->
-                                                            <!--<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</p>-->
-                                                        <!--</div>-->
-                                                    <!--</div>-->
-                                                <!--</li>-->
-                                                <!--<li id="slide4">-->
-                                                    <!--<img src="http://lorempixel.com/150/150" />-->
-                                                    <!--<div class="description">-->
-                                                        <!--<input type="checkbox" id="show-description-4"/>-->
-                                                        <!--<label for="show-description-4" class="show-description-label">I</label>-->
-                                                        <!--<div class="description-text">-->
-                                                            <!--<h2>Stormy coast</h2>-->
-                                                            <!--<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</p>-->
-                                                        <!--</div>-->
-                                                    <!--</div>-->
-                                                <!--</li>-->
-                                                <!--<li id="slide5">-->
-                                                    <!--<img src="http://lorempixel.com/300/300" />-->
-                                                    <!--<div class="description">-->
-                                                        <!--<input type="checkbox" id="show-description-5"/>-->
-                                                        <!--<label for="show-description-5" class="show-description-label">I</label>-->
-                                                        <!--<div class="description-text">-->
-                                                            <!--<h2>Splash!</h2>-->
-                                                            <!--<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</p>-->
-                                                        <!--</div>-->
-                                                    <!--</div>-->
-                                                <!--</li>-->
-                                            <!--</ul>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-
-
-
-
                                 </div>
                             </div>
                         </div>
                     </div>
 
+                    <br/>
+
+
 
                 </div>
 
-                <!--<div class="col-md-2 hidden-xs" style="border:none; padding-right: 0px; padding-left: 0px; background-color: rgb(248, 248, 249)">-->
 
-                    <!--<style type="text/css">-->
-                        <!--.panel-default {-->
-                        <!--border-left: 1px solid rgba(204, 204, 204, 0.57);-->
-                        <!--border-top: 1px solid rgba(204, 204, 204, 0.57);-->
-                        <!--border-bottom: 1px solid rgba(204, 204, 204, 0.57) ;-->
-                        <!--}-->
-                    <!--</style>-->
+            </div>
+            </div>
 
-                    <!--<div>-->
-                        <!--<div class="panel panel-default" style="background-color:#ffffff; border-right: 1px solid rgba(204, 204, 204, 0.57) ; border-radius: 0px; ">-->
 
-                            <!--<div class="panel-heading" style="background-color: #ffffff;">My account</div>-->
-                            <!--<div class="panel-body" style="border-radius: 0px">-->
-                                <!--<ul class="nav">-->
-                                    <!--<li>-->
-                                        <!--<a class="active" href="account_dashboard.html" th:href="@{/user}">Dashboard</a>-->
-                                    <!--</li>-->
-                                    <!--<li>-->
-                                        <!--<a class="active" href="account_profile.html" th:href="@{/profile}">My profile</a>-->
-                                    <!--</li>-->
-                                    <!--<li>-->
-                                        <!--<a class="active" href="account_ads.html" th:href="@{/user/list}">Manage venues</a>-->
-                                    <!--</li>-->
-                                    <!--<li>-->
-                                        <!--<a class="active" th:href="@{/user/add}">Register Venue</a>-->
-                                    <!--</li>-->
-                                <!--</ul>-->
 
+        <div class="row">
+
+            <div class="col-md-8 col-md-offset-2"
+                 style="border: 1px solid #F8F8F9;">
+                <div class="row"
+                     style="margin-left: 15px; margin-right: 15px; margin-top: 15px;">
+                    <div class="row" style="border:none;">
+
+                        <div class="panel panel-default" style="border:none;">
+
+                            <!--Venue Name-->
+                            <!--<div class="panel-heading" style="background-color:#fff; border:none;">-->
+                            <!--<h3 style="margin-top:0px;" th:text="${venue.name}">Thumbnail label</h3>-->
                             <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
+                            <div class="panel-body nopadding" style="border:none;">
 
-                <!--<div class="col-md-1">-->
-                <!--</div>-->
-            </div>
+                                <style type="text/css">
 
 
-            <div class="row">
+                                    /* The ribbons */
 
-                <!--<div class="col-md-1">-->
+                                    .corner-ribbon{
+                                    width: 250px;
+                                    position: absolute;
+                                    top: 25px;
+                                    left: -50px;
+                                    line-height: 30px;
+                                    letter-spacing: 1px;
+                                    color: #f0f0f0;
+                                    font-weight:bold;
+                                    border-radius:0.5em;
+                                    }
 
-                <!--</div>-->
+                                    /* Custom styles */
+
+                                    .corner-ribbon.sticky{
+                                    margin-top: 5px;
+                                    }
+
+                                    .corner-ribbon.shadow{
+                                    box-shadow: 0 0 3px rgba(0,0,0,.3);
+                                    }
 
 
-                <!--<div class="col-md-2">-->
-                <!--</div>-->
+                                    .corner-ribbon.bottom-left{
+                                    top: 340px;
+                                    right: inherit;
+                                    left: 20px;
+                                    }
+
+                                    .corner-ribbon.bottom-right{
+                                    top: 340px;
+                                    right: inherit;
+                                    left: 1000px;
+                                    }
 
 
-                <div class="col-md-10 col-md-offset-1" style="border-right: 1px solid rgba(204, 204, 204, 0.57); border-bottom: 1px solid rgba(204, 204, 204, 0.57); border-left: 1px solid rgba(204, 204, 204, 0.57); background-color: white; ">
-                    <div class="col-md-12 nopadding"
-                         style="padding-right:none; padding-left:none;">
+                                    /* Colors */
 
-                        <div class="col-md-10 col-md-offset-1" style="padding-top:15px;">
-                            <h4>Information</h4>
-                            <div style="margin-bottom: 10px;" class="col-md-6">
-                                <div class="info-section">
-                                    <i class="fa fa-phone" style="padding-right:5px;"></i> 0100000000000007
+
+                                    .corner-ribbon.bg{background:transparent;}
+
+                                    .stats > div > strong {
+                                    color:#777;}
+
+                                </style>
+
+
+                                <br/>
+
+                                <div class="col-md-12">
+                                    <div class="stats">
+
+                                        <div>
+                                            <strong>button</strong>
+                                        </div>
+
+                                        <div>
+                                            <strong>button</strong>
+                                        </div>
+
+                                        <div>
+                                            <strong>button</strong>
+                                        </div>
+
+                                        <div>
+                                            <strong>button</strong>
+                                        </div>
+
+                                        <div>
+                                            <strong>button</strong>
+                                        </div>
+
+                                    </div>
+
                                 </div>
-                                <div class="info-section">
-                                    <i class="fa fa-phone" style="padding-right:5px;"></i> 0100000000000007
-                                </div>
-                                <div class="info-section">
-                                    <i class="fa fa-envelope" style="padding-right:5px;"></i> <a href="mailto:abc@def.com">Contact us.</a>
-                                </div>
-                                <div class="info-section">
-                                    <i class="fa fa-map-marker" style="padding-right:5px;"></i> Berliner Allee 1, 10000 Berlin | View in Map
-                                </div>
+
+                                <br/>
 
                             </div>
-                            <div style="margin-bottom: 10px;" class="col-md-6">
-                                <div class="info-section">
-                                    <i class="fa fa-phone" style="padding-right:5px;"></i> 0100000000000007
-                                </div>
-                                <div class="info-section">
-                                    <i class="fa fa-phone" style="padding-right:5px;"></i> 0100000000000007
-                                </div>
-                                <div class="info-section">
-                                    <i class="fa fa-envelope" style="padding-right:5px;"></i> <a href="mailto:abc@def.com">Contact us.</a>
-                                </div>
-                            </div>
-
-                            <br/>
-
                         </div>
                     </div>
                 </div>
 
-                <!--<div class="col-md-2">-->
-                <!--</div>-->
+                <br/>
 
-                <!--<div class="col-md-1">-->
-                <!--</div>-->
-
-
-
-
-
-             </div>
 
 
             </div>
-
-
-
-
 
 
         </div>
@@ -345,6 +334,7 @@
 
 
 
+        </div>
 
 
     <br/>
