@@ -5,10 +5,11 @@
 <body>
 
     <div th:fragment="footer" class="row footer">
-        <div class="col-md-3"></div>
-        <div class="col-md-6" style="margin-top:10px;">
+        <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1 col-xs-12 col-sm-12" style="margin-top:10px;">
             <div>
-                <p style="max-width: 728px; text-align: center; margin: 21px auto; color: #999; line-height: normal; font-size: 12px;">instant lets you search stuff and do other stuff. There are 5,382 stuff open in City Name. Search stuff in City Name with instant. Be social. Have fun.</p>
+                <p style="max-width: 728px; text-align: center; margin: 21px auto; color: #999; line-height: normal; font-size: 12px;" th:utext="#{footer.appDescriptor}">
+                    <span style="font-family: 'Pacifico', cursive; font-weight: 400;" th:text="#{general.appName}">instant</span> lets you search your favorite restaurants, pubs and bars, and helps to better keep in touch with friends. Explore hundreds of venues and parties in <span th:text="#{general.countryName}">Albania</span>, all through the <span style="font-family: 'Pacifico', cursive; font-weight: 400;" th:text="#{general.appName}">instant</span> app.
+                </p>
             </div>
 
             <div>
@@ -16,38 +17,41 @@
             </div>
 
             <nav style="margin-bottom: 14px; margin: 0; padding: 0; border: 0; font: inherit; font-size: 100%; vertical-align: baseline;">
-                <ul class="flex-grid notranslate" style="padding: 0; vertical-align: baseline; list-style: none; width: 100%; max-width: 1024px; margin: 0 auto;">
-
-                    <li style="margin: 21px 0; display: block;" class="span-1-3 col">
+                <ul class="flex-grid noFold" style="padding: 0; vertical-align: baseline; list-style: none; width: 100%; max-width: 1024px; margin: 0 auto;">
+                    <li style="margin: 21px 0; display: block;" class="span-1-2 col">
                         <ul class="flex-grid noFold">
-                            <li class="span-1-2 col"><p>Glassdoor</p>
+                            <li class="span-1-2 col"><p>Company</p>
                                 <ul>
-                                    <li><a href="/about/index_input.htm" target="_top" rel="nofollow"> About Us </a>
+                                    <li>
+                                        <a href="/about/index_input.htm" target="_top" rel="nofollow"> About </a>
                                     </li>
-                                    <li class="SL_norewrite"><a href="http://jobs.glassdoor.com/home?id=GLASA001M"
-                                                                target="_top" rel="nofollow"> Careers</a></li>
-                                    <li class="SL_norewrite"><a href="https://www.glassdoor.co.uk/blog" target="_top">
-                                        Blog</a></li>
+                                    <li class="SL_norewrite">
+                                        <a href="http://jobs.glassdoor.com/home?id=GLASA001M" target="_top" rel="nofollow"> Blog </a>
+                                    </li>
+                                    <!--<li class="SL_norewrite">-->
+                                        <!--<a href="https://www.glassdoor.co.uk/blog" target="_top">Blog</a>-->
+                                    <!--</li>-->
                                 </ul>
                             </li>
-                            <li class="span-1-2 col"><p>Employers</p>
+                            <li class="span-1-2 col"><p>Owners</p>
                                 <ul>
                                     <li><a href="http://employers.glassdoor.co.uk?src=gdfoot" target="_top"
-                                           rel="nofollow"> Talent Solutions</a></li>
-                                    <li><a href="/partners/index.htm" target="_top" rel="nofollow"> Employer Centre</a>
+                                           rel="nofollow"> Register Venue</a></li>
+                                    <li><a href="/partners/index.htm" target="_top" rel="nofollow"> Owner Assistance</a>
                                     </li>
-                                    <li><a href="/post-job?src=site-footer" target="_top" rel="nofollow"> Post a Job</a>
+                                    <li><a href="/partners/index.htm" target="_top" rel="nofollow"> Advertisement</a>
                                     </li>
+                                    <!--<li><a href="/post-job?src=site-footer" target="_top" rel="nofollow"> Post a Job</a>-->
+                                    <!--</li>-->
                                 </ul>
                             </li>
                         </ul>
                     </li>
-                    <li style="margin: 21px 0; display: block;" class="span-1-3 col">
+                    <li style="margin: 21px 0; display: block;" class="span-1-2 col">
                         <ul class="flex-grid noFold">
                             <li class="span-1-2 col"><p>Community</p>
                                 <ul>
-                                    <li><a href="http://help.glassdoor.com/GlassDoorHome/en_US" target="_blank"> Help
-                                        Centre</a></li>
+                                    <li><a href="http://help.glassdoor.com/GlassDoorHome/en_US" target="_blank"> Help and Support</a></li>
                                     <li><a href="http://help.glassdoor.com/article/Community-Guidelines/en_US"
                                            target="_blank"> Guidelines</a></li>
                                     <li><a href="/about/terms.htm" target="_top" rel="nofollow"> Terms of Use</a></li>
@@ -55,32 +59,30 @@
                                         Cookies</a></li>
                                 </ul>
                             </li>
-                            <li class="span-1-2 col"><p>Work With Us</p>
+                            <li class="span-1-2 col"><p>Developers</p>
                                 <ul>
-                                    <li><a href="/partners/jobs/dailyReport.htm" target="_top" rel="nofollow">Job
-                                        Boards</a></li>
+                                    <li><a href="/partners/jobs/dailyReport.htm" target="_top" rel="nofollow">Code Bits</a></li>
                                     <li><a href="http://resources.glassdoor.com/advertising-on-glassdoor.html"
-                                           target="_blank" rel="nofollow"> Advertisers</a></li>
-                                    <li><a href="/developer/index.htm" target="_top" rel="nofollow"> Developers</a></li>
+                                           target="_blank" rel="nofollow"> Tech Blog</a></li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
-                    <li style="vertical-align: middle; margin-bottom: 0; margin: 21px 0; display: block;" class="span-1-3 col tldSelector">
-                        <div class="ib noFold last fillMob">
-                            <div class="appStoreCTA notranslate noWrap">
-                                <a class="app-store ios " style="border-right-width: 0; vertical-align: baseline; text-decoration: none;" href="https://itunes.apple.com/us/app/glassdoor-job-search-salaries/id589698942?mt=8&amp;uo=4" target="_blank">
-                                    <i class="lazy" data-original="https://static.glassdoor.co.uk/static/img/sprites/app-stores-en.png?v=610ed48n4" style="position: relative; background-image: url(&quot;https://static.glassdoor.co.uk/static/img/sprites/app-stores-en.png?v=610ed48n4&quot;);">
-                                        <span>Available on the App Store</span>
-                                    </i>
-                                </a> <a class="app-store android "
-                                        href="https://play.google.com/store/apps/details?id=com.glassdoor.app"
-                                        target="_blank"> <i class="lazy"
-                                                            data-original="https://static.glassdoor.co.uk/static/img/sprites/app-stores-en.png?v=610ed48n4"
-                                                            style="position: relative; background-image: url(&quot;https://static.glassdoor.co.uk/static/img/sprites/app-stores-en.png?v=610ed48n4&quot;);"><span>Android App available on Google Play</span></i>
-                            </a></div>
-                        </div>
-                    </li>
+                    <!--<li style="vertical-align: middle; margin-bottom: 0; margin: 21px 0; display: block;" class="span-1-3 col tldSelector">-->
+                        <!--<div class="ib noFold last fillMob">-->
+                            <!--<div class="appStoreCTA notranslate noWrap">-->
+                                <!--<a class="app-store ios " style="border-right-width: 0; vertical-align: baseline; text-decoration: none;" href="https://itunes.apple.com/us/app/glassdoor-job-search-salaries/id589698942?mt=8&amp;uo=4" target="_blank">-->
+                                    <!--<i class="lazy" data-original="https://static.glassdoor.co.uk/static/img/sprites/app-stores-en.png?v=610ed48n4" style="position: relative; background-image: url(&quot;https://static.glassdoor.co.uk/static/img/sprites/app-stores-en.png?v=610ed48n4&quot;);">-->
+                                        <!--<span>Available on the App Store</span>-->
+                                    <!--</i>-->
+                                <!--</a> <a class="app-store android "-->
+                                        <!--href="https://play.google.com/store/apps/details?id=com.glassdoor.app"-->
+                                        <!--target="_blank"> <i class="lazy"-->
+                                                            <!--data-original="https://static.glassdoor.co.uk/static/img/sprites/app-stores-en.png?v=610ed48n4"-->
+                                                            <!--style="position: relative; background-image: url(&quot;https://static.glassdoor.co.uk/static/img/sprites/app-stores-en.png?v=610ed48n4&quot;);"><span>Android App available on Google Play</span></i>-->
+                            <!--</a></div>-->
+                        <!--</div>-->
+                    <!--</li>-->
                 </ul>
             </nav>
 
@@ -89,33 +91,58 @@
             </div>
 
 
-            <div class="browseLinks" style="width: 100%; margin: 21px auto; text-align: left; margin-bottom: 10px; line-height: 1em; font-size: 14px;
-        color: #666; border-width: 0; padding: 0; border: 0;">
-                <ul class="linkList" style="display: block; margin: 0; padding: 0; list-style: none; text-align: center;
-                    vertical-align: baseline; font-size: 100%; font: inherit; border: 0; color: #666;">
-                    <li class="newLine" style="display: inline-block; margin: 0; padding: 0;white-space: nowrap;
-                        line-height: 1em; border: 0;font: inherit; font-size: 100%; vertical-align: baseline;">
-                        <a href="/site-directory/job-salaries.htm" target="_top" data-ajax="false"
-                           class="minor">Salaries by Job</a>
+            <div class="browseLinks" style="width: 100%; margin: 21px auto; text-align: left; margin-bottom: 10px; line-height: 1em; font-size: 14px; color: #666; border-width: 0; padding: 0; border: 0;">
+                <ul class="linkList" style="display: block; margin: 0; padding: 0; list-style: none; text-align: center; vertical-align: baseline; font-size: 100%; font: inherit; border: 0; color: #666;">
+                    <li class="newLine" style="display: inline-block; margin: 0; padding: 0;white-space: nowrap; line-height: 1em; border: 0;font: inherit; font-size: 100%; vertical-align: baseline;">
+                        <a href="/site-directory/job-salaries.htm" target="_top" data-ajax="false" class="minor">
+                            Best Reviewed Restaurants in <span th:text="#{general.countryName}">Albania</span>
+                        </a>
                     </li>
-                    <li><a href="/site-directory/company-salaries.htm" target="_top" data-ajax="false" class="minor">Salaries
-                        by Company</a></li>
-                    <li class="endLine"><a href="/site-directory/city-salaries.htm" target="_top" data-ajax="false"
-                                           class="minor">Salaries by City</a></li>
-                    <li class="newLine"><a href="/site-directory/company-reviews.htm" target="_top" data-ajax="false"
-                                           class="minor">Reviews by Company</a></li>
-                    <li class="endLine"><a href="/site-directory/job-interviews.htm" target="_top" data-ajax="false"
-                                           class="minor">Interview Questions by Job</a></li>
-                    <li class="newLine endLine"><a href="/site-directory/company-interviews.htm" target="_top"
-                                                   data-ajax="false" class="minor">Interviews by Company</a></li>
-                    <li class="endLine"><a href="/site-directory/company-benefits.htm" target="_top" data-ajax="false"
-                                           class="minor">Benefits by Company</a></li>
-                    <li class="newLine"><a href="/site-directory/title-jobs.htm" target="_top" data-ajax="false"
-                                           class="minor">Jobs by Title</a></li>
-                    <li><a href="/site-directory/company-jobs.htm" target="_top" data-ajax="false" class="minor">Jobs by
-                        Company</a></li>
-                    <li class="endLine"><a href="/site-directory/city-jobs.htm" target="_top" data-ajax="false"
-                                           class="minor">Jobs by City</a></li>
+                    <li>
+                        <a href="/site-directory/company-salaries.htm" target="_top" data-ajax="false" class="minor">
+                            Newest Restaurants in <span th:text="#{general.countryName}">Albania</span>
+                        </a>
+                    </li>
+                    <li class="endLine">
+                        <a href="/site-directory/city-salaries.htm" target="_top" data-ajax="false" class="minor">
+                            Best Reviewed Night Clubs in <span th:text="#{general.countryName}">Albania</span>
+                        </a>
+                    </li>
+                    <li class="newLine">
+                        <a href="/site-directory/company-reviews.htm" target="_top" data-ajax="false" class="minor">
+                            Best Beach Restaurants in <span th:text="#{general.countryName}">Albania</span>
+                        </a>
+                    </li>
+                    <li class="endLine">
+                        <a href="/site-directory/job-interviews.htm" target="_top" data-ajax="false" class="minor">
+                            Best Summer Parties in <span th:text="#{general.countryName}">Albania</span>
+                        </a>
+                    </li>
+                    <li class="newLine endLine">
+                        <a href="/site-directory/company-interviews.htm" target="_top" data-ajax="false" class="minor">
+                            Most Popular Restaurants in <span th:text="#{general.countryName}">Albania</span>
+                        </a>
+                    </li>
+                    <li class="endLine">
+                        <a href="/site-directory/company-benefits.htm" target="_top" data-ajax="false" class="minor">
+                            Most Popular Night Clubs in <span th:text="#{general.countryName}">Albania</span>
+                        </a>
+                    </li>
+                    <li class="newLine">
+                        <a href="/site-directory/title-jobs.htm" target="_top" data-ajax="false" class="minor">
+                            Most Popular Bars in <span th:text="#{general.countryName}">Albania</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/site-directory/company-jobs.htm" target="_top" data-ajax="false" class="minor">
+                            Cheapest Restaurants in <span th:text="#{general.countryName}">Albania</span>
+                        </a>
+                    </li>
+                    <li class="endLine">
+                        <a href="/site-directory/city-jobs.htm" target="_top" data-ajax="false" class="minor">
+                            Special Events in <span th:text="#{general.countryName}">Albania</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
 
@@ -124,22 +151,10 @@
             </div>
 
             <div>
-                <p style="max-width: 728px; text-align: center; margin: 21px auto; color: #999; line-height: normal; font-size: 12px;">Copyright © xxxx–2016, instant. instant ® is a registered trademark of Instant Shpk.</p>
+                <p style="max-width: 728px; text-align: center; margin: 21px auto; color: #999; line-height: normal; font-size: 12px;">Copyright © 2016, <span style="font-family: 'Pacifico', cursive; font-weight: 400;" th:text="#{general.appName}">instant</span>. Built with love by the <span style="font-family: 'Pacifico', cursive; font-weight: 400;" th:text="#{general.appName}">instant</span> team</p>
             </div>
 
         </div>
-        <div class="col-md-3"></div>
-
-        <!--<form action="/connect/facebook" method="POST">-->
-            <!--<input type="hidden" name="scope" value="user_posts" />-->
-            <!--<div class="formInfo">-->
-                <!--<p>You aren't connected to Facebook yet. Click the button to connect this application with your Facebook account.</p>-->
-            <!--</div>-->
-            <!--<p><button type="submit">Connect to Facebook</button></p>-->
-        <!--</form>-->
-
-
-
     </div>
 
 </body>
