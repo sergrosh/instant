@@ -1,5 +1,9 @@
 package com.instant.persistence.model;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -8,53 +12,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
  */
 
 @Document
+@ToString(exclude="id")
+@EqualsAndHashCode(exclude="id")
 public class UploadedFile {
-
     @Id
-    private Long id;
-    private String name;
-    private String location;
-    private Long size;
-    private String type;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public Long getSize() {
-        return size;
-    }
-
-    public void setSize(Long size) {
-        this.size = size;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
+    @Getter @Setter private Long id;
+    @Getter @Setter private String name;
+    @Getter @Setter private String location;
+    @Getter @Setter private Long size;
+    @Getter @Setter private String type;
 }
