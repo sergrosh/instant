@@ -133,7 +133,7 @@
                      style="border-left: 1px solid rgba(204, 204, 204, 0.57); border-top: 1px solid rgba(204, 204, 204, 0.57); border-bottom: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-right: 0px; padding-left: 0px;">
 
                     <div class="row" style="padding:5px 10px 0px 10px; margin-right:0px; margin-left:0px;">
-                        <p style="margin: 0 0 5px; font-size: 1.5em; color:#777777;">Filter: <em style="font-size: 0.8em; color: #999999;" id="resultsCountString">0 results</em></p>
+                        <p style="margin: 0 0 5px; font-size: 1.5em; color:#777777;"><em style="font-size: 0.8em; color: #999999;" id="resultsCountString">0 results</em></p>
                     </div>
 
 
@@ -366,6 +366,47 @@
                      style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:5px; padding-right:5px; padding-bottom: 15px;">
 
                     <div th:replace="fragments/itemlist_product_list :: itemlist_product_list"></div>
+                    <div th:if="${venues.isEmpty()}" class="col-sm-12" style="padding-top: 15px;">
+
+                        <style>
+
+                            .alert {
+                            padding: 15px;
+                            margin-bottom: 18px;
+                            border: 1px solid transparent;
+                            border-radius: 0px;
+                            }
+
+                            .alert-info {
+                            background-color: #d9edf7;
+                            border-color: #bce8f1;
+                            color: #000000;
+                            }
+
+                            .alert {
+                            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+                            -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 2px rgba(0, 0, 0, 0.05);
+                            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 2px rgba(0, 0, 0, 0.05);
+                            }
+
+                            .alert-info {
+                            background-image: -webkit-linear-gradient(top, #d9edf7 0%, #b9def0 100%);
+                            background-image: linear-gradient(to bottom, #d9edf7 0%, #b9def0 100%);
+                            background-repeat: repeat-x;
+                            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9edf7', endColorstr='#ffb9def0', GradientType=0);
+                            border-color: #9acfea;
+                            background: #d9edf7;
+                            }
+
+
+                        </style>
+
+                        <div class="alert alert-info">
+                            <h3 style="margin: 0; font-size: 16px; line-height: 20px;">No results found :(</h3>
+                            <p><br>It seems we dont have any venues matching your search. Please try to refine your search or broaden your filters.</p>
+                        </div>
+
+                    </div>
 
                 </div>
 
