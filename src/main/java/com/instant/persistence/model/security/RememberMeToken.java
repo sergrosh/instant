@@ -15,7 +15,6 @@ import java.util.Date;
 public class RememberMeToken extends BaseEntity {
     @Indexed
     private String username;
-
     @Indexed
     private String series;
 

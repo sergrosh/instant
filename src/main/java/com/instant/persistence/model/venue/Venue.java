@@ -1,13 +1,9 @@
 package com.instant.persistence.model.venue;
 
 
+import com.instant.persistence.model.BaseModel;
 import com.instant.persistence.model.Product;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-import org.apache.commons.lang.StringUtils;
-import org.springframework.data.annotation.Id;
+import lombok.Data;
 import org.springframework.data.mongodb.core.index.TextIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -17,34 +13,31 @@ import java.util.List;
  * @author sroshchupkin
  */
 
+@Data
 @Document
-@ToString(exclude="id")
-@EqualsAndHashCode(exclude="id")
-public class Venue {
-
-    @Id
-    @Getter @Setter private String id;
+public class Venue extends BaseModel{
+    
     @TextIndexed(weight = 3)
-    @Getter @Setter private String name;
-    @Getter @Setter private String country;
-    @Getter @Setter private String city;
-    @Getter @Setter private String category;
-    @Getter @Setter private String company;
-    @Getter @Setter private String email;
-    @Getter @Setter private String phonePrimary;
-    @Getter @Setter private String phoneSecondary;
-    @Getter @Setter private String mobilePrimary;
-    @Getter @Setter private String mobileSecondary;
-    @Getter @Setter private String facebookPage;
-    @Getter @Setter private String website;
-    @Getter @Setter private String address;
-    @Getter @Setter private String imagePath;
-    @Getter @Setter private String description;
-    @Getter @Setter private List<String> speciality;
-    @Getter @Setter private List<Product> menu;
-    @Getter @Setter private List<String> gallery;
-    @Getter @Setter private double rating;
-    @Getter @Setter private int reviews;
-    @Getter @Setter private int likes;
-    @Getter @Setter private String specialities;
+    private String name;
+    private String country;
+    private String city;
+    private String category;
+    private String company;
+    private String email;
+    private String phonePrimary;
+    private String phoneSecondary;
+    private String mobilePrimary;
+    private String mobileSecondary;
+    private String facebookPage;
+    private String website;
+    private String address;
+    private String imagePath;
+    private String description;
+    private List<String> speciality;
+    private List<Product> menu;
+    private List<String> gallery;
+    private double rating;
+    private int reviews;
+    private int likes;
+    private String specialities;
 }
