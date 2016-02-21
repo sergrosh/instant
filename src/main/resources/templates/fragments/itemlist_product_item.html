@@ -75,7 +75,7 @@
                                         <a style="text-decoration: none;" th:href="@{/item(id=${venue.id})}"><p><strong style="color: #444; font-size: 23px; font-height:16px;line-height:1;font-style:normal;" th:text="${venue.name}">Demo</strong><sup style="font-style:bold; color: #999999;" th:text="| by ${venue.company}|"> demo</sup></p></a>
                                         <p style="color:#999999;margin-top:-10px;" th:text="|${venue.category}; ${venue.specialities}|">Category; speciality, speciality, speciality</p>
                                         <p style="color:#999999; font-size: 0.9em;" th:text="${venue.description}" class="venue_description">Some description</p>
-                                        <p style="margin-bottom: 0px; color:#777777;"><i class="fa fa-map-marker"></i> <span th:text="${venue.address}">Friendrichstr, near the stadium, Berlin, Germany</span> | <span>Map</span></p>
+                                        <p style="margin-bottom: 0px; color:#777777;"><i class="fa fa-map-marker"></i> <span th:text="${venue.address}">Friendrichstr, near the stadium, Berlin, Germany</span>  <a href="#"><span style="color:#648EB7">View in Map</span></a></p>
                                         <!--<p style="color:#777777;margin-top:-10px;"><i class="fa fa-phone"></i> <span th:text="${venue.phonePrimary} + ' | ' + ${venue.phoneSecondary}">+0522 25965 | +0522 36507</span></p>-->
                                         <!--<p style="color:#777777;margin-top:-10px;"><i class="fa fa-envelope"></i> <span th:text="${venue.email}">restaurant-abs@hotmail.com</span></p>-->
                                     </div>
@@ -97,13 +97,13 @@
                                         </div>
                                         <div>
                                             <label style="font-size: 1.0em; margin-bottom: 15px; color:#ADCC74;">Good</label>
-                                            <!--<label style="font-size: 1.0em; margin-bottom: 15px; color:#CC7474;">Bad</label>-->
+                                            <label style="font-size: 1.0em; margin-bottom: 15px; color:#CC7474;">Bad</label>
                                         </div>
                                         <div>
                                             <p >
-                                                <strong style="font-size: 15px; font-height:16px;line-height:1;font-style:normal; color: #fff; background-color: #777; padding: .2em .2em .3em; border-radius: .25em;     border-top-right-radius: 0em;      border-bottom-right-radius: 0em;">
-                                                    <i class="fa fa-clock-o" style="color: #ADCC74;"></i> open </strong>
-                                                <strong style="font-size: 15px; font-height:16px;line-height:1;font-style:normal; padding: 10px 15px 10px 15px; background-color: #B0CE79; padding: .2em .6em .3em; border-radius: .25em;     border-bottom-left-radius: 0em;     border-top-left-radius: 0em;">
+                                                <!--<strong style="font-size: 15px; font-height:16px;line-height:1;font-style:normal; color: #fff; background-color: #777; padding: .2em .2em .3em; border-radius: .25em;     border-top-right-radius: 0em;      border-bottom-right-radius: 0em;">-->
+                                                    <!--<i class="fa fa-clock-o" style="color: #ADCC74;"></i> open </strong>-->
+                                                <strong style="font-size: 15px; font-height:16px;line-height:1;font-style:normal; padding: 10px 15px 10px 15px; background-color: #B0CE79; background-color:#648EB7;   padding: .2em .6em .3em; border-radius: .25em;">
                                                     <a style="color: #fff;" th:href="@{/item(id=${venue.id})}"><i class="fa fa-paper-plane-o"></i> Explore</a>
                                                 </strong>
                                             </p>
