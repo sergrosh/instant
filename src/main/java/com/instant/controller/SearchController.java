@@ -23,10 +23,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
+
 /**
+ *
+ *  Search controller - Venue search, venue and city suggestion
+ *
  * @author sroshchupkin
  */
-
 @Controller
 public class SearchController {
 
@@ -45,6 +48,18 @@ public class SearchController {
     @Autowired
     MongoOperations mongoOperations;
 
+    /**
+     *
+     * @param query -
+     * @param category
+     * @param view
+     * @param pageNum
+     * @param city
+     * @param reviews
+     * @param speciality
+     * @param sortingType
+     * @return
+     */
     @RequestMapping(Mappings.CLIENTS)
     public ModelAndView search(@RequestParam("query") String query,
                                @RequestParam(value = "category", required = false, defaultValue = "") String category,
