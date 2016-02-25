@@ -86,6 +86,15 @@ public class VenueController {
                 case "map":
                     modelAndView.addObject("view", "item_map_view");
                     break;
+                case "menu":
+                    modelAndView.addObject("view", "item_menu_view");
+                    break;
+                case "contact":
+                    modelAndView.addObject("view", "item_contact_view");
+                    break;
+                case "reviews":
+                    modelAndView.addObject("view", "item_reviews_view");
+                    break;
                 default:
                     modelAndView.addObject("view", "item_main_view");
                     break;
