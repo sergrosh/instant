@@ -104,7 +104,9 @@
                                                 <!--<strong style="font-size: 15px; font-height:16px;line-height:1;font-style:normal; color: #fff; background-color: #777; padding: .2em .2em .3em; border-radius: .25em;     border-top-right-radius: 0em;      border-bottom-right-radius: 0em;">-->
                                                     <!--<i class="fa fa-clock-o" style="color: #ADCC74;"></i> open </strong>-->
                                                 <strong style="font-size: 15px; font-height:16px;line-height:1;font-style:normal; padding: 10px 15px 10px 15px; background-color: #B0CE79; background-color:#648EB7;   padding: .2em .6em .3em; border-radius: .25em;">
-                                                    <a style="color: #fff;" th:href="@{/item(id=${venue.id})}"><i class="fa fa-paper-plane-o"></i> Explore</a>
+                                                    <!-- TODO Refactoring or Not refactoring the callign way of item-->
+                                                    <!--th:href="@{/item(id=${venue.id})}"-->
+                                                    <a style="color: #fff;" th:href="@{/item/{id}(id=${venue.id})}"><i class="fa fa-paper-plane-o"></i> Explore</a>
                                                 </strong>
                                             </p>
                                         </div>

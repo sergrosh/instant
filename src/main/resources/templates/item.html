@@ -28,6 +28,7 @@
 
 <div class="container-fluid" style="padding-top: 65px;">
     <div class="row">
+
         <div class="col-md-12">
             <div th:replace="fragments/header :: header"></div>
 
@@ -193,23 +194,33 @@
                                         <div class="stats" style="color:#648EB7;">
 
                                             <div>
+                                                <a style="    cursor: pointer;" th:href="@{/item/{id}(id=${venue.id})}">
                                                 <strong><i class="fa fa-arrow-left"></i> Back</strong>
+                                                </a>
                                             </div>
 
                                             <div>
-                                                <strong>Menu</strong>
+                                                <a style="    cursor: pointer; " th:href="@{/item/{id}/menu(id=${venue.id})}">
+                                                    <strong>Menu</strong>
+                                                </a>
                                             </div>
 
                                             <div>
+                                                <a style="    cursor: pointer;" th:href="@{/item/{id}/map(id=${venue.id})}">
                                                 <strong>Map</strong>
+                                                </a>
                                             </div>
 
                                             <div>
+                                                <a style="    cursor: pointer;" th:href="@{/item/{id}/review(id=${venue.id})}">
                                                 <strong>Reviews</strong>
+                                                </a>
                                             </div>
 
                                             <div>
+                                                <a style="    cursor: pointer;" th:href="@{/item/{id}/contact(id=${venue.id})}">
                                                 <strong>Contact</strong>
+                                                </a>
                                             </div>
 
                                         </div>
@@ -236,258 +247,11 @@
             </div>
             </div>
 
+        <div class="row" th:replace="@{'fragments/' + ${view}} :: ${view}"> </div>
 
-
-        <div class="row">
-
-            <div class="col-md-8 col-md-offset-2"
-                 style="border: 1px solid #F8F8F9;">
-                <div class="row"
-                     style="margin-left: 15px; margin-right: 15px; margin-top: 15px;">
-                    <div class="row" style="border:none;">
-
-                        <div class="panel panel-default" style="border:none;background:#F8F8F9;-webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, .05); box-shadow: 0 0 0 rgba(0, 0, 0, .05);">
-
-                            <!--Venue Name-->
-                            <!--<div class="panel-heading" style="background-color:#fff; border:none;">-->
-                            <!--<h3 style="margin-top:0px;" th:text="${venue.name}">Thumbnail label</h3>-->
-                            <!--</div>-->
-                            <div class="panel-body nopadding" style="border:none;">
-
-                                <style type="text/css">
-
-
-                                    /* The ribbons */
-
-                                    .corner-ribbon{
-                                    width: 250px;
-                                    position: absolute;
-                                    top: 25px;
-                                    left: -50px;
-                                    line-height: 30px;
-                                    letter-spacing: 1px;
-                                    color: #f0f0f0;
-                                    font-weight:bold;
-                                    border-radius:0.5em;
-                                    }
-
-                                    /* Custom styles */
-
-                                    .corner-ribbon.sticky{
-                                    margin-top: 5px;
-                                    }
-
-                                    .corner-ribbon.shadow{
-                                    box-shadow: 0 0 3px rgba(0,0,0,.3);
-                                    }
-
-
-                                    .corner-ribbon.bottom-left{
-                                    top: 340px;
-                                    right: inherit;
-                                    left: 20px;
-                                    }
-
-                                    .corner-ribbon.bottom-right{
-                                    top: 340px;
-                                    right: inherit;
-                                    left: 1000px;
-                                    }
-
-
-                                    /* Colors */
-
-
-                                    .corner-ribbon.bg{background:transparent;}
-
-                                    .stats > div > strong {
-                                    color:#777;}
-
-                                    span.block-title{
-                                        font-style: normal;font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 26px; line-height: 2em;
-                                    font-family: 'Open Sans', sans-serif;
-                                    }
-
-                                </style>
-
-
-                                <div class="col-md-12" style="">
-                                    <div class="col-md-8" style="background:#F8F8F9;">
-                                        <div style="height:inherit; border-radius: 5px;margin-left:0px;margin-right:10px;background:white;box-shadow:0px 1px 1px 0px rgba(112, 115, 117, 0.28); padding: 10px;">
-                                            <div style="padding-left: 10px; padding-right: 10px; color: #777;">
-                                                <span class="block-title"><i class="material-icons" style="font-size: 19px;">info_outline</i> General </span>
-                                            </div>
-                                            <div>
-                                                <h5 style="padding-left: 10px; padding-right: 10px;">Description</h5>
-                                                <p style="font-family: 'Open Sans',Arial,sans-serif; color: #8a8a8a;     line-height: 140%; font-size: 14px;     padding-left: 10px; padding-right: 10px;">
-                                                    Lorem ipsum dolor sit amet, ei suas mollis ponderum his, cu debet facilis appareat pri, populo appetere similique qui in. Oporteat pertinacia cu usu, ad expetenda dissentiet his. Habeo nonumes qui ea, dolorum vulputate dissentias te vel. Doming inimicus scribentur per in, per facer intellegat ea.
-                                                    Mucius prompta molestie usu ei, no legere commodo usu. No qui iuvaret propriae posidonium, eu vix porro quodsi civibus. Iracundia conceptam his ad. Est in legere legimus facilisi. Est veniam dolorem reformidans ea, eos postea petentium et. Nam graeco aeterno id, et discere necessitatibus mei. Qui quas facete inciderint ea, ex meis detracto pri.
-                                                    </p>
-                                                <!--<div style="padding-left: 10px; padding-right: 10px; border-radius: 5px;">-->
-                                                    <!--<img src="http://lorempixel.com/128/128/"/> <img src="http://lorempixel.com/128/128/"/> <img src="http://lorempixel.com/128/128/"/>-->
-                                                <!--</div>-->
-                                            </div>
-                                            <div style="padding-top: 5px;">
-                                                <h5 style="padding-left: 10px; padding-right: 10px;">Gallery</h5>
-                                                <div style="line-height: 140%; font-size: 14px; padding-left: 10px; padding-right:10px; margin-bottom:10px;">
-                                                    <div style="float:left;     margin: 5px;">
-                                                        <img src="http://lorempixel.com/128/128/" style="border-radius: 5px;"/>
-                                                    </div>
-                                                    <div style="float:left;     margin: 5px;">
-                                                        <img src="http://lorempixel.com/128/128/" style="border-radius: 5px;"/>
-                                                    </div>
-                                                    <div style=" float:left;    margin: 5px;">
-                                                        <img src="http://lorempixel.com/128/128/" style="border-radius: 5px;"/>
-                                                    </div>
-                                                    <div style=" float:left;    margin: 5px;">
-                                                        <img src="http://lorempixel.com/128/128/" style="border-radius: 5px;"/>
-                                                    </div>
-                                                    <!--<div style=" float:left;    margin: 5px;">-->
-                                                        <!--<img src="http://lorempixel.com/128/128/" style="border-radius: 5px;"/>-->
-                                                    <!--</div>-->
-                                                </div>
-                                                <!--<p style="font-family: 'Open Sans',Arial,sans-serif; color: #8a8a8a;     line-height: 140%; font-size: 14px;     padding-left: 10px; padding-right: 10px;">-->
-
-                                                <!--</p>-->
-                                                <!--<div style="padding-left: 10px; padding-right: 10px; border-radius: 5px;">-->
-                                                <!--<img src="http://lorempixel.com/128/128/"/> <img src="http://lorempixel.com/128/128/"/> <img src="http://lorempixel.com/128/128/"/>-->
-                                                <!--</div>-->
-                                            </div>
-                                            <div style="padding-top: 17px;     clear: both;">
-                                                <h5 style="padding-left: 10px; padding-right: 10px;">Latest Reviews</h5>
-                                                <div style="padding-top: 5px; font-family: 'Open Sans',Arial,sans-serif; color: #8a8a8a;     line-height: 140%; font-size: 14px;     padding-left: 10px; padding-right: 10px; margin:5px;">
-                                                    <img src="http://lorempixel.com/35/35" style="border-radius: 18px;" /> Teodor Rupi  <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
-                                                    <p style="margin-left:40px;">Lorem ipsum dolor sit amet, ei suas mollis ponderum his, cu debet facilis appareat pri, populo appetere similique qui in. Oporteat pertinacia cu usu, </p>
-                                                </div>
-                                                <div style="padding-top: 5px; font-family: 'Open Sans',Arial,sans-serif; color: #8a8a8a;     line-height: 140%; font-size: 14px;     padding-left: 10px; padding-right: 10px; margin:5px;">
-                                                    <img src="http://lorempixel.com/35/35" style="border-radius: 18px;"/> Teodor Rupi  <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
-                                                    <p style="margin-left:40px;">Lorem ipsum dolor sit amet, ei suas mollis ponderum his, cu debet facilis appareat pri, populo appetere similique qui in. Oporteat pertinacia cu usu, </p>
-                                                </div>
-                                                <div style="padding-top: 5px; font-family: 'Open Sans',Arial,sans-serif; color: #8a8a8a;     line-height: 140%; font-size: 14px;     padding-left: 10px; padding-right: 10px; margin:5px;">
-                                                    <img src="http://lorempixel.com/35/35" style="border-radius: 18px;" /> Teodor Rupi  <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
-                                                    <p style="margin-left:40px;">Lorem ipsum dolor sit amet, ei suas mollis ponderum his, cu debet facilis appareat pri, populo appetere similique qui in. Oporteat pertinacia cu usu, </p>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                   </div>
-                                    <div class="col-md-4" style="background:#F8F8F9; z-index: 1;">
-                                        <div style="border-radius: 5px;margin-left:10px;background:white;margin-right:0px;box-shadow:0px 1px 1px 0px rgba(112, 115, 117, 0.28); padding: 10px;">
-                                            <div style="padding-left: 10px; padding-right: 10px; color: #777;">
-                                                <span class="block-title"><i class="material-icons" style="font-size: 19px;">access_time</i> Essentials </span>
-                                            </div>
-                                            <div>
-                                                <h5 style="padding-left: 10px; padding-right: 10px;">Opening Times <sup>OPEN</sup></h5>
-                                                <p style="font-family: 'Open Sans',Arial,sans-serif; color: #8a8a8a;     line-height: 140%; font-size: 14px;     padding-left: 10px; padding-right: 10px;">
-                                                    <strong>Monday-Friday: </strong> 7:30<sup>am</sup> - 11:00<sup>pm</sup></p>
-                                            </div>
-                                            <div style="padding-top: 5px;">
-                                                <h5 style="padding-left: 10px; padding-right: 10px;">Contact</h5>
-                                                <p style="font-family: 'Open Sans',Arial,sans-serif; color: #8a8a8a;     line-height: 140%; font-size: 14px;     padding-left: 10px; padding-right: 10px;">
-                                                    <strong>Phone: </strong> (+355) 052 225865</p>
-                                                <p style="font-family: 'Open Sans',Arial,sans-serif; color: #8a8a8a;     line-height: 140%; font-size: 14px;     padding-left: 10px; padding-right: 10px;">
-                                                    <strong>Mobile: </strong>(+355) 069 4035071</p>
-                                            </div>
-                                            <div style="padding-top: 5px;">
-                                                <h5 style="padding-left: 10px; padding-right: 10px;">Specialities</h5>
-                                                <div style="line-height: 140%; font-size: 14px; padding-left: 10px; padding-right:10px; margin-bottom:10px; overflow: auto;">
-                                                    <div style="float:left;     margin: 5px;">
-                                                        <img src="http://lorempixel.com/50/50/" style="border-radius: 5px;"/>
-                                                        <p>something</p>
-                                                    </div>
-                                                    <div style="float:left;     margin: 5px;">
-                                                        <img src="http://lorempixel.com/50/50/" style="border-radius: 5px;"/>
-                                                        <p>something</p>
-                                                    </div>
-                                                    <div style=" float:left;    margin: 5px;">
-                                                        <img src="http://lorempixel.com/50/50/" style="border-radius: 5px;"/>
-                                                        <p>something</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4" style="background:#F8F8F9; padding-top: 20px;">
-                                        <div style="border-radius: 5px;margin-left:10px;background:white;margin-right:0px;box-shadow:0px 1px 1px 0px rgba(112, 115, 117, 0.28); padding: 10px;">
-                                            <div style="padding-left: 10px; padding-right: 10px; color: #777;">
-                                                <span class="block-title"><i class="material-icons" style="font-size: 19px;">location_on</i> Location </span>
-                                            </div>
-                                            <!--<h5 style="padding-left: 10px; padding-right: 10px;">Specialities</h5>-->
-                                            <div style="line-height: 140%; font-size: 14px; padding-left: 10px; padding-right:10px; margin-bottom:10px; overflow: auto;">
-                                                <div id="googleMap" style="width:320px;height:220px; overflow: auto;"></div>
-                                                <p style="clear:both;"> Location Address </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--<div class="col-md-12" style="height:100px; margin-top:15px;">-->
-                                    <!--<div class="col-md-4" style="height:100px;background:#F8F8F9;">-->
-                                        <!--<div style="height:inherit; border-radius: 5px;margin-left:20px;margin-right:10px;background:white;box-shadow:0px 1px 1px 0px rgba(112, 115, 117, 0.28); padding: 10px;">-->
-                                            <!--aaaaaaaaaaaaaaaaaaaa-->
-                                            <!--bbbbbbbbbbbbbbbbbbbb-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                    <!--<div class="col-md-8" style="background:#F8F8F9;">-->
-                                        <!--<div style="border-radius: 5px;margin-left:10px;background:white;margin-right:20px;box-shadow:0px 1px 1px 0px rgba(112, 115, 117, 0.28); padding: 10px;">-->
-                                            <!--&lt;!&ndash;<div id="googleMap" style="width:500px;height:380px; overflow: auto;"></div>&ndash;&gt;-->
-                                            <!--&lt;!&ndash;<p style="clear:both;"> Location Address </p>&ndash;&gt;-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-
-
-
-                                <!--</div>-->
-
-
-                                <!--<div class="col-md-12" style="height:100px;margin-top:15px;">-->
-                                    <!--<div class="col-md-4" style="height:100px;background:#F8F8F9;">-->
-                                        <!--<div style="height:inherit; border-radius: 5px;margin-left:20px;margin-right:10px;background:white;box-shadow:0px 1px 1px 0px rgba(112, 115, 117, 0.28); padding: 10px;">-->
-                                            <!--aaaaaaaaaaaaaaaaaaaa-->
-                                            <!--bbbbbbbbbbbbbbbbbbbb-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                    <!--<div class="col-md-4" style="height:100px;background:#F8F8F9;">-->
-                                        <!--<div style="height:inherit;border-radius: 5px;margin-left:10px;background:white;margin-right:10px;box-shadow:0px 1px 1px 0px rgba(112, 115, 117, 0.28); padding: 10px;">-->
-                                            <!--cccccccccccccccccccc-->
-                                            <!--dddddddddddddddddddd-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-
-                                    <!--<div class="col-md-4" style="height:100px;background:#F8F8F9;">-->
-                                        <!--<div style="height:inherit;border-radius: 5px;margin-left:10px;background:white;margin-right:20px;box-shadow:0px 1px 1px 0px rgba(112, 115, 117, 0.28); padding: 10px;">-->
-                                            <!--cccccccccccccccccccc-->
-                                            <!--dddddddddddddddddddd-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-
-
-
-                                <!--</div>-->
-
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <br/>
-
-
-
-            </div>
-
-
-        </div>
     </div>
 
-
-
-
-
-
-        <p style="text-align: center; margin-top:50px; color: #999; line-height: normal; font-size: 17px;">
-            Hand picked by <span style="font-family: 'Pacifico', cursive; font-weight: 400;">instant</span>, just for you!</p>
+        <p style="text-align: center; margin-top:50px; color: #999; line-height: normal; font-size: 17px;"> Hand picked by <span style="font-family: 'Pacifico', cursive; font-weight: 400;">instant</span>, just for you!</p>
 
         <!--<p style="max-width: 728px; text-align: center; margin: 21px auto; color: #999; line-height: normal; font-size: 12px;">-->
         <!--SEO Block</p>-->

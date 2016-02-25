@@ -10,6 +10,7 @@ import com.instant.persistence.repository.VenueRepository;
 import com.instant.validator.VenueValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -54,6 +55,42 @@ public class VenueController {
         } else {
             modelAndView = new ModelAndView(TilesDefinition.ITEM);
             modelAndView.addObject("venue", venueRepository.findById(id));
+        }
+        return modelAndView;
+    }
+
+    @RequestMapping(Mappings.ITEM + "/{id}")
+    public ModelAndView getItemByIdViaUrl(@PathVariable(value="id") String id) {
+        ModelAndView modelAndView;
+        if (StringUtils.isEmpty(id)) {
+            modelAndView = new ModelAndView(TilesDefinition.HOME);
+            return modelAndView;
+        } else {
+            modelAndView = new ModelAndView(TilesDefinition.ITEM);
+            modelAndView.addObject("venue", venueRepository.findById(id));
+            modelAndView.addObject("view", "item_main_view");
+        }
+        return modelAndView;
+    }
+
+    @RequestMapping(Mappings.ITEM + "/{id}/{block}")
+    public ModelAndView getItemBlockByIdViaUrl(@PathVariable(value="id") String id, @PathVariable(value="block") String block) {
+        ModelAndView modelAndView;
+        if (StringUtils.isEmpty(id)) {
+            modelAndView = new ModelAndView(TilesDefinition.HOME);
+            return modelAndView;
+        } else {
+            modelAndView = new ModelAndView(TilesDefinition.ITEM);
+            modelAndView.addObject("venue", venueRepository.findById(id));
+            switch (block.toLowerCase()){
+                case "map":
+                    modelAndView.addObject("view", "item_map_view");
+                    break;
+                default:
+                    modelAndView.addObject("view", "item_main_view");
+                    break;
+            }
+
         }
         return modelAndView;
     }
