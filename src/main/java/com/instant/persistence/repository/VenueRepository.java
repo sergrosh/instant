@@ -3,6 +3,9 @@ package com.instant.persistence.repository;
 import com.instant.persistence.model.venue.Venue;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.geo.Distance;
+import org.springframework.data.geo.GeoResults;
+import org.springframework.data.geo.Point;
 import org.springframework.data.mongodb.core.query.TextCriteria;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
@@ -23,6 +26,8 @@ public interface VenueRepository extends MongoRepository<Venue, String> {
     List<Venue> findTop10ByCityAndCategoryAndNameLikeIgnoreCase(String city, String category, String name);
 
     Venue findById(String id);
+
+    GeoResults<Venue> findByLocationNear(Point location, Distance distance);
 
     /**Geo location searching*/
     // {'geoNear' : 'location', 'near' : [x, y] }

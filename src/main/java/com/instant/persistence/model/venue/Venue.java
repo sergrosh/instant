@@ -4,6 +4,7 @@ package com.instant.persistence.model.venue;
 import com.instant.persistence.model.BaseModel;
 import com.instant.persistence.model.Product;
 import lombok.Data;
+import org.springframework.data.mongodb.core.index.GeoSpatialIndexed;
 import org.springframework.data.mongodb.core.index.TextIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -40,4 +41,6 @@ public class Venue extends BaseModel{
     private int reviews;
     private int likes;
     private String specialities;
+    @GeoSpatialIndexed
+    private double[] location;
 }
