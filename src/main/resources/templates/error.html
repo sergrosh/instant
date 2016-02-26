@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Bootstrap 3, from LayoutIt!</title>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900,200' rel='stylesheet' type='text/css'> -->
+    <link href="https://fonts.googleapis.com/css?family=IM+Fell+English:400,400italic|Product+Sans" rel="stylesheet"
+          type="text/css"/>
+
+    <meta name="description" content="Source code generated using layoutit.com"/>
+    <meta name="author" content="LayoutIt!"/>
+
+    <link href="css/bootstrap.min.css" th:href="@{/resources/oc_css/bootstrap.min.css}" rel="stylesheet"/>
+    <link href="css/style.css" th:href="@{/resources/oc_css/style.css}" rel="stylesheet"/>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'/>
+    <link href="css/font-awesome.min.css" th:href="@{/resources/oc_css/font-awesome.min.css}" rel="stylesheet"/>
+    <link href="css/bootstrap-social.css" th:href="@{/resources/oc_css/bootstrap-social.css}" rel="stylesheet"/>
+    <link th:href="@{/resources/oc_css/bootstrap-multiselect.css}" rel="stylesheet"/>
+    <link th:href="@{/resources/oc_css/dropzone/basic.css}" rel="stylesheet"/>
+    <link th:href="@{/resources/oc_css/dropzone/dropzone.css}" rel="stylesheet"/>
+
+
+
+</head>
+<body>
+
+
+<div class="container-fluid" style="padding-top: 65px;">
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div th:replace="fragments/header :: header"></div>
+
+            <div class="row">
+
+
+
+                <div class="col-md-6 col-md-offset-3"
+                     style="background-color: rgb(248, 248, 249); padding-left: 0px; padding-right:5px;">
+                    <div>
+                        <div class="panel panel-default" th:fragment="accounts_dashboard" style="background-color:#ffffff; border-radius: 0px">
+                            <div class="panel-heading" style="background-color: #ffffff;">My account</div>
+
+                            <div class="panel-body" style="padding: 15px;">
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+
+                                        <style>
+
+                                            .alert {
+                                            padding: 15px;
+                                            margin-bottom: 18px;
+                                            border: 1px solid transparent;
+                                            border-radius: 0px;
+                                            }
+
+                                            .alert-info {
+                                            background-color: #d9edf7;
+                                            border-color: #bce8f1;
+                                            color: #000000;
+                                            }
+
+                                            .alert {
+                                            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+                                            -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 2px rgba(0, 0, 0, 0.05);
+                                            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 2px rgba(0, 0, 0, 0.05);
+                                            }
+
+                                            .alert-info {
+                                            background-image: -webkit-linear-gradient(top, #d9edf7 0%, #b9def0 100%);
+                                            background-image: linear-gradient(to bottom, #d9edf7 0%, #b9def0 100%);
+                                            background-repeat: repeat-x;
+                                            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9edf7', endColorstr='#ffb9def0', GradientType=0);
+                                            border-color: #9acfea;
+                                            background: #d9edf7;
+                                            }
+
+
+                                        </style>
+
+                                        <div class="alert alert-info">
+                                            <h3 style="margin: 0; font-size: 16px; line-height: 20px;">Error:</h3>
+                                            <p>This is your dashboard</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row footer">
+        <div class="col-md-3"></div>
+        <div class="col-md-6" style="margin-top:10px;">
+            <div>
+                <p style="max-width: 728px; text-align: center; margin: 21px auto; color: #999; line-height: normal; font-size: 12px;">
+                    instant lets you search stuff and do other stuff. There are 5,382 stuff open in City Name. Search
+                    stuff in City Name with instant. Be social. Have fun.</p>
+            </div>
+            <div>
+                <hr style="line-height: 1em; margin: 21px 14px; width: auto; box-sizing: border-box; border-top: 1px #ccc solid;"/>
+            </div>
+
+            <div>
+                <hr style="line-height: 1em; margin: 21px 14px; width: auto; box-sizing: border-box; border-top: 1px #ccc solid;"/>
+            </div>
+
+            <div>
+                <p style="max-width: 728px; text-align: center; margin: 21px auto; color: #999; line-height: normal; font-size: 12px;">
+                    Copyright © xxxx–2016, instant. instant ® is a registered trademark of Instant Shpk.</p>
+            </div>
+
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+
+
+<script src="js/jquery.min.js" th:src="@{/resources/oc_js/jquery.min.js}"></script>
+<script src="js/bootstrap.min.js" th:src="@{/resources/oc_js/bootstrap.min.js}"></script>
+<script src="js/scripts.js" th:src="@{/resources/oc_js/scripts.js}"></script>
+<script src="js/search.js" th:src="@{/resources/oc_js/search.js}"></script>
+<script src="js/localization.js" th:src="@{/resources/oc_js/localization.js}"></script>
+<script th:src="@{/resources/oc_js/bootstrap-multiselect.js}"></script>
+<script th:src="@{/resources/oc_js/dropzone.js}"></script>
+
+<script th:inline="javascript" type="text/javascript">
+/*<![CDATA[*/
+    $(document).ready(function() {
+        $('#venue_speciality').multiselect();
+        $('.custom-filter-input.speciality > div > .btn-group').css("width", "100%");
+        $('.custom-filter-input.speciality > div > .btn-group > .multiselect.dropdown-toggle.btn.btn-default').css("width", "100%");
+    });
+
+    var counter=0;
+    var set=0;
+    var cleanFilename = function (name) {
+        switch(set){
+            case 0:
+                counter = counter+1;
+                set=1;
+                break;
+            case 1:
+                set=0;
+        }
+
+       return $("#venue_name").val() + "_item_" + counter + ".png";
+    };
+
+
+    Dropzone.options.myDropzone = { renameFilename: cleanFilename, url: "/upload/venue/image",
+     init: function() {
+          this.on("addedfile", function(file) {
+
+            // Create the remove button
+            var removeButton = Dropzone.createElement("<button class='btn btn-dropzone'>Remove file</button>");
+
+
+            // Capture the Dropzone instance as closure.
+            var _this = this;
+
+            // Listen to the click event
+            removeButton.addEventListener("click", function(e) {
+              // Make sure the button click doesn't submit the form:
+              e.preventDefault();
+              e.stopPropagation();
+
+              // Remove the file preview.
+              _this.removeFile(file);
+              counter = counter-1;
+              var naming = $(this).closest('.dz-preview').find('.dz-details > .dz-filename > span').text();
+              jQuery.ajax( {
+                url: '/delete/venue/image',
+                type: 'POST',
+                data: {
+                    name: naming
+                       }
+    } );
+              // If you want to the delete the file on the server as well,
+              // you can do the AJAX request here.
+            });
+
+            // Add the button to the file preview element.
+            file.previewElement.appendChild(removeButton);
+          });
+        }
+        }
+
+    /*
+        Dropzone.options.d = {
+            init: function() {
+              this.on("addedfile", function(file) {
+
+                // Create the remove button
+                var removeButton = Dropzone.createElement("<button class='btn btn-dropzone'>Remove file</button>");
+
+
+                // Capture the Dropzone instance as closure.
+                var _this = this;
+
+                // Listen to the click event
+                removeButton.addEventListener("click", function(e) {
+                  // Make sure the button click doesn't submit the form:
+                  e.preventDefault();
+                  e.stopPropagation();
+
+                  // Remove the file preview.
+                  _this.removeFile(file);
+                  // If you want to the delete the file on the server as well,
+                  // you can do the AJAX request here.
+                });
+
+                // Add the button to the file preview element.
+                file.previewElement.appendChild(removeButton);
+              });
+            }
+        };
+    */
+
+
+     /*]]>*/
+</script>
+
+
+</body>
+</html>
