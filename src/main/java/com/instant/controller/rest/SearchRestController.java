@@ -8,10 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.mongodb.core.query.TextCriteria;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,6 +25,7 @@ public class SearchRestController {
     @Autowired
     private PaginationBean paginationBean;
 
+    @CrossOrigin(origins = "http://localhost:9000")
     @RequestMapping(Mappings.REST_CLIENTS)
     public Page<Venue> search(@RequestParam("query") String query, @RequestParam("category") String category,
                               @RequestParam(value = "view", required = false, defaultValue = "1") Integer view,
