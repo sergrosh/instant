@@ -4,6 +4,7 @@ package com.instant.controller;
  * @author sroshchupkin
  */
 public interface Mappings {
+    String ERROR_PATH = "/error";
     String VENUE_SAVE = "/saveVenue";
     String UPLOAD_VENUE_IMAGE = "/upload/venue/image";
     String DELETE_VENUE_IMAGE="/delete/venue/image";
