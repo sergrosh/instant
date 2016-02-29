@@ -27,6 +27,7 @@
 		<org.springframework.boot.social.facebook>1.3.2.RELEASE</org.springframework.boot.social.facebook>
 		<org.springframework.social.version>1.1.4.RELEASE</org.springframework.social.version>
 		<lombok.version>1.16.6</lombok.version>
+		<springfox.version>2.3.1</springfox.version>
 	</properties>
 
 
@@ -152,6 +153,20 @@
 			<version>${lombok.version}</version>
 			<scope>provided</scope>
 		</dependency>
+
+		<!-- SWAGGER -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${springfox.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${springfox.version}</version>
+		</dependency>
+		<!-- SWAGGER END -->
 
 
 	</dependencies>
