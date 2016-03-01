@@ -17,8 +17,6 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
  */
 
 @Api(value = Mappings.REST_VENUE, description = "API to manage venues")
-@RestController
-@CrossOrigin(origins = "http://localhost:9000")
 public interface VenueRestController {
 
     /**

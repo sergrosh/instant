@@ -1,5 +1,6 @@
 package com.instant.controller.rest.venue;
 
+import com.instant.controller.Mappings;
 import com.instant.exception.InternalServerException;
 import com.instant.exception.InvalidRequestException;
 import com.instant.exception.NotFoundException;
@@ -12,9 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,6 +23,9 @@ import java.util.List;
  * @author sroshchupkin
  */
 @Slf4j
+@RestController
+@CrossOrigin(origins = "http://localhost:9000")
+@RequestMapping(value = Mappings.REST_VENUE)
 public class VenueRestControllerImpl implements VenueRestController{
 
     @Autowired

@@ -30,8 +30,8 @@ public class Venue extends BaseModel{
     @Length(min = 3, max = 100, message = "Name should be at least 3 characters but less than 100")
     private String name;
 
-    @JsonProperty("name")
-    private Boolean published = Boolean.FALSE;
+//    @JsonProperty("name")
+//    private Boolean published = Boolean.FALSE;
 
     @ApiModelProperty(required = true, value = "")
     @JsonProperty("country")

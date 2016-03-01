@@ -12,6 +12,7 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
@@ -41,6 +42,7 @@ import java.util.Locale;
 @EnableScheduling
 @ComponentScan(basePackages = "com.instant", excludeFilters = {@ComponentScan.Filter(Configuration.class), @ComponentScan.Filter(Controller.class)})
 @EnableMongoRepositories("com.instant.persistence.repository")
+@ImportResource("classpath*:springmvc-resteasy.xml")
 public class MvcConfiguration extends WebMvcConfigurerAdapter {
     @Bean
     public EhCacheManagerFactoryBean ehCacheManagerFactoryBean() {
