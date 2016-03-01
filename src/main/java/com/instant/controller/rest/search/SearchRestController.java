@@ -1,4 +1,4 @@
-package com.instant.controller.rest;
+package com.instant.controller.rest.search;
 
 import com.instant.common.PaginationBean;
 import com.instant.controller.Mappings;

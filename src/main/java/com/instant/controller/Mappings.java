@@ -15,6 +15,7 @@ public interface Mappings {
     String REST_SUGGESTIONS = "/rest/suggestions";
     String ITEM = "/item";
     String REST_VENUE="/rest/venue";
+    String REST_IMAGE="/rest/image";
     String ACCOUNT = "/account";
     String USER = "/user";
     String USER_ADD = "/user/add";
