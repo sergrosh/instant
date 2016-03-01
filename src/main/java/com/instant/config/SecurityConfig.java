@@ -75,6 +75,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(Mappings.DELETE_VENUE_IMAGE).hasAuthority(UserRoleType.ROLE_AUTHOR.name())
                 .antMatchers(Mappings.CLIENTS+"/**").permitAll()
                 .antMatchers(Mappings.REST_CLIENTS+"/**").permitAll()
+                .antMatchers(Mappings.REST_VENUE+"/**").permitAll()
                 .antMatchers(Mappings.USER+"/**").authenticated()
                 .antMatchers(Mappings.ITEM+"/**").permitAll()
                 .antMatchers("/home/**").permitAll()
