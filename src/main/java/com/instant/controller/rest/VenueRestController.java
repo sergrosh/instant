@@ -75,7 +75,7 @@ public interface VenueRestController {
             @ApiResponse(code = 500, message = ERROR_500_MSG)})
 
     @RequestMapping(value = "/{id}", produces = {APPLICATION_JSON_VALUE}, method = RequestMethod.GET)
-    Venue getVenue(@ApiParam(value = "id of venue to fetch", required = true) @PathVariable("id") Long id);
+    Venue getVenue(@ApiParam(value = "id of venue to fetch", required = true) @PathVariable("id") String id);
 
     /**
      * UPDATE VENUE
@@ -107,7 +107,7 @@ public interface VenueRestController {
             @ApiResponse(code = 500, message = ERROR_500_MSG)})
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/{id}", produces = {APPLICATION_JSON_VALUE}) void deleteVenue(@ApiParam(value = "id of venue to delete",
-            required = true) @PathVariable("id") Long id
+            required = true) @PathVariable("id") String id
 
     );
 

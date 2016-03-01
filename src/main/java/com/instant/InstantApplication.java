@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 
 /**
@@ -14,6 +15,7 @@ import org.springframework.context.annotation.Configuration;
 @SpringBootApplication
 @EnableAutoConfiguration
 @ComponentScan
+@EnableSwagger2
 public class InstantApplication {
 
     public static void main(String[] args) {
