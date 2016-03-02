@@ -85,51 +85,48 @@
                 </div>
             </div>
 
-            <div class="row hidden-xs">
-                <div class="col-md-1">
-                </div>
+            <!--<div class="row hidden-xs">-->
+                <!--<div class="col-md-1">-->
+                <!--</div>-->
 
-                <div class="col-md-8"
-                     style="border-left: 1px solid rgba(204, 204, 204, 0.57); border-top: 1px solid rgba(204, 204, 204, 0.57); border-right: 1px solid rgba(204, 204, 204, 0.57); background-color: white">
-                    <div>
-                        <div class="row">
-                            <br/>
-                            <div class="col-md-3 lefty">
-                                <strong style="font-size: larger;">Sort by:</strong>
-                                <small> Blah blah</small>
-                            </div>
+                <!--<div class="col-md-8"-->
+                     <!--style="border-left: 1px solid rgba(204, 204, 204, 0.57); border-top: 1px solid rgba(204, 204, 204, 0.57); border-right: 1px solid rgba(204, 204, 204, 0.57); background-color: white">-->
+                    <!--<div>-->
+                        <!--<div class="row">-->
+                            <!--<br/>-->
+                            <!--<div class="col-md-3 lefty">-->
+                                <!--<strong style="font-size: larger;">Sort by:</strong>-->
+                                <!--<small> Blah blah</small>-->
+                            <!--</div>-->
 
-                            <div class="col-md-9">
-                                <form data-th-action="@{/user}">
-                                    <button class="btn btn-default righty padded" type="submit" value="">User</button>
-                                </form>
-                                <div class="btn-toolbar righty">
-                                    <button class="btn btn-default righty" type="submit">Button2</button>
-                                    <button class="btn btn-default righty" type="submit">Button3</button>
-                                </div>
-
-
-                            </div>
-                        </div>
-
-                        <br/>
-                        <style type="text/css">
-
-                        </style>
-                    </div>
+                            <!--<div class="col-md-9">-->
+                                <!--<form data-th-action="@{/user}">-->
+                                    <!--<button class="btn btn-default righty padded" type="submit" value="">User</button>-->
+                                <!--</form>-->
+                                <!--<div class="btn-toolbar righty">-->
+                                    <!--<button class="btn btn-default righty" type="submit">Button2</button>-->
+                                    <!--<button class="btn btn-default righty" type="submit">Button3</button>-->
+                                <!--</div>-->
 
 
-                </div>
+                            <!--</div>-->
+                        <!--</div>-->
 
-                <div class="col-md-3">
-                </div>
-            </div>
+                        <!--<br/>-->
+                        <!--<style type="text/css">-->
+
+                        <!--</style>-->
+                    <!--</div>-->
+
+
+                <!--</div>-->
+
+                <!--<div class="col-md-3">-->
+                <!--</div>-->
+            <!--</div>-->
 
             <div class="row">
-                <div class="col-md-1">
-                </div>
-
-                <div class="col-md-2 hidden-xs"
+                <div class="col-lg-2 col-lg-offset-1 hidden-md hidden-xs"
                      style="border-left: 1px solid rgba(204, 204, 204, 0.57); border-top: 1px solid rgba(204, 204, 204, 0.57); border-bottom: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-right: 0px; padding-left: 0px;">
 
                     <div class="row" style="padding:5px 10px 0px 10px; margin-right:0px; margin-left:0px;">
@@ -151,7 +148,9 @@
                                 <div class="col-md-12">
                                     <select id="filter_option_category" name="category" class="form-control">
                                         <option value="restaurant">Restaurant</option>
-                                        <option value="pub">Pub</option>
+                                        <option value="pub">Night Club (Pub)</option>
+                                        <option value="pub">Pizzeria</option>
+                                        <option value="pub">Bar Caffe</option>
                                     </select>
                                 </div>
                             </div>
@@ -238,12 +237,12 @@
                                 <!--<label class="col-md-5 control-label" for="selectbasic">Select Basic</label>-->
                                 <div class="col-md-12">
                                     <select id="filter_option_speciality" name="speciality" class="form-control" multiple="multiple">
-                                        <option value="loadOnCategory1">demo1</option>
-                                        <option value="loadOnCategory2">demo2</option>
-                                        <option value="loadOnCategory3">demo3</option>
-                                        <option value="loadOnCategory4">demo4</option>
-                                        <option value="loadOnCategory5">demo5</option>
-                                        <option value="loadOnCategory6">demo6</option>
+                                        <option value="loadOnCategory1">Meat dishes</option>
+                                        <option value="loadOnCategory2">Sea Food / Fish</option>
+                                        <option value="loadOnCategory3">Vegetarian</option>
+                                        <option value="loadOnCategory4">Traditional Kusine</option>
+                                        <option value="loadOnCategory5">Italian Kusine</option>
+                                        <option value="loadOnCategory6">Fast-Food</option>
                                     </select>
                                 </div>
                             </div>
@@ -264,14 +263,19 @@
                                 <div class="col-md-12">
                                     <style>
                                         label.active{
-                                            background: #CCCCCC;
+                                            background: #337ab7;
+                                        color: white;
                                         border-color: #CCCCCC;
                                         }
 
+                                        label.active > i.fa{
+                                            color: white;
+                                        }
+
                                         .btn-primary.ratings.active {
-                                            background: #CCCCCC;
+                                        background: #337ab7;
+                                        color: white;
                                         border-color: #CCCCCC;
-                                        color: #020202;
                                         }
 
                                         label.ratings{
@@ -294,19 +298,19 @@
                                     </style>
                                     <div class="btn-group" data-toggle="buttons">
                                         <label class="btn btn-primary ratings" >
-                                            <input type="checkbox" name="rating" value="1" autocomplete="off"/> 1 <i class="fa fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #777777;"></i>
+                                            <input type="checkbox" name="rating" value="1" autocomplete="off"/> 1 <i class="fa fa-star-o" style="font-size: 1.2em;"></i>
                                         </label>
                                         <label class="btn btn-primary ratings" >
-                                            <input type="checkbox" name="rating" value="2" autocomplete="off"/> 2 <i class="fa fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #777777;"></i>
+                                            <input type="checkbox" name="rating" value="2" autocomplete="off"/> 2 <i class="fa fa-star-o" style="font-size: 1.2em;"></i>
                                         </label>
                                         <label class="btn btn-primary ratings" >
-                                            <input type="checkbox" name="rating" value="3" autocomplete="off"/> 3 <i class="fa fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #777777;"></i>
+                                            <input type="checkbox" name="rating" value="3" autocomplete="off"/> 3 <i class="fa fa-star-o" style="font-size: 1.2em;"></i>
                                         </label>
                                         <label class="btn btn-primary ratings" >
-                                            <input type="checkbox" name="rating" value="4" autocomplete="off"/> 4 <i class="fa fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #777777;"></i>
+                                            <input type="checkbox" name="rating" value="4" autocomplete="off"/> 4 <i class="fa fa-star-o" style="font-size: 1.2em;"></i>
                                         </label>
                                         <label class="btn btn-primary ratings" >
-                                            <input type="checkbox" name="rating" value="5" autocomplete="off"/> 5 <i class="fa fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #777777;"></i>
+                                            <input type="checkbox" name="rating" value="5" autocomplete="off"/> 5 <i class="fa fa-star-o" style="font-size: 1.2em;"></i>
                                         </label>
                                     </div>
                                 </div>
@@ -362,9 +366,18 @@
 
                 </div>
 
-                <div class="col-md-6" id="itemlist_results"
-                     style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:5px; padding-right:5px; padding-bottom: 15px;">
+                <div class="col-lg-6 col-lg-offset-0 col-md-10 col-md-offset-1" id="itemlist_results"
+                     style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:0px; padding-right:0px; padding-bottom: 25px;">
+                    <div style="    display: table;
+    width: 100%;
+    padding-top: 10px;">
+                        <p style="font-size: 10px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}">Best [Category] in [City] ordered by [Sorting]</p>
 
+                    </div>
                     <div th:replace="fragments/itemlist_product_list :: itemlist_product_list"></div>
                     <!--<div th:if="${venues.isEmpty()}" class="col-sm-12" style="padding-top: 15px;">-->
 
@@ -408,9 +421,6 @@
 
                     <!--</div>-->
 
-                </div>
-
-                <div class="col-md-3">
                 </div>
             </div>
         </div>
