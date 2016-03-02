@@ -14,10 +14,11 @@ import org.json.JSONObject;
  */
 
 @Service
-public class GeoCoderServiceImpl implements Serializable {
+public class GeoCoderServiceImpl implements GeoCoderService,Serializable {
 
     private static final String GOOGLE_ADRESS_QUERY="http://maps.googleapis.com/maps/api/geocode/json?address=";
 
+    @Override
     public Point getGeoPointFromAddress(String locationAddress) {
         Point locationPoint = null;
         String locationAddres = locationAddress.replaceAll(" ", "%20");
