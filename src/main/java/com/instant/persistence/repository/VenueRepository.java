@@ -36,7 +36,7 @@ public interface VenueRepository extends MongoRepository<Venue, String> {
     // No metric: {'geoNear' : 'person', 'near' : [x, y], maxDistance : distance }
     // Metric: {'geoNear' : 'person', 'near' : [x, y], 'maxDistance' : distance,
     //          'distanceMultiplier' : metric.multiplier, 'spherical' : true }
-    //GeoResults<Venue> findByLocationNear(Point location, Distance distance);
+//    GeoResults<Venue> findByLocationNear(Point location, Distance distance);
 
     // Metric: {'geoNear' : 'person', 'near' : [x, y], 'minDistance' : min,
     //          'maxDistance' : max, 'distanceMultiplier' : metric.multiplier,

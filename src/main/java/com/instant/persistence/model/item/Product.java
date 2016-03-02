@@ -1,5 +1,6 @@
-package com.instant.persistence.model;
+package com.instant.persistence.model.item;
 
+import com.instant.persistence.model.NamedModel;
 import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -10,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  */
 @Data
 @Document
-public class Product extends NamedModel{
+public class Product extends NamedModel {
     private String type;
     private double price;
     private String imagePath;

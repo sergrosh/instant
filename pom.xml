@@ -28,6 +28,12 @@
 		<org.springframework.social.version>1.1.4.RELEASE</org.springframework.social.version>
 		<lombok.version>1.16.6</lombok.version>
 		<springfox.version>2.3.1</springfox.version>
+		<jadira.usertype.version>5.0.0.GA</jadira.usertype.version>
+		<jackson.jaxrs.json.version>2.7.2</jackson.jaxrs.json.version>
+		<geocoder.version>0.16</geocoder.version>
+		<apache.wicket.version>7.2.0</apache.wicket.version>
+		<google.maps.services.version>0.1.11</google.maps.services.version>
+		<org.json.version>20140107</org.json.version>
 	</properties>
 
 
@@ -168,10 +174,48 @@
 		</dependency>
 		<!-- SWAGGER END -->
 
+		<!-- Joda Time -->
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.jadira.usertype</groupId>
+			<artifactId>usertype.core</artifactId>
+			<version>${jadira.usertype.version}</version>
+		</dependency>
+
+		<!-- Jackson json data bind -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.jaxrs</groupId>
+			<artifactId>jackson-jaxrs-json-provider</artifactId>
+			<version>${jackson.jaxrs.json.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-joda</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.7.2</version>
+		</dependency>
+
+		<!--Apache-->
+		<dependency>
+			<groupId>org.apache.wicket</groupId>
+			<artifactId>wicket-util</artifactId>
+			<version>${apache.wicket.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>${org.json.version}</version>
+		</dependency>
 
 	</dependencies>
-
-
 	
 	<build>
 		<plugins>
@@ -181,6 +225,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	
 
 </project>

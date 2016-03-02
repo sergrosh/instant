@@ -1,4 +1,4 @@
-package com.instant.controller.rest.venue;
+package com.instant.api.controller;
 
 import com.instant.controller.Mappings;
 import com.instant.persistence.model.venue.Venue;
