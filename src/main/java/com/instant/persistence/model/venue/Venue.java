@@ -17,7 +17,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @ApiModel(description = "")
 @Data
 @Document
-public class Venue extends NewVenue{
+public class Venue extends NewVenue {
 
     @Id
     private String id;

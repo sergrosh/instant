@@ -2,19 +2,11 @@ package com.instant.controller.rest.venue;
 
 import com.instant.api.controller.VenueRestController;
 import com.instant.controller.Mappings;
-import com.instant.exception.InternalServerException;
-import com.instant.exception.InvalidRequestException;
-import com.instant.exception.NotFoundException;
 import com.instant.persistence.model.venue.Venue;
-import com.instant.persistence.repository.VenueRepository;
 import com.instant.service.venue.VenueService;
-import com.instant.validator.ValidationResult;
-import com.instant.validator.ValidationService;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -39,7 +31,7 @@ public class VenueRestControllerImpl implements VenueRestController {
             defaultValue = "20") Integer limit, @ApiParam(value = "This parameter specify where to start returning venues from the entire set of result. Default is 0.") @RequestParam(value = "offset",
             required = false,
             defaultValue = "0") Integer offset) {
-        return venueService.getVenues(limit,offset);
+        return venueService.getVenues(limit, offset);
     }
 
     @Override
@@ -55,7 +47,7 @@ public class VenueRestControllerImpl implements VenueRestController {
 
     @Override
     public Venue updateVenue(@ApiParam(value = "venue that will be updated", required = true) @RequestBody Venue venue) {
-        return  venueService.updateVenue(venue);
+        return venueService.updateVenue(venue);
     }
 
     @Override

@@ -31,14 +31,16 @@ public class InstantErrorController implements ErrorController {
 
     /**
      * Controller for the Error Controller
+     *
      * @param errorAttributes
      */
-    public InstantErrorController (ErrorAttributes errorAttributes) {
+    public InstantErrorController(ErrorAttributes errorAttributes) {
         this.errorAttributes = errorAttributes;
     }
 
     /**
      * Supports the HTML Error View
+     *
      * @param request
      * @return
      */
@@ -49,6 +51,7 @@ public class InstantErrorController implements ErrorController {
 
     /**
      * Supports other formats like JSON, XML
+     *
      * @param request
      * @return
      */
@@ -92,8 +95,7 @@ public class InstantErrorController implements ErrorController {
         if (statusCode != null) {
             try {
                 return HttpStatus.valueOf(statusCode);
-            }
-            catch (Exception ex) {
+            } catch (Exception ex) {
             }
         }
         return HttpStatus.INTERNAL_SERVER_ERROR;

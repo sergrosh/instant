@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head lang="en">
 
 </head>
@@ -7,12 +7,12 @@
 
 <body>
 
-    <th:block th:fragment="commonjs" class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <script src="js/jquery.min.js" th:src="@{/resources/oc_js/jquery.min.js}"></script>
-        <script src="js/bootstrap.min.js" th:src="@{/resources/oc_js/bootstrap.min.js}"></script>
-        <script src="js/scripts.js" th:src="@{/resources/oc_js/scripts.js}"></script>
-        <script src="js/global.js" th:src="@{/resources/oc_js/global.js}"></script>
-        <script type="text/javascript" th:inline="javascript">
+<th:block th:fragment="commonjs" class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <script src="js/jquery.min.js" th:src="@{/resources/oc_js/jquery.min.js}"></script>
+    <script src="js/bootstrap.min.js" th:src="@{/resources/oc_js/bootstrap.min.js}"></script>
+    <script src="js/scripts.js" th:src="@{/resources/oc_js/scripts.js}"></script>
+    <script src="js/global.js" th:src="@{/resources/oc_js/global.js}"></script>
+    <script type="text/javascript" th:inline="javascript">
 /*<![CDATA[*/
 
     //global
@@ -192,8 +192,9 @@
 
 
 /*]]>*/
-</script>
-    </th:block>
+
+    </script>
+</th:block>
 
 </body>
 </html>

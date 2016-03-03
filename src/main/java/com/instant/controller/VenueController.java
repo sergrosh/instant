@@ -9,7 +9,10 @@ import com.instant.validator.VenueValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Map;
@@ -52,7 +55,7 @@ public class VenueController {
     }
 
     @RequestMapping(Mappings.ITEM + "/{id}")
-    public ModelAndView getItemByIdViaUrl(@PathVariable(value="id") String id) {
+    public ModelAndView getItemByIdViaUrl(@PathVariable(value = "id") String id) {
         ModelAndView modelAndView;
         if (StringUtils.isEmpty(id)) {
             modelAndView = new ModelAndView(TilesDefinition.HOME);
@@ -66,7 +69,7 @@ public class VenueController {
     }
 
     @RequestMapping(Mappings.ITEM + "/{id}/{block}")
-    public ModelAndView getItemBlockByIdViaUrl(@PathVariable(value="id") String id, @PathVariable(value="block") String block) {
+    public ModelAndView getItemBlockByIdViaUrl(@PathVariable(value = "id") String id, @PathVariable(value = "block") String block) {
         ModelAndView modelAndView;
         if (StringUtils.isEmpty(id)) {
             modelAndView = new ModelAndView(TilesDefinition.HOME);
@@ -74,7 +77,7 @@ public class VenueController {
         } else {
             modelAndView = new ModelAndView(TilesDefinition.ITEM);
             modelAndView.addObject("venue", venueRepository.findById(id));
-            switch (block.toLowerCase()){
+            switch (block.toLowerCase()) {
                 case MAP:
                     modelAndView.addObject("view", "item_map_view");
                     break;

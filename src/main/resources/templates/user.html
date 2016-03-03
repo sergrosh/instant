@@ -23,7 +23,6 @@
     <link th:href="@{/resources/oc_css/dropzone/dropzone.css}" rel="stylesheet"/>
 
 
-
 </head>
 <body>
 
@@ -44,14 +43,15 @@
 
                     <style type="text/css">
                         .panel-default {
-                            border-left: 1px solid rgba(204, 204, 204, 0.57);
-                            border-top: 1px solid rgba(204, 204, 204, 0.57);
-                            border-bottom: 1px solid rgba(204, 204, 204, 0.57) ;
+                        border-left: 1px solid rgba(204, 204, 204, 0.57);
+                        border-top: 1px solid rgba(204, 204, 204, 0.57);
+                        border-bottom: 1px solid rgba(204, 204, 204, 0.57) ;
                         }
                     </style>
 
                     <div>
-                        <div class="panel panel-default" style="background-color:#ffffff; border-right: 0px solid rgba(204, 204, 204, 0.57) ; border-radius: 0px; ">
+                        <div class="panel panel-default"
+                             style="background-color:#ffffff; border-right: 0px solid rgba(204, 204, 204, 0.57) ; border-radius: 0px; ">
 
                             <div class="panel-heading" style="background-color: #ffffff;">My account</div>
                             <div class="panel-body" style="border-radius: 0px">
@@ -60,10 +60,12 @@
                                         <a class="active" href="account_dashboard.html" th:href="@{/user}">Dashboard</a>
                                     </li>
                                     <li>
-                                        <a class="active" href="account_profile.html" th:href="@{/profile}">My profile</a>
+                                        <a class="active" href="account_profile.html" th:href="@{/profile}">My
+                                            profile</a>
                                     </li>
                                     <li>
-                                        <a class="active" href="account_ads.html" th:href="@{/user/list}">Manage venues</a>
+                                        <a class="active" href="account_ads.html" th:href="@{/user/list}">Manage
+                                            venues</a>
                                     </li>
                                     <li>
                                         <a class="active" th:href="@{/user/add}">Register Venue</a>
@@ -219,6 +221,7 @@
 
 
      /*]]>*/
+
 </script>
 
 

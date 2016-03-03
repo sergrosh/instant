@@ -48,8 +48,8 @@
                     }
 
                     .seo-primary .col-md-4{
-                        padding-right: 15px;
-                        padding-left: 15px;
+                    padding-right: 15px;
+                    padding-left: 15px;
                     }
 
                     .seo-secondary-row .col-md-4{
@@ -82,7 +82,6 @@
                     .stats div:nth-of-type(5){border:none;}
 
 
-
                 </style>
 
 
@@ -96,10 +95,9 @@
 
                                 <!--Venue Name-->
                                 <!--<div class="panel-heading" style="background-color:#fff; border:none;">-->
-                                    <!--<h3 style="margin-top:0px;" th:text="${venue.name}">Thumbnail label</h3>-->
+                                <!--<h3 style="margin-top:0px;" th:text="${venue.name}">Thumbnail label</h3>-->
                                 <!--</div>-->
                                 <div class="panel-body nopadding" style="border:none;">
-
 
 
                                     <style type="text/css">
@@ -154,36 +152,40 @@
                                     </style>
 
 
-
                                     <div class="col-md-12" style="height:420px">
 
                                         <div class="corner-ribbon bottom-left sticky bg">
-                                            <div class="info-section" style="font-style: normal;font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 26px;line-height: normal; font-family: 'Open Sans', sans-serif;">
-                                                 Restaurant Vertigo
+                                            <div class="info-section"
+                                                 style="font-style: normal;font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 26px;line-height: normal; font-family: 'Open Sans', sans-serif;">
+                                                Restaurant Vertigo
                                             </div>
-                                            <div class="info-section" style="font-style: normal;font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 14px;line-height: normal; font-family: 'Open Sans', sans-serif;">
+                                            <div class="info-section"
+                                                 style="font-style: normal;font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 14px;line-height: normal; font-family: 'Open Sans', sans-serif;">
                                                 Rr.Ismail Qemali, Lgj.14, Vlore
                                             </div>
-                                            <div class="info-section" style="font-style: normal;font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 16px;line-height: normal; font-family: 'Open Sans', sans-serif; line-height: 1.5em;">
-                                                <i class="fa fa-star" style="color:white"></i><i class="fa fa-star" style="color:white"></i><i class="fa fa-star" style="color:white"></i><i class="fa fa-star" style="color:white"></i><i class="fa fa-star" style="color:white"></i>
+                                            <div class="info-section"
+                                                 style="font-style: normal;font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 16px;line-height: normal; font-family: 'Open Sans', sans-serif; line-height: 1.5em;">
+                                                <i class="fa fa-star" style="color:white"></i><i class="fa fa-star"
+                                                                                                 style="color:white"></i><i
+                                                    class="fa fa-star" style="color:white"></i><i class="fa fa-star"
+                                                                                                  style="color:white"></i><i
+                                                    class="fa fa-star" style="color:white"></i>
                                             </div>
                                         </div>
 
 
                                         <!--<div class="corner-ribbon bottom-right sticky bg hidden-lg-down">-->
-                                            <!--<div class="info-section" style="font-style: normal;font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 26px;line-height: normal; font-family: 'Open Sans', sans-serif;">-->
-                                                <!--Event Time-->
-                                            <!--</div>-->
-                                            <!--<div class="info-section" style="font-style: normal;font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 14px;line-height: normal; font-family: 'Open Sans', sans-serif;">-->
-                                                <!--Berliner Allee 1, 10000 Berlin-->
-                                            <!--</div>-->
+                                        <!--<div class="info-section" style="font-style: normal;font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 26px;line-height: normal; font-family: 'Open Sans', sans-serif;">-->
+                                        <!--Event Time-->
+                                        <!--</div>-->
+                                        <!--<div class="info-section" style="font-style: normal;font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 14px;line-height: normal; font-family: 'Open Sans', sans-serif;">-->
+                                        <!--Berliner Allee 1, 10000 Berlin-->
+                                        <!--</div>-->
                                         <!--</div>-->
 
 
                                         <img style="background-repeat: repeat-x; width:100%;height:100%; overflow:hidden;
                                         background:linear-gradient( rgba(0, 0, 0, 0.45), rgba(90, 89, 89, 0.45), rgba(4, 4, 4, 0.82) ), url(/resources/img/img01.jpg)"/>
-
-
 
 
                                     </div>
@@ -195,31 +197,35 @@
 
                                             <div>
                                                 <a style="    cursor: pointer;" th:href="@{/item/{id}(id=${venue.id})}">
-                                                <strong><i class="fa fa-arrow-left"></i> Back</strong>
+                                                    <strong><i class="fa fa-arrow-left"></i> Back</strong>
                                                 </a>
                                             </div>
 
                                             <div>
-                                                <a style="    cursor: pointer; " th:href="@{/item/{id}/menu(id=${venue.id})}">
+                                                <a style="    cursor: pointer; "
+                                                   th:href="@{/item/{id}/menu(id=${venue.id})}">
                                                     <strong>Menu</strong>
                                                 </a>
                                             </div>
 
                                             <div>
-                                                <a style="    cursor: pointer;" th:href="@{/item/{id}/map(id=${venue.id})}">
-                                                <strong>Map</strong>
+                                                <a style="    cursor: pointer;"
+                                                   th:href="@{/item/{id}/map(id=${venue.id})}">
+                                                    <strong>Map</strong>
                                                 </a>
                                             </div>
 
                                             <div>
-                                                <a style="    cursor: pointer;" th:href="@{/item/{id}/reviews(id=${venue.id})}">
-                                                <strong>Reviews</strong>
+                                                <a style="    cursor: pointer;"
+                                                   th:href="@{/item/{id}/reviews(id=${venue.id})}">
+                                                    <strong>Reviews</strong>
                                                 </a>
                                             </div>
 
                                             <div>
-                                                <a style="    cursor: pointer;" th:href="@{/item/{id}/contact(id=${venue.id})}">
-                                                <strong>Contact</strong>
+                                                <a style="    cursor: pointer;"
+                                                   th:href="@{/item/{id}/contact(id=${venue.id})}">
+                                                    <strong>Contact</strong>
                                                 </a>
                                             </div>
 
@@ -240,25 +246,25 @@
                     <br/>
 
 
-
                 </div>
 
 
             </div>
-            </div>
+        </div>
 
-        <div class="row" th:replace="@{'fragments/' + ${view}} :: ${view}"> </div>
+        <div class="row" th:replace="@{'fragments/' + ${view}} :: ${view}"></div>
 
     </div>
 
-        <p style="text-align: center; margin-top:50px; color: #999; line-height: normal; font-size: 17px;"> Hand picked by <span style="font-family: 'Pacifico', cursive; font-weight: 400;">instant</span>, just for you!</p>
+    <p style="text-align: center; margin-top:50px; color: #999; line-height: normal; font-size: 17px;"> Hand picked by
+        <span style="font-family: 'Pacifico', cursive; font-weight: 400;">instant</span>, just for you!</p>
 
-        <!--<p style="max-width: 728px; text-align: center; margin: 21px auto; color: #999; line-height: normal; font-size: 12px;">-->
-        <!--SEO Block</p>-->
+    <!--<p style="max-width: 728px; text-align: center; margin: 21px auto; color: #999; line-height: normal; font-size: 12px;">-->
+    <!--SEO Block</p>-->
 
-        <div th:replace="fragments/seo :: seo"></div>
-        <div th:replace="fragments/footer :: footer"></div>
-    </div>
+    <div th:replace="fragments/seo :: seo"></div>
+    <div th:replace="fragments/footer :: footer"></div>
+</div>
 
 
 <script src="js/jquery.min.js" th:src="@{/resources/oc_js/jquery.min.js}"></script>
@@ -282,6 +288,7 @@ function initialize() {
 marker.setMap(map);
 }
 google.maps.event.addDomListener(window, 'load', initialize);
+
 </script>
 </body>
 </html>

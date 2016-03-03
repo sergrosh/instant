@@ -1,7 +1,7 @@
 package com.instant.persistence.model.item;
 
 import com.instant.persistence.model.NamedModel;
-import lombok.*;
+import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**

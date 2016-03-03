@@ -4,28 +4,29 @@
 <head th:replace="tag/head :: head"></head>
 
 <body>
-    <div class="container-fluid" style="padding-top: 0px;">
-        <div class="row">
-            <div class="col-md-12">
-                <div th:replace="fragments/header :: header"></div>
-                <!-- th:replace="fragments/header :: header(page='landing')" TODO use to put parameters in fragments
-                http://stackoverflow.com/questions/22093149/thymeleaf-fragments-and-default-parameters -->
-            </div>
+<div class="container-fluid" style="padding-top: 0px;">
+    <div class="row">
+        <div class="col-md-12">
+            <div th:replace="fragments/header :: header"></div>
+            <!-- th:replace="fragments/header :: header(page='landing')" TODO use to put parameters in fragments
+            http://stackoverflow.com/questions/22093149/thymeleaf-fragments-and-default-parameters -->
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="row" style="background-color: white; border-bottom: 1px solid rgba(204, 204, 204, 0.57);">
-                    <div class="col-md-12">
-                        <div class="row" style="background-color: white;">
-                            <div class="jumbotron home-search" style="">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <br/>
-                                            <p class="main_description" style="font-size:30px;" th:text="#{landingmoto}"></p>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row" style="background-color: white; border-bottom: 1px solid rgba(204, 204, 204, 0.57);">
+                <div class="col-md-12">
+                    <div class="row" style="background-color: white;">
+                        <div class="jumbotron home-search" style="">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <br/>
+                                        <p class="main_description" style="font-size:30px;"
+                                           th:text="#{landingmoto}"></p>
 
-                                            <br/><br/>
-                                            <form action="#" th:action="@{/clients}" method="GET" id="search_form">
+                                        <br/><br/>
+                                        <form action="#" th:action="@{/clients}" method="GET" id="search_form">
                                             <fieldset>
                                                 <div class="row">
                                                     <div class="col-sm-8 col-sm-offset-2" style="text-align: center">
@@ -35,37 +36,73 @@
                                                                 <div class="input-group">
                                                                     <!--<span class="input-group-addon input-group-addon-text">Find me a</span>-->
 
-                                                                    <input onfocus="this.value='';" autocomplete="off" autofocus="autofocus" type="text" name="query" id="query_input" class="form-control col-sm-3" th:placeholder="#{search.placeholderAttribute.query}"/>
+                                                                    <input onfocus="this.value='';" autocomplete="off"
+                                                                           autofocus="autofocus" type="text"
+                                                                           name="query" id="query_input"
+                                                                           class="form-control col-sm-3"
+                                                                           th:placeholder="#{search.placeholderAttribute.query}"/>
 
-                                                                    <div id ="suggestionBox" style = "z-index:1; display:none; border: 1px solid rgb(226, 226, 226); background-color: #fff; border-radius: 2px; -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2); -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2); box-shadow: 0 5px 10px rgba(0,0,0,.2);">
-                                                                        <ul id="suggestionList" class="list-unstyled" style="width: 100%; display: table; margin-bottom:5px; text-align:left;">
+                                                                    <div id="suggestionBox"
+                                                                         style="z-index:1; display:none; border: 1px solid rgb(226, 226, 226); background-color: #fff; border-radius: 2px; -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2); -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2); box-shadow: 0 5px 10px rgba(0,0,0,.2);">
+                                                                        <ul id="suggestionList" class="list-unstyled"
+                                                                            style="width: 100%; display: table; margin-bottom:5px; text-align:left;">
                                                                             <!--<li style="margin: 4px; padding: 4px;"> <a href="..." style="padding:5px;" onclick="triggerSearch('teodor'); return false;">DEMO</a> </li>-->
                                                                         </ul>
                                                                     </div>
 
-                                                                    <div id="removing_keeps_structure" class=" input-group-addon" style="border: 0px solid #ccc;">
+                                                                    <div id="removing_keeps_structure"
+                                                                         class=" input-group-addon"
+                                                                         style="border: 0px solid #ccc;">
                                                                     </div>
 
-                                                                    <input onfocus="this.value='';" autocomplete="off" type="text" name="city" id="city_input" class="form-control col-sm-3" placeholder="&#xf041; Berlin" th:placeholder="|&#xf041; #{search.placeholderAttribute.location}|" style="font-family:Arial, FontAwesome"/>
+                                                                    <input onfocus="this.value='';" autocomplete="off"
+                                                                           type="text" name="city" id="city_input"
+                                                                           class="form-control col-sm-3"
+                                                                           placeholder="&#xf041; Berlin"
+                                                                           th:placeholder="|&#xf041; #{search.placeholderAttribute.location}|"
+                                                                           style="font-family:Arial, FontAwesome"/>
 
-                                                                    <div id ="suggestionBoxCity" style = "z-index:1; display:none; border: 1px solid rgb(226, 226, 226); background-color: #fff; border-radius: 2px; -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2); -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2); box-shadow: 0 5px 10px rgba(0,0,0,.2);">
-                                                                        <ul id="suggestionListCity" class="list-unstyled" style="width: 100%; display: table; margin-bottom:5px; text-align:left;">
+                                                                    <div id="suggestionBoxCity"
+                                                                         style="z-index:1; display:none; border: 1px solid rgb(226, 226, 226); background-color: #fff; border-radius: 2px; -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2); -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2); box-shadow: 0 5px 10px rgba(0,0,0,.2);">
+                                                                        <ul id="suggestionListCity"
+                                                                            class="list-unstyled"
+                                                                            style="width: 100%; display: table; margin-bottom:5px; text-align:left;">
                                                                             <!--<li style="margin: 4px; padding: 4px;"> <a href="..." style="padding:5px;" onclick="triggerSearch('teodor'); return false;">DEMO</a> </li>-->
                                                                         </ul>
                                                                     </div>
 
                                                                     <div class=" input-group-addon">
                                                                         <div class="btn-group">
-                                                                            <button type="button" class="btn  dropdown-toggle" data-toggle="dropdown" id="category_visible" style="font-family:Arial, FontAwesome" th:utext="#{search.category}">
+                                                                            <button type="button"
+                                                                                    class="btn  dropdown-toggle"
+                                                                                    data-toggle="dropdown"
+                                                                                    id="category_visible"
+                                                                                    style="font-family:Arial, FontAwesome"
+                                                                                    th:utext="#{search.category}">
                                                                                 All <span class="caret"></span>
                                                                             </button>
-                                                                            <ul class="dropdown-menu" role="menu" name="category" >
-                                                                                <li><a href="#" onclick="setCategoryValue('all &#xf0d7;')" th:text="#{search.category.option.all}">All</a></li>
-                                                                                <li><a href="#" onclick="setCategoryValue('bars &#xf0d7;')" th:text="#{search.category.option.bar}">Bars</a></li>
-                                                                                <li><a href="#" onclick="setCategoryValue('restaurant &#xf0d7;')" th:text="#{search.category.option.restaurant}">Restaurant</a></li>
-                                                                                <li><a href="#" onclick="setCategoryValue('pub &#xf0d7;')" th:text="#{search.category.option.club}">Pub (Club)</a></li>
+                                                                            <ul class="dropdown-menu" role="menu"
+                                                                                name="category">
+                                                                                <li><a href="#"
+                                                                                       onclick="setCategoryValue('all &#xf0d7;')"
+                                                                                       th:text="#{search.category.option.all}">All</a>
+                                                                                </li>
+                                                                                <li><a href="#"
+                                                                                       onclick="setCategoryValue('bars &#xf0d7;')"
+                                                                                       th:text="#{search.category.option.bar}">Bars</a>
+                                                                                </li>
+                                                                                <li><a href="#"
+                                                                                       onclick="setCategoryValue('restaurant &#xf0d7;')"
+                                                                                       th:text="#{search.category.option.restaurant}">Restaurant</a>
+                                                                                </li>
+                                                                                <li><a href="#"
+                                                                                       onclick="setCategoryValue('pub &#xf0d7;')"
+                                                                                       th:text="#{search.category.option.club}">Pub
+                                                                                    (Club)</a></li>
                                                                             </ul>
-                                                                            <input type="text" name="category" class="form-control col-sm-3 hidden" id="category_hidden"/>
+                                                                            <input type="text" name="category"
+                                                                                   class="form-control col-sm-3 hidden"
+                                                                                   id="category_hidden"/>
                                                                         </div>
                                                                     </div>
 
@@ -81,42 +118,45 @@
                                                 <br/>
                                                 <div class="row">
                                                     <div class="col-sm-12" style="text-align: center">
-                                                        <button type="submit" class="btn btn-primary search-btn" th:text="#{search.button}">Search</button>
+                                                        <button type="submit" class="btn btn-primary search-btn"
+                                                                th:text="#{search.button}">Search
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </fieldset>
-                                            </form>
-                                            <br/>
-                                            <br/>
-                                            <div class="row">
-                                                <div class="col-sm-12" style="text-align: center">
-                                                    <div id="quotes">
-                                                        <!--<div class="text-item" style="display: none;">Boom! <strong>Vince</strong> just sold a <strong>Washing Machine</strong> in <strong>Sheffield</strong></div>-->
-                                                        <!--<div class="text-item" style="display: none;"><strong>Julia</strong> is availiable for <strong>home cleaning</strong> in <strong>Manchester</strong></div>-->
-                                                        <!--<div class="text-item" style="display: none;">Success! <strong>Paul</strong> has just sold a <strong>Mercedes-Benz E-class</strong> in <strong>Liverpool</strong></div>-->
-                                                        <!--<div class="text-item" style="display: none;">Hey, <strong>Uber</strong> has a <strong>job opening</strong> in <strong>London</strong></div>-->
-                                                    </div>
+                                        </form>
+                                        <br/>
+                                        <br/>
+                                        <div class="row">
+                                            <div class="col-sm-12" style="text-align: center">
+                                                <div id="quotes">
+                                                    <!--<div class="text-item" style="display: none;">Boom! <strong>Vince</strong> just sold a <strong>Washing Machine</strong> in <strong>Sheffield</strong></div>-->
+                                                    <!--<div class="text-item" style="display: none;"><strong>Julia</strong> is availiable for <strong>home cleaning</strong> in <strong>Manchester</strong></div>-->
+                                                    <!--<div class="text-item" style="display: none;">Success! <strong>Paul</strong> has just sold a <strong>Mercedes-Benz E-class</strong> in <strong>Liverpool</strong></div>-->
+                                                    <!--<div class="text-item" style="display: none;">Hey, <strong>Uber</strong> has a <strong>job opening</strong> in <strong>London</strong></div>-->
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-
                         </div>
+
+
                     </div>
                 </div>
             </div>
         </div>
-
-        <p style="text-align: center; margin-top:50px; color: #999; line-height: normal; font-size: 17px;">
-            Hand picked by <span style="font-family: 'Pacifico', cursive; font-weight: 400;">instant</span>, just for you!</p>
-
-        <div th:replace="fragments/seo :: seo"></div>
-        <div th:replace="fragments/footer :: footer"></div>
-
     </div>
+
+    <p style="text-align: center; margin-top:50px; color: #999; line-height: normal; font-size: 17px;">
+        Hand picked by <span style="font-family: 'Pacifico', cursive; font-weight: 400;">instant</span>, just for you!
+    </p>
+
+    <div th:replace="fragments/seo :: seo"></div>
+    <div th:replace="fragments/footer :: footer"></div>
+
+</div>
 
 
 <!--Include common scripts-->

@@ -103,13 +103,13 @@ public class NewVenue implements Serializable {
 
     @ApiModelProperty(value = "")
     @JsonSerialize(using = CustomTimeSerializer.class)
-    @JsonDeserialize(using=CustomTimeDeserializer.class)
+    @JsonDeserialize(using = CustomTimeDeserializer.class)
     @JsonProperty("opentime")
     private LocalTime openTime;
 
     @ApiModelProperty(value = "")
-    @JsonSerialize(using = CustomTimeSerializer .class)
-    @JsonDeserialize(using=CustomTimeDeserializer.class)
+    @JsonSerialize(using = CustomTimeSerializer.class)
+    @JsonDeserialize(using = CustomTimeDeserializer.class)
     @JsonProperty("closetime")
     private LocalTime closeTime;
 }

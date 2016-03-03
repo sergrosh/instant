@@ -1,22 +1,23 @@
 package com.instant.service.geo;
 
 import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.data.geo.Point;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
 import java.net.URL;
 import java.nio.charset.Charset;
-import org.json.JSONException;
-import org.json.JSONObject;
+
 /**
  * @author sroshchupkin
  */
 
 @Service
-public class GeoCoderServiceImpl implements GeoCoderService,Serializable {
+public class GeoCoderServiceImpl implements GeoCoderService, Serializable {
 
-    private static final String GOOGLE_ADRESS_QUERY="http://maps.googleapis.com/maps/api/geocode/json?address=";
+    private static final String GOOGLE_ADRESS_QUERY = "http://maps.googleapis.com/maps/api/geocode/json?address=";
 
     @Override
     public Point getGeoPointFromAddress(String locationAddress) {
@@ -27,7 +28,7 @@ public class GeoCoderServiceImpl implements GeoCoderService,Serializable {
         JSONObject json;
         try {
             double lat, lon;
-            json = readJsonFromUrl (str);
+            json = readJsonFromUrl(str);
             JSONObject geoMetryObject;
             JSONObject locations;
             JSONArray jarr = json.getJSONArray("results");
@@ -38,7 +39,7 @@ public class GeoCoderServiceImpl implements GeoCoderService,Serializable {
                 locations = geoMetryObject.getJSONObject("location");
                 lat = locations.getDouble("lat");
                 lon = locations.getDouble("lng");
-                locationPoint = new Point(lat,lon);
+                locationPoint = new Point(lat, lon);
             }
         } catch (Exception e) {
             e.printStackTrace();

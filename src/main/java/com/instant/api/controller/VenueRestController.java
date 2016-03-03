@@ -21,6 +21,7 @@ public interface VenueRestController {
 
     /**
      * GET ALL VENUES
+     *
      * @param limit
      * @param offset
      * @return
@@ -47,6 +48,7 @@ public interface VenueRestController {
 
     /**
      * CREATE-POST new Venue
+     *
      * @param venue
      * @return
      */
@@ -63,6 +65,7 @@ public interface VenueRestController {
 
     /**
      * GET VENUE
+     *
      * @param id
      * @return
      */
@@ -78,6 +81,7 @@ public interface VenueRestController {
 
     /**
      * UPDATE VENUE
+     *
      * @param venue
      * @return
      */
@@ -96,6 +100,7 @@ public interface VenueRestController {
 
     /**
      * DELETE VENUE
+     *
      * @param id
      */
     @ApiOperation(value = "", notes = "delete a single venue based on the id supplied", response = Venue.class, responseContainer = "List")
@@ -105,7 +110,8 @@ public interface VenueRestController {
             @ApiResponse(code = 404, message = ERROR_404_MSG),
             @ApiResponse(code = 500, message = ERROR_500_MSG)})
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "/{id}", produces = {APPLICATION_JSON_VALUE}) void deleteVenue(@ApiParam(value = "id of venue to delete",
+    @RequestMapping(method = RequestMethod.DELETE, value = "/{id}", produces = {APPLICATION_JSON_VALUE})
+    void deleteVenue(@ApiParam(value = "id of venue to delete",
             required = true) @PathVariable("id") String id
 
     );

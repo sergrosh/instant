@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 
 @Slf4j
 @Service
-public class ValidationServiceImpl implements ValidationService<Venue>{
+public class ValidationServiceImpl implements ValidationService<Venue> {
 
     @Autowired
     private Validator validator;

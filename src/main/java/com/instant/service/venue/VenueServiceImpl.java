@@ -23,7 +23,7 @@ import java.util.List;
 
 @Slf4j
 @Service
-public class VenueServiceImpl implements VenueService{
+public class VenueServiceImpl implements VenueService {
 
     @Autowired
     VenueRepository venueRepository;
@@ -54,13 +54,16 @@ public class VenueServiceImpl implements VenueService{
             log.error("validation failed: {}", result);
             throw new InvalidRequestException();
         }
-        if(!venue.getAddress().isEmpty()){
+        if (!venue.getAddress().isEmpty()) {
             Point geoPoint = geoCoderService.getGeoPointFromAddress(venue.getAddress());
             venue.setLocation(geoPoint);
         }
 
-        try{venueRepository.save(venue);}
-        catch (Exception e){throw new InternalServerException();}
+        try {
+            venueRepository.save(venue);
+        } catch (Exception e) {
+            throw new InternalServerException();
+        }
         return venue;
     }
 

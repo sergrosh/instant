@@ -13,7 +13,7 @@ import java.util.List;
 @ToString
 public class ValidationResult {
 
-    public enum ResultCode{SUCCESS, ERROR}
+    public enum ResultCode {SUCCESS, ERROR}
 
     @Getter
     private ResultCode resultCode;
@@ -21,9 +21,12 @@ public class ValidationResult {
     @Getter
     private List<String> messages;
 
-    private ValidationResult(){}
+    private ValidationResult() {
+    }
 
-    public boolean isSuccessfull(){return resultCode==ResultCode.SUCCESS;}
+    public boolean isSuccessfull() {
+        return resultCode == ResultCode.SUCCESS;
+    }
 
     public boolean isFailed() {
         return resultCode == ResultCode.ERROR;

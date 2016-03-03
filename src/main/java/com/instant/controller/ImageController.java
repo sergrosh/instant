@@ -43,11 +43,12 @@ public class ImageController {
         return uploadedFiles;
     }
 
-    @RequestMapping(value=Mappings.DELETE_VENUE_IMAGE, method = RequestMethod.POST)
+    @RequestMapping(value = Mappings.DELETE_VENUE_IMAGE, method = RequestMethod.POST)
     public
-    @ResponseBody String deleteFile(HttpServletRequest request) throws IOException{
-        String fileName=request.getParameter("name");
-        String name=fileName.split("\\.")[0];
+    @ResponseBody
+    String deleteFile(HttpServletRequest request) throws IOException {
+        String fileName = request.getParameter("name");
+        String name = fileName.split("\\.")[0];
         fileComponent.deleteFileFromLocalDisc(fileName);
 //        if(uploadedFileRepository.findFileByName(name).size()>0)
 //            uploadedFileRepository.deleteByName(name);

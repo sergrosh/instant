@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head lang="en">
 
 </head>
@@ -7,44 +7,48 @@
 
 <body>
 
-    <nav th:fragment="header" class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="" style="float:left;width:75%;overflow: hidden; ">
-            <ul class="nav navbar-nav index_logo">
-                <a class="navbar-brand" href="#" th:href="@{/}"
-                   style="font-family: 'Pacifico', cursive; font-size: 2em; font-weight: 400;">instant
-                </a>
-            </ul>
-        </div>
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <i class="fa fa-facebook"></i>
-            </button>
-            &nbsp;
-        </div>
-        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+<nav th:fragment="header" class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="" style="float:left;width:75%;overflow: hidden; ">
+        <ul class="nav navbar-nav index_logo">
+            <a class="navbar-brand" href="#" th:href="@{/}"
+               style="font-family: 'Pacifico', cursive; font-size: 2em; font-weight: 400;">instant
+            </a>
+        </ul>
+    </div>
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <i class="fa fa-facebook"></i>
+        </button>
+        &nbsp;
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right" style="padding: 0px 15px 0px 5px">
             <li th:switch="${#authentication}? ${#authorization.expression('isAuthenticated()')} : ${false}">
                 <form th:case="${false}" action="/signin/facebook" method="POST" class="connectForm">
-                    <input type="hidden" name="scope" value="" />
-                    <button type="submit" class="btn btn-block connectButton" id="connectFb" style="background-color: transparent; font-family: 'Pacifico', cursive; font-size: 1.2em; padding-top: 9px; padding-bottom: 6px;">
+                    <input type="hidden" name="scope" value=""/>
+                    <button type="submit" class="btn btn-block connectButton" id="connectFb"
+                            style="background-color: transparent; font-family: 'Pacifico', cursive; font-size: 1.2em; padding-top: 9px; padding-bottom: 6px;">
                         Login via
                         <span class="fa-stack" style="color:#3B5998;">
                             <i class="fa fa-square-o fa-stack-2x"></i>
-                            <i class="fa fa-facebook fa-stack-1x" ></i>
+                            <i class="fa fa-facebook fa-stack-1x"></i>
                         </span>
                     </button>
                 </form>
                 <div th:case="${true}" style="padding-top: 8px;">
                     <span style="color:#3B5998;">
-                        <img src="http://lorempixel.com/33/33" th:src="${#authentication.principal.imageUrl}" style="border-radius: 18px; margin-left:-13px; height:33px; width:33px;"/>
+                        <img src="http://lorempixel.com/33/33" th:src="${#authentication.principal.imageUrl}"
+                             style="border-radius: 18px; margin-left:-13px; height:33px; width:33px;"/>
                     </span>
                     <!--<span th:text="${#authentication.email}"> some text</span>-->
                     <!--<span sec:authentication="principal.email"></span>-->
                     <!--<span th:text="${facebookProfile.name}">Some User</span>-->
 
                     <div class="btn-group" role="group">
-                        <button style="border:none;     padding-left: 4px;" type="button" class="btn btn-default dropdown-toggle topmenubutton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button style="border:none;     padding-left: 4px;" type="button"
+                                class="btn btn-default dropdown-toggle topmenubutton" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
                             <span style="padding-right: 5px;" th:text="${#authentication.principal.displayName}"></span>
                             <i class="fa fa-angle-down"></i>
                         </button>
@@ -57,7 +61,7 @@
                     <style type="text/css">
 
                         .btn-default.active, .btn-default:active, .open > .dropdown-toggle.btn-default{
-                            background-color:transparent !important;
+                        background-color:transparent !important;
                         }
 
                         .btn-default:hover{
@@ -93,14 +97,14 @@
     </div>
 
 
-            <!--<div class="formInfo">-->
-                <!--You are not yet connected to Facebook.-->
-            <!--</div>-->
-            <!--<button class="connectButton" type="submit"><img src="/spring-social-popup/resources/social/facebook/connect_light_medium_short.gif"/></button>-->
+    <!--<div class="formInfo">-->
+    <!--You are not yet connected to Facebook.-->
+    <!--</div>-->
+    <!--<button class="connectButton" type="submit"><img src="/spring-social-popup/resources/social/facebook/connect_light_medium_short.gif"/></button>-->
 
-            <!--<p class="connectionOptions"><label for="postToWall"><input id="postToWall" type="checkbox" name="postToWall" /> Tell your friends about Spring Social Popup on your Facebook wall</label></p>-->
+    <!--<p class="connectionOptions"><label for="postToWall"><input id="postToWall" type="checkbox" name="postToWall" /> Tell your friends about Spring Social Popup on your Facebook wall</label></p>-->
 
-    </nav>
+</nav>
 
 </body>
 </html>

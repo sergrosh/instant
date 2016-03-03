@@ -25,26 +25,26 @@ public class FileComponent {
     @Autowired
     ServletContext servletContext;
 
-    public  void saveFileToLocalDisk(MultipartFile multipartFile) throws IOException, FileNotFoundException {
+    public void saveFileToLocalDisk(MultipartFile multipartFile) throws IOException, FileNotFoundException {
         String outputFileName = getOutputFilename(multipartFile);
         FileCopyUtils.copy(multipartFile.getBytes(), new FileOutputStream(outputFileName));
     }
 
-    public void deleteFileFromLocalDisc(String name)throws IOException{
-        Path filePath= Paths.get(getDestinationLocation()+name);
+    public void deleteFileFromLocalDisc(String name) throws IOException {
+        Path filePath = Paths.get(getDestinationLocation() + name);
         Files.delete(filePath);
     }
 
-    public  String getOutputFilename(MultipartFile multipartFile) {
+    public String getOutputFilename(MultipartFile multipartFile) {
         return getDestinationLocation() + multipartFile.getOriginalFilename();
     }
 
-    public  String getDestinationLocation() {
-        String destinationLocation=servletContext.getRealPath(File.separator);
+    public String getDestinationLocation() {
+        String destinationLocation = servletContext.getRealPath(File.separator);
         return destinationLocation;
     }
 
-    public UploadedFile  getUploadedFileInfo(MultipartFile multipartFile) throws IOException {
+    public UploadedFile getUploadedFileInfo(MultipartFile multipartFile) throws IOException {
         UploadedFile fileInfo = new UploadedFile();
         fileInfo.setName(multipartFile.getOriginalFilename());
         fileInfo.setSize(multipartFile.getSize());

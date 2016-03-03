@@ -4,7 +4,6 @@ import com.instant.common.ArgumentResolverComposite;
 import com.instant.controller.InstantErrorController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.ErrorAttributes;
-import org.springframework.boot.context.embedded.MultipartConfigFactory;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.ehcache.EhCacheCacheManager;
 import org.springframework.cache.ehcache.EhCacheManagerFactoryBean;
@@ -20,7 +19,6 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
-import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.ViewResolver;
@@ -32,7 +30,6 @@ import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 
-import javax.servlet.MultipartConfigElement;
 import java.util.List;
 import java.util.Locale;
 
@@ -126,7 +123,9 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
     private ErrorAttributes errorAttributes;
 
     @Bean
-    public InstantErrorController instantErrorController(){return new InstantErrorController(errorAttributes);}
+    public InstantErrorController instantErrorController() {
+        return new InstantErrorController(errorAttributes);
+    }
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {

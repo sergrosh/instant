@@ -33,7 +33,7 @@ public class ApplicationConfiguration {
                 new Docket(DocumentationType.SWAGGER_2)
                         .apiInfo(apiInfo)
                         .select()
-                        .apis(RequestHandlerSelectors.basePackage("com.startitupers"))
+                        .apis(RequestHandlerSelectors.basePackage("com.instant.controller.rest"))
                         .build();
     }
 }

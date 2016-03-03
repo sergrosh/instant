@@ -25,8 +25,7 @@ import java.util.List;
 
 
 /**
- *
- *  Search controller - Venue search, venue and city suggestion
+ * Search controller - Venue search, venue and city suggestion
  *
  * @author sroshchupkin
  */
@@ -49,8 +48,7 @@ public class SearchController {
     MongoOperations mongoOperations;
 
     /**
-     *
-     * @param query -
+     * @param query       -
      * @param category
      * @param view
      * @param pageNum

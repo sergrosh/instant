@@ -14,12 +14,12 @@ import java.io.IOException;
  *
  * @author Sergii Roshchupkin
  */
-public class CustomTimeDeserializer extends JsonDeserializer<LocalTime>{
+public class CustomTimeDeserializer extends JsonDeserializer<LocalTime> {
     DateTimeFormatter outputFormat = new DateTimeFormatterBuilder().appendPattern("HH:MM:SS").toFormatter();
 
     @Override
-    public LocalTime deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException{
-        LocalTime outputLocalTime = outputFormat.parseLocalTime(jp.getText()+":00");
+    public LocalTime deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException {
+        LocalTime outputLocalTime = outputFormat.parseLocalTime(jp.getText() + ":00");
         return outputLocalTime;
     }
 }
