@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<div th:fragment="itemlist_product_list" class="row" style="margin-left: 15px; margin-right: 15px; margin-top: 15px;"
+<div th:fragment="itemlist_product_list" class="row" style="margin-left: 15px; margin-right: 15px;"
      th:each="venue : ${venues}" th:include="fragments/itemlist_product_item :: itemlist_product_item"
      th:with="venue=${venue}">
 </div>
