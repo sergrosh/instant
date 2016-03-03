@@ -3,7 +3,7 @@ package com.instant.service.geo;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.springframework.data.geo.Point;
+import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
@@ -20,8 +20,8 @@ public class GeoCoderServiceImpl implements GeoCoderService, Serializable {
     private static final String GOOGLE_ADRESS_QUERY = "http://maps.googleapis.com/maps/api/geocode/json?address=";
 
     @Override
-    public Point getGeoPointFromAddress(String locationAddress) {
-        Point locationPoint = null;
+    public GeoJsonPoint getGeoPointFromAddress(String locationAddress) {
+        GeoJsonPoint locationPoint = null;
         String locationAddres = locationAddress.replaceAll(" ", "%20");
         String str = GOOGLE_ADRESS_QUERY
                 + locationAddres + "&sensor=true";
@@ -39,7 +39,7 @@ public class GeoCoderServiceImpl implements GeoCoderService, Serializable {
                 locations = geoMetryObject.getJSONObject("location");
                 lat = locations.getDouble("lat");
                 lon = locations.getDouble("lng");
-                locationPoint = new Point(lat, lon);
+                locationPoint = new GeoJsonPoint(lat, lon);
             }
         } catch (Exception e) {
             e.printStackTrace();

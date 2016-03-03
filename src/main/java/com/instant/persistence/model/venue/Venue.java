@@ -6,7 +6,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.geo.Point;
+import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 import org.springframework.data.mongodb.core.index.GeoSpatialIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -40,5 +40,5 @@ public class Venue extends NewVenue {
     @GeoSpatialIndexed
     @ApiModelProperty(value = "")
     @JsonProperty("location")
-    private Point location;
+    private GeoJsonPoint location;
 }

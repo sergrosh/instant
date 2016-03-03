@@ -1,10 +1,10 @@
 package com.instant.service.geo;
 
-import org.springframework.data.geo.Point;
+import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 
 /**
  * @author sroshchupkin
  */
 public interface GeoCoderService {
-    Point getGeoPointFromAddress(String locationAddress);
+    GeoJsonPoint getGeoPointFromAddress(String locationAddress);
 }

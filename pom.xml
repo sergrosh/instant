@@ -222,6 +222,13 @@
             <version>${org.json.version}</version>
         </dependency>
 
+        <!--Test-->
+        <!--<dependency>-->
+            <!--<groupId>de.flapdoodle.embed</groupId>-->
+            <!--<artifactId>de.flapdoodle.embed.mongo</artifactId>-->
+            <!--<version>${embedded-mongo.version}</version>-->
+        <!--</dependency>-->
+
     </dependencies>
 
     <build>

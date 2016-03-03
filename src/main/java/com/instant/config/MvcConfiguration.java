@@ -46,6 +46,7 @@ import java.util.Locale;
 @EnableMongoRepositories("com.instant.persistence.repository")
 @ImportResource("classpath*:springmvc-resteasy.xml")
 public class MvcConfiguration extends WebMvcConfigurerAdapter {
+
     @Bean
     public EhCacheManagerFactoryBean ehCacheManagerFactoryBean() {
         EhCacheManagerFactoryBean ehCacheManagerFactoryBean = new EhCacheManagerFactoryBean();
