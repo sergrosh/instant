@@ -7,14 +7,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * @author sroshchupkin
  */
 @SuppressWarnings("serial")
-@Document(collection = "Counter")
-public class Counter extends BaseEntity {
+@Document(collection = "UserCounter")
+public class UserCounter extends BaseEntity {
 
     private String name;
 
     private long sequence;
 
-    public Counter() {
+    public UserCounter() {
     }
 
     /**
