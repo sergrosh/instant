@@ -10,10 +10,10 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.joda.time.LocalTime;
 import org.springframework.data.mongodb.core.index.TextIndexed;
 
 import java.io.Serializable;
-import java.time.LocalTime;
 import java.util.List;
 
 
