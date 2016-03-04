@@ -5,6 +5,7 @@ import com.instant.exception.InvalidRequestException;
 import com.instant.exception.NotFoundException;
 import com.instant.persistence.model.venue.Venue;
 import com.instant.persistence.repository.VenueRepository;
+import com.instant.service.counter.CounterService;
 import com.instant.service.geo.GeoCoderService;
 import com.instant.validator.ValidationResult;
 import com.instant.validator.ValidationService;
@@ -34,6 +35,9 @@ public class VenueServiceImpl implements VenueService {
     @Autowired
     GeoCoderService geoCoderService;
 
+    @Autowired
+    CounterService counterService;
+
 
     @Override
     public List<Venue> getVenues(Integer limit, Integer offset) {
@@ -54,9 +58,10 @@ public class VenueServiceImpl implements VenueService {
             log.error("validation failed: {}", result);
             throw new InvalidRequestException();
         }
+        //venue.setId(counterService.getNextSequence("Venue"));
         if (!venue.getAddress().isEmpty()) {
             GeoJsonPoint geoPoint = geoCoderService.getGeoPointFromAddress(venue.getAddress());
-            venue.setLocation(geoPoint);
+//            venue.setLocation(geoPoint);
         }
 
         try {
