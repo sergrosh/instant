@@ -20,7 +20,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Venue extends NewVenue {
 
     @Id
-    private String id;
+    private int id;
 
     @JsonProperty("published")
     private Boolean published;

@@ -3,7 +3,7 @@ package com.instant.service.user;
 import com.instant.persistence.model.social.UserAccount;
 import com.instant.persistence.model.social.UserRoleType;
 import com.instant.persistence.repository.social.UserAccountRepository;
-import com.instant.persistence.repository.system.CounterService;
+import com.instant.persistence.repository.system.UserCounterService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -26,18 +26,18 @@ public class UserAccountServiceImpl implements UserAccountService {
     public static final String USER_ID_PREFIX = "user";
     private static final Logger LOGGER = LoggerFactory.getLogger(UserAccountServiceImpl.class);
     private final UserAccountRepository accountRepository;
-    private final CounterService counterService;
+    private final UserCounterService userCounterService;
     private final UserIdSource userIdSource = new AuthenticationNameUserIdSource();
 
     @Inject
-    public UserAccountServiceImpl(UserAccountRepository accountRepository, CounterService counterService) {
+    public UserAccountServiceImpl(UserAccountRepository accountRepository, UserCounterService userCounterService) {
         this.accountRepository = accountRepository;
-        this.counterService = counterService;
+        this.userCounterService = userCounterService;
     }
 
     @Override
     public UserAccount createUserAccount(ConnectionData data, UserProfile profile) {
-        long userIdSequence = this.counterService.getNextUserIdSequence();
+        long userIdSequence = this.userCounterService.getNextUserIdSequence();
 
         UserRoleType[] roles = (userIdSequence == 1l) ?
                 new UserRoleType[]{UserRoleType.ROLE_USER, UserRoleType.ROLE_AUTHOR, UserRoleType.ROLE_ADMIN} :

@@ -1,6 +1,6 @@
 package com.instant.persistence.repository.system;
 
-import com.instant.persistence.model.system.Counter;
+import com.instant.persistence.model.system.UserCounter;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -13,13 +13,13 @@ import javax.inject.Inject;
  * @author sroshchupkin
  */
 @Service
-public class CounterServiceImpl implements CounterService {
+public class UserCounterServiceImpl implements UserCounterService {
     public static final String USER_ID_SEQUENCE_NAME = "user_id";
 
     private final MongoTemplate mongoTemplate;
 
     @Inject
-    public CounterServiceImpl(MongoTemplate mongoTemplate) {
+    public UserCounterServiceImpl(MongoTemplate mongoTemplate) {
         this.mongoTemplate = mongoTemplate;
     }
 
@@ -31,15 +31,15 @@ public class CounterServiceImpl implements CounterService {
     private long increaseCounter(String counterName) {
         Query query = new Query(Criteria.where("name").is(counterName));
         Update update = new Update().inc("sequence", 1);
-        Counter counter = mongoTemplate.findAndModify(query, update, Counter.class); // return old Counter object
-        if (counter == null) {
-            counter = new Counter();
-            counter.setName(counterName);
-            counter.setSequence(2); //should increase by one.
-            mongoTemplate.save(counter);
+        UserCounter userCounter = mongoTemplate.findAndModify(query, update, UserCounter.class); // return old UserCounter object
+        if (userCounter == null) {
+            userCounter = new UserCounter();
+            userCounter.setName(counterName);
+            userCounter.setSequence(2); //should increase by one.
+            mongoTemplate.save(userCounter);
             return 1;
         }
-        return counter.getSequence();
+        return userCounter.getSequence();
     }
 
 }
