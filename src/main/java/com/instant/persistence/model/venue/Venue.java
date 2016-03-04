@@ -8,6 +8,7 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 import org.springframework.data.mongodb.core.index.GeoSpatialIndexed;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -20,7 +21,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Venue extends NewVenue {
 
     @Id
-    private int id;
+    private String id;
 
     @JsonProperty("published")
     private Boolean published;
@@ -37,8 +38,9 @@ public class Venue extends NewVenue {
     @JsonProperty("likes")
     private int likes;
 
-    @GeoSpatialIndexed
+
     @ApiModelProperty(value = "")
     @JsonProperty("location")
-    private GeoJsonPoint location;
+    @GeoSpatialIndexed
+    private double[] location;
 }

@@ -150,5 +150,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 new RememberMeAuthenticationProvider(environment.getProperty("application.key"));
         return rememberMeAuthenticationProvider;
     }
-
 }

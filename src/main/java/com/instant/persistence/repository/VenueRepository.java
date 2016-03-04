@@ -27,7 +27,7 @@ public interface VenueRepository extends MongoRepository<Venue, String> {
 
     Venue findById(String id);
 
-    GeoResults<Venue> findByLocationNear(Point location, Distance distance);
+//    GeoResults<Venue> findByLocationNear(Point location, Distance distance);
 
     /**Geo location searching*/
     // {'geoNear' : 'location', 'near' : [x, y] }

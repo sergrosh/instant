@@ -60,10 +60,10 @@ public class VenueServiceImpl implements VenueService {
         }
         //venue.setId(counterService.getNextSequence("Venue"));
         if (!venue.getAddress().isEmpty()) {
-            GeoJsonPoint geoPoint = geoCoderService.getGeoPointFromAddress(venue.getAddress());
-//            venue.setLocation(geoPoint);
+            double[] geoPoint = geoCoderService.getGeoPointFromAddress(venue.getAddress());
+            venue.setLocation(geoPoint);
         }
-
+        venue.setPublished(false);
         try {
             venueRepository.save(venue);
         } catch (Exception e) {

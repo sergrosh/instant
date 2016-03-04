@@ -20,8 +20,8 @@ public class GeoCoderServiceImpl implements GeoCoderService, Serializable {
     private static final String GOOGLE_ADRESS_QUERY = "http://maps.googleapis.com/maps/api/geocode/json?address=";
 
     @Override
-    public GeoJsonPoint getGeoPointFromAddress(String locationAddress) {
-        GeoJsonPoint locationPoint = null;
+    public double[] getGeoPointFromAddress(String locationAddress) {
+        double[] locationPoint=null;
         String locationAddres = locationAddress.replaceAll(" ", "%20");
         String str = GOOGLE_ADRESS_QUERY
                 + locationAddres + "&sensor=true";
@@ -39,7 +39,7 @@ public class GeoCoderServiceImpl implements GeoCoderService, Serializable {
                 locations = geoMetryObject.getJSONObject("location");
                 lat = locations.getDouble("lat");
                 lon = locations.getDouble("lng");
-                locationPoint = new GeoJsonPoint(lat, lon);
+                locationPoint = new double[]{lat,lon};
             }
         } catch (Exception e) {
             e.printStackTrace();
