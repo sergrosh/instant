@@ -5,7 +5,7 @@
 
 </head>
 <body>
-<div class="row" th:fragment="itemlist_product_item" style="margin-left: 15px; margin-right: 15px; margin-top: 15px;">
+<div class="row" th:fragment="itemlist_product_item" style="margin-left: 15px; margin-right: 15px;">
     <div class="row">
 
         <style type="text/css">
@@ -162,97 +162,182 @@
 
         <!--New Item Starts here-->
 
+        <!--<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">-->
+            <!--<div class="row instantborder">-->
+                <!--&lt;!&ndash; instantborder class ONLY FOR BOTTOM from row above for TESTING !!!!&ndash;&gt;-->
+                <!--<br/>-->
+                <!--&lt;!&ndash;Image&ndash;&gt;-->
+                <!--<div class="col-xs-5 col-sm-4 col-md-4 col-lg-4">-->
+                    <!--<img src="http://lorempixel.com/180/130"/>-->
+                    <!--<div class="corner-ribbon top-right sticky open">OPEN</div>-->
+                <!--</div>-->
+
+                <!--&lt;!&ndash;Desc&ndash;&gt;-->
+                <!--<div class="col-xs-3 col-sm-4 col-md-4 col-lg-4"-->
+                     <!--style="border-right:1px solid rgba(204, 204, 204, 0.57)">-->
+                    <!--<dl>-->
+                        <!--<dt>-->
+                            <!--<a style="text-decoration: none;" href="/item/56c60d5244aef3f082ce958a">-->
+                                <!--<p>-->
+                                    <!--<strong style="color: #444; font-size: 23px; font-height:16px;line-height:1;font-style:normal;">A</strong>-->
+                                    <!--<sup style="font-style:bold; color: #999999;"> by YOLOLAND</sup>-->
+                                <!--</p>-->
+                            <!--</a>-->
+                        <!--</dt>-->
+                        <!-- -->
+                        <!--<dd class="hidethisshit">-->
+                            <!--<p style="color:#999999;margin-top:-10px;">club; fish, meat, chicken, pizza</p>-->
+                        <!--</dd>-->
+
+                        <!--<dd class="hidethisshit">-->
+                            <!--<p style="color:#999999; font-size: 0.9em;" class="venue_description">aaa</p>-->
+                        <!--</dd>-->
+
+                        <!--<dd>-->
+                            <!--<p style="margin-bottom: 0px; color:#777777;"><i class="fa fa-map-marker"></i> <span>YOLOLAND</span>-->
+                                <!--<a href="#"><span style="color:#648EB7">View in Map</span></a></p>-->
+                        <!--</dd>-->
+
+                    <!--</dl>-->
+
+                <!--</div>-->
+
+                <!--&lt;!&ndash;Review/Explore&ndash;&gt;-->
+                <!--<div class="col-xs-3 col-sm-4 col-md-4 col-lg-4">-->
+
+                    <!--<div style="margin-left:5px;">-->
+                        <!--<div style="width: 100%; margin-top: 10px;">-->
+                            <!--<i class="fa fa-star" style="font-weight: bold; font-size: 1.2em; color: #777777;"></i>-->
+                            <!--<i class="fa fa-star" style="font-weight: bold; font-size: 1.2em; color: #777777;"></i>-->
+                            <!--<i class="fa fa-star" style="font-weight: bold; font-size: 1.2em; color: #777777;"></i>-->
+                            <!--<i class="fa fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #777777;"></i>-->
+                            <!--<i class="fa fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #777777;"></i>-->
+                        <!--</div>-->
+
+                        <!--<div>-->
+                            <!--<label style="font-size: 1.0em; margin-bottom: 15px; color:#ADCC74;">Good</label>-->
+                            <!--&lt;!&ndash;<label style="font-size: 1.0em; margin-bottom: 15px; color:#CC7474;">Bad</label>&ndash;&gt;-->
+                        <!--</div>-->
+                        <!-- -->
+                        <!--<div>-->
+                            <!--<p>-->
+                                <!--&lt;!&ndash;<strong style="font-size: 15px; font-height:16px;line-height:1;font-style:normal; color: #fff; background-color: #777; padding: .2em .2em .3em; border-radius: .25em;     border-top-right-radius: 0em;      border-bottom-right-radius: 0em;">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<i class="fa fa-clock-o" style="color: #ADCC74;"></i> open </strong>&ndash;&gt;-->
+                                <!--<strong style="font-size: 15px; font-height:16px;line-height:1;font-style:normal; padding: 10px 15px 10px 15px; background-color: #B0CE79; background-color:#648EB7;   padding: .2em .6em .3em; border-radius: .25em;">-->
+                                    <!--&lt;!&ndash; TODO Refactoring or Not refactoring the callign way of item&ndash;&gt;-->
+                                    <!--&lt;!&ndash;th:href="@{/item(id=${venue.id})}"&ndash;&gt;-->
+                                    <!--<a style="color: #fff;" th:href="@{/item/{id}(id=${venue.id})}"><i-->
+                                            <!--class="fa fa-paper-plane-o"></i></a>-->
+                                    <!--<a class="hidethisshit" style="color: #fff;"-->
+                                       <!--th:href="@{/item/{id}(id=${venue.id})}">Explore</a>-->
+                                <!--</strong>-->
+                            <!--</p>-->
+                        <!--</div>-->
+                        <!--<br/>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <style type="text/css">
+            .container {
+            display: table !important;
+            }
+            .container2 {
+            display: table !important;
+            padding-right:0px !important;
+            padding-left:0px !important;
+            }
+            .column {
+            display: table-cell !important;
+
+            }
+
+            .myrow {
+            display: table-row !important;
+            }
+
+            @media all {
+            .container{
+            width:inherit;
+            }
+            }
+
+        </style>
+
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="row instantborder" style="    padding-top: 20px; padding-bottom: 20px;">
+                <div class="container">
+                    <div class="column">
 
-            <div class="row instantborder">
-                <!-- instantborder class ONLY FOR BOTTOM from row above for TESTING !!!!-->
-                <br/>
-
-                <!--Image-->
-                <div class="col-xs-5 col-sm-4 col-md-4 col-lg-4">
-
-                    <img src="http://lorempixel.com/180/130"/>
-
-                    <div class="corner-ribbon top-right sticky open">OPEN</div>
-
-                </div>
-
-                <!--Desc-->
-                <div class="col-xs-3 col-sm-4 col-md-4 col-lg-4"
-                     style="border-right:1px solid rgba(204, 204, 204, 0.57)">
-
-
-                    <dl>
-                        <dt>
-                            <a style="text-decoration: none;" href="/item/56c60d5244aef3f082ce958a">
-                                <p>
-                                    <strong style="color: #444; font-size: 23px; font-height:16px;line-height:1;font-style:normal;">A</strong>
-                                    <sup style="font-style:bold; color: #999999;"> by YOLOLAND</sup>
-                                </p>
-                            </a>
-                        </dt>
-
-
-                        <dd class="hidethisshit">
-                            <p style="color:#999999;margin-top:-10px;">club; fish, meat, chicken, pizza</p>
-                        </dd>
-
-                        <dd class="hidethisshit">
-                            <p style="color:#999999; font-size: 0.9em;" class="venue_description">aaa</p>
-                        </dd>
-
-                        <dd>
-                            <p style="margin-bottom: 0px; color:#777777;"><i class="fa fa-map-marker"></i> <span>YOLOLAND</span>
-                                <a href="#"><span style="color:#648EB7">View in Map</span></a></p>
-                        </dd>
-
-                    </dl>
-
-                </div>
-
-                <!--Review/Explore-->
-                <div class="col-xs-3 col-sm-4 col-md-4 col-lg-4">
-
-                    <div style="margin-left:5px;">
-                        <div style="width: 100%; margin-top: 10px;">
-                            <i class="fa fa-star" style="font-weight: bold; font-size: 1.2em; color: #777777;"></i>
-                            <i class="fa fa-star" style="font-weight: bold; font-size: 1.2em; color: #777777;"></i>
-                            <i class="fa fa-star" style="font-weight: bold; font-size: 1.2em; color: #777777;"></i>
-                            <i class="fa fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #777777;"></i>
-                            <i class="fa fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #777777;"></i>
-                        </div>
-
-                        <div>
-                            <label style="font-size: 1.0em; margin-bottom: 15px; color:#ADCC74;">Good</label>
-                            <!--<label style="font-size: 1.0em; margin-bottom: 15px; color:#CC7474;">Bad</label>-->
-                        </div>
-
-
-                        <div>
-                            <p>
-                                <!--<strong style="font-size: 15px; font-height:16px;line-height:1;font-style:normal; color: #fff; background-color: #777; padding: .2em .2em .3em; border-radius: .25em;     border-top-right-radius: 0em;      border-bottom-right-radius: 0em;">-->
-                                <!--<i class="fa fa-clock-o" style="color: #ADCC74;"></i> open </strong>-->
-                                <strong style="font-size: 15px; font-height:16px;line-height:1;font-style:normal; padding: 10px 15px 10px 15px; background-color: #B0CE79; background-color:#648EB7;   padding: .2em .6em .3em; border-radius: .25em;">
-                                    <!-- TODO Refactoring or Not refactoring the callign way of item-->
-                                    <!--th:href="@{/item(id=${venue.id})}"-->
-                                    <a style="color: #fff;" th:href="@{/item/{id}(id=${venue.id})}"><i
-                                            class="fa fa-paper-plane-o"></i></a>
-                                    <a class="hidethisshit" style="color: #fff;"
-                                       th:href="@{/item/{id}(id=${venue.id})}">Explore</a>
-                                </strong>
-                            </p>
-                        </div>
-
-                        <br/>
-
+                        <img src="http://imgec.trivago.com/itemimages/47/21/47210_v2_mc.jpeg"/>
                     </div>
+                    <div class="column" style="vertical-align:middle;">
+                        <div class="column" style="    padding-left: 10px; padding-right: 20px;">
 
+                            <div class="myrow">
+                                <a style="text-decoration: none;" th:href="@{/item/{id}(id=${venue.id})}">
+                                    <p style="    margin-bottom: 5px;">
+                                        <strong style="color: #444; font-size: 23px; font-height:16px;line-height:1;font-style:normal;" th:text="${venue.name}">Venue Name</strong>
+                                        <sup style="font-style:bold; color: #999999;" th:text="| by ${venue.company}|"> by Company</sup>
+                                    </p>
+                                </a>
+                            </div>
 
+                            <div class="myrow" style="background-color:white;">
+                                <div class="container2" style="width:100%">
+                                    <div class="column" style="width:50%; vertical-align:middle;text-align:left;">
+                                        <p style="    margin-bottom: 5px;">
+                                            <i class="fa" th:classappend="${venue.rating} > 0? fa-star : fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #feab6c;"></i>
+                                            <i class="fa" th:classappend="${venue.rating} > 1? fa-star : fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #feab6c;"></i>
+                                            <i class="fa" th:classappend="${venue.rating} > 2? fa-star : fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #feab6c;"></i>
+                                            <i class="fa" th:classappend="${venue.rating} > 3? fa-star : fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #feab6c;"></i>
+                                            <i class="fa" th:classappend="${venue.rating} > 4? fa-star : fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #feab6c;"></i>
+                                            <span th:text="| - ${venue.category}|">- Restaurant</span>
+                                        </p>
+                                    </div>
+                                    <div class="column" style="width:50%; vertical-align:middle;text-align:right; ">
+                                        <img src="/img/pizza_icon.jpg" th:src="@{/img/pizza_icon.jpg}" style="width:25px; height:25px;"/>
+                                        <img src="/img/cake_icon.jpg" th:src="@{/img/cake_icon.jpg}" style="width:25px; height:25px;"/>
+                                        <img src="/img/pizza_icon.jpg" th:src="@{/img/pizza_icon.jpg}" style="width:25px; height:25px;"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="myrow" style="">
+                                <!-- th:text="${venue.description}" -->
+                                <p >
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                                Cum sociis natoque penatibus et magnis dis atoque penatib atoque penatib atoque penatib ...
+                                </p>
+                            </div>
+
+                            <div class="myrow" style="background-color:white;">
+                                <div class="container2" style="width:100%">
+                                    <div class="column" style="width:50%; vertical-align:middle;text-align:left;">
+                                        <p style="margin-bottom: 0px; color:#777777;">
+                                            <i class="fa fa-map-marker"></i>
+                                            <span th:text="${venue.address}">Eller Str. 184, 40227 Dusseldorf</span>
+                                            <a th:href="@{/item/{id}/map(id=${venue.id})}"><span style="color:#648EB7"> - View in Map</span></a></p>
+                                    </div>
+                                    <div class="column" style="width:50%; vertical-align:middle;text-align:right;">
+                                        <p style="margin-bottom: 0px; color:#777777;">
+                                            <i class="fa fa-mobile"></i>
+                                            <span>Mobile: <strong style="color: black;">0049 15775983187</strong></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="column" style="vertical-align:middle;text-align:center;">
+                            <a th:href="@{/item/{id}(id=${venue.id})}">
+                                <img src="/img/next-arrow.png" th:src="@{/img/next-arrow.png}" style="margin-left:10px;height:50px;margin-right:10px"/>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-
-
             </div>
-
 
         </div>
 

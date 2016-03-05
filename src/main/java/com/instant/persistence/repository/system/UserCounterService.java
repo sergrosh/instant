@@ -3,7 +3,7 @@ package com.instant.persistence.repository.system;
 /**
  * @author sroshchupkin
  */
-public interface CounterService {
+public interface UserCounterService {
 
     long getNextUserIdSequence();
 }
