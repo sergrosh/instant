@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Bootstrap 3, from LayoutIt!</title>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900,200' rel='stylesheet' type='text/css'> -->
+    <link href="https://fonts.googleapis.com/css?family=IM+Fell+English:400,400italic|Product+Sans" rel="stylesheet"
+          type="text/css"/>
+
+    <meta name="description" content="Source code generated using layoutit.com"/>
+    <meta name="author" content="LayoutIt!"/>
+
+    <link href="css/bootstrap.min.css" th:href="@{/oc_css/bootstrap.min.css}" rel="stylesheet"/>
+    <link href="css/style.css" th:href="@{/oc_css/style.css}" rel="stylesheet"/>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'/>
+    <link href="css/font-awesome.min.css" th:href="@{/oc_css/font-awesome.min.css}" rel="stylesheet"/>
+    <link href="css/bootstrap-social.css" th:href="@{/oc_css/bootstrap-social.css}" rel="stylesheet"/>
+    <link th:href="@{/oc_css/bootstrap-multiselect.css}" rel="stylesheet"/>
+
+
+</head>
+<body>
+
+
+<div class="container-fluid" style="padding-top: 65px;">
+    <div class="row">
+        <div class="col-md-12">
+            <div th:replace="fragments/header :: header"></div>
+
+            <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" style="display: table; padding-top: 10px; padding-bottom: 10px;">
+                <p style="font-size: 12px; display: table-cell; vertical-align: middle; text-align:right; margin-right: 15px;"> <a href="#">Home</a> > <a href="#">Account</a></p>
+            </div>
+            <div class="row" style="">
+                <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" id="itemlist_results" style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:0px; padding-right:0px; padding-bottom: 0px;">
+                    <div class="row" style="margin-left: 20px; margin-right: 20px;">
+                        <div class="row">
+                            <style type="text/css">
+
+                                @media (max-width: 490px) {
+                                .hidethisshit{
+                                display:none;
+                                }
+                                }
+
+
+                                @import url('http://fonts.googleapis.com/css?family=Noto+Sans:400,700');
+
+
+                                /* The ribbons */
+
+                                .corner-ribbon{
+                                /* width: 50px; */
+                                width: 40px;
+                                background: #e43;
+                                position: absolute;
+                                top: 25px;
+                                left: -50px;
+                                text-align: center;
+                                /* line-height: 30px; */
+                                line-height: 20px;
+                                letter-spacing: 1px;
+                                color: #f0f0f0;
+                                font-size:0.7em;
+                                font-weight:bold;
+                                border-radius:0.5em;
+                                }
+
+                                /* Custom styles */
+
+                                .corner-ribbon.sticky{
+                                margin-left: 135px;
+                                margin-top: 5px;
+                                }
+
+                                .corner-ribbon.shadow{
+                                box-shadow: 0 0 3px rgba(0,0,0,.3);
+                                }
+
+
+                                .corner-ribbon.top-right{
+                                top: 2px;
+                                right: inherit;
+                                left: inherit;
+                                }
+
+
+                                /* Colors */
+
+
+                                .corner-ribbon.open{background:#406C9B;}
+                                .corner-ribbon.closed{background:red;}
+
+                                .instantborder{border-top:1px solid rgba(204, 204, 204, 0.57);}
+
+
+                            </style>
+                            <style type="text/css">
+                                .container {
+                                display: table !important;
+                                }
+                                .container2 {
+                                display: table !important;
+                                padding-right:0px !important;
+                                padding-left:0px !important;
+                                }
+                                .column {
+                                display: table-cell !important;
+
+                                }
+
+                                .myrow {
+                                display: table-row !important;
+                                }
+
+                                @media all {
+                                .container{
+                                width:inherit;
+                                }
+                                }
+
+                            </style>
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="row" style="    padding-top: 20px; padding-bottom: 20px;">
+                                    <div class="container " style="    width: 100%;">
+                                        <div class="myrow" style="    text-align: center;">
+                                            <img th:src="${#authentication.principal.imageUrl}" style="border-radius:4px;"/>
+                                        </div>
+                                        <div class="myrow" style="    text-align: center;">
+                                            <p style="    margin-bottom: 5px;">
+                                                <strong style="color: #444; font-size: 23px; font-height:16px;line-height:1;font-style:normal;" th:text="${#authentication.principal.displayName}"></strong>
+                                            </p>
+                                        </div>
+                                        <div class="myrow" style="    text-align: center;">
+                                            <span> 33 </span><i class="fa fa-cutlery" alt="Venues" style="font-weight: bold; font-size: 1.2em;"></i> &#8226; <span> 33 </span> <img src="/img/heart-outline-full.png" alt="Favourites" style="width:20px; height:20px;"/> &#8226; <span> 33 </span> <i class="fa fa-star" alt="Reviews" style="font-weight: bold; font-size: 1.2em; color: #feab6c;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="padding-top: 20px;">
+                <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1 col-sm-12 col-xs-12"
+                     style="display: table; padding-top: 10px; padding-bottom: 10px;">
+                    <div class="row">
+                        <div class="container" style="width:100%;">
+                            <div class="column" style="width:20%; text-align: center;">
+                                <a style="text-decoration: none;" href="/new_item/56be6f94d4c696e216899792">
+                                    <p style="    margin-bottom: 5px;">
+                                        <strong style="color: #444; font-size: 12px; font-height:16px;line-height:1;font-style:normal;padding: 1em; border-radius: 10px; background: #EAEAEA;">Profile</strong>
+                                        <!--<sup style="font-style:bold; color: #999999;"> by asd</sup>-->
+                                    </p>
+                                </a>
+                            </div>
+                            <div class="column" style="width:20%; text-align: center;">
+                                <a style="text-decoration: none;" href="/new_item/56be6f94d4c696e216899792">
+                                    <p style="    margin-bottom: 5px;">
+                                        <strong style="color: #444; font-size: 12px; font-height:16px;line-height:1;font-style:normal;padding: 1em; border-radius: 10px; background: #EAEAEA;">Alerts<sup>0</sup></strong>
+                                    </p>
+                                </a>
+                            </div>
+                            <div class="column" style="width:20%; text-align: center;">
+                                <a style="text-decoration: none;" href="/new_item/56be6f94d4c696e216899792">
+                                    <p style="    margin-bottom: 5px;">
+                                        <strong style="color: #444; font-size: 12px; font-height:16px;line-height:1;font-style:normal;padding: 1em; border-radius: 10px; background: #EAEAEA;">Support</strong>
+                                    </p>
+                                </a>
+                            </div>
+                            <div class="column" style=" width:20%; text-align: center;">
+                                <a style="text-decoration: none;" href="/new_item/56be6f94d4c696e216899792">
+                                    <p style="    margin-bottom: 5px;">
+                                        <strong style="color: #444; font-size: 12px; font-height:16px;line-height:1;font-style:normal; padding: 1em; border-radius: 10px; background: #EAEAEA;">Register</strong>
+                                    </p>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="padding-top: 20px;">
+                <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:0px; padding-right:0px; padding-bottom: 0px;">
+
+                    <div class="row" style="margin-left: 20px; margin-right: 20px;">
+                        <div class="row">
+
+                            <style type="text/css">
+
+                                @media (max-width: 490px) {
+                                .hidethisshit{
+                                display:none;
+                                }
+                                }
+
+
+                                @import url('http://fonts.googleapis.com/css?family=Noto+Sans:400,700');
+
+
+                                /* The ribbons */
+
+                                .corner-ribbon{
+                                /* width: 50px; */
+                                width: 40px;
+                                background: #e43;
+                                position: absolute;
+                                top: 25px;
+                                left: -50px;
+                                text-align: center;
+                                /* line-height: 30px; */
+                                line-height: 20px;
+                                letter-spacing: 1px;
+                                color: #f0f0f0;
+                                font-size:0.7em;
+                                font-weight:bold;
+                                border-radius:0.5em;
+                                }
+
+                                /* Custom styles */
+
+                                .corner-ribbon.sticky{
+                                margin-left: 135px;
+                                margin-top: 5px;
+                                }
+
+                                .corner-ribbon.shadow{
+                                box-shadow: 0 0 3px rgba(0,0,0,.3);
+                                }
+
+
+                                .corner-ribbon.top-right{
+                                top: 2px;
+                                right: inherit;
+                                left: inherit;
+                                }
+
+
+                                /* Colors */
+
+
+                                .corner-ribbon.open{background:#406C9B;}
+                                .corner-ribbon.closed{background:red;}
+
+                                .instantborder{border-top:1px solid rgba(204, 204, 204, 0.57);}
+
+
+                            </style>
+
+                            <style type="text/css">
+                                .container {
+                                display: table !important;
+                                }
+                                .container2 {
+                                display: table !important;
+                                padding-right:0px !important;
+                                padding-left:0px !important;
+                                }
+                                .column {
+                                display: table-cell !important;
+
+                                }
+
+                                .myrow {
+                                display: table-row !important;
+                                }
+
+                                @media all {
+                                .container{
+                                width:inherit;
+                                }
+                                }
+
+                            </style>
+
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="row" style="    padding-top: 20px; padding-bottom: 10px;">
+                                    <div class="container " style="width: 100%;">
+                                        <div class="myrow" style="vertical-align:middle; text-align:left;">
+                                            <h3 style="margin-top:0px;">Venues</h3>
+                                        </div>
+                                        <div class="myrow" style="vertical-align:middle; text-align:left;">
+                                            <p>
+                                                Venue owner? Here you can see all the venues you have added with their latest information, reviews and comments and the current state of venues under acceptance process.
+                                                For more information please check <a href="#">here</a>.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row instantborder" style="margin-left: 0px; margin-right: 0px;"></div>
+                    <div class="row" style="margin-left: 20px; margin-right: 20px;">
+                        <div class="row">
+
+                            <style type="text/css">
+
+                                @media (max-width: 490px) {
+                                .hidethisshit{
+                                display:none;
+                                }
+                                }
+
+
+                                @import url('http://fonts.googleapis.com/css?family=Noto+Sans:400,700');
+
+
+                                /* The ribbons */
+
+                                .corner-ribbon{
+                                /* width: 50px; */
+                                width: 40px;
+                                background: #e43;
+                                position: absolute;
+                                top: 25px;
+                                left: -50px;
+                                text-align: center;
+                                /* line-height: 30px; */
+                                line-height: 20px;
+                                letter-spacing: 1px;
+                                color: #f0f0f0;
+                                font-size:0.7em;
+                                font-weight:bold;
+                                border-radius:0.5em;
+                                }
+
+                                /* Custom styles */
+
+                                .corner-ribbon.sticky{
+                                margin-left: 135px;
+                                margin-top: 5px;
+                                }
+
+                                .corner-ribbon.shadow{
+                                box-shadow: 0 0 3px rgba(0,0,0,.3);
+                                }
+
+
+                                .corner-ribbon.top-right{
+                                top: 2px;
+                                right: inherit;
+                                left: inherit;
+                                }
+
+
+                                /* Colors */
+
+
+                                .corner-ribbon.open{background:#406C9B;}
+                                .corner-ribbon.closed{background:red;}
+
+                                .instantborder{border-top:1px solid rgba(204, 204, 204, 0.57);}
+
+
+                            </style>
+
+                            <style type="text/css">
+                                .container {
+                                display: table !important;
+                                }
+                                .container2 {
+                                display: table !important;
+                                padding-right:0px !important;
+                                padding-left:0px !important;
+                                }
+                                .column {
+                                display: table-cell !important;
+
+                                }
+
+                                .myrow {
+                                display: table-row !important;
+                                }
+
+                                @media all {
+                                .container{
+                                width:inherit;
+                                }
+                                }
+
+                            </style>
+
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="row" style="    padding-top: 20px; padding-bottom: 20px; text-align: center;">
+                                    <p>
+                                        <span style="font-weight: 600;">No venues were found.</span>
+                                        <br/>
+                                        <span style="font-size: 13px;">Use <em><i class="fa fa-cutlery" style="font-weight: bold; font-size: 1.2em;"></i> Register venue</em> in order to add a new venue</span>
+                                    </p>
+                                    <div style="display:none" class="col-md-6">
+                                        <p>
+                                            <span style="font-weight: 600;">Venue Category:</span>
+                                            <br/>
+                                            <span>Restaurant</span>
+                                        </p>
+                                        <p>
+                                            <span style="font-weight: 600;">Specialities:</span>
+                                            <br/>
+                                            <span>Meat, Fish</span>
+                                        </p>
+                                        <p>
+                                            <span style="font-weight: 600;">Hours of Operation:</span>
+                                            <br/>
+                                            <span>Lunch/Dinner: Monday - Saturday: 11:00am - 11:00pm, Sunday: 11:00am - 9:00pm</span>
+                                        </p>
+                                        <p>
+                                            <span style="font-weight: 600;">Payment Options</span>
+                                            <br/>
+                                            <span>AMEX, Discover, MasterCard, Visa</span>
+                                        </p>
+                                        <p>
+                                            <span style="font-weight: 600;">Price Range:</span>
+                                            <br/>
+                                            <span>$10 to $50</span>
+                                        </p>
+                                    </div>
+                                    <div style="display:none" class="col-md-6">
+                                        <p>
+                                            <span style="font-weight: 600;">Fix Numbers:</span>
+                                            <br/>
+                                            <span>052225965, 052236507</span>
+                                        </p>
+                                        <p>
+                                            <span style="font-weight: 600;">Mobile Numbers:</span>
+                                            <br/>
+                                            <span>0692113629, 0692148557</span>
+                                        </p>
+                                        <p>
+                                            <span style="font-weight: 600;">Website:</span>
+                                            <br/>
+                                            <a href="http://www.delfriscosgrille.com/" target="_blank">http://www.delfriscosgrille.com/</a>
+                                        </p>
+                                        <p>
+                                            <span style="font-weight: 600;">Parking Details:</span>
+                                            <br/>
+                                            <span>Parking on street available at select times.  Parking garages on 51st Street East and West of our Location.</span>
+                                        </p>
+                                        <p>
+                                            <span style="font-weight: 600;">Additional:</span>
+                                            <br/>
+                                            <span>Bar Dining, Bar/Lounge, Beer, Full Bar, Non-Smoking Restaurant, Patio/Outdoor Dining, Private Room, Takeout, View, Wheelchair Access, Wine</span>
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row" style="padding-top: 20px;">
+                <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:0px; padding-right:0px; padding-bottom: 0px;">
+
+                    <div class="row" style="margin-left: 20px; margin-right: 20px;">
+                        <div class="row">
+
+                            <style type="text/css">
+
+                                @media (max-width: 490px) {
+                                .hidethisshit{
+                                display:none;
+                                }
+                                }
+
+
+                                @import url('http://fonts.googleapis.com/css?family=Noto+Sans:400,700');
+
+
+                                /* The ribbons */
+
+                                .corner-ribbon{
+                                /* width: 50px; */
+                                width: 40px;
+                                background: #e43;
+                                position: absolute;
+                                top: 25px;
+                                left: -50px;
+                                text-align: center;
+                                /* line-height: 30px; */
+                                line-height: 20px;
+                                letter-spacing: 1px;
+                                color: #f0f0f0;
+                                font-size:0.7em;
+                                font-weight:bold;
+                                border-radius:0.5em;
+                                }
+
+                                /* Custom styles */
+
+                                .corner-ribbon.sticky{
+                                margin-left: 135px;
+                                margin-top: 5px;
+                                }
+
+                                .corner-ribbon.shadow{
+                                box-shadow: 0 0 3px rgba(0,0,0,.3);
+                                }
+
+
+                                .corner-ribbon.top-right{
+                                top: 2px;
+                                right: inherit;
+                                left: inherit;
+                                }
+
+
+                                /* Colors */
+
+
+                                .corner-ribbon.open{background:#406C9B;}
+                                .corner-ribbon.closed{background:red;}
+
+                                .instantborder{border-top:1px solid rgba(204, 204, 204, 0.57);}
+
+
+                            </style>
+
+                            <style type="text/css">
+                                .container {
+                                display: table !important;
+                                }
+                                .container2 {
+                                display: table !important;
+                                padding-right:0px !important;
+                                padding-left:0px !important;
+                                }
+                                .column {
+                                display: table-cell !important;
+
+                                }
+
+                                .myrow {
+                                display: table-row !important;
+                                }
+
+                                @media all {
+                                .container{
+                                width:inherit;
+                                }
+                                }
+
+                            </style>
+
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="row" style="    padding-top: 20px; padding-bottom: 10px;">
+                                    <div class="container " style="width: 100%;">
+                                        <div class="myrow" style="vertical-align:middle; text-align:left;">
+                                            <h3 style="margin-top:0px;">Favourites</h3>
+                                        </div>
+                                        <div class="myrow" style="vertical-align:middle; text-align:left;">
+                                            <p>
+                                                Here you can see a list of all your favourited venues.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row instantborder" style="margin-left: 0px; margin-right: 0px;"></div>
+                    <div class="row" style="margin-left: 20px; margin-right: 20px;">
+                        <div class="row">
+
+                            <style type="text/css">
+
+                                @media (max-width: 490px) {
+                                .hidethisshit{
+                                display:none;
+                                }
+                                }
+
+
+                                @import url('http://fonts.googleapis.com/css?family=Noto+Sans:400,700');
+
+
+                                /* The ribbons */
+
+                                .corner-ribbon{
+                                /* width: 50px; */
+                                width: 40px;
+                                background: #e43;
+                                position: absolute;
+                                top: 25px;
+                                left: -50px;
+                                text-align: center;
+                                /* line-height: 30px; */
+                                line-height: 20px;
+                                letter-spacing: 1px;
+                                color: #f0f0f0;
+                                font-size:0.7em;
+                                font-weight:bold;
+                                border-radius:0.5em;
+                                }
+
+                                /* Custom styles */
+
+                                .corner-ribbon.sticky{
+                                margin-left: 135px;
+                                margin-top: 5px;
+                                }
+
+                                .corner-ribbon.shadow{
+                                box-shadow: 0 0 3px rgba(0,0,0,.3);
+                                }
+
+
+                                .corner-ribbon.top-right{
+                                top: 2px;
+                                right: inherit;
+                                left: inherit;
+                                }
+
+
+                                /* Colors */
+
+
+                                .corner-ribbon.open{background:#406C9B;}
+                                .corner-ribbon.closed{background:red;}
+
+                                .instantborder{border-top:1px solid rgba(204, 204, 204, 0.57);}
+
+
+                            </style>
+
+                            <style type="text/css">
+                                .container {
+                                display: table !important;
+                                }
+                                .container2 {
+                                display: table !important;
+                                padding-right:0px !important;
+                                padding-left:0px !important;
+                                }
+                                .column {
+                                display: table-cell !important;
+
+                                }
+
+                                .myrow {
+                                display: table-row !important;
+                                }
+
+                                @media all {
+                                .container{
+                                width:inherit;
+                                }
+                                }
+
+                            </style>
+
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="row" style="    padding-top: 20px; padding-bottom: 20px; text-align: center;">
+                                    <p>
+                                        <span style="font-weight: 600;"> <img src="/img/heart-outline.png" style="width:20px; height:20px;"/> No favourited venues were found.</span>
+                                        <br/>
+                                        <span style="font-size: 13px;"><img src="/img/heart-outline-full.png" style="width:20px; height:20px;"/> your favourite venues and save them here!</span>
+                                    </p>
+                                    <div style="display:none" class="col-md-6">
+                                        <p>
+                                            <span style="font-weight: 600;">Venue Category:</span>
+                                            <br/>
+                                            <span>Restaurant</span>
+                                        </p>
+                                        <p>
+                                            <span style="font-weight: 600;">Specialities:</span>
+                                            <br/>
+                                            <span>Meat, Fish</span>
+                                        </p>
+                                        <p>
+                                            <span style="font-weight: 600;">Hours of Operation:</span>
+                                            <br/>
+                                            <span>Lunch/Dinner: Monday - Saturday: 11:00am - 11:00pm, Sunday: 11:00am - 9:00pm</span>
+                                        </p>
+                                        <p>
+                                            <span style="font-weight: 600;">Payment Options</span>
+                                            <br/>
+                                            <span>AMEX, Discover, MasterCard, Visa</span>
+                                        </p>
+                                        <p>
+                                            <span style="font-weight: 600;">Price Range:</span>
+                                            <br/>
+                                            <span>$10 to $50</span>
+                                        </p>
+                                    </div>
+                                    <div style="display:none" class="col-md-6">
+                                        <p>
+                                            <span style="font-weight: 600;">Fix Numbers:</span>
+                                            <br/>
+                                            <span>052225965, 052236507</span>
+                                        </p>
+                                        <p>
+                                            <span style="font-weight: 600;">Mobile Numbers:</span>
+                                            <br/>
+                                            <span>0692113629, 0692148557</span>
+                                        </p>
+                                        <p>
+                                            <span style="font-weight: 600;">Website:</span>
+                                            <br/>
+                                            <a href="http://www.delfriscosgrille.com/" target="_blank">http://www.delfriscosgrille.com/</a>
+                                        </p>
+                                        <p>
+                                            <span style="font-weight: 600;">Parking Details:</span>
+                                            <br/>
+                                            <span>Parking on street available at select times.  Parking garages on 51st Street East and West of our Location.</span>
+                                        </p>
+                                        <p>
+                                            <span style="font-weight: 600;">Additional:</span>
+                                            <br/>
+                                            <span>Bar Dining, Bar/Lounge, Beer, Full Bar, Non-Smoking Restaurant, Patio/Outdoor Dining, Private Room, Takeout, View, Wheelchair Access, Wine</span>
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row" style="padding-top: 20px;">
+                <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:0px; padding-right:0px; padding-bottom: 0px;">
+
+                    <div class="row" style="margin-left: 20px; margin-right: 20px;">
+                        <div class="row">
+
+                            <style type="text/css">
+
+                                @media (max-width: 490px) {
+                                .hidethisshit{
+                                display:none;
+                                }
+                                }
+
+
+                                @import url('http://fonts.googleapis.com/css?family=Noto+Sans:400,700');
+
+
+                                /* The ribbons */
+
+                                .corner-ribbon{
+                                /* width: 50px; */
+                                width: 40px;
+                                background: #e43;
+                                position: absolute;
+                                top: 25px;
+                                left: -50px;
+                                text-align: center;
+                                /* line-height: 30px; */
+                                line-height: 20px;
+                                letter-spacing: 1px;
+                                color: #f0f0f0;
+                                font-size:0.7em;
+                                font-weight:bold;
+                                border-radius:0.5em;
+                                }
+
+                                /* Custom styles */
+
+                                .corner-ribbon.sticky{
+                                margin-left: 135px;
+                                margin-top: 5px;
+                                }
+
+                                .corner-ribbon.shadow{
+                                box-shadow: 0 0 3px rgba(0,0,0,.3);
+                                }
+
+
+                                .corner-ribbon.top-right{
+                                top: 2px;
+                                right: inherit;
+                                left: inherit;
+                                }
+
+
+                                /* Colors */
+
+
+                                .corner-ribbon.open{background:#406C9B;}
+                                .corner-ribbon.closed{background:red;}
+
+                                .instantborder{border-top:1px solid rgba(204, 204, 204, 0.57);}
+
+
+                            </style>
+
+                            <style type="text/css">
+                                .container {
+                                display: table !important;
+                                }
+                                .container2 {
+                                display: table !important;
+                                padding-right:0px !important;
+                                padding-left:0px !important;
+                                }
+                                .column {
+                                display: table-cell !important;
+
+                                }
+
+                                .myrow {
+                                display: table-row !important;
+                                }
+
+                                @media all {
+                                .container{
+                                width:inherit;
+                                }
+                                }
+
+                            </style>
+
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="row" style="    padding-top: 20px; padding-bottom: 10px;">
+                                    <div class="container " style="width: 100%;">
+                                        <div class="myrow" style="vertical-align:middle; text-align:left;">
+                                            <h3 style="margin-top:0px;">Reviews</h3>
+                                        </div>
+                                        <div class="myrow" style="vertical-align:middle; text-align:left;">
+                                            <p>
+                                                Here you can see a list of all the venues you have reviewed.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row instantborder" style="margin-left: 0px; margin-right: 0px;"></div>
+                    <div class="row" style="margin-left: 20px; margin-right: 20px;">
+                        <div class="row">
+
+                            <style type="text/css">
+
+                                @media (max-width: 490px) {
+                                .hidethisshit{
+                                display:none;
+                                }
+                                }
+
+
+                                @import url('http://fonts.googleapis.com/css?family=Noto+Sans:400,700');
+
+
+                                /* The ribbons */
+
+                                .corner-ribbon{
+                                /* width: 50px; */
+                                width: 40px;
+                                background: #e43;
+                                position: absolute;
+                                top: 25px;
+                                left: -50px;
+                                text-align: center;
+                                /* line-height: 30px; */
+                                line-height: 20px;
+                                letter-spacing: 1px;
+                                color: #f0f0f0;
+                                font-size:0.7em;
+                                font-weight:bold;
+                                border-radius:0.5em;
+                                }
+
+                                /* Custom styles */
+
+                                .corner-ribbon.sticky{
+                                margin-left: 135px;
+                                margin-top: 5px;
+                                }
+
+                                .corner-ribbon.shadow{
+                                box-shadow: 0 0 3px rgba(0,0,0,.3);
+                                }
+
+
+                                .corner-ribbon.top-right{
+                                top: 2px;
+                                right: inherit;
+                                left: inherit;
+                                }
+
+
+                                /* Colors */
+
+
+                                .corner-ribbon.open{background:#406C9B;}
+                                .corner-ribbon.closed{background:red;}
+
+                                .instantborder{border-top:1px solid rgba(204, 204, 204, 0.57);}
+
+
+                            </style>
+
+                            <style type="text/css">
+                                .container {
+                                display: table !important;
+                                }
+                                .container2 {
+                                display: table !important;
+                                padding-right:0px !important;
+                                padding-left:0px !important;
+                                }
+                                .column {
+                                display: table-cell !important;
+
+                                }
+
+                                .myrow {
+                                display: table-row !important;
+                                }
+
+                                @media all {
+                                .container{
+                                width:inherit;
+                                }
+                                }
+
+                            </style>
+
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="row" style="    padding-top: 20px; padding-bottom: 20px; text-align: center;">
+                                    <p>
+                                        <span style="font-weight: 600;"> <i class="fa fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #feab6c;"></i> No reviews were found.</span>
+                                        <br/>
+                                        <span style="font-size: 13px;">Add some reviews using the <i class="fa fa-star" style="font-weight: bold; font-size: 1.2em; color: #feab6c;"></i> scales.</span>
+                                    </p>
+                                    <div style="display:none" class="col-md-6">
+                                        <p>
+                                            <span style="font-weight: 600;">Venue Category:</span>
+                                            <br/>
+                                            <span>Restaurant</span>
+                                        </p>
+                                        <p>
+                                            <span style="font-weight: 600;">Specialities:</span>
+                                            <br/>
+                                            <span>Meat, Fish</span>
+                                        </p>
+                                        <p>
+                                            <span style="font-weight: 600;">Hours of Operation:</span>
+                                            <br/>
+                                            <span>Lunch/Dinner: Monday - Saturday: 11:00am - 11:00pm, Sunday: 11:00am - 9:00pm</span>
+                                        </p>
+                                        <p>
+                                            <span style="font-weight: 600;">Payment Options</span>
+                                            <br/>
+                                            <span>AMEX, Discover, MasterCard, Visa</span>
+                                        </p>
+                                        <p>
+                                            <span style="font-weight: 600;">Price Range:</span>
+                                            <br/>
+                                            <span>$10 to $50</span>
+                                        </p>
+                                    </div>
+                                    <div style="display:none" class="col-md-6">
+                                        <p>
+                                            <span style="font-weight: 600;">Fix Numbers:</span>
+                                            <br/>
+                                            <span>052225965, 052236507</span>
+                                        </p>
+                                        <p>
+                                            <span style="font-weight: 600;">Mobile Numbers:</span>
+                                            <br/>
+                                            <span>0692113629, 0692148557</span>
+                                        </p>
+                                        <p>
+                                            <span style="font-weight: 600;">Website:</span>
+                                            <br/>
+                                            <a href="http://www.delfriscosgrille.com/" target="_blank">http://www.delfriscosgrille.com/</a>
+                                        </p>
+                                        <p>
+                                            <span style="font-weight: 600;">Parking Details:</span>
+                                            <br/>
+                                            <span>Parking on street available at select times.  Parking garages on 51st Street East and West of our Location.</span>
+                                        </p>
+                                        <p>
+                                            <span style="font-weight: 600;">Additional:</span>
+                                            <br/>
+                                            <span>Bar Dining, Bar/Lounge, Beer, Full Bar, Non-Smoking Restaurant, Patio/Outdoor Dining, Private Room, Takeout, View, Wheelchair Access, Wine</span>
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div th:replace="fragments/footer :: footer"></div>
+</div>
+
+
+<script src="js/jquery.min.js" th:src="@{/oc_js/jquery.min.js}"></script>
+<script src="js/bootstrap.min.js" th:src="@{/oc_js/bootstrap.min.js}"></script>
+<script src="js/scripts.js" th:src="@{/oc_js/scripts.js}"></script>
+<script src="js/search.js" th:src="@{/oc_js/search.js}"></script>
+<script src="js/localization.js" th:src="@{/oc_js/localization.js}"></script>
+<script th:src="@{/oc_js/bootstrap-multiselect.js}"></script>
+
+<script type="text/javascript" th:inline="javascript">
+/*<![CDATA[*/
+    function retrieveGuests() {
+        var url = '/clients?query=' + $('#query_input').val()
+        + '&city=' + $('#city_input').val()
+        + '&view=2&';
+        var data = $('#filterForm').serialize();
+        url = url + data;
+        $("#itemlist_results").load(url);
+    }
+/*]]>*/
+
+</script>
+
+<script th:inline="javascript">
+      /*<![CDATA[*/
+
+        var venuesListObject = /*[[${venues}]]*/ [{'a'}, {'b'}];
+        results_count = venuesListObject.content.length;
+        results_count_string = results_count + " results";
+        setResultsCountString(results_count_string);
+
+     /*]]>*/
+
+</script>
+
+<script th:inline="javascript" type="text/javascript">
+/*<![CDATA[*/
+    $(document).ready(function() {
+        $('#filter_option_speciality').multiselect();
+        $('.custom-filter-input.speciality > div > .btn-group').css("width", "100%");
+        $('.custom-filter-input.speciality > div > .btn-group > .multiselect.dropdown-toggle.btn.btn-default').css("width", "100%");
+    });
+
+    $(document).ready(function() {
+        $('#filter_option_category').multiselect();
+        $('.custom-filter-input.category > div > .btn-group').css("width", "100%");
+        $('.custom-filter-input.category > div > .btn-group > .multiselect.dropdown-toggle.btn.btn-default').css("width", "100%");
+    });
+
+    $(".venue_description").each(function(){
+        console.log($( this ).text().length);
+        if($( this ).text().length > 190){
+            $(this).text($(this).text().substr(0,190) + " ...");
+        }
+    });
+
+
+     /*]]>*/
+
+</script>
+
+<script th:inline="javascript" type="text/javascript">
+/*<![CDATA[*/
+
+/*]]>*/
+
+</script>
+
+<script>
+    $(document).ready(function(){
+    var favourite=false;
+        $('.favourite_heart').click(function(){
+            favourite=!favourite;
+
+            if(favourite==true){
+                $('.favourite_heart > img').attr('src', '/img/heart-outline-full.png');
+            }
+            if(favourite==false){
+                $('.favourite_heart > img').attr('src', '/img/heart-outline.png');
+            }
+    });
+})
+</script>
+
+</body>
+</html>

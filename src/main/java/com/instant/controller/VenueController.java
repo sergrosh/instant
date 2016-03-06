@@ -54,6 +54,19 @@ public class VenueController {
         return modelAndView;
     }
 
+    @RequestMapping("/new_item")
+    public ModelAndView getNewItemById(@RequestParam("id") String id) {
+        ModelAndView modelAndView;
+        if (StringUtils.isEmpty(id)) {
+            modelAndView = new ModelAndView(TilesDefinition.HOME);
+            return modelAndView;
+        } else {
+            modelAndView = new ModelAndView(TilesDefinition.ITEM);
+            modelAndView.addObject("venue", venueRepository.findById(id));
+        }
+        return modelAndView;
+    }
+
     @RequestMapping(Mappings.ITEM + "/{id}")
     public ModelAndView getItemByIdViaUrl(@PathVariable(value = "id") String id) {
         ModelAndView modelAndView;
@@ -62,6 +75,20 @@ public class VenueController {
             return modelAndView;
         } else {
             modelAndView = new ModelAndView(TilesDefinition.ITEM);
+            modelAndView.addObject("venue", venueRepository.findById(id));
+            modelAndView.addObject("view", "item_main_view");
+        }
+        return modelAndView;
+    }
+
+    @RequestMapping("/new_item/{id}")
+    public ModelAndView getNewItemByIdViaUrl(@PathVariable(value = "id") String id) {
+        ModelAndView modelAndView;
+        if (StringUtils.isEmpty(id)) {
+            modelAndView = new ModelAndView(TilesDefinition.HOME);
+            return modelAndView;
+        } else {
+            modelAndView = new ModelAndView("index_" + TilesDefinition.ITEM);
             modelAndView.addObject("venue", venueRepository.findById(id));
             modelAndView.addObject("view", "item_main_view");
         }
