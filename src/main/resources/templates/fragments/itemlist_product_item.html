@@ -276,7 +276,7 @@
                         <div class="column" style="    padding-left: 10px; padding-right: 20px;">
 
                             <div class="myrow">
-                                <a style="text-decoration: none;" th:href="@{/item/{id}(id=${venue.id})}">
+                                <a style="text-decoration: none;" th:href="@{/new_item/{id}(id=${venue.id})}">
                                     <p style="    margin-bottom: 5px;">
                                         <strong style="color: #444; font-size: 23px; font-height:16px;line-height:1;font-style:normal;" th:text="${venue.name}">Venue Name</strong>
                                         <sup style="font-style:bold; color: #999999;" th:text="| by ${venue.company}|"> by Company</sup>
@@ -318,7 +318,7 @@
                                         <p style="margin-bottom: 0px; color:#777777;">
                                             <i class="fa fa-map-marker"></i>
                                             <span th:text="${venue.address}">Eller Str. 184, 40227 Dusseldorf</span>
-                                            <a th:href="@{/item/{id}/map(id=${venue.id})}"><span style="color:#648EB7"> - View in Map</span></a></p>
+                                            <a th:href="@{/new_item/{id}/map(id=${venue.id})}"><span style="color:#648EB7"> - View in Map</span></a></p>
                                     </div>
                                     <div class="column" style="width:50%; vertical-align:middle;text-align:right;">
                                         <p style="margin-bottom: 0px; color:#777777;">
@@ -331,7 +331,7 @@
 
                         </div>
                         <div class="column" style="vertical-align:middle;text-align:center;">
-                            <a th:href="@{/item/{id}(id=${venue.id})}">
+                            <a th:href="@{/new_item/{id}(id=${venue.id})}">
                                 <img src="/img/next-arrow.png" th:src="@{/img/next-arrow.png}" style="margin-left:10px;height:50px;margin-right:10px"/>
                             </a>
                         </div>
