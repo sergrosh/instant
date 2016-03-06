@@ -31,7 +31,7 @@ public class Home {
     @RequestMapping(Mappings.USER)
     public String getUser(String speciality, Model model) {
         model.addAttribute("accounts_section", "accounts_dashboard");
-        return Mappings.USER;
+        return "index_user";
     }
 
     @RequestMapping(Mappings.USER_ADD)
