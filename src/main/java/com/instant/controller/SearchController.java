@@ -7,7 +7,9 @@ import com.instant.persistence.model.venue.Venue;
 import com.instant.persistence.model.venue.Venues;
 import com.instant.persistence.repository.CityRepository;
 import com.instant.persistence.repository.VenueRepository;
+import com.instant.service.favourites.FavouritesService;
 import com.instant.service.search.SearchService;
+import com.instant.service.user.UserAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.mongodb.core.MongoOperations;
@@ -47,6 +49,10 @@ public class SearchController {
     @Autowired
     MongoOperations mongoOperations;
 
+    @Autowired
+    FavouritesService favouritesService;
+
+
     /**
      * @param query       -
      * @param category
@@ -79,9 +85,10 @@ public class SearchController {
         } else {
             Query searchQuery = searchService.getQuery(query, city, category, reviews, speciality,
                     sortingType, paginationBean.defaultPageable(pageNum - 1));
-            List<Venue> venues = mongoOperations.find(searchQuery, Venue.class);
+            List<Venue> venues = favouritesService.checkAndGetVenues(mongoOperations.find(searchQuery, Venue.class));
             modelAndView.addObject("venues", venues);
             modelAndView.addObject("searchString", query);
+
         }
         return modelAndView;
     }
