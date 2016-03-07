@@ -18,7 +18,7 @@ public class Home {
         return modelAndView;
     }
 
-    @RequestMapping("/home")
+    @RequestMapping(Mappings.HOME)
     public String reindex() {
         return TilesDefinition.LANDING;
     }
