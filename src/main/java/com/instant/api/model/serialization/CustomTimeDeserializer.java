@@ -15,6 +15,6 @@ import java.io.IOException;
 public class CustomTimeDeserializer extends JsonDeserializer<LocalTime> {
     @Override
     public LocalTime deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException {
-        return new LocalTime(jp.getText() + ":00");
+        return new LocalTime(jp.getText());
     }
 }
