@@ -54,7 +54,7 @@ public class VenueController {
         return modelAndView;
     }
 
-    @RequestMapping("/new_item")
+    @RequestMapping(Mappings.ITEM_NEW)
     public ModelAndView getNewItemById(@RequestParam("id") String id) {
         ModelAndView modelAndView;
         if (StringUtils.isEmpty(id)) {
@@ -143,5 +143,11 @@ public class VenueController {
             return view;
         }
     }
+
+//    @RequestMapping(value = Mappings.ITEM_FAVOURITE, method = RequestMethod.GET)
+//    public Venue addToFavourites(@RequestParam("id") String id){
+//
+//
+//    }
 
 }
