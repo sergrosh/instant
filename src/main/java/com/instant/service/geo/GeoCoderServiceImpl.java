@@ -3,7 +3,6 @@ package com.instant.service.geo;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
@@ -21,7 +20,7 @@ public class GeoCoderServiceImpl implements GeoCoderService, Serializable {
 
     @Override
     public double[] getLocationFromAddress(String locationAddress) {
-        double[] locationPoint=null;
+        double[] locationPoint = null;
         String locationAddres = locationAddress.replaceAll(" ", "%20");
         String str = GOOGLE_ADRESS_QUERY
                 + locationAddres + "&sensor=true";
@@ -39,7 +38,7 @@ public class GeoCoderServiceImpl implements GeoCoderService, Serializable {
                 locations = geoMetryObject.getJSONObject("location");
                 lat = locations.getDouble("lat");
                 lon = locations.getDouble("lng");
-                locationPoint = new double[]{lat,lon};
+                locationPoint = new double[]{lat, lon};
             }
         } catch (Exception e) {
             e.printStackTrace();

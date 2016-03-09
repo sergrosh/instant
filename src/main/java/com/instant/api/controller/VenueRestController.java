@@ -53,16 +53,16 @@ public interface VenueRestController {
      * @param newVenue
      * @return
      */
-    @ApiOperation(value = "", 
-            notes = "Creates a new venue. Duplicates are allowed.", 
+    @ApiOperation(value = "",
+            notes = "Creates a new venue. Duplicates are allowed.",
             response = Venue.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = SUCCESS),
             @ApiResponse(code = 400, message = ERROR_400),
             @ApiResponse(code = 500, message = ERROR_500_MSG)})
 
-    @RequestMapping(method = RequestMethod.POST, 
-            produces = {APPLICATION_JSON_VALUE}, 
+    @RequestMapping(method = RequestMethod.POST,
+            produces = {APPLICATION_JSON_VALUE},
             consumes = {APPLICATION_JSON_VALUE})
     Venue createVenue(@ApiParam(value = "Venue to add to the system",
             required = true) @RequestBody NewVenue newVenue);

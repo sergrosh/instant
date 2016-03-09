@@ -1,6 +1,5 @@
 package com.instant.persistence.model.venue;
 
-import com.instant.api.model.venue.NewVenue;
 import lombok.Data;
 import org.joda.time.LocalTime;
 import org.springframework.data.annotation.Id;
@@ -15,7 +14,7 @@ import java.util.List;
 
 @Data
 @Document(collection = "venue")
-public class VenueEntity{
+public class VenueEntity {
 
     @Id
     private String id;

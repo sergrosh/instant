@@ -10,7 +10,6 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
-
 import org.joda.time.LocalTime;
 import org.springframework.data.mongodb.core.index.TextIndexed;
 
@@ -106,7 +105,7 @@ public class NewVenue implements Serializable {
     @JsonSerialize(using = CustomTimeSerializer.class)
     @JsonDeserialize(using = CustomTimeDeserializer.class)
     @JsonProperty("opentime")
-    private LocalTime  openTime;
+    private LocalTime openTime;
 
     @ApiModelProperty(value = "closetime")
     @JsonSerialize(using = CustomTimeSerializer.class)

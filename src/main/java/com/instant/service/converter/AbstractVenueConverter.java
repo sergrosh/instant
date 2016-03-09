@@ -11,7 +11,7 @@ import org.springframework.core.convert.converter.Converter;
 public abstract class AbstractVenueConverter<T extends NewVenue> implements Converter<T, VenueEntity> {
 
     @Override
-    public VenueEntity  convert(T newVenue) {
+    public VenueEntity convert(T newVenue) {
 
         VenueEntity entity = new VenueEntity();
         entity.setName(newVenue.getName());
@@ -37,8 +37,6 @@ public abstract class AbstractVenueConverter<T extends NewVenue> implements Conv
 
         return entity;
     }
-
-
 
 
 }

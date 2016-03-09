@@ -1,7 +1,6 @@
 package com.instant.service.validator;
 
 import com.instant.api.model.venue.NewVenue;
-import com.instant.persistence.model.venue.VenueEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

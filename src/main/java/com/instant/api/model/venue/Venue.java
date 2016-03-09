@@ -11,7 +11,7 @@ import lombok.Data;
 
 @ApiModel(description = "")
 @Data
-public class Venue extends NewVenue{
+public class Venue extends NewVenue {
     @ApiModelProperty(required = true, value = "")
     @JsonProperty("id")
     private String id;

@@ -45,7 +45,6 @@ public class VenueServiceImpl implements VenueService {
     private ConfigurableConversionService conversionService;
 
 
-
     @Override
     public List<Venue> getVenues(Integer limit, Integer offset) {
         List<Venue> venues;
@@ -97,7 +96,7 @@ public class VenueServiceImpl implements VenueService {
             log.error("Venue with id {} not found", id);
             throw new NotFoundException();
         }
-        return conversionService.convert(venueEntity,Venue.class);
+        return conversionService.convert(venueEntity, Venue.class);
     }
 
     @Override
@@ -107,14 +106,14 @@ public class VenueServiceImpl implements VenueService {
             log.error("validation failed: {}", result);
             throw new InvalidRequestException();
         }
-        VenueEntity venueEntity = conversionService.convert(venue,VenueEntity.class);
+        VenueEntity venueEntity = conversionService.convert(venue, VenueEntity.class);
         try {
             venueEntity = venueRepository.save(venueEntity);
         } catch (Exception e) {
             log.error("Internal error", e);
             throw new InternalServerException();
         }
-        return conversionService.convert(venueEntity,Venue.class);
+        return conversionService.convert(venueEntity, Venue.class);
     }
 
     @Override

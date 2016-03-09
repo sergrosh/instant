@@ -58,13 +58,13 @@ public class SearchController {
     private ConfigurableConversionService conversionService;
 
     /**
-     * @param query - search query
-     * @param category - category of venue
-     * @param view - view
-     * @param pageNum - page number, starts from 1
-     * @param city - city name
-     * @param reviews - reviews filter
-     * @param speciality - speciality filter
+     * @param query       - search query
+     * @param category    - category of venue
+     * @param view        - view
+     * @param pageNum     - page number, starts from 1
+     * @param city        - city name
+     * @param reviews     - reviews filter
+     * @param speciality  - speciality filter
      * @param sortingType - sorting type
      * @return model and view
      */
@@ -90,7 +90,7 @@ public class SearchController {
         } else {
             Query searchQuery = searchService.getQuery(query, city, category, reviews, speciality,
                     sortingType, paginationBean.defaultPageable(pageNum - 1));
-            List<VenueEntity> venueEntities=mongoOperations.find(searchQuery, VenueEntity.class);
+            List<VenueEntity> venueEntities = mongoOperations.find(searchQuery, VenueEntity.class);
             List<Venue> venues = favouritesService.checkAndGetVenues(venueEntities.stream().map(e -> conversionService.convert(e, Venue.class))
                     .collect(Collectors.toList()));
             modelAndView.addObject("venues", venues);

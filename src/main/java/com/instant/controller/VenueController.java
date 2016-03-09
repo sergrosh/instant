@@ -15,7 +15,6 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Map;
@@ -83,7 +82,7 @@ public class VenueController {
             return modelAndView;
         } else {
             modelAndView = new ModelAndView(TilesDefinition.ITEM);
-            modelAndView.addObject("venue", conversionService.convert(venueRepository.findById(id),Venue.class));
+            modelAndView.addObject("venue", conversionService.convert(venueRepository.findById(id), Venue.class));
             switch (block.toLowerCase()) {
                 case MAP:
                     modelAndView.addObject("view", "item_map_view");
@@ -108,7 +107,7 @@ public class VenueController {
 
     @RequestMapping(value = Mappings.VENUE_SAVE, method = RequestMethod.POST)
     public ModelAndView save(NewVenue newVenue) {
-        VenueEntity venue = conversionService.convert(newVenue,VenueEntity.class);
+        VenueEntity venue = conversionService.convert(newVenue, VenueEntity.class);
         Map<String, String> errorsMap = venueValidator.isValid(venue);
         if (errorsMap.isEmpty()) {
             ModelAndView view = new ModelAndView(TilesDefinition.LANDING);

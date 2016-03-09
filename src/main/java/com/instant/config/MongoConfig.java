@@ -25,8 +25,8 @@ import java.util.List;
 @Configuration
 public class MongoConfig extends AbstractMongoConfiguration {
 
-    private static final String DATABASE="spring.data.mongodb.database";
-    private static final String HOST="mongodb.host";
+    private static final String DATABASE = "spring.data.mongodb.database";
+    private static final String HOST = "mongodb.host";
 
     @Autowired
     Environment environment;

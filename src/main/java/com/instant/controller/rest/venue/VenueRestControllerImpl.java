@@ -4,7 +4,6 @@ import com.instant.api.controller.VenueRestController;
 import com.instant.api.model.venue.NewVenue;
 import com.instant.api.model.venue.Venue;
 import com.instant.controller.Mappings;
-import com.instant.persistence.model.venue.VenueEntity;
 import com.instant.service.venue.VenueService;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
@@ -29,12 +28,12 @@ public class VenueRestControllerImpl implements VenueRestController {
 
     @Override
     public List<Venue> getVenues(@ApiParam(value = "maximum number of results to return. Default is 20. Limit should be less then 1000.")
-                                     @RequestParam(value = "limit", required = false, defaultValue = "20") Integer limit,
+                                 @RequestParam(value = "limit", required = false, defaultValue = "20") Integer limit,
 
                                  @ApiParam(value = "This parameter specify where to start returning venues from the entire set of result. Default is 0.")
                                  @RequestParam(value = "offset",
-            required = false,
-            defaultValue = "0") Integer offset) {
+                                         required = false,
+                                         defaultValue = "0") Integer offset) {
         return venueService.getVenues(limit, offset);
     }
 
@@ -46,13 +45,13 @@ public class VenueRestControllerImpl implements VenueRestController {
 
     @Override
     public Venue getVenue(@ApiParam(value = "id of venue to fetch", required = true)
-                              @PathVariable("id") String id) {
+                          @PathVariable("id") String id) {
         return venueService.getVenueById(id);
     }
 
     @Override
     public Venue updateVenue(@ApiParam(value = "venue that will be updated", required = true)
-                                 @RequestBody Venue venue) {
+                             @RequestBody Venue venue) {
         return venueService.updateVenue(venue);
     }
 
