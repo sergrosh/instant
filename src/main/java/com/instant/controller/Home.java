@@ -52,5 +52,11 @@ public class Home {
         return "index_user_add";
     }
 
+    @RequestMapping("/user/add_new/terms")
+    public String getNewUserAddVenuFragmentTerms(String speciality, Model model) {
+        model.addAttribute("register_venue_page", "index_user_add_third_page");
+        return "index_user_add";
+    }
+
 
 }

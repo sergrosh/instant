@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<head>
+
+
+</head>
+<body>
+
+
+<div class="row" th:fragment="index_user_add_third_page">
+    <div class="col-md-12">
+        <div th:replace="fragments/header :: header"></div>
+        <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" style="display: table; padding-top: 10px; padding-bottom: 10px;">
+            <p style="font-size: 12px; display: table-cell; vertical-align: middle; text-align:right; margin-right: 15px;"> <a href="#">Home</a> > <a href="#">Account</a></p>
+        </div>
+        <div class="row" style="">
+            <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" id="itemlist_results" style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:0px; padding-right:0px; padding-bottom: 0px;">
+                <div class="row" style="margin-left: 20px; margin-right: 20px;">
+                    <div class="row">
+                        <style type="text/css">
+
+                            @media (max-width: 490px) {
+                            .hidethisshit{
+                            display:none;
+                            }
+                            }
+
+
+                            @import url('http://fonts.googleapis.com/css?family=Noto+Sans:400,700');
+
+
+                            /* The ribbons */
+
+                            .corner-ribbon{
+                            /* width: 50px; */
+                            width: 40px;
+                            background: #e43;
+                            position: absolute;
+                            top: 25px;
+                            left: -50px;
+                            text-align: center;
+                            /* line-height: 30px; */
+                            line-height: 20px;
+                            letter-spacing: 1px;
+                            color: #f0f0f0;
+                            font-size:0.7em;
+                            font-weight:bold;
+                            border-radius:0.5em;
+                            }
+
+                            /* Custom styles */
+
+                            .corner-ribbon.sticky{
+                            margin-left: 135px;
+                            margin-top: 5px;
+                            }
+
+                            .corner-ribbon.shadow{
+                            box-shadow: 0 0 3px rgba(0,0,0,.3);
+                            }
+
+
+                            .corner-ribbon.top-right{
+                            top: 2px;
+                            right: inherit;
+                            left: inherit;
+                            }
+
+
+                            /* Colors */
+
+
+                            .corner-ribbon.open{background:#406C9B;}
+                            .corner-ribbon.closed{background:red;}
+
+                            .instantborder{border-top:1px solid rgba(204, 204, 204, 0.57);}
+
+
+                        </style>
+                        <style type="text/css">
+                            .container {
+                            display: table !important;
+                            }
+                            .container2 {
+                            display: table !important;
+                            padding-right:0px !important;
+                            padding-left:0px !important;
+                            }
+                            .column {
+                            display: table-cell !important;
+
+                            }
+
+                            .myrow {
+                            display: table-row !important;
+                            }
+
+                            @media all {
+                            .container{
+                            width:inherit;
+                            }
+                            }
+
+                        </style>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="row" style="    padding-top: 20px; padding-bottom: 20px;">
+                                <div class="container " style="    width: 100%;">
+                                    <div class="myrow" style="    text-align: center;">
+                                        <h2 style="margin-top:0px;">Venue Registration - Step 3</h2>
+                                    </div>
+                                    <div class="myrow" style="    text-align: center;">
+                                        <p style="margin-bottom:5px;">
+                                            Please read and accept the terms of agreement in order to register the new venue.
+                                        </p>
+                                        <button onclick="location.href='/user/add_new/cont';" id="registerVenueButton" name="registerVenue" class="btn btn-primary" type="button">Back</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About-->
+        <div class="row" style="padding-top: 20px;">
+            <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:0px; padding-right:0px; padding-bottom: 0px;">
+                <div class="row" style="margin-left: 20px; margin-right: 20px;">
+                    <div class="row">
+                        <style type="text/css">
+
+                            @media (max-width: 490px) {
+                            .hidethisshit{
+                            display:none;
+                            }
+                            }
+
+
+                            @import url('http://fonts.googleapis.com/css?family=Noto+Sans:400,700');
+
+
+                            /* The ribbons */
+
+                            .corner-ribbon{
+                            /* width: 50px; */
+                            width: 40px;
+                            background: #e43;
+                            position: absolute;
+                            top: 25px;
+                            left: -50px;
+                            text-align: center;
+                            /* line-height: 30px; */
+                            line-height: 20px;
+                            letter-spacing: 1px;
+                            color: #f0f0f0;
+                            font-size:0.7em;
+                            font-weight:bold;
+                            border-radius:0.5em;
+                            }
+
+                            /* Custom styles */
+
+                            .corner-ribbon.sticky{
+                            margin-left: 135px;
+                            margin-top: 5px;
+                            }
+
+                            .corner-ribbon.shadow{
+                            box-shadow: 0 0 3px rgba(0,0,0,.3);
+                            }
+
+
+                            .corner-ribbon.top-right{
+                            top: 2px;
+                            right: inherit;
+                            left: inherit;
+                            }
+
+
+                            /* Colors */
+
+
+                            .corner-ribbon.open{background:#406C9B;}
+                            .corner-ribbon.closed{background:red;}
+
+                            .instantborder{border-top:1px solid rgba(204, 204, 204, 0.57);}
+
+
+                        </style>
+                        <style type="text/css">
+                            .container {
+                            display: table !important;
+                            }
+                            .container2 {
+                            display: table !important;
+                            padding-right:0px !important;
+                            padding-left:0px !important;
+                            }
+                            .column {
+                            display: table-cell !important;
+
+                            }
+
+                            .myrow {
+                            display: table-row !important;
+                            }
+
+                            @media all {
+                            .container{
+                            width:inherit;
+                            }
+                            }
+
+                        </style>
+
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="row" style="    padding-top: 20px; padding-bottom: 10px;">
+                                <div class="container" style="width: 100%;">
+                                    <div class="myrow" style="vertical-align:middle; text-align:left;">
+                                        <h3 style="margin-top:0px;">Terms and Conditions</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row instantborder" style="margin-left: 0px; margin-right: 0px;"></div>
+                <div class="row" style="margin-left: 20px; margin-right: 20px;">
+                    <div class="row">
+                        <style type="text/css">
+
+                            @media (max-width: 490px) {
+                            .hidethisshit{
+                            display:none;
+                            }
+                            }
+
+
+                            @import url('http://fonts.googleapis.com/css?family=Noto+Sans:400,700');
+
+
+                            /* The ribbons */
+
+                            .corner-ribbon{
+                            /* width: 50px; */
+                            width: 40px;
+                            background: #e43;
+                            position: absolute;
+                            top: 25px;
+                            left: -50px;
+                            text-align: center;
+                            /* line-height: 30px; */
+                            line-height: 20px;
+                            letter-spacing: 1px;
+                            color: #f0f0f0;
+                            font-size:0.7em;
+                            font-weight:bold;
+                            border-radius:0.5em;
+                            }
+
+                            /* Custom styles */
+
+                            .corner-ribbon.sticky{
+                            margin-left: 135px;
+                            margin-top: 5px;
+                            }
+
+                            .corner-ribbon.shadow{
+                            box-shadow: 0 0 3px rgba(0,0,0,.3);
+                            }
+
+
+                            .corner-ribbon.top-right{
+                            top: 2px;
+                            right: inherit;
+                            left: inherit;
+                            }
+
+
+                            /* Colors */
+
+
+                            .corner-ribbon.open{background:#406C9B;}
+                            .corner-ribbon.closed{background:red;}
+
+                            .instantborder{border-top:1px solid rgba(204, 204, 204, 0.57);}
+
+
+                        </style>
+                        <style type="text/css">
+                            .container {
+                            display: table !important;
+                            }
+                            .container2 {
+                            display: table !important;
+                            padding-right:0px !important;
+                            padding-left:0px !important;
+                            }
+                            .column {
+                            display: table-cell !important;
+
+                            }
+
+                            .myrow {
+                            display: table-row !important;
+                            }
+
+                            @media all {
+                            .container{
+                            width:inherit;
+                            }
+                            }
+
+                        </style>
+
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="row" style="    padding-top: 20px; padding-bottom:20px;">
+                                <div class="col-md-12">
+                                    <dl class="dl-horizontal">
+                                        <dd><h3>Some title here</h3></dd>
+                                        <dt>Here is something</dt>
+                                        <dd>JKH sdkjhdasj dhkajshd akjsdha skjdhasd akdhakdbadb adkahd adad\ada dajkdh asdkashd askdjha fjhga kfjhad ahdadk ahfafka hkh adkbak dbakdbak bda kd b
+                                             JKH sdkjhdasj dhkajshd akjsdha skjdhasd akdhakdbadb adkahd adad\ada dajkdh asdkashd askdjha fjhga kfjhad ahda</dd>
+                                        <dt>Here is something</dt>
+                                        <dd>JKH sdkjhdasj dhkajshd akjsdha skjdhasd akdhakdbadb adkahd adad\ada dajkdh asdkashd askdjha fjhga kfjhad ahdadk ahfafka hkh adkbak dbakdbak bda kd b
+                                             JKH sdkjhdasj dhkajshd akjsdha skjdhasd akdhakdbadb adkahd adad\ada dajkdh asdkashd askdjha fjhga kfjhad ahda</dd>
+                                        <dt>Here is something</dt>
+                                        <dd>JKH sdkjhdasj dhkajshd akjsdha skjdhasd akdhakdbadb adkahd adad\ada dajkdh asdkashd askdjha fjhga kfjhad ahdadk ahfafka hkh adkbak dbakdbak bda kd b</dd>
+                                        <dt>Here is something</dt>
+                                        <dd>JKH sdkjhdasj dhkajshd akjsdha skjdhasd akdhakdbadb adkahd adad\ada dajkdh asdkashd askdjha fjhga kfjhad ahdadk ahfafka hkh adkbak dbakdbak bda kd b</dd>
+                                        <dt>Here is something</dt>
+                                        <dd>JKH sdkjhdasj dhkajshd akjsdha skjdhasd akdhakdbadb adkahd adad\ada dajkdh asdkashd askdjha fjhga kfjhad ahdadk ahfafka hkh adkbak dbakdbak bda kd b
+                                            JKH sdkjhdasj dhkajshd akjsdha skjdhasd akdhakdbadb adkahd adad\ada dajkdh asdkashd askdjha fjhga kfjhad ahda</dd>
+                                        <dt>Here is something</dt>
+                                        <dd>JKH sdkjhdasj dhkajshd akjsdha skjdhasd akdhakdbadb adkahd adad\ada dajkdh asdkashd askdjha fjhga kfjhad ahdadk ahfafka hkh adkbak dbakdbak bda kd b</dd>
+                                        <dd><h3>Some title here</h3></dd>
+                                        <dt>Here is something</dt>
+                                        <dd>JKH sdkjhdasj dhkajshd akjsdha skjdhasd akdhakdbadb adkahd adad\ada dajkdh asdkashd askdjha fjhga kfjhad ahdadk ahfafka hkh adkbak dbakdbak bda kd b
+                                            JKH sdkjhdasj dhkajshd akjsdha skjdhasd akdhakdbadb adkahd adad\ada dajkdh asdkashd askdjha fjhga kfjhad ahda</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Next Page Jump-->
+        <div class="row" style="padding-top: 20px;">
+            <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" id="itemlist_results" style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:0px; padding-right:0px; padding-bottom: 0px;">
+                <div class="row" style="margin-left: 20px; margin-right: 20px;">
+                    <div class="row">
+                        <style type="text/css">
+
+                            @media (max-width: 490px) {
+                            .hidethisshit{
+                            display:none;
+                            }
+                            }
+
+
+                            @import url('http://fonts.googleapis.com/css?family=Noto+Sans:400,700');
+
+
+                            /* The ribbons */
+
+                            .corner-ribbon{
+                            /* width: 50px; */
+                            width: 40px;
+                            background: #e43;
+                            position: absolute;
+                            top: 25px;
+                            left: -50px;
+                            text-align: center;
+                            /* line-height: 30px; */
+                            line-height: 20px;
+                            letter-spacing: 1px;
+                            color: #f0f0f0;
+                            font-size:0.7em;
+                            font-weight:bold;
+                            border-radius:0.5em;
+                            }
+
+                            /* Custom styles */
+
+                            .corner-ribbon.sticky{
+                            margin-left: 135px;
+                            margin-top: 5px;
+                            }
+
+                            .corner-ribbon.shadow{
+                            box-shadow: 0 0 3px rgba(0,0,0,.3);
+                            }
+
+
+                            .corner-ribbon.top-right{
+                            top: 2px;
+                            right: inherit;
+                            left: inherit;
+                            }
+
+
+                            /* Colors */
+
+
+                            .corner-ribbon.open{background:#406C9B;}
+                            .corner-ribbon.closed{background:red;}
+
+                            .instantborder{border-top:1px solid rgba(204, 204, 204, 0.57);}
+
+
+                        </style>
+                        <style type="text/css">
+                            .container {
+                            display: table !important;
+                            }
+                            .container2 {
+                            display: table !important;
+                            padding-right:0px !important;
+                            padding-left:0px !important;
+                            }
+                            .column {
+                            display: table-cell !important;
+
+                            }
+
+                            .myrow {
+                            display: table-row !important;
+                            }
+
+                            @media all {
+                            .container{
+                            width:inherit;
+                            }
+                            }
+
+                        </style>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="row" style="    padding-top: 20px; padding-bottom: 20px;">
+                                <div class="container " style="    width: 100%;">
+                                    <div class="myrow" style="    text-align: center;">
+                                        <p style="margin-bottom:5px;">
+                                            Please click next to jump to the next page.
+                                        </p>
+                                        <a href="#" style="padding-right:20px;">cancel</a>
+                                        <button onclick="location.href='/user/add_new/terms';" id="registerVenueButton" name="registerVenue" class="btn btn-primary" type="button">Finish</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+</html>
