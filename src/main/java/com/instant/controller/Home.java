@@ -40,5 +40,17 @@ public class Home {
         return TilesDefinition.USER;
     }
 
+    @RequestMapping("/user/add_new")
+    public String getNewUserAddVenuFragment(String speciality, Model model) {
+        model.addAttribute("register_venue_page", "index_user_add_first_page");
+        return "index_user_add";
+    }
+
+    @RequestMapping("/user/add_new/cont")
+    public String getNewUserAddVenuFragmentContinued(String speciality, Model model) {
+        model.addAttribute("register_venue_page", "index_user_add_second_page");
+        return "index_user_add";
+    }
+
 
 }

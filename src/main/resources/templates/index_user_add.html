@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Bootstrap 3, from LayoutIt!</title>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900,200' rel='stylesheet' type='text/css'> -->
+    <link href="https://fonts.googleapis.com/css?family=IM+Fell+English:400,400italic|Product+Sans" rel="stylesheet"
+          type="text/css"/>
+
+    <meta name="description" content="Source code generated using layoutit.com"/>
+    <meta name="author" content="LayoutIt!"/>
+
+    <link href="css/bootstrap.min.css" th:href="@{/oc_css/bootstrap.min.css}" rel="stylesheet"/>
+    <link href="css/style.css" th:href="@{/oc_css/style.css}" rel="stylesheet"/>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'/>
+    <link href="css/font-awesome.min.css" th:href="@{/oc_css/font-awesome.min.css}" rel="stylesheet"/>
+    <link href="css/bootstrap-social.css" th:href="@{/oc_css/bootstrap-social.css}" rel="stylesheet"/>
+    <link th:href="@{/oc_css/bootstrap-multiselect.css}" rel="stylesheet"/>
+    <link th:href="@{/oc_css/dropzone/basic.css}" rel="stylesheet"/>
+    <link th:href="@{/oc_css/dropzone/dropzone.css}" rel="stylesheet"/>
+
+
+</head>
+<body>
+
+
+<div class="container-fluid" style="padding-top: 65px;">
+    <div th:replace="@{'fragments/' + ${register_venue_page}} :: ${register_venue_page}"></div>
+    <div th:replace="fragments/footer :: footer"></div>
+</div>
+
+
+<script src="js/jquery.min.js" th:src="@{/oc_js/jquery.min.js}"></script>
+<script src="js/bootstrap.min.js" th:src="@{/oc_js/bootstrap.min.js}"></script>
+<script th:src="@{/oc_js/register_venue_cookie.js}"></script>
+<script src="js/scripts.js" th:src="@{/oc_js/scripts.js}"></script>
+<script src="js/search.js" th:src="@{/oc_js/search.js}"></script>
+<script src="js/localization.js" th:src="@{/oc_js/localization.js}"></script>
+<script th:src="@{/oc_js/bootstrap-multiselect.js}"></script>
+<script th:src="@{/oc_js/dropzone.js}"></script>
+
+
+<script type="text/javascript" th:inline="javascript">
+/*<![CDATA[*/
+    function retrieveGuests() {
+        var url = '/clients?query=' + $('#query_input').val()
+        + '&city=' + $('#city_input').val()
+        + '&view=2&';
+        var data = $('#filterForm').serialize();
+        url = url + data;
+        $("#itemlist_results").load(url);
+    }
+/*]]>*/
+
+</script>
+
+<script th:inline="javascript">
+      /*<![CDATA[*/
+
+        var venuesListObject = /*[[${venues}]]*/ [{'a'}, {'b'}];
+        results_count = venuesListObject.content.length;
+        results_count_string = results_count + " results";
+        setResultsCountString(results_count_string);
+
+     /*]]>*/
+
+</script>
+
+<script th:inline="javascript" type="text/javascript">
+/*<![CDATA[*/
+    $(document).ready(function() {
+        $('#filter_option_speciality').multiselect();
+        $('.custom-filter-input.speciality > div > .btn-group').css("width", "100%");
+        $('.custom-filter-input.speciality > div > .btn-group > .multiselect.dropdown-toggle.btn.btn-default').css("width", "100%");
+    });
+
+    $(document).ready(function() {
+        $('#filter_option_category').multiselect();
+        $('.custom-filter-input.category > div > .btn-group').css("width", "100%");
+        $('.custom-filter-input.category > div > .btn-group > .multiselect.dropdown-toggle.btn.btn-default').css("width", "100%");
+    });
+
+    $(".venue_description").each(function(){
+        console.log($( this ).text().length);
+        if($( this ).text().length > 190){
+            $(this).text($(this).text().substr(0,190) + " ...");
+        }
+    });
+
+    Dropzone.options.myDropzone = { renameFilename: cleanFilename, url: "/upload/venue/image",
+     init: function() {
+          this.on("addedfile", function(file) {
+
+            // Create the remove button
+            var removeButton = Dropzone.createElement("<button class='btn btn-dropzone'>Remove file</button>");
+
+
+            // Capture the Dropzone instance as closure.
+            var _this = this;
+
+            // Listen to the click event
+            removeButton.addEventListener("click", function(e) {
+              // Make sure the button click doesn't submit the form:
+              e.preventDefault();
+              e.stopPropagation();
+
+              // Remove the file preview.
+              _this.removeFile(file);
+              counter = counter-1;
+              var naming = $(this).closest('.dz-preview').find('.dz-details > .dz-filename > span').text();
+              jQuery.ajax( {
+                url: '/delete/venue/image',
+                type: 'POST',
+                data: {
+                    name: naming
+                       }
+    } );
+              // If you want to the delete the file on the server as well,
+              // you can do the AJAX request here.
+            });
+
+            // Add the button to the file preview element.
+            file.previewElement.appendChild(removeButton);
+          });
+        }
+        }
+
+
+
+     /*]]>*/
+
+</script>
+
+<script th:inline="javascript" type="text/javascript">
+/*<![CDATA[*/
+
+/*]]>*/
+
+</script>
+
+<script>
+    $(document).ready(function(){
+    var favourite=false;
+        $('.favourite_heart').click(function(){
+            favourite=!favourite;
+
+            if(favourite==true){
+                $('.favourite_heart > img').attr('src', '/img/heart-outline-full.png');
+            }
+            if(favourite==false){
+                $('.favourite_heart > img').attr('src', '/img/heart-outline.png');
+            }
+    });
+})
+</script>
+
+</body>
+</html>

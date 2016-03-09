@@ -29,7 +29,6 @@
     <div class="row">
         <div class="col-md-12">
             <div th:replace="fragments/header :: header"></div>
-
             <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" style="display: table; padding-top: 10px; padding-bottom: 10px;">
                 <p style="font-size: 12px; display: table-cell; vertical-align: middle; text-align:right; margin-right: 15px;"> <a href="#">Home</a> > <a href="#">Account</a></p>
             </div>
@@ -143,47 +142,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="row" style="padding-top: 20px;">
-                <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1 col-sm-12 col-xs-12"
-                     style="display: table; padding-top: 10px; padding-bottom: 10px;">
-                    <div class="row">
-                        <div class="container" style="width:100%;">
-                            <div class="column" style="width:20%; text-align: center;">
-                                <a style="text-decoration: none;" href="/new_item/56be6f94d4c696e216899792">
-                                    <p style="    margin-bottom: 5px;">
-                                        <strong style="color: #444; font-size: 12px; font-height:16px;line-height:1;font-style:normal;padding: 1em; border-radius: 10px; background: #EAEAEA;">Profile</strong>
-                                        <!--<sup style="font-style:bold; color: #999999;"> by asd</sup>-->
-                                    </p>
-                                </a>
-                            </div>
-                            <div class="column" style="width:20%; text-align: center;">
-                                <a style="text-decoration: none;" href="/new_item/56be6f94d4c696e216899792">
-                                    <p style="    margin-bottom: 5px;">
-                                        <strong style="color: #444; font-size: 12px; font-height:16px;line-height:1;font-style:normal;padding: 1em; border-radius: 10px; background: #EAEAEA;">Alerts<sup>0</sup></strong>
-                                    </p>
-                                </a>
-                            </div>
-                            <div class="column" style="width:20%; text-align: center;">
-                                <a style="text-decoration: none;" href="/new_item/56be6f94d4c696e216899792">
-                                    <p style="    margin-bottom: 5px;">
-                                        <strong style="color: #444; font-size: 12px; font-height:16px;line-height:1;font-style:normal;padding: 1em; border-radius: 10px; background: #EAEAEA;">Support</strong>
-                                    </p>
-                                </a>
-                            </div>
-                            <div class="column" style=" width:20%; text-align: center;">
-                                <a style="text-decoration: none;" href="/new_item/56be6f94d4c696e216899792">
-                                    <p style="    margin-bottom: 5px;">
-                                        <strong style="color: #444; font-size: 12px; font-height:16px;line-height:1;font-style:normal; padding: 1em; border-radius: 10px; background: #EAEAEA;">Register</strong>
-                                    </p>
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <div class="row" style="padding-top: 20px;">
                 <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:0px; padding-right:0px; padding-bottom: 0px;">
 
@@ -392,6 +350,8 @@
                                         <br/>
                                         <span style="font-size: 13px;">Use <em><i class="fa fa-cutlery" style="font-weight: bold; font-size: 1.2em;"></i> Register venue</em> in order to add a new venue</span>
                                     </p>
+                                    <button id="registerVenueButton" name="registerVenue" class="btn btn-primary" type="button">Register Venue
+                                    </button>
                                     <div style="display:none" class="col-md-6">
                                         <p>
                                             <span style="font-weight: 600;">Venue Category:</span>
@@ -992,7 +952,6 @@
 
                 </div>
             </div>
-
         </div>
     </div>
 

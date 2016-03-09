@@ -392,13 +392,16 @@
                      style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:0px; padding-right:0px; padding-bottom: 25px;">
                     <div style="    display: table;
     width: 100%;
-    padding-top: 10px; padding-bottom: 10px;">
-                        <p style="font-size: 12px; font-weight: bold;
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-    width:33.33%;
-}">Best [Category] in [City] ordered by [Sorting]</p>
+    padding-top: 10px; padding-bottom: 10px;" class="custom-filter-input sorting">
+                        <p style="font-size: 12px; font-weight: bold; display: table-cell; vertical-align: middle; text-align: center; width:33.33%;">
+                            Best <span style="font-weight: normal; font-size:13px">Category</span> in <span style="font-weight: normal; font-size:13px">City/Country</span> ordered by&ensp;
+                            <select id="filter_option_sorting" name="sorting" class="form-control">
+                                <option>Popularity</option>
+                                <option>Reviews</option>
+                                <option>Price</option>
+                                <option>Distance</option>
+                            </select>
+                        </p>
 
                     </div>
                     <div th:replace="fragments/itemlist_product_list :: itemlist_product_list"></div>
@@ -508,6 +511,13 @@
         $('.custom-filter-input.category > div > .btn-group').css("width", "100%");
         $('.custom-filter-input.category > div > .btn-group > .multiselect.dropdown-toggle.btn.btn-default').css("width", "100%");
     });
+
+    $(document).ready(function() {
+        $('#filter_option_sorting').multiselect();
+        $('.custom-filter-input.sorting > p > .btn-group > button').css("line-height", "1");
+        $('.custom-filter-input.sorting > p > .btn-group > button').css("font-size", "13px");
+    });
+
 
     $(".venue_description").each(function(){
         console.log($( this ).text().length);
