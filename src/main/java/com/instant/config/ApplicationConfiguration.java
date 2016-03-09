@@ -17,12 +17,6 @@ import javax.validation.ValidatorFactory;
 
 @Configuration
 public class ApplicationConfiguration {
-    @Bean(name = "validator")
-    public javax.validation.Validator getValidator() {
-        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
-        Validator validator = factory.getValidator();
-        return validator;
-    }
 
     // swagger config
     @Bean

@@ -1,11 +1,8 @@
 package com.instant.persistence.repository;
 
-import com.instant.persistence.model.venue.Venue;
+import com.instant.persistence.model.venue.VenueEntity;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.geo.Distance;
-import org.springframework.data.geo.GeoResults;
-import org.springframework.data.geo.Point;
 import org.springframework.data.mongodb.core.query.TextCriteria;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
@@ -15,17 +12,17 @@ import java.util.List;
 /**
  * @author sroshchupkin
  */
-public interface VenueRepository extends MongoRepository<Venue, String> {
+public interface VenueRepository extends MongoRepository<VenueEntity, String> {
 
-    Page<Venue> findAllBy(TextCriteria textCriteria, Pageable pageable);
+    Page<VenueEntity> findAllBy(TextCriteria textCriteria, Pageable pageable);
 
     @Query(fields = "{ 'name' : 1}")
-    List<Venue> findTop10ByNameLikeIgnoreCase(String venueName);
+    List<VenueEntity> findTop10ByNameLikeIgnoreCase(String venueName);
 
     @Query(fields = "{'name':1,'city':1}")
-    List<Venue> findTop10ByCityAndCategoryAndNameLikeIgnoreCase(String city, String category, String name);
+    List<VenueEntity> findTop10ByCityAndCategoryAndNameLikeIgnoreCase(String city, String category, String name);
 
-    Venue findById(String id);
+    VenueEntity findById(String id);
 
 //    GeoResults<Venue> findByLocationNear(Point location, Distance distance);
 

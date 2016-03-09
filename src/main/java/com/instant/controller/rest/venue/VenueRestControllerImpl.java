@@ -1,8 +1,10 @@
 package com.instant.controller.rest.venue;
 
 import com.instant.api.controller.VenueRestController;
+import com.instant.api.model.venue.NewVenue;
+import com.instant.api.model.venue.Venue;
 import com.instant.controller.Mappings;
-import com.instant.persistence.model.venue.Venue;
+import com.instant.persistence.model.venue.VenueEntity;
 import com.instant.service.venue.VenueService;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
@@ -26,9 +28,11 @@ public class VenueRestControllerImpl implements VenueRestController {
     VenueService venueService;
 
     @Override
-    public List<Venue> getVenues(@ApiParam(value = "maximum number of results to return. Default is 20. Limit should be less then 1000.") @RequestParam(value = "limit",
-            required = false,
-            defaultValue = "20") Integer limit, @ApiParam(value = "This parameter specify where to start returning venues from the entire set of result. Default is 0.") @RequestParam(value = "offset",
+    public List<Venue> getVenues(@ApiParam(value = "maximum number of results to return. Default is 20. Limit should be less then 1000.")
+                                     @RequestParam(value = "limit", required = false, defaultValue = "20") Integer limit,
+
+                                 @ApiParam(value = "This parameter specify where to start returning venues from the entire set of result. Default is 0.")
+                                 @RequestParam(value = "offset",
             required = false,
             defaultValue = "0") Integer offset) {
         return venueService.getVenues(limit, offset);
@@ -36,17 +40,19 @@ public class VenueRestControllerImpl implements VenueRestController {
 
     @Override
     public Venue createVenue(@ApiParam(value = "Venue to add to the system",
-            required = true) @RequestBody Venue venue) {
-        return venueService.saveVenue(venue);
+            required = true) @RequestBody NewVenue newVenue) {
+        return venueService.saveVenue(newVenue);
     }
 
     @Override
-    public Venue getVenue(@ApiParam(value = "id of venue to fetch", required = true) @PathVariable("id") String id) {
-        return venueService.getVenueEntityById(id);
+    public Venue getVenue(@ApiParam(value = "id of venue to fetch", required = true)
+                              @PathVariable("id") String id) {
+        return venueService.getVenueById(id);
     }
 
     @Override
-    public Venue updateVenue(@ApiParam(value = "venue that will be updated", required = true) @RequestBody Venue venue) {
+    public Venue updateVenue(@ApiParam(value = "venue that will be updated", required = true)
+                                 @RequestBody Venue venue) {
         return venueService.updateVenue(venue);
     }
 

@@ -1,7 +1,8 @@
 package com.instant.api.controller;
 
+import com.instant.api.model.venue.NewVenue;
+import com.instant.api.model.venue.Venue;
 import com.instant.controller.Mappings;
-import com.instant.persistence.model.venue.Venue;
 import io.swagger.annotations.*;
 import org.springframework.web.bind.annotation.*;
 
@@ -49,19 +50,22 @@ public interface VenueRestController {
     /**
      * CREATE-POST new Venue
      *
-     * @param venue
+     * @param newVenue
      * @return
      */
-    @ApiOperation(value = "", notes = "Creates a new venue. Duplicates are allowed.", response = Venue.class, responseContainer = "List")
+    @ApiOperation(value = "", 
+            notes = "Creates a new venue. Duplicates are allowed.", 
+            response = Venue.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = SUCCESS),
             @ApiResponse(code = 400, message = ERROR_400),
             @ApiResponse(code = 500, message = ERROR_500_MSG)})
 
-
-    @RequestMapping(method = RequestMethod.POST, produces = {APPLICATION_JSON_VALUE}, consumes = {APPLICATION_JSON_VALUE})
+    @RequestMapping(method = RequestMethod.POST, 
+            produces = {APPLICATION_JSON_VALUE}, 
+            consumes = {APPLICATION_JSON_VALUE})
     Venue createVenue(@ApiParam(value = "Venue to add to the system",
-            required = true) @RequestBody Venue venue);
+            required = true) @RequestBody NewVenue newVenue);
 
     /**
      * GET VENUE
@@ -69,7 +73,9 @@ public interface VenueRestController {
      * @param id
      * @return
      */
-    @ApiOperation(value = "", notes = "Return a venue based on a single id.", response = Venue.class, responseContainer = "List")
+    @ApiOperation(value = "",
+            notes = "Return a venue based on a single id.",
+            response = Venue.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = SUCCESS),
             @ApiResponse(code = 400, message = ERROR_400),
@@ -82,10 +88,12 @@ public interface VenueRestController {
     /**
      * UPDATE VENUE
      *
-     * @param venue
+     * @param Venue
      * @return
      */
-    @ApiOperation(value = "", notes = "Update venue", response = Venue.class, responseContainer = "List")
+    @ApiOperation(value = "",
+            notes = "Update venue",
+            response = Venue.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = SUCCESS),
             @ApiResponse(code = 400, message = ERROR_400),
@@ -96,14 +104,16 @@ public interface VenueRestController {
             produces = {APPLICATION_JSON_VALUE},
             consumes = {APPLICATION_JSON_VALUE},
             method = RequestMethod.PUT)
-    Venue updateVenue(@ApiParam(value = "venue that will be updated", required = true) @RequestBody Venue venue);
+    Venue updateVenue(@ApiParam(value = "venue that will be updated", required = true) @RequestBody Venue Venue);
 
     /**
      * DELETE VENUE
      *
      * @param id
      */
-    @ApiOperation(value = "", notes = "delete a single venue based on the id supplied", response = Venue.class, responseContainer = "List")
+    @ApiOperation(value = "",
+            notes = "delete a single venue based on the id supplied",
+            response = Venue.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = SUCCESS),
             @ApiResponse(code = 400, message = ERROR_400),

@@ -1,22 +1,25 @@
 package com.instant.service.venue;
 
+import com.instant.api.model.venue.NewVenue;
+import com.instant.api.model.venue.Venue;
 import com.instant.exception.InternalServerException;
 import com.instant.exception.InvalidRequestException;
 import com.instant.exception.NotFoundException;
-import com.instant.persistence.model.venue.Venue;
+import com.instant.persistence.model.venue.VenueEntity;
 import com.instant.persistence.repository.VenueRepository;
 import com.instant.service.counter.CounterService;
 import com.instant.service.geo.GeoCoderService;
-import com.instant.validator.ValidationResult;
-import com.instant.validator.ValidationService;
+import com.instant.service.validator.ValidationResult;
+import com.instant.service.validator.ValidationService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.convert.support.ConfigurableConversionService;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author sroshchupkin
@@ -30,7 +33,7 @@ public class VenueServiceImpl implements VenueService {
     VenueRepository venueRepository;
 
     @Autowired
-    ValidationService<Venue> validationService;
+    ValidationService<NewVenue> validationService;
 
     @Autowired
     GeoCoderService geoCoderService;
@@ -38,12 +41,18 @@ public class VenueServiceImpl implements VenueService {
     @Autowired
     CounterService counterService;
 
+    @Autowired
+    private ConfigurableConversionService conversionService;
+
+
 
     @Override
     public List<Venue> getVenues(Integer limit, Integer offset) {
         List<Venue> venues;
         try {
-            venues = venueRepository.findAll(new PageRequest(offset, limit)).getContent();
+            venues = venueRepository.findAll(new PageRequest(offset, limit)).getContent()
+                    .stream().map(e -> conversionService.convert(e, Venue.class))
+                    .collect(Collectors.toList());
         } catch (Exception e) {
             log.error("internal error", e);
             throw new InternalServerException();
@@ -52,42 +61,43 @@ public class VenueServiceImpl implements VenueService {
     }
 
     @Override
-    public Venue saveVenue(Venue venue) {
-        ValidationResult result = validationService.validate(venue);
+    public Venue saveVenue(NewVenue newVenue) {
+        ValidationResult result = validationService.validate(newVenue);
         if (result.isFailed()) {
             log.error("validation failed: {}", result);
             throw new InvalidRequestException();
         }
+        VenueEntity venueEntity = conversionService.convert(newVenue, VenueEntity.class);
         //venue.setId(counterService.getNextSequence("Venue"));
-        if (!venue.getAddress().isEmpty()) {
-            double[] geoPoint = geoCoderService.getGeoPointFromAddress(venue.getAddress());
-            venue.setLocation(geoPoint);
+        if (!newVenue.getAddress().isEmpty()) {
+            double[] geoPoint = geoCoderService.getLocationFromAddress(newVenue.getAddress());
+            venueEntity.setLocation(geoPoint);
         }
-        venue.setPublished(false);
+        venueEntity.setPublished(false);
         try {
-            venueRepository.save(venue);
+            venueRepository.save(venueEntity);
         } catch (Exception e) {
             throw new InternalServerException();
         }
-        return venue;
+        return conversionService.convert(venueEntity, Venue.class);
     }
 
 
     @Override
-    public Venue getVenueEntityById(String id) {
-        Venue venue;
+    public Venue getVenueById(String id) {
+        VenueEntity venueEntity;
         try {
-            venue = venueRepository.findOne(id);
+            venueEntity = venueRepository.findOne(id);
         } catch (Exception e) {
             log.error("Internal exception", e);
             throw new InternalServerException();
         }
 
-        if (venue == null) {
+        if (venueEntity == null) {
             log.error("Venue with id {} not found", id);
             throw new NotFoundException();
         }
-        return venue;
+        return conversionService.convert(venueEntity,Venue.class);
     }
 
     @Override
@@ -97,13 +107,14 @@ public class VenueServiceImpl implements VenueService {
             log.error("validation failed: {}", result);
             throw new InvalidRequestException();
         }
+        VenueEntity venueEntity = conversionService.convert(venue,VenueEntity.class);
         try {
-            venue = venueRepository.save(venue);
+            venueEntity = venueRepository.save(venueEntity);
         } catch (Exception e) {
             log.error("Internal error", e);
             throw new InternalServerException();
         }
-        return venue;
+        return conversionService.convert(venueEntity,Venue.class);
     }
 
     @Override

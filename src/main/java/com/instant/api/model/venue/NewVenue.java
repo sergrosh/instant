@@ -1,4 +1,4 @@
-package com.instant.api.model;
+package com.instant.api.model.venue;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;

@@ -1,12 +1,15 @@
 package com.instant.controller;
 
+import com.instant.api.model.venue.NewVenue;
+import com.instant.api.model.venue.Venue;
 import com.instant.persistence.model.city.City;
-import com.instant.persistence.model.venue.Venue;
+import com.instant.persistence.model.venue.VenueEntity;
 import com.instant.persistence.repository.CityRepository;
 import com.instant.persistence.repository.UploadedFileRepository;
 import com.instant.persistence.repository.VenueRepository;
-import com.instant.validator.VenueValidator;
+import com.instant.service.validator.VenueValidator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.convert.support.ConfigurableConversionService;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -34,38 +37,15 @@ public class VenueController {
     CityRepository cityRepository;
 
     @Autowired
+    private ConfigurableConversionService conversionService;
+
+    @Autowired
     UploadedFileRepository uploadedFileRepository;
 
     private static final String MAP = "map";
     private static final String MENU = "menu";
     private static final String CONTACT = "contact";
     private static final String REVIEWS = "reviews";
-
-    @RequestMapping(Mappings.ITEM)
-    public ModelAndView getItemById(@RequestParam("id") String id) {
-        ModelAndView modelAndView;
-        if (StringUtils.isEmpty(id)) {
-            modelAndView = new ModelAndView(TilesDefinition.HOME);
-            return modelAndView;
-        } else {
-            modelAndView = new ModelAndView(TilesDefinition.ITEM);
-            modelAndView.addObject("venue", venueRepository.findById(id));
-        }
-        return modelAndView;
-    }
-
-    @RequestMapping(Mappings.ITEM_NEW)
-    public ModelAndView getNewItemById(@RequestParam("id") String id) {
-        ModelAndView modelAndView;
-        if (StringUtils.isEmpty(id)) {
-            modelAndView = new ModelAndView(TilesDefinition.HOME);
-            return modelAndView;
-        } else {
-            modelAndView = new ModelAndView(TilesDefinition.ITEM);
-            modelAndView.addObject("venue", venueRepository.findById(id));
-        }
-        return modelAndView;
-    }
 
     @RequestMapping(Mappings.ITEM + "/{id}")
     public ModelAndView getItemByIdViaUrl(@PathVariable(value = "id") String id) {
@@ -75,7 +55,7 @@ public class VenueController {
             return modelAndView;
         } else {
             modelAndView = new ModelAndView(TilesDefinition.ITEM);
-            modelAndView.addObject("venue", venueRepository.findById(id));
+            modelAndView.addObject("venue", conversionService.convert(venueRepository.findById(id), Venue.class));
             modelAndView.addObject("view", "item_main_view");
         }
         return modelAndView;
@@ -89,7 +69,7 @@ public class VenueController {
             return modelAndView;
         } else {
             modelAndView = new ModelAndView("index_" + TilesDefinition.ITEM);
-            modelAndView.addObject("venue", venueRepository.findById(id));
+            modelAndView.addObject("venue", conversionService.convert(venueRepository.findById(id), Venue.class));
             modelAndView.addObject("view", "item_main_view");
         }
         return modelAndView;
@@ -103,7 +83,7 @@ public class VenueController {
             return modelAndView;
         } else {
             modelAndView = new ModelAndView(TilesDefinition.ITEM);
-            modelAndView.addObject("venue", venueRepository.findById(id));
+            modelAndView.addObject("venue", conversionService.convert(venueRepository.findById(id),Venue.class));
             switch (block.toLowerCase()) {
                 case MAP:
                     modelAndView.addObject("view", "item_map_view");
@@ -127,7 +107,8 @@ public class VenueController {
     }
 
     @RequestMapping(value = Mappings.VENUE_SAVE, method = RequestMethod.POST)
-    public ModelAndView save(Venue venue) {
+    public ModelAndView save(NewVenue newVenue) {
+        VenueEntity venue = conversionService.convert(newVenue,VenueEntity.class);
         Map<String, String> errorsMap = venueValidator.isValid(venue);
         if (errorsMap.isEmpty()) {
             ModelAndView view = new ModelAndView(TilesDefinition.LANDING);

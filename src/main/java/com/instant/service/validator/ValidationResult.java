@@ -1,4 +1,4 @@
-package com.instant.validator;
+package com.instant.service.validator;
 
 import lombok.Getter;
 import lombok.ToString;

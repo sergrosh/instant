@@ -20,7 +20,7 @@ public class GeoCoderServiceImpl implements GeoCoderService, Serializable {
     private static final String GOOGLE_ADRESS_QUERY = "http://maps.googleapis.com/maps/api/geocode/json?address=";
 
     @Override
-    public double[] getGeoPointFromAddress(String locationAddress) {
+    public double[] getLocationFromAddress(String locationAddress) {
         double[] locationPoint=null;
         String locationAddres = locationAddress.replaceAll(" ", "%20");
         String str = GOOGLE_ADRESS_QUERY

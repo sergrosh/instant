@@ -1,6 +1,7 @@
-package com.instant.validator;
+package com.instant.service.validator;
 
-import com.instant.persistence.model.venue.Venue;
+import com.instant.api.model.venue.NewVenue;
+import com.instant.persistence.model.venue.VenueEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,17 +18,17 @@ import java.util.stream.Collectors;
 
 @Slf4j
 @Service
-public class ValidationServiceImpl implements ValidationService<Venue> {
+public class ValidationServiceImpl implements ValidationService<NewVenue> {
 
     @Autowired
     private Validator validator;
 
     @Override
-    public ValidationResult validate(Venue venue) {
+    public ValidationResult validate(NewVenue newVenue) {
 
         List<String> errorMsgs = null;
 
-        Set<ConstraintViolation<Venue>> violations = validator.validate(venue);
+        Set<ConstraintViolation<NewVenue>> violations = validator.validate(newVenue);
 
         if (!violations.isEmpty()) {
             errorMsgs = violations.stream()

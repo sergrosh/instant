@@ -1,7 +1,6 @@
 package com.instant.service.favourites;
 
-import com.instant.persistence.model.venue.Venue;
-
+import com.instant.api.model.venue.Venue;
 import java.util.List;
 
 /**
