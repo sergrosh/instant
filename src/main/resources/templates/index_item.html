@@ -19,6 +19,7 @@
     <link href="css/font-awesome.min.css" th:href="@{/oc_css/font-awesome.min.css}" rel="stylesheet"/>
     <link href="css/bootstrap-social.css" th:href="@{/oc_css/bootstrap-social.css}" rel="stylesheet"/>
     <link th:href="@{/oc_css/bootstrap-multiselect.css}" rel="stylesheet"/>
+    <link rel="stylesheet" th:href="@{/oc_css/jqueryrating/fontawesome-stars.css}" href="fontawesome-stars.css"/>
 
 
 </head>
@@ -353,6 +354,143 @@
                     <!--</div>-->
                 <!--</div>-->
             <!--</div>-->
+
+            <!-- About Block start -->
+            <div class="row" style="padding-top: 20px;">
+                <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:0px; padding-right:0px; padding-bottom: 0px;">
+                    <div class="row" style="margin-left: 20px; margin-right: 20px;">
+                        <div class="row">
+
+                            <style type="text/css">
+
+                                @media (max-width: 490px) {
+                                .hidethisshit{
+                                display:none;
+                                }
+                                }
+
+
+                                @import url('http://fonts.googleapis.com/css?family=Noto+Sans:400,700');
+
+
+                                /* The ribbons */
+
+                                .corner-ribbon{
+                                /* width: 50px; */
+                                width: 40px;
+                                background: #e43;
+                                position: absolute;
+                                top: 25px;
+                                left: -50px;
+                                text-align: center;
+                                /* line-height: 30px; */
+                                line-height: 20px;
+                                letter-spacing: 1px;
+                                color: #f0f0f0;
+                                font-size:0.7em;
+                                font-weight:bold;
+                                border-radius:0.5em;
+                                }
+
+                                /* Custom styles */
+
+                                .corner-ribbon.sticky{
+                                margin-left: 135px;
+                                margin-top: 5px;
+                                }
+
+                                .corner-ribbon.shadow{
+                                box-shadow: 0 0 3px rgba(0,0,0,.3);
+                                }
+
+
+                                .corner-ribbon.top-right{
+                                top: 2px;
+                                right: inherit;
+                                left: inherit;
+                                }
+
+
+                                /* Colors */
+
+
+                                .corner-ribbon.open{background:#406C9B;}
+                                .corner-ribbon.closed{background:red;}
+
+                                .instantborder{border-top:1px solid rgba(204, 204, 204, 0.57);}
+
+
+                            </style>
+
+                            <style type="text/css">
+                                .container {
+                                display: table !important;
+                                }
+                                .container2 {
+                                display: table !important;
+                                padding-right:0px !important;
+                                padding-left:0px !important;
+                                }
+                                .column {
+                                display: table-cell !important;
+
+                                }
+
+                                .myrow {
+                                display: table-row !important;
+                                }
+
+                                @media all {
+                                .container{
+                                width:inherit;
+                                }
+                                }
+
+                            </style>
+
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="row" style="    padding-top: 20px; padding-bottom: 10px;">
+                                    <div class="container ">
+                                        <div class="myrow" style="vertical-align:middle; text-align:left;">
+                                            <h3 style="margin-top:0px;" th:text="|Review ${venue.name}|">Review</h3>
+                                        </div>
+                                        <div class="myrow" style="vertical-align:middle; text-align:left;">
+                                            <p>
+                                                Your opinion counts! You can add your review for this venue, and help others reach the best venues.
+                                            </p>
+                                        </div>
+                                        <div class="myrow" style="vertical-align:middle; text-align:center;">
+                                            <div class="row" style="    padding-top: 10px;">
+                                                <div class="col-md-6">
+                                                    <p>
+                                                        <span style="font-weight: 600;">Rating</span>
+                                                        <br/>
+                                                        <select id="example">
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                        </select>
+                                                    </p>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>
+                                                        <span style="font-weight: 600;">Fix Numbers:</span>
+                                                        <br/>
+                                                        <span>052225965, 052236507</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- About Block end -->
 
             <!-- About Block start -->
             <div class="row" style="padding-top: 20px;">
@@ -1303,6 +1441,7 @@
 <script src="js/search.js" th:src="@{/oc_js/search.js}"></script>
 <script src="js/localization.js" th:src="@{/oc_js/localization.js}"></script>
 <script th:src="@{/oc_js/bootstrap-multiselect.js}"></script>
+<script th:src="@{/oc_js/jquery.barrating.min.js}"></script>
 
 <script type="text/javascript" th:inline="javascript">
 /*<![CDATA[*/
@@ -1358,7 +1497,11 @@
 
 <script th:inline="javascript" type="text/javascript">
 /*<![CDATA[*/
-
+    $(function() {
+      $('#example').barrating({
+        theme: 'fontawesome-stars'
+      });
+   });
 /*]]>*/
 
 </script>
