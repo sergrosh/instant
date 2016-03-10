@@ -1,4 +1,4 @@
-package com.instant.persistence.repository.system;
+package com.instant.service.system;
 
 /**
  * @author sroshchupkin
