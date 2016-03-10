@@ -42,7 +42,6 @@ import java.util.Locale;
 @EnableAsync
 @EnableScheduling
 @ComponentScan(basePackages = "com.instant", excludeFilters = {@ComponentScan.Filter(Configuration.class), @ComponentScan.Filter(Controller.class)})
-@EnableMongoRepositories("com.instant.persistence.repository")
 @ImportResource("classpath*:springmvc-resteasy.xml")
 public class MvcConfiguration extends WebMvcConfigurerAdapter {
 

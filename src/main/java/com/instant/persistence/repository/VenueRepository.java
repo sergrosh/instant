@@ -16,6 +16,10 @@ public interface VenueRepository extends MongoRepository<VenueEntity, String> {
 
     Page<VenueEntity> findAllBy(TextCriteria textCriteria, Pageable pageable);
 
+    Page<VenueEntity> findByCity(String cityName, Pageable pageable);
+
+    Page<VenueEntity> findByCityAndPublished(String cityName, Boolean published,Pageable pageable);
+
     @Query(fields = "{ 'name' : 1}")
     List<VenueEntity> findTop10ByNameLikeIgnoreCase(String venueName);
 

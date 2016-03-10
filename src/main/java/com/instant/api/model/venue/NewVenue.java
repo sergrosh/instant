@@ -66,6 +66,10 @@ public class NewVenue implements Serializable {
     @JsonProperty("mobilesecondary")
     private String mobileSecondary;
 
+    @ApiModelProperty(required = false, value = "")
+    @JsonProperty("whatsapp")
+    private String whatsApp;
+
     @ApiModelProperty(required = true, value = "")
     @JsonProperty("facebookpage")
     private String facebookPage;
@@ -94,6 +98,10 @@ public class NewVenue implements Serializable {
     private List<String> menu;
 
     @ApiModelProperty(required = false, value = "")
+    @JsonProperty("avgprice")
+    private Double avgPrice;
+
+    @ApiModelProperty(required = false, value = "")
     @JsonProperty("gallery")
     private List<String> gallery;
 
@@ -112,4 +120,32 @@ public class NewVenue implements Serializable {
     @JsonDeserialize(using = CustomTimeDeserializer.class)
     @JsonProperty("closetime")
     private LocalTime closeTime;
+
+    @ApiModelProperty(required = false, value = "")
+    @JsonProperty("parking")
+    private String parkingDetails;
+
+    @ApiModelProperty(required = false, value = "")
+    @JsonProperty("wifi")
+    private Boolean wifiAvailability;
+
+    @ApiModelProperty(required = false, value = "")
+    @JsonProperty("smoking")
+    private Boolean smokingAvailability;
+
+    @ApiModelProperty(required = false, value = "")
+    @JsonProperty("disabled")
+    private Boolean accessForDisabled;
+
+    @ApiModelProperty(required = false, value = "")
+    @JsonProperty("takeaway")
+    private Boolean takeAwayAvailability;
+
+    @ApiModelProperty(required = false, value = "")
+    @JsonProperty("outdoor")
+    private String outdoorEnvironment;
+
+    @ApiModelProperty(required = false, value = "")
+    @JsonProperty("kidsplayground")
+    private String kidsPlayground;
 }

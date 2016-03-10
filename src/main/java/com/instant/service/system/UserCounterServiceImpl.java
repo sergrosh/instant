@@ -1,4 +1,4 @@
-package com.instant.persistence.repository.system;
+package com.instant.service.system;
 
 import com.instant.persistence.model.system.UserCounter;
 import org.springframework.data.mongodb.core.MongoTemplate;

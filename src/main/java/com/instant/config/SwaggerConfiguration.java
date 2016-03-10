@@ -12,12 +12,10 @@ import springfox.documentation.spring.web.plugins.Docket;
  */
 
 @Configuration
-public class ApplicationConfiguration {
-
+public class SwaggerConfiguration {
     // swagger config
     @Bean
     public Docket customImplementation() {
-
         ApiInfo apiInfo = new ApiInfo("Venue API", "Protype API for management of venues and images", "1.0.0", "", "", "", "");
         return
                 new Docket(DocumentationType.SWAGGER_2)

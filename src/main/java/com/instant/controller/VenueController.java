@@ -5,13 +5,14 @@ import com.instant.api.model.venue.Venue;
 import com.instant.persistence.model.city.City;
 import com.instant.persistence.model.venue.VenueEntity;
 import com.instant.persistence.repository.CityRepository;
-import com.instant.persistence.repository.UploadedFileRepository;
 import com.instant.persistence.repository.VenueRepository;
+import com.instant.service.user.UserAccountService;
 import com.instant.service.validator.VenueValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.support.ConfigurableConversionService;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -39,12 +40,13 @@ public class VenueController {
     private ConfigurableConversionService conversionService;
 
     @Autowired
-    UploadedFileRepository uploadedFileRepository;
+    private UserAccountService userAccountService;
 
     private static final String MAP = "map";
     private static final String MENU = "menu";
     private static final String CONTACT = "contact";
     private static final String REVIEWS = "reviews";
+    private static final String VIEW = "view";
 
     @RequestMapping(Mappings.ITEM + "/{id}")
     public ModelAndView getItemByIdViaUrl(@PathVariable(value = "id") String id) {
@@ -60,7 +62,7 @@ public class VenueController {
         return modelAndView;
     }
 
-    @RequestMapping("/new_item/{id}")
+    @RequestMapping(Mappings.ITEM_NEW+"/{id}")
     public ModelAndView getNewItemByIdViaUrl(@PathVariable(value = "id") String id) {
         ModelAndView modelAndView;
         if (StringUtils.isEmpty(id)) {
@@ -85,19 +87,19 @@ public class VenueController {
             modelAndView.addObject("venue", conversionService.convert(venueRepository.findById(id), Venue.class));
             switch (block.toLowerCase()) {
                 case MAP:
-                    modelAndView.addObject("view", "item_map_view");
+                    modelAndView.addObject(VIEW, "item_map_view");
                     break;
                 case MENU:
-                    modelAndView.addObject("view", "item_menu_view");
+                    modelAndView.addObject(VIEW, "item_menu_view");
                     break;
                 case CONTACT:
-                    modelAndView.addObject("view", "item_contact_view");
+                    modelAndView.addObject(VIEW, "item_contact_view");
                     break;
                 case REVIEWS:
-                    modelAndView.addObject("view", "item_reviews_view");
+                    modelAndView.addObject(VIEW, "item_reviews_view");
                     break;
                 default:
-                    modelAndView.addObject("view", "item_main_view");
+                    modelAndView.addObject(VIEW, "item_main_view");
                     break;
             }
 
@@ -124,10 +126,8 @@ public class VenueController {
         }
     }
 
-//    @RequestMapping(value = Mappings.ITEM_FAVOURITE, method = RequestMethod.GET)
-//    public Venue addToFavourites(@RequestParam("id") String id){
-//
-//
-//    }
-
+    @RequestMapping(value = Mappings.ITEM_FAVOURITE, method = RequestMethod.GET)
+    public boolean addToFavourites(@PathVariable("id") String id){
+        return userAccountService.getCurrentUser().addFavouriteVenue(id);
+    }
 }

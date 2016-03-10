@@ -60,5 +60,4 @@ public class VenueRestControllerImpl implements VenueRestController {
             required = true) @PathVariable("id") String id) {
         venueService.deleteVenue(id);
     }
-
 }
