@@ -13,6 +13,7 @@ import com.instant.service.search.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.support.ConfigurableConversionService;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.http.MediaType;
@@ -73,7 +74,7 @@ public class SearchController {
                                @RequestParam(value = "category", required = false, defaultValue = "") String category,
                                @RequestParam(value = "view", required = false, defaultValue = "1") Integer view,
                                @RequestParam(value = "page", required = false, defaultValue = "1") Integer pageNum,
-                               @RequestParam(value = "city", required = false, defaultValue = "") String city,
+                               @RequestParam(value = "city", required = false, defaultValue = "Berlin") String city,
                                @RequestParam(value = "reviews", required = false, defaultValue = "0") int reviews,
                                @RequestParam(value = "speciality", required = false, defaultValue = "") List<String> speciality,
                                @RequestParam(value = "sortingType", required = false, defaultValue = "") String sortingType) {
@@ -83,7 +84,7 @@ public class SearchController {
             modelAndView = new ModelAndView("fragments/itemlist_product_list :: itemlist_product_list");
         }
         if (StringUtils.isEmpty(query)) {
-            List<VenueEntity> venueEntities = venueRepository.findAll(paginationBean.defaultPageable(pageNum - 1)).getContent();
+            List<VenueEntity> venueEntities = venueRepository.findByCityAndPublished(city, true, paginationBean.defaultPageable(pageNum - 1)).getContent();
             modelAndView.addObject("venues", venueEntities.stream().map(e -> conversionService.convert(e, Venue.class))
                     .collect(Collectors.toList()));
             return modelAndView;
@@ -91,9 +92,19 @@ public class SearchController {
             Query searchQuery = searchService.getQuery(query, city, category, reviews, speciality,
                     sortingType, paginationBean.defaultPageable(pageNum - 1));
             List<VenueEntity> venueEntities = mongoOperations.find(searchQuery, VenueEntity.class);
-            List<Venue> venues = favouritesService.checkAndGetVenues(venueEntities.stream().map(e -> conversionService.convert(e, Venue.class))
-                    .collect(Collectors.toList()));
-            modelAndView.addObject("venues", venues);
+
+                List<Venue> venues = favouritesService.checkAndGetVenues(venueEntities.stream().map(e -> conversionService.convert(e, Venue.class))
+                        .collect(Collectors.toList()));
+                modelAndView.addObject("venues", venues);
+
+                if(venueEntities.size()<paginationBean.getPageSize()){
+                    List<VenueEntity> extraVenueEntities = venueRepository.findByCity(city,
+                            new PageRequest(pageNum, paginationBean.getPageSize()-venues.size(), new Sort(Sort.Direction.DESC, "name"))).getContent();
+                    List<Venue> extraVenues = favouritesService.checkAndGetVenues(extraVenueEntities.stream().map(e -> conversionService.convert(e, Venue.class))
+                            .collect(Collectors.toList()));
+                    modelAndView.addObject("extraVenues",extraVenues);
+                }
+
             modelAndView.addObject("searchString", query);
         }
         return modelAndView;

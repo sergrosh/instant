@@ -1,8 +1,9 @@
 package com.instant.config;
 
+import com.instant.service.converter.datetime.LocalTimeToStringConverter;
+import com.instant.service.converter.datetime.StringToLocalTimeConverter;
 import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
-import org.joda.time.LocalTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.convert.converter.Converter;
@@ -47,20 +48,6 @@ public class MongoConfig extends AbstractMongoConfiguration {
         converters.add(new LocalTimeToStringConverter());
         converters.add(new StringToLocalTimeConverter());
         return new CustomConversions(converters);
-    }
-}
-
-class LocalTimeToStringConverter implements Converter<LocalTime, String> {
-    @Override
-    public String convert(LocalTime localTime) {
-        return localTime.toString();
-    }
-}
-
-class StringToLocalTimeConverter implements Converter<String, LocalTime> {
-    @Override
-    public LocalTime convert(String s) {
-        return LocalTime.parse(s);
     }
 }
 

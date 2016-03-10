@@ -8,6 +8,7 @@ import org.springframework.social.security.SocialUserDetails;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @author sroshchupkin
@@ -33,7 +34,7 @@ public class UserAccount extends BaseAuditableEntity implements SocialUserDetail
 
     private boolean trustedAccount;
 
-    private List<String> favouritesVenues;
+    private Set<String> favouritesVenues;
 
     public UserAccount() {
         this.roles = new UserRoleType[0];
@@ -108,12 +109,20 @@ public class UserAccount extends BaseAuditableEntity implements SocialUserDetail
         this.trustedAccount = trustedAccount;
     }
 
-    public List<String> getFavouritesVenues() {
+    public Set<String> getFavouritesVenues() {
         return favouritesVenues;
     }
 
-    public void setFavouritesVenues(List<String> favouritesVenues) {
+    public void setFavouritesVenues(Set<String> favouritesVenues) {
         this.favouritesVenues = favouritesVenues;
+    }
+
+    public boolean addFavouriteVenue(String venueId){
+        Set<String> venues=getFavouritesVenues();
+        boolean added = venues.add(venueId);
+        if(!added)
+            venues.remove(venueId);
+        return added;
     }
 
     @Override

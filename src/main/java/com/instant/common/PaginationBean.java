@@ -26,4 +26,8 @@ public class PaginationBean {
     public static Sort createSort() {
         return new Sort(Sort.Direction.DESC, "name");
     }
+
+    public int getPageSize(){
+        return environmentBean.getInt("pagination.page.size");
+    }
 }

@@ -1,24 +1,37 @@
-package com.instant.service.geo;
+package com.instant.service.converter.venue;
 
+import com.instant.api.model.venue.NewVenue;
+import com.instant.persistence.model.venue.VenueEntity;
+import com.instant.service.geo.GeoCoderService;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.*;
 import java.net.URL;
 import java.nio.charset.Charset;
 
 /**
- * @author sroshchupkin
+ * @author Sergii Roshchupkin
  */
 
-@Service(value = "geoCoderService")
-public class GeoCoderServiceImpl implements GeoCoderService {
+
+public final class NewVenueConverter extends AbstractVenueConverter<NewVenue> {
 
     private static final String GOOGLE_ADRESS_QUERY = "http://maps.googleapis.com/maps/api/geocode/json?address=";
 
+//    @Autowired
+//    GeoCoderService geoCoderService;
+
     @Override
+    public VenueEntity convert(NewVenue venue) {
+        VenueEntity venueEntity = super.convert(venue);
+        String address = venue.getAddress();
+        venueEntity.setLocation(getLocationFromAddress(address));
+        return venueEntity;
+    }
+
     public double[] getLocationFromAddress(String locationAddress) {
         double[] locationPoint = null;
         String locationAddres = locationAddress.replaceAll(" ", "%20");

@@ -1,4 +1,4 @@
-package com.instant.service.converter;
+package com.instant.service.converter.venue;
 
 
 import com.instant.api.model.venue.NewVenue;
@@ -21,22 +21,32 @@ public abstract class AbstractVenueConverter<T extends NewVenue> implements Conv
         entity.setAddress(newVenue.getAddress());
         entity.setCategory(newVenue.getCategory());
         entity.setCompany(newVenue.getCompany());
+
         entity.setEmail(newVenue.getEmail());
         entity.setPhonePrimary(newVenue.getPhonePrimary());
         entity.setPhoneSecondary(newVenue.getPhoneSecondary());
         entity.setMobilePrimary(newVenue.getMobilePrimary());
         entity.setMobileSecondary(newVenue.getMobileSecondary());
+        entity.setWhatsApp(newVenue.getWhatsApp());
         entity.setFacebookPage(newVenue.getFacebookPage());
         entity.setWebsite(newVenue.getWebsite());
         entity.setImagePath(newVenue.getImagePath());
+
         entity.setSpeciality(newVenue.getSpeciality());
         entity.setMenu(newVenue.getMenu());
+        entity.setAvgPrice(newVenue.getAvgPrice());
         entity.setGallery(newVenue.getGallery());
         entity.setOpenTime(newVenue.getOpenTime());
         entity.setCloseTime(newVenue.getCloseTime());
 
+        entity.setParkingDetails(newVenue.getParkingDetails());
+        entity.setWifiAvailability(newVenue.getWifiAvailability());
+        entity.setSmokingAvailability(newVenue.getSmokingAvailability());
+        entity.setAccessForDisabled(newVenue.getAccessForDisabled());
+        entity.setTakeAwayAvailability(newVenue.getTakeAwayAvailability());
+        entity.setOutdoorEnvironment(newVenue.getOutdoorEnvironment());
+        entity.setKidsPlayground(newVenue.getKidsPlayground());
+
         return entity;
     }
-
-
 }

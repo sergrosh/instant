@@ -1,8 +1,8 @@
 package com.instant.config;
 
-import com.instant.service.converter.NewVenueConverter;
-import com.instant.service.converter.VenueConverter;
-import com.instant.service.converter.VenueEntityConverter;
+import com.instant.service.converter.venue.NewVenueConverter;
+import com.instant.service.converter.venue.VenueConverter;
+import com.instant.service.converter.venue.VenueEntityConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ConversionServiceFactoryBean;

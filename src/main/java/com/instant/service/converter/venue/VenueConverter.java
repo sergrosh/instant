@@ -1,4 +1,4 @@
-package com.instant.service.converter;
+package com.instant.service.converter.venue;
 
 import com.instant.api.model.venue.Venue;
 import com.instant.persistence.model.venue.VenueEntity;

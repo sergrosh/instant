@@ -3,7 +3,7 @@ package com.instant.service.user;
 import com.instant.persistence.model.social.UserAccount;
 import com.instant.persistence.model.social.UserRoleType;
 import com.instant.persistence.repository.social.UserAccountRepository;
-import com.instant.persistence.repository.system.UserCounterService;
+import com.instant.service.system.UserCounterService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.userdetails.UserDetails;
