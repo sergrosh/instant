@@ -7,14 +7,9 @@
 <div th:fragment="footer" class="row footer">
     <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1 col-xs-12 col-sm-12" style="margin-top:10px;">
         <div>
-            <p style="max-width: 728px; text-align: center; margin: 21px auto; color: #999; line-height: normal; font-size: 12px;"
-               th:utext="#{footer.appDescriptor}">
-                <span style="font-family: 'Pacifico', cursive; font-weight: 400;"
-                      th:text="#{general.appName}">instant</span> lets you search your favorite restaurants, pubs and
-                bars, and helps to better keep in touch with friends. Explore hundreds of venues and parties in <span
-                    th:text="#{general.countryName}">Albania</span>, all through the <span
-                    style="font-family: 'Pacifico', cursive; font-weight: 400;"
-                    th:text="#{general.appName}">instant</span> app.
+            <p style="max-width: 728px; text-align: center; margin: 21px auto; color: #999; line-height: normal; font-size: 12px;" th:utext="#{footer.appDescriptor}">
+                <span style="font-family: 'Pacifico', cursive; font-weight: 400;" th:text="#{general.appName}">instant</span> lets you search your favorite restaurants, pubs andbars, and helps to better keep in touch with friends. Explore hundreds of venues and parties in
+                <span th:text="#{general.countryName}">Albania</span>, all through the <span style="font-family: 'Pacifico', cursive; font-weight: 400;" th:text="#{general.appName}">instant</span> app.
             </p>
         </div>
 
@@ -92,52 +87,62 @@
                 style="display: block; margin: 0; padding: 0; list-style: none; text-align: center; vertical-align: baseline; font-size: 100%; font: inherit; border: 0; color: #666;">
                 <li class="newLine"
                     style="display: inline-block; margin: 0; padding: 0;white-space: nowrap; line-height: 1em; border: 0;font: inherit; font-size: 100%; vertical-align: baseline;">
-                    <a href="/site-directory/job-salaries.htm" target="_top" data-ajax="false" class="minor">
+                    <a href="/site-directory/job-salaries.htm" target="_top" data-ajax="false" class="minor"
+                            th:utext="|#{footer.directlinks.1} #{general.countryName.stylish}|">
                         Best Reviewed Restaurants in <span th:text="#{general.countryName}">Albania</span>
                     </a>
                 </li>
                 <li>
-                    <a href="/site-directory/company-salaries.htm" target="_top" data-ajax="false" class="minor">
+                    <a href="/site-directory/company-salaries.htm" target="_top" data-ajax="false" class="minor"
+                       th:utext="|#{footer.directlinks.2} #{general.countryName.stylish}|">>
                         Newest Restaurants in <span th:text="#{general.countryName}">Albania</span>
                     </a>
                 </li>
                 <li class="endLine">
-                    <a href="/site-directory/city-salaries.htm" target="_top" data-ajax="false" class="minor">
+                    <a href="/site-directory/city-salaries.htm" target="_top" data-ajax="false" class="minor"
+                       th:utext="|#{footer.directlinks.3} #{general.countryName.stylish}|">>
                         Best Reviewed Night Clubs in <span th:text="#{general.countryName}">Albania</span>
                     </a>
                 </li>
                 <li class="newLine">
-                    <a href="/site-directory/company-reviews.htm" target="_top" data-ajax="false" class="minor">
+                    <a href="/site-directory/company-reviews.htm" target="_top" data-ajax="false" class="minor"
+                       th:utext="|#{footer.directlinks.4} #{general.countryName.stylish}|">>
                         Best Beach Restaurants in <span th:text="#{general.countryName}">Albania</span>
                     </a>
                 </li>
                 <li class="endLine">
-                    <a href="/site-directory/job-interviews.htm" target="_top" data-ajax="false" class="minor">
+                    <a href="/site-directory/job-interviews.htm" target="_top" data-ajax="false" class="minor"
+                       th:utext="|#{footer.directlinks.5} #{general.countryName.stylish}|">>
                         Best Summer Parties in <span th:text="#{general.countryName}">Albania</span>
                     </a>
                 </li>
                 <li class="newLine endLine">
-                    <a href="/site-directory/company-interviews.htm" target="_top" data-ajax="false" class="minor">
+                    <a href="/site-directory/company-interviews.htm" target="_top" data-ajax="false" class="minor"
+                       th:utext="|#{footer.directlinks.6} #{general.countryName.stylish}|">>
                         Most Popular Restaurants in <span th:text="#{general.countryName}">Albania</span>
                     </a>
                 </li>
                 <li class="endLine">
-                    <a href="/site-directory/company-benefits.htm" target="_top" data-ajax="false" class="minor">
+                    <a href="/site-directory/company-benefits.htm" target="_top" data-ajax="false" class="minor"
+                       th:utext="|#{footer.directlinks.7} #{general.countryName.stylish}|">>
                         Most Popular Night Clubs in <span th:text="#{general.countryName}">Albania</span>
                     </a>
                 </li>
                 <li class="newLine">
-                    <a href="/site-directory/title-jobs.htm" target="_top" data-ajax="false" class="minor">
+                    <a href="/site-directory/title-jobs.htm" target="_top" data-ajax="false" class="minor"
+                       th:utext="|#{footer.directlinks.8} #{general.countryName.stylish}|">>
                         Most Popular Bars in <span th:text="#{general.countryName}">Albania</span>
                     </a>
                 </li>
                 <li>
-                    <a href="/site-directory/company-jobs.htm" target="_top" data-ajax="false" class="minor">
+                    <a href="/site-directory/company-jobs.htm" target="_top" data-ajax="false" class="minor"
+                       th:utext="|#{footer.directlinks.9} #{general.countryName.stylish}|">>
                         Cheapest Restaurants in <span th:text="#{general.countryName}">Albania</span>
                     </a>
                 </li>
                 <li class="endLine">
-                    <a href="/site-directory/city-jobs.htm" target="_top" data-ajax="false" class="minor">
+                    <a href="/site-directory/city-jobs.htm" target="_top" data-ajax="false" class="minor"
+                       th:utext="|#{footer.directlinks.10} #{general.countryName.stylish}|">>
                         Special Events in <span th:text="#{general.countryName}">Albania</span>
                     </a>
                 </li>
@@ -149,11 +154,9 @@
         </div>
 
         <div>
-            <p style="max-width: 728px; text-align: center; margin: 21px auto; color: #999; line-height: normal; font-size: 12px;">
-                Copyright © 2016, <span style="font-family: 'Pacifico', cursive; font-weight: 400;"
-                                        th:text="#{general.appName}">instant</span>. Built with love by the <span
-                    style="font-family: 'Pacifico', cursive; font-weight: 400;"
-                    th:text="#{general.appName}">instant</span> team</p>
+            <p style="max-width: 728px; text-align: center; margin: 21px auto; color: #999; line-height: normal; font-size: 12px;" th:utext="#{footer.endline}">
+                Copyright © 2016, <span style="font-family: 'Pacifico', cursive; font-weight: 400;" th:text="#{general.appName}">instant</span>. Built with love by the <span style="font-family: 'Pacifico', cursive; font-weight: 400;" th:text="#{general.appName}">instant</span> team
+            </p>
         </div>
 
     </div>
