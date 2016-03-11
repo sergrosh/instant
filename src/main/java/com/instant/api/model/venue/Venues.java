@@ -1,4 +1,4 @@
-package com.instant.persistence.model.venue;
+package com.instant.api.model.venue;
 
 import com.instant.api.model.venue.Venue;
 

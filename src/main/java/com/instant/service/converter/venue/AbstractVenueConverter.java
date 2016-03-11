@@ -36,8 +36,11 @@ public abstract class AbstractVenueConverter<T extends NewVenue> implements Conv
         entity.setMenu(newVenue.getMenu());
         entity.setAvgPrice(newVenue.getAvgPrice());
         entity.setGallery(newVenue.getGallery());
-        entity.setOpenTime(newVenue.getOpenTime());
-        entity.setCloseTime(newVenue.getCloseTime());
+
+//        entity.setOpenTime(newVenue.getOpenTime());
+//        entity.setCloseTime(newVenue.getCloseTime());
+
+        entity.setOpenHours(newVenue.getOpenHours());
 
         entity.setParkingDetails(newVenue.getParkingDetails());
         entity.setWifiAvailability(newVenue.getWifiAvailability());

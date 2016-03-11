@@ -5,7 +5,7 @@ import com.instant.common.PaginationBean;
 import com.instant.persistence.model.city.Cities;
 import com.instant.persistence.model.city.City;
 import com.instant.persistence.model.venue.VenueEntity;
-import com.instant.persistence.model.venue.Venues;
+import com.instant.api.model.venue.Venues;
 import com.instant.persistence.repository.CityRepository;
 import com.instant.persistence.repository.VenueRepository;
 import com.instant.service.favourites.FavouritesService;
