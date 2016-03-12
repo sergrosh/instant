@@ -109,17 +109,22 @@ public class NewVenue implements Serializable {
     @JsonProperty("specialities")
     private String specialities;
 
-    @ApiModelProperty(value = "opentime")
-    @JsonSerialize(using = CustomTimeSerializer.class)
-    @JsonDeserialize(using = CustomTimeDeserializer.class)
-    @JsonProperty("opentime")
-    private LocalTime openTime;
+//    @ApiModelProperty(value = "opentime")
+//    @JsonSerialize(using = CustomTimeSerializer.class)
+//    @JsonDeserialize(using = CustomTimeDeserializer.class)
+//    @JsonProperty("opentime")
+//    private LocalTime openTime;
+//
+//    @ApiModelProperty(value = "closetime")
+//    @JsonSerialize(using = CustomTimeSerializer.class)
+//    @JsonDeserialize(using = CustomTimeDeserializer.class)
+//    @JsonProperty("closetime")
+//    private LocalTime closeTime;
 
-    @ApiModelProperty(value = "closetime")
-    @JsonSerialize(using = CustomTimeSerializer.class)
-    @JsonDeserialize(using = CustomTimeDeserializer.class)
-    @JsonProperty("closetime")
-    private LocalTime closeTime;
+
+    @ApiModelProperty(value = "openhours")
+    @JsonProperty("openhours")
+    private String openHours;
 
     @ApiModelProperty(required = false, value = "")
     @JsonProperty("parking")

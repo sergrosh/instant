@@ -5,6 +5,8 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
+import java.util.List;
+
 /**
  * @author sroshchupkin
  */
@@ -30,7 +32,7 @@ public class Venue extends NewVenue {
 
     @ApiModelProperty(required = false, value = "")
     @JsonProperty("reviews")
-    private int reviews;
+    private List<Review> reviews;
 
     @ApiModelProperty(required = false, value = "")
     @JsonProperty("likes")

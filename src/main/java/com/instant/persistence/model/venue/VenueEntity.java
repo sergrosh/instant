@@ -1,5 +1,6 @@
 package com.instant.persistence.model.venue;
 
+import com.instant.api.model.venue.Review;
 import lombok.Data;
 import org.joda.time.LocalTime;
 import org.springframework.data.annotation.Id;
@@ -44,15 +45,18 @@ public class VenueEntity {
     private Double avgPrice;
     private List<String> gallery;
 
-    private LocalTime openTime;
-    private LocalTime closeTime;
+//    private LocalTime[] openTimes;
+//    private LocalTime[] closeTimes;
+
+    private String openHours;
 
     @GeoSpatialIndexed
     private double[] location;
 
     private Boolean published;
+    private int clickouts;
     private double rating;
-    private int reviews;
+    private List<Review> reviews;
     private int likes;
 
     //Additional

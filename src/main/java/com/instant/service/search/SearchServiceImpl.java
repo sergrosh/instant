@@ -36,8 +36,11 @@ public class SearchServiceImpl implements SearchService{
         }
         if (!sortingType.equals("")) {
             switch (sortingType){
-                case "rating_desc":
+                case "rating":
                     searchQuery.with(new Sort(Sort.Direction.DESC, "rating"));
+                    break;
+                case "popularity":
+                    searchQuery.with(new Sort(Sort.Direction.DESC, "clickouts"));
                     break;
                 case "price_asc":
                     searchQuery.with(new Sort(Sort.Direction.ASC, "avgPrice"));
@@ -46,7 +49,7 @@ public class SearchServiceImpl implements SearchService{
                     searchQuery.with(new Sort(Sort.Direction.DESC, "avgPrice"));
                     break;
                 default:
-                    searchQuery.with(new Sort(Sort.Direction.DESC, "rating"));
+                    searchQuery.with(new Sort(Sort.Direction.DESC, "clickouts"));
                     break;
             }
         }

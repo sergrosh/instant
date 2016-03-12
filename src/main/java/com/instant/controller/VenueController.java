@@ -6,6 +6,7 @@ import com.instant.persistence.model.city.City;
 import com.instant.persistence.model.venue.VenueEntity;
 import com.instant.persistence.repository.CityRepository;
 import com.instant.persistence.repository.VenueRepository;
+import com.instant.service.clickouts.ClickoutsUpdateService;
 import com.instant.service.user.UserAccountService;
 import com.instant.service.validator.VenueValidator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +43,9 @@ public class VenueController {
     @Autowired
     private UserAccountService userAccountService;
 
+    @Autowired
+    private ClickoutsUpdateService clickoutsUpdateService;
+
     private static final String MAP = "map";
     private static final String MENU = "menu";
     private static final String CONTACT = "contact";
@@ -59,6 +63,7 @@ public class VenueController {
             modelAndView.addObject("venue", conversionService.convert(venueRepository.findById(id), Venue.class));
             modelAndView.addObject("view", "item_main_view");
         }
+        clickoutsUpdateService.updateClickoutMap(id);
         return modelAndView;
     }
 
@@ -73,6 +78,7 @@ public class VenueController {
             modelAndView.addObject("venue", conversionService.convert(venueRepository.findById(id), Venue.class));
             modelAndView.addObject("view", "item_main_view");
         }
+        clickoutsUpdateService.updateClickoutMap(id);
         return modelAndView;
     }
 

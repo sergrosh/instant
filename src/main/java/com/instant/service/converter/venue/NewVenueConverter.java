@@ -2,11 +2,9 @@ package com.instant.service.converter.venue;
 
 import com.instant.api.model.venue.NewVenue;
 import com.instant.persistence.model.venue.VenueEntity;
-import com.instant.service.geo.GeoCoderService;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.*;
 import java.net.URL;

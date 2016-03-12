@@ -40,8 +40,10 @@ public final class VenueEntityConverter implements Converter<VenueEntity, Venue>
         venue.setMenu(entity.getMenu());
         venue.setAvgPrice(entity.getAvgPrice());
         venue.setGallery(entity.getGallery());
-        venue.setOpenTime(entity.getOpenTime());
-        venue.setCloseTime(entity.getCloseTime());
+//        venue.setOpenTimes(entity.getOpenTimes());
+//        venue.setCloseTimes(entity.getCloseTimes());
+
+        venue.setOpenHours(entity.getOpenHours());
         venue.setRating(entity.getRating());
         venue.setReviews(entity.getReviews());
         venue.setLikes(entity.getLikes());
@@ -56,5 +58,9 @@ public final class VenueEntityConverter implements Converter<VenueEntity, Venue>
         venue.setKidsPlayground(entity.getKidsPlayground());
 
         return venue;
+    }
+
+    public boolean isVenueOpen(){
+        return true;
     }
 }

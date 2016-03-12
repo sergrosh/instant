@@ -58,7 +58,7 @@ public class UserAccountServiceImpl implements UserAccountService {
     @Override
     public UserAccount addRole(String userId, UserRoleType role) throws UsernameNotFoundException {
         UserAccount account = loadUserByUserId(userId);
-        Set<UserRoleType> roleSet = new HashSet<UserRoleType>();
+        Set<UserRoleType> roleSet = new HashSet<>();
         for (UserRoleType existingRole : account.getRoles()) {
             roleSet.add(existingRole);
         }
@@ -70,7 +70,7 @@ public class UserAccountServiceImpl implements UserAccountService {
     @Override
     public UserAccount removeRole(String userId, UserRoleType role) throws UsernameNotFoundException {
         UserAccount account = loadUserByUserId(userId);
-        Set<UserRoleType> roleSet = new HashSet<UserRoleType>();
+        Set<UserRoleType> roleSet = new HashSet<>();
         for (UserRoleType existingRole : account.getRoles()) {
             roleSet.add(existingRole);
         }
