@@ -356,7 +356,7 @@
             <!--</div>-->
 
             <!-- About Block start -->
-            <div class="row" style="padding-top: 20px;">
+            <div class="row add_rating_block" style="padding-top: 20px;">
                 <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:0px; padding-right:0px; padding-bottom: 0px;">
                     <div class="row" style="margin-left: 20px; margin-right: 20px;">
                         <div class="row">
@@ -452,6 +452,7 @@
                                 <div class="row" style="    padding-top: 20px; padding-bottom: 10px;">
                                     <div class="container " style="width:100%">
                                         <div class="myrow" style="vertical-align:middle; text-align:left;">
+                                            <div class="review close_btn" style="float: right; font-size:11px;color: #999; cursor: pointer;">Close</div>
                                             <h3 style="margin-top:0px;" th:text="|Review ${venue.name}|">Review</h3>
                                         </div>
                                         <div class="myrow" style="vertical-align:middle; text-align:left;">
@@ -1255,7 +1256,6 @@
 
 
                             </style>
-
                             <style type="text/css">
                                 .container {
                                 display: table !important;
@@ -1287,6 +1287,25 @@
                                     <div class="container" style="width: 100%;">
                                         <div class="myrow" style="vertical-align:middle; text-align:left;">
                                             <h3 style="margin-top:0px;" th:text="|Menu of ${venue.name}|">Menu</h3>
+                                        </div>
+                                        <style>
+                                            .menu.category{
+                                                border-radius: 4px;
+                                                margin-right: 5px;
+                                                padding: 5px;
+                                                line-height: 2em;
+                                                cursor: pointer;
+                                            }
+                                            .menu.category.active{
+                                                background-color: aliceblue;
+                                            }
+                                        </style>
+                                        <div class="myrow" style="vertical-align:middle; text-align:left;">
+                                            <p>
+                                                <a class="menu category active">Category</a>
+                                                <a class="menu category">Category</a>
+                                                <a class="menu category">Category</a>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -1512,6 +1531,10 @@
       $('#example').barrating({
         theme: 'fontawesome-stars'
       });
+   });
+
+   $( ".review.close_btn" ).click(function() {
+      $( ".row.add_rating_block" ).remove();
    });
 /*]]>*/
 

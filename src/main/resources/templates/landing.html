@@ -36,6 +36,18 @@
                                 width: auto;
                             }
                         }
+                        @media (max-width: 991px){
+                            .input-group-addon.category{
+                                display:none;
+                                width:0px;
+                                height:0px;
+                            }
+                            div.row.category.mobile{
+                                display:block;
+                                width:auto;
+                                height:auto;
+                            }
+                        }
                     </style>
                     <div class="container landing">
                         <div class="row">
@@ -84,7 +96,7 @@
                                                                         <!--<li style="margin: 4px; padding: 4px;"> <a href="..." style="padding:5px;" onclick="triggerSearch('teodor'); return false;">DEMO</a> </li>-->
                                                                     </ul>
                                                                 </div>
-                                                                <div class=" input-group-addon">
+                                                                <div class=" input-group-addon category">
                                                                     <div class="btn-group">
                                                                         <button type="button" class="btn  dropdown-toggle" data-toggle="dropdown" id="category_visible" style="font-family:Arial, FontAwesome" th:utext="#{search.category}">
                                                                             All <span class="caret"></span>
@@ -118,7 +130,28 @@
 
                                         <div class="row">
                                             <div class="col-md-12" style="text-align:center;">
-                                                <div class="row">
+
+                                                <style>
+                                                    @media (max-width: 991px){
+                                                        div.row.category.mobile{
+                                                            display:block;
+                                                            width:auto;
+                                                            height:auto;
+                                                        }
+                                                    }
+
+                                                    @media (min-width: 991px){
+                                                    div.row.category.mobile{
+                                                    display:none;
+                                                    width:0px;
+                                                    height:0px;
+                                                    }
+                                                    }
+
+
+                                                </style>
+
+                                                <div class="row category mobile">
                                                     <style>
                                                         label.active{
                                                             background: #337ab7;
@@ -211,7 +244,7 @@
     </div>
 
 
-    <p style="text-align: center; margin-top:50px; color: #999; line-height: normal; font-size: 17px;" th:utext="seo.top.message">Hand picked by <span style="font-family: 'Pacifico', cursive; font-weight: 400;">instant</span>, just for you!</p>
+    <p style="text-align: center; margin-top:50px; color: #999; line-height: normal; font-size: 17px;" th:utext="#{seo.top.message}">Hand picked by <span style="font-family: 'Pacifico', cursive; font-weight: 400;">instant</span>, just for you!</p>
     <div th:replace="fragments/seo :: seo"></div>
     <div th:replace="fragments/footer :: footer"></div>
 
