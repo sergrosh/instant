@@ -1,5 +1,6 @@
 package com.instant.persistence.model.venue;
 
+import com.instant.api.model.venue.Dish;
 import com.instant.api.model.venue.Review;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
@@ -40,7 +41,7 @@ public class VenueEntity {
     private String imagePath;
 
     private List<String> speciality;
-    private List<String> menu;
+    private List<Dish> menu;
     private Double avgPrice;
     private List<String> gallery;
 
