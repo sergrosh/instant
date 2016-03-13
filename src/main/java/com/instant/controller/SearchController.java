@@ -1,11 +1,11 @@
 package com.instant.controller;
 
 import com.instant.api.model.venue.Venue;
+import com.instant.api.model.venue.Venues;
 import com.instant.common.PaginationBean;
 import com.instant.persistence.model.city.Cities;
 import com.instant.persistence.model.city.City;
 import com.instant.persistence.model.venue.VenueEntity;
-import com.instant.api.model.venue.Venues;
 import com.instant.persistence.repository.CityRepository;
 import com.instant.persistence.repository.VenueRepository;
 import com.instant.service.favourites.FavouritesService;
@@ -42,19 +42,14 @@ public class SearchController {
 
     @Autowired
     CityRepository cityRepository;
-
-    @Autowired
-    private PaginationBean paginationBean;
-
     @Autowired
     SearchService searchService;
-
     @Autowired
     MongoOperations mongoOperations;
-
     @Autowired
     FavouritesService favouritesService;
-
+    @Autowired
+    private PaginationBean paginationBean;
     @Autowired
     private ConfigurableConversionService conversionService;
 
@@ -93,17 +88,17 @@ public class SearchController {
                     sortingType, paginationBean.defaultPageable(pageNum - 1));
             List<VenueEntity> venueEntities = mongoOperations.find(searchQuery, VenueEntity.class);
 
-                List<Venue> venues = favouritesService.checkAndGetVenues(venueEntities.stream().map(e -> conversionService.convert(e, Venue.class))
-                        .collect(Collectors.toList()));
-                modelAndView.addObject("venues", venues);
+            List<Venue> venues = favouritesService.checkAndGetVenues(venueEntities.stream().map(e -> conversionService.convert(e, Venue.class))
+                    .collect(Collectors.toList()));
+            modelAndView.addObject("venues", venues);
 
-                if(venueEntities.size()<paginationBean.getPageSize()){
-                    List<VenueEntity> extraVenueEntities = venueRepository.findByCity(city,
-                            new PageRequest(pageNum, paginationBean.getPageSize()-venues.size(), new Sort(Sort.Direction.DESC, "name"))).getContent();
-                    List<Venue> extraVenues = favouritesService.checkAndGetVenues(extraVenueEntities.stream().map(e -> conversionService.convert(e, Venue.class))
-                            .collect(Collectors.toList()));
-                    modelAndView.addObject("extraVenues",extraVenues);
-                }
+            if (venueEntities.size() < paginationBean.getPageSize()) {
+                List<VenueEntity> extraVenueEntities = venueRepository.findByCity(city,
+                        new PageRequest(pageNum, paginationBean.getPageSize() - venues.size(), new Sort(Sort.Direction.DESC, "name"))).getContent();
+                List<Venue> extraVenues = favouritesService.checkAndGetVenues(extraVenueEntities.stream().map(e -> conversionService.convert(e, Venue.class))
+                        .collect(Collectors.toList()));
+                modelAndView.addObject("extraVenues", extraVenues);
+            }
 
             modelAndView.addObject("searchString", query);
         }

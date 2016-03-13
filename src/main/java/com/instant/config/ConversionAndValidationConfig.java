@@ -10,7 +10,6 @@ import org.springframework.core.convert.ConversionService;
 import org.springframework.core.convert.converter.Converter;
 
 import javax.validation.Validation;
-import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 import java.util.HashSet;
 import java.util.Set;
@@ -27,8 +26,7 @@ public class ConversionAndValidationConfig {
         ConversionServiceFactoryBean bean = new ConversionServiceFactoryBean();
         bean.setConverters(getConverters());
         bean.afterPropertiesSet();
-        ConversionService object = bean.getObject();
-        return object;
+        return bean.getObject();
     }
 
     private Set<Converter> getConverters() {
@@ -42,7 +40,6 @@ public class ConversionAndValidationConfig {
     @Bean(name = "validator")
     public javax.validation.Validator getValidator() {
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
-        Validator validator = factory.getValidator();
-        return validator;
+        return factory.getValidator();
     }
 }

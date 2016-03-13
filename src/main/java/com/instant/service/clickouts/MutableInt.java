@@ -5,6 +5,12 @@ package com.instant.service.clickouts;
  */
 class MutableInt {
     int value = 1;
-    public void increment () { ++value;      }
-    public int  get ()       { return value; }
+
+    public void increment() {
+        ++value;
+    }
+
+    public int get() {
+        return value;
+    }
 }

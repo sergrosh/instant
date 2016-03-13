@@ -15,6 +15,9 @@ import org.springframework.web.context.request.WebRequest;
 //@Component
 public class PostToWallAfterConnectInterceptor implements ConnectInterceptor<Facebook> {
 
+    private static final String POST_TO_WALL_PARAMETER = "postToWall";
+    private static final String POST_TO_WALL_ATTRIBUTE = "facebookConnect." + POST_TO_WALL_PARAMETER;
+
     public void preConnect(ConnectionFactory<Facebook> connectionFactory, MultiValueMap<String, String> parameters, WebRequest request) {
         if (StringUtils.hasText(request.getParameter(POST_TO_WALL_PARAMETER))) {
             request.setAttribute(POST_TO_WALL_ATTRIBUTE, Boolean.TRUE, WebRequest.SCOPE_SESSION);
@@ -31,8 +34,4 @@ public class PostToWallAfterConnectInterceptor implements ConnectInterceptor<Fac
             request.removeAttribute(POST_TO_WALL_ATTRIBUTE, WebRequest.SCOPE_SESSION);
         }
     }
-
-    private static final String POST_TO_WALL_PARAMETER = "postToWall";
-
-    private static final String POST_TO_WALL_ATTRIBUTE = "facebookConnect." + POST_TO_WALL_PARAMETER;
 }

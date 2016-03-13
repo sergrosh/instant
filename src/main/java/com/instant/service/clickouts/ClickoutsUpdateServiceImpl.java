@@ -26,21 +26,20 @@ public class ClickoutsUpdateServiceImpl implements ClickoutsUpdateService {
     }
 
     @Override
-    public void updateClickoutMap(String venueId){
+    public void updateClickoutMap(String venueId) {
         MutableInt count = clickoutMap.get(venueId);
         if (count == null) {
             clickoutMap.put(venueId, new MutableInt());
-        }
-        else {
+        } else {
             count.increment();
         }
     }
 
     @Override
-    public void updateEntity(){
-        for(Map.Entry<String,MutableInt> clickoutEntry:clickoutMap.entrySet()){
+    public void updateEntity() {
+        for (Map.Entry<String, MutableInt> clickoutEntry : clickoutMap.entrySet()) {
             VenueEntity venue = venueRepository.findById(clickoutEntry.getKey());
-            venue.setClickouts(venue.getClickouts()+clickoutEntry.getValue().get());
+            venue.setClickouts(venue.getClickouts() + clickoutEntry.getValue().get());
             venueRepository.save(venue);
             clickoutMap.clear();
         }

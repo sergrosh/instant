@@ -7,7 +7,6 @@ import org.springframework.social.security.SocialUserDetails;
 
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -117,10 +116,10 @@ public class UserAccount extends BaseAuditableEntity implements SocialUserDetail
         this.favouritesVenues = favouritesVenues;
     }
 
-    public boolean addFavouriteVenue(String venueId){
-        Set<String> venues=getFavouritesVenues();
+    public boolean addFavouriteVenue(String venueId) {
+        Set<String> venues = getFavouritesVenues();
         boolean added = venues.add(venueId);
-        if(!added)
+        if (!added)
             venues.remove(venueId);
         return added;
     }

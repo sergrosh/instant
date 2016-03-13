@@ -36,7 +36,7 @@ public class MongoConnectionRepositoryImpl implements ConnectionRepository {
         List<UserSocialConnection> userSocialConnectionList = this.userSocialConnectionRepository
                 .findByUserId(userId);
 
-        MultiValueMap<String, Connection<?>> connections = new LinkedMultiValueMap<String, Connection<?>>();
+        MultiValueMap<String, Connection<?>> connections = new LinkedMultiValueMap<>();
         Set<String> registeredProviderIds = socialAuthenticationServiceLocator.registeredProviderIds();
         for (String registeredProviderId : registeredProviderIds) {
             connections.put(registeredProviderId, Collections.<Connection<?>>emptyList());
@@ -44,7 +44,7 @@ public class MongoConnectionRepositoryImpl implements ConnectionRepository {
         for (UserSocialConnection userSocialConnection : userSocialConnectionList) {
             String providerId = userSocialConnection.getProviderId();
             if (connections.get(providerId).size() == 0) {
-                connections.put(providerId, new LinkedList<Connection<?>>());
+                connections.put(providerId, new LinkedList<>());
             }
             connections.add(providerId, buildConnection(userSocialConnection));
         }
@@ -52,7 +52,7 @@ public class MongoConnectionRepositoryImpl implements ConnectionRepository {
     }
 
     public List<Connection<?>> findConnections(String providerId) {
-        List<Connection<?>> resultList = new LinkedList<Connection<?>>();
+        List<Connection<?>> resultList = new LinkedList<>();
         List<UserSocialConnection> userSocialConnectionList = this.userSocialConnectionRepository
                 .findByUserIdAndProviderId(userId, providerId);
         for (UserSocialConnection userSocialConnection : userSocialConnectionList) {
@@ -72,7 +72,7 @@ public class MongoConnectionRepositoryImpl implements ConnectionRepository {
             throw new IllegalArgumentException("Unable to execute find: no providerUsers provided");
         }
 
-        MultiValueMap<String, Connection<?>> connectionsForUsers = new LinkedMultiValueMap<String, Connection<?>>();
+        MultiValueMap<String, Connection<?>> connectionsForUsers = new LinkedMultiValueMap<>();
 
         for (Iterator<Map.Entry<String, List<String>>> it = providerUsers.entrySet().iterator(); it.hasNext(); ) {
             Map.Entry<String, List<String>> entry = it.next();
@@ -80,7 +80,7 @@ public class MongoConnectionRepositoryImpl implements ConnectionRepository {
             List<String> providerUserIds = entry.getValue();
             List<UserSocialConnection> userSocialConnections =
                     this.userSocialConnectionRepository.findByProviderIdAndProviderUserIdIn(providerId, providerUserIds);
-            List<Connection<?>> connections = new ArrayList<Connection<?>>(providerUserIds.size());
+            List<Connection<?>> connections = new ArrayList<>(providerUserIds.size());
             for (int i = 0; i < providerUserIds.size(); i++) {
                 connections.add(null);
             }

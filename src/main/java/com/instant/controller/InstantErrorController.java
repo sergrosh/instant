@@ -60,7 +60,7 @@ public class InstantErrorController implements ErrorController {
     public ResponseEntity<Map<String, Object>> error(HttpServletRequest request) {
         Map<String, Object> body = getErrorAttributes(request, getTraceParameter(request));
         HttpStatus status = getStatus(request);
-        return new ResponseEntity<Map<String, Object>>(body, status);
+        return new ResponseEntity<>(body, status);
     }
 
     /**
@@ -76,10 +76,7 @@ public class InstantErrorController implements ErrorController {
 
     private boolean getTraceParameter(HttpServletRequest request) {
         String parameter = request.getParameter("trace");
-        if (parameter == null) {
-            return false;
-        }
-        return !"false".equals(parameter.toLowerCase());
+        return parameter != null && !"false".equals(parameter.toLowerCase());
     }
 
     private Map<String, Object> getErrorAttributes(HttpServletRequest request,
@@ -96,6 +93,7 @@ public class InstantErrorController implements ErrorController {
             try {
                 return HttpStatus.valueOf(statusCode);
             } catch (Exception ex) {
+                ex.printStackTrace();
             }
         }
         return HttpStatus.INTERNAL_SERVER_ERROR;

@@ -60,7 +60,7 @@ public final class VenueEntityConverter implements Converter<VenueEntity, Venue>
         return venue;
     }
 
-    public boolean isVenueOpen(){
+    public boolean isVenueOpen() {
         return true;
     }
 }

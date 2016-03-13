@@ -146,8 +146,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public RememberMeAuthenticationProvider rememberMeAuthenticationProvider() {
-        RememberMeAuthenticationProvider rememberMeAuthenticationProvider =
-                new RememberMeAuthenticationProvider(environment.getProperty("application.key"));
-        return rememberMeAuthenticationProvider;
+        return new RememberMeAuthenticationProvider(environment.getProperty("application.key"));
     }
 }

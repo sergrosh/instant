@@ -20,13 +20,12 @@ public class ClickoutsUpdateTask {
     @Autowired
     ClickoutsUpdateService clickoutsUpdateService;
 
-    @Scheduled(fixedRate = 10*60*1000)
+    @Scheduled(fixedRate = 10 * 60 * 1000)
     public void updateClickouts() {
-        if(clickoutsUpdateService.getClickoutMapSize()>0){
+        if (clickoutsUpdateService.getClickoutMapSize() > 0) {
             clickoutsUpdateService.updateEntity();
             LOGGER.info("clickouts were updated in db and clickouts map was cleared");
-        }
-        else {
+        } else {
             LOGGER.info("clickouts map was empty");
         }
     }

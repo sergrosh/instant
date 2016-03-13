@@ -13,7 +13,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.stereotype.Controller;
@@ -44,6 +43,11 @@ import java.util.Locale;
 @ComponentScan(basePackages = "com.instant", excludeFilters = {@ComponentScan.Filter(Configuration.class), @ComponentScan.Filter(Controller.class)})
 @ImportResource("classpath*:springmvc-resteasy.xml")
 public class MvcConfiguration extends WebMvcConfigurerAdapter {
+
+    @Autowired
+    private ArgumentResolverComposite argumentResolverComposite;
+    @Autowired
+    private ErrorAttributes errorAttributes;
 
     @Bean
     public EhCacheManagerFactoryBean ehCacheManagerFactoryBean() {
@@ -111,22 +115,15 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
         return new StandardServletMultipartResolver();
     }
 
-    @Autowired
-    private ArgumentResolverComposite argumentResolverComposite;
-
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/resources/**").addResourceLocations("/static/");
     }
 
-
     @Override
     public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
         argumentResolvers.add(argumentResolverComposite);
     }
-
-    @Autowired
-    private ErrorAttributes errorAttributes;
 
     @Bean
     public InstantErrorController instantErrorController() {

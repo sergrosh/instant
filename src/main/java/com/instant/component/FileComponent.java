@@ -8,7 +8,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.ServletContext;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -25,7 +24,7 @@ public class FileComponent {
     @Autowired
     ServletContext servletContext;
 
-    public void saveFileToLocalDisk(MultipartFile multipartFile) throws IOException, FileNotFoundException {
+    public void saveFileToLocalDisk(MultipartFile multipartFile) throws IOException {
         String outputFileName = getOutputFilename(multipartFile);
         FileCopyUtils.copy(multipartFile.getBytes(), new FileOutputStream(outputFileName));
     }
@@ -40,8 +39,7 @@ public class FileComponent {
     }
 
     public String getDestinationLocation() {
-        String destinationLocation = servletContext.getRealPath(File.separator);
-        return destinationLocation;
+        return servletContext.getRealPath(File.separator);
     }
 
     public UploadedFile getUploadedFileInfo(MultipartFile multipartFile) throws IOException {

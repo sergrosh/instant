@@ -1,7 +1,5 @@
 package com.instant.api.model.venue;
 
-import com.instant.api.model.venue.Venue;
-
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;

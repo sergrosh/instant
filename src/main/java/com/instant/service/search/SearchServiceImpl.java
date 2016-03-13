@@ -13,7 +13,7 @@ import java.util.List;
  */
 
 @Service
-public class SearchServiceImpl implements SearchService{
+public class SearchServiceImpl implements SearchService {
 
     public Query getQuery(String query, String city, String category, double rating,
                           List<String> speciality, String sortingType, Pageable page) {
@@ -35,7 +35,7 @@ public class SearchServiceImpl implements SearchService{
             searchQuery.addCriteria(Criteria.where("speciality").in(speciality));
         }
         if (!sortingType.equals("")) {
-            switch (sortingType){
+            switch (sortingType) {
                 case "rating":
                     searchQuery.with(new Sort(Sort.Direction.DESC, "rating"));
                     break;

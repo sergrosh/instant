@@ -13,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.support.ConfigurableConversionService;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -28,29 +27,23 @@ import java.util.Map;
 @Controller
 public class VenueController {
 
-    @Autowired
-    VenueValidator venueValidator;
-
-    @Autowired
-    VenueRepository venueRepository;
-
-    @Autowired
-    CityRepository cityRepository;
-
-    @Autowired
-    private ConfigurableConversionService conversionService;
-
-    @Autowired
-    private UserAccountService userAccountService;
-
-    @Autowired
-    private ClickoutsUpdateService clickoutsUpdateService;
-
     private static final String MAP = "map";
     private static final String MENU = "menu";
     private static final String CONTACT = "contact";
     private static final String REVIEWS = "reviews";
     private static final String VIEW = "view";
+    @Autowired
+    VenueValidator venueValidator;
+    @Autowired
+    VenueRepository venueRepository;
+    @Autowired
+    CityRepository cityRepository;
+    @Autowired
+    private ConfigurableConversionService conversionService;
+    @Autowired
+    private UserAccountService userAccountService;
+    @Autowired
+    private ClickoutsUpdateService clickoutsUpdateService;
 
     @RequestMapping(Mappings.ITEM + "/{id}")
     public ModelAndView getItemByIdViaUrl(@PathVariable(value = "id") String id) {
@@ -67,7 +60,7 @@ public class VenueController {
         return modelAndView;
     }
 
-    @RequestMapping(Mappings.ITEM_NEW+"/{id}")
+    @RequestMapping(Mappings.ITEM_NEW + "/{id}")
     public ModelAndView getNewItemByIdViaUrl(@PathVariable(value = "id") String id) {
         ModelAndView modelAndView;
         if (StringUtils.isEmpty(id)) {
@@ -127,13 +120,12 @@ public class VenueController {
             }
             return view;
         } else {
-            ModelAndView view = new ModelAndView(TilesDefinition.LANDING);
-            return view;
+            return new ModelAndView(TilesDefinition.LANDING);
         }
     }
 
     @RequestMapping(value = Mappings.ITEM_FAVOURITE, method = RequestMethod.GET)
-    public boolean addToFavourites(@PathVariable("id") String id){
+    public boolean addToFavourites(@PathVariable("id") String id) {
         return userAccountService.getCurrentUser().addFavouriteVenue(id);
     }
 }

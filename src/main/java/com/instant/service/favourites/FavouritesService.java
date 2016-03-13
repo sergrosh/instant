@@ -8,5 +8,5 @@ import java.util.List;
  * @author sroshchupkin
  */
 public interface FavouritesService {
-    public List<Venue> checkAndGetVenues(List<Venue> venues);
+    List<Venue> checkAndGetVenues(List<Venue> venues);
 }

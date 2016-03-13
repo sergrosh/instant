@@ -2,7 +2,6 @@ package com.instant.persistence.model.venue;
 
 import com.instant.api.model.venue.Review;
 import lombok.Data;
-import org.joda.time.LocalTime;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.GeoSpatialIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;

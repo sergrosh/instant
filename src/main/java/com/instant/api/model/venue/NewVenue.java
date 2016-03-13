@@ -1,16 +1,11 @@
 package com.instant.api.model.venue;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.instant.api.model.serialization.CustomTimeDeserializer;
-import com.instant.api.model.serialization.CustomTimeSerializer;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
-import org.joda.time.LocalTime;
 import org.springframework.data.mongodb.core.index.TextIndexed;
 
 import java.io.Serializable;

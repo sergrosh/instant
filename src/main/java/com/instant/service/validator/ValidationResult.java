@@ -13,11 +13,8 @@ import java.util.List;
 @ToString
 public class ValidationResult {
 
-    public enum ResultCode {SUCCESS, ERROR}
-
     @Getter
     private ResultCode resultCode;
-
     @Getter
     private List<String> messages;
 
@@ -31,6 +28,8 @@ public class ValidationResult {
     public boolean isFailed() {
         return resultCode == ResultCode.ERROR;
     }
+
+    public enum ResultCode {SUCCESS, ERROR}
 
     public static class Builder {
 
@@ -48,7 +47,6 @@ public class ValidationResult {
             } else {
                 result.resultCode = ResultCode.ERROR;
             }
-            ;
             return result;
         }
     }

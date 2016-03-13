@@ -48,7 +48,7 @@ public class MongoUsersConnectionRepositoryImpl implements UsersConnectionReposi
         ConnectionKey key = connection.getKey();
         List<UserSocialConnection> userSocialConnectionList =
                 this.userSocialConnectionRepository.findByProviderIdAndProviderUserId(key.getProviderId(), key.getProviderUserId());
-        List<String> localUserIds = new ArrayList<String>();
+        List<String> localUserIds = new ArrayList<>();
         for (UserSocialConnection userSocialConnection : userSocialConnectionList) {
             localUserIds.add(userSocialConnection.getUserId());
         }
@@ -64,7 +64,7 @@ public class MongoUsersConnectionRepositoryImpl implements UsersConnectionReposi
     }
 
     public Set<String> findUserIdsConnectedTo(String providerId, Set<String> providerUserIds) {
-        final Set<String> localUserIds = new HashSet<String>();
+        final Set<String> localUserIds = new HashSet<>();
 
         List<UserSocialConnection> userSocialConnectionList =
                 this.userSocialConnectionRepository.findByProviderIdAndProviderUserIdIn(providerId, providerUserIds);

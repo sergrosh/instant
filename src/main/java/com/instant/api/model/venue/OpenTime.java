@@ -11,8 +11,8 @@ import java.util.List;
 
 @Data
 public class OpenTime {
-    private DayOfWeek dayOfWeek;
     List<String> openIntervals;
+    private DayOfWeek dayOfWeek;
 }
 
 

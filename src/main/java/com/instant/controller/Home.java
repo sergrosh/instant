@@ -14,8 +14,7 @@ public class Home {
 
     @RequestMapping("/")
     public ModelAndView index() {
-        ModelAndView modelAndView = new ModelAndView("redirect:/home");
-        return modelAndView;
+        return new ModelAndView("redirect:/home");
     }
 
     @RequestMapping(Mappings.HOME)

@@ -5,6 +5,8 @@ package com.instant.service.clickouts;
  */
 public interface ClickoutsUpdateService {
     int getClickoutMapSize();
+
     void updateClickoutMap(String venueId);
+
     void updateEntity();
 }
