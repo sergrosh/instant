@@ -29,6 +29,8 @@ import java.util.stream.Collectors;
  */
 
 @RestController
+@CrossOrigin(origins = "http://localhost:9000")
+@RequestMapping(value = Mappings.REST+Mappings.SEARCH)
 public class SearchRestControllerImpl implements SearchRestController{
 
     @Autowired
