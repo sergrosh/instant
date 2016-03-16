@@ -64,7 +64,7 @@ public class SearchController {
      * @param sortingType - sorting type
      * @return model and view
      */
-    @RequestMapping(Mappings.CLIENTS)
+    @RequestMapping(Mappings.VENUE)
     public ModelAndView search(@RequestParam("query") String query,
                                @RequestParam(value = "category", required = false, defaultValue = "") String category,
                                @RequestParam(value = "view", required = false, defaultValue = "1") Integer view,

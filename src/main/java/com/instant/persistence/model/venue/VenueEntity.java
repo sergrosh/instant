@@ -41,7 +41,7 @@ public class VenueEntity {
     private String imagePath;
 
     private List<String> speciality;
-    private List<Dish> menu;
+    private List<String> menu;
     private Double avgPrice;
     private List<String> gallery;
 

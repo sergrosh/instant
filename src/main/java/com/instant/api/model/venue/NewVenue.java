@@ -80,7 +80,7 @@ public class NewVenue implements Serializable {
 
     @ApiModelProperty(value = "")
     @JsonProperty("description")
-    @Length(min = 10, max = 300, message = "Description should be at least 10 characters but less than 300")
+    @Length(min = 3, max = 300, message = "Description should be at least 10 characters but less than 300")
     @NotEmpty
     private String description;
 
@@ -90,7 +90,7 @@ public class NewVenue implements Serializable {
 
     @ApiModelProperty(required = false, value = "")
     @JsonProperty("menu")
-    private List<Dish> menu;
+    private List<String> menu;
 
     @ApiModelProperty(required = false, value = "")
     @JsonProperty("avgprice")

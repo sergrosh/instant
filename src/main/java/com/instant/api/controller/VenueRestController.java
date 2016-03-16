@@ -17,7 +17,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
  * @author sroshchupkin
  */
 
-@Api(value = Mappings.REST_VENUE, description = "API to manage venues")
+@Api(value = Mappings.REST+Mappings.VENUE, description = "API to manage venues")
 public interface VenueRestController {
 
     /**
