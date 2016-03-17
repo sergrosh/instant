@@ -11,7 +11,9 @@
     <div class="col-md-12">
         <div th:replace="fragments/header :: header"></div>
         <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" style="display: table; padding-top: 10px; padding-bottom: 10px;">
-            <p style="font-size: 12px; display: table-cell; vertical-align: middle; text-align:right; margin-right: 15px;"> <a href="#">Home</a> > <a href="#">Account</a></p>
+            <p style="font-size: 12px; display: table-cell; vertical-align: middle; text-align:right; margin-right: 15px;">
+                <a href="#">Home</a> > <a href="#" th:text="${page}=='edit'? Edit : Registration">Account</a>
+            </p>
         </div>
         <div class="row" style="">
             <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" id="itemlist_results" style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:0px; padding-right:0px; padding-bottom: 0px;">
@@ -106,10 +108,11 @@
                             <div class="row" style="    padding-top: 20px; padding-bottom: 20px;">
                                 <div class="container " style="    width: 100%;">
                                     <div class="myrow" style="    text-align: center;">
-                                        <h2 style="margin-top:0px;">Venue Registration</h2>
+                                        <h2 style="margin-top:0px;" th:text="${page}=='edit'? 'Edit Venue' : 'Venue Registration'">Venue Registration</h2>
                                     </div>
                                     <div class="myrow" style="    text-align: center;">
-                                        <p style="margin-bottom:5px;">
+                                        <p style="margin-bottom:5px;" th:text="${page}=='edit'? 'You are about to Edit a registered venue. Please be careful in order not to leave empty any required fields.' : 'Thank you for starting a venue registration with instant. The registation process is divided in 3 steps. Please fill in the form below
+                                            all the necessary information and click next to reach the next page.'">
                                             Thank you for starting a venue registration with instant. The registation process is divided in 3 steps. Please fill in the form below
                                             all the necessary information and click next to reach the next page.
                                         </p>
@@ -1525,9 +1528,12 @@
             </div>
         </div>
 
+
+
+
         <!-- Next Page Jump-->
-        <div class="row" style="padding-top: 20px;">
-            <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" id="itemlist_results" style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:0px; padding-right:0px; padding-bottom: 0px;">
+        <div class="row" th:switch="${page}=='edit' ? ${true} : ${false}" style="padding-top: 20px;">
+            <div th:case="${false}" class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" id="itemlist_results" style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:0px; padding-right:0px; padding-bottom: 0px;">
                 <div class="row" style="margin-left: 20px; margin-right: 20px;">
                     <div class="row">
                         <style type="text/css">

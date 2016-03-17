@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<head>
+
+
+</head>
+<body>
+
+<div th:fragment="index_user_add_all_pages">
+    <div th:replace="fragments/index_user_add_first_page :: index_user_add_first_page(page='edit')"></div>
+    <div th:replace="fragments/index_user_add_second_page :: index_user_add_second_page(page='edit')"></div>
+    <div th:replace="fragments/index_user_add_third_page :: index_user_add_third_page(page='edit')"></div>
+</div>
+
+
+</body>
+</html>

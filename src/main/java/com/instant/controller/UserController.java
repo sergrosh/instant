@@ -15,13 +15,12 @@ import org.springframework.web.servlet.ModelAndView;
  */
 
 @Controller
-@RequestMapping(Mappings.USER)
 public class UserController {
 
     @Autowired
     VenueService venueService;
 
-
+    @RequestMapping(Mappings.USER)
     public String getUser(String speciality, Model model) {
         model.addAttribute("accounts_section", "accounts_dashboard");
         return "index_user";
@@ -33,14 +32,14 @@ public class UserController {
         return TilesDefinition.USER;
     }
 
-    @RequestMapping(value = "/add_new", method = RequestMethod.GET)
+    @RequestMapping(value = "user/add_new", method = RequestMethod.GET)
     public String getNewUserAddVenuFragment(Model model) {
         ModelAndView view = new ModelAndView(TilesDefinition.LANDING);
         model.addAttribute("register_venue_page", "index_user_add_first_page");
         return "index_user_add";
     }
 
-    @RequestMapping(value = "/add_new", method = RequestMethod.POST)
+    @RequestMapping(value = "user/add_new", method = RequestMethod.POST)
     public Venue getNewUserAddVenuFragment(NewVenue newVenue) {
         ModelAndView view = new ModelAndView(TilesDefinition.LANDING);
         Venue venue = venueService.saveVenue(newVenue);
@@ -51,6 +50,12 @@ public class UserController {
     public String getNewUserAddVenuFragmentContinued(String speciality, Model model) {
         model.addAttribute("register_venue_page", "index_user_add_second_page");
         return "index_user_add";
+    }
+
+    @RequestMapping("/user/edit")
+    public String editVenue(String speciality, Model model) {
+        model.addAttribute("register_venue_page", "index_user_add_second_page");
+        return "index_user_edit";
     }
 
     @RequestMapping("/user/add_new/terms")

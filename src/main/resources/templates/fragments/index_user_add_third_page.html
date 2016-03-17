@@ -10,11 +10,11 @@
 <div class="row" th:fragment="index_user_add_third_page">
     <div class="col-md-12">
         <div th:replace="fragments/header :: header"></div>
-        <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" style="display: table; padding-top: 10px; padding-bottom: 10px;">
-            <p style="font-size: 12px; display: table-cell; vertical-align: middle; text-align:right; margin-right: 15px;"> <a href="#">Home</a> > <a href="#">Account</a></p>
+        <div th:switch="${page}=='edit' ? ${true} : ${false}" class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" style="display: table; padding-top: 10px; padding-bottom: 10px;">
+            <p th:case="${false}" style="font-size: 12px; display: table-cell; vertical-align: middle; text-align:right; margin-right: 15px;"> <a href="#">Home</a> > <a href="#">Account</a></p>
         </div>
-        <div class="row" style="">
-            <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" id="itemlist_results" style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:0px; padding-right:0px; padding-bottom: 0px;">
+        <div th:switch="${page}=='edit' ? ${true} : ${false}" class="row" style="">
+            <div th:case="${false}" class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" id="itemlist_results" style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:0px; padding-right:0px; padding-bottom: 0px;">
                 <div class="row" style="margin-left: 20px; margin-right: 20px;">
                     <div class="row">
                         <style type="text/css">
@@ -124,8 +124,8 @@
         </div>
 
         <!-- About-->
-        <div class="row" style="padding-top: 20px;">
-            <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:0px; padding-right:0px; padding-bottom: 0px;">
+        <div th:switch="${page}=='edit' ? ${true} : ${false}" class="row" style="padding-top: 20px;">
+            <div th:case="${false}" class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:0px; padding-right:0px; padding-bottom: 0px;">
                 <div class="row" style="margin-left: 20px; margin-right: 20px;">
                     <div class="row">
                         <style type="text/css">
@@ -441,11 +441,11 @@
                             <div class="row" style="    padding-top: 20px; padding-bottom: 20px;">
                                 <div class="container " style="    width: 100%;">
                                     <div class="myrow" style="    text-align: center;">
-                                        <p style="margin-bottom:5px;">
+                                        <p style="margin-bottom:5px;" th:text="${page}=='edit'? 'Save to keep your changes or cancel edit.' : 'Please click next to jump to the next page.'">
                                             Please click next to jump to the next page.
                                         </p>
                                         <a href="#" style="padding-right:20px;">cancel</a>
-                                        <button onclick="location.href='/user/add_new/terms';" id="registerVenueButton" name="registerVenue" class="btn btn-primary" type="button">Finish</button>
+                                        <button onclick="location.href='/user/add_new/terms';" id="registerVenueButton" name="registerVenue" class="btn btn-primary" type="button" th:text="${page}=='edit'? Save : Finish">Finish</button>
                                     </div>
                                 </div>
 
