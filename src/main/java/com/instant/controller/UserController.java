@@ -2,6 +2,7 @@ package com.instant.controller;
 
 import com.instant.api.model.venue.NewVenue;
 import com.instant.api.model.venue.Venue;
+import com.instant.service.user.UserAccountService;
 import com.instant.service.venue.VenueService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +21,9 @@ public class UserController {
     @Autowired
     VenueService venueService;
 
+    @Autowired
+    UserAccountService userAccountService;
+
     private static final String ADD_NEW="/add_new";
     private static final String EDIT_VENUE="/edit/venue";
     private static final String REGISTER_VENUE="register_venue_page";
@@ -27,6 +31,7 @@ public class UserController {
     @RequestMapping
     public String getUser(Model model) {
         model.addAttribute("accounts_section", "accounts_dashboard");
+        model.addAttribute("user", userAccountService.getCurrentUser());
         return "index_user";
     }
 
