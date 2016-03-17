@@ -19,6 +19,7 @@ public final class VenueEntityConverter implements Converter<VenueEntity, Venue>
         Venue venue = new Venue();
         venue.setId(entity.getId());
         venue.setName(entity.getName());
+        venue.setUserId(entity.getUserId());
         venue.setCountry(entity.getCountry());
         venue.setCity(entity.getCity());
         venue.setDescription(entity.getDescription());

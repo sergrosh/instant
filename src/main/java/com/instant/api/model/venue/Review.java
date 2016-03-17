@@ -10,5 +10,5 @@ import lombok.Data;
 public class Review {
     private double rating;
     private String text;
-    private int userId;
+    private String userId;
 }

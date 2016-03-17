@@ -21,6 +21,7 @@ public class VenueEntity {
     private String id;
 
     private String name;
+    private String userId;
     private String country;
     private String city;
     private String description;
@@ -42,6 +43,7 @@ public class VenueEntity {
 
     private List<String> speciality;
     private List<String> menu;
+    private List<String> images;
     private Double avgPrice;
     private List<String> gallery;
 

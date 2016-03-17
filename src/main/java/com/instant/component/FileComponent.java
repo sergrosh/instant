@@ -26,6 +26,8 @@ public class FileComponent {
 
     public void saveFileToLocalDisk(MultipartFile multipartFile) throws IOException {
         String outputFileName = getOutputFilename(multipartFile);
+        //TODO:test for folder creation
+//        String outputFileName = getOutputFilename(multipartFile).replace("$1",File.separator);
         FileCopyUtils.copy(multipartFile.getBytes(), new FileOutputStream(outputFileName));
     }
 

@@ -89,16 +89,8 @@ public class NewVenue implements Serializable {
     private List<String> speciality;
 
     @ApiModelProperty(required = false, value = "")
-    @JsonProperty("menu")
-    private List<String> menu;
-
-    @ApiModelProperty(required = false, value = "")
     @JsonProperty("avgprice")
     private Double avgPrice;
-
-    @ApiModelProperty(required = false, value = "")
-    @JsonProperty("gallery")
-    private List<String> gallery;
 
     @ApiModelProperty(required = false, value = "")
     @JsonProperty("specialities")

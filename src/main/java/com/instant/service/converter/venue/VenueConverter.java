@@ -14,6 +14,9 @@ public final class VenueConverter extends AbstractVenueConverter<Venue> {
     public VenueEntity convert(Venue venue) {
         VenueEntity venueEntity = super.convert(venue);
         venueEntity.setId(venue.getId());
+        venueEntity.setUserId(venue.getUserId());
+        venueEntity.setMenu(venue.getMenu());
+        venueEntity.setGallery(venue.getGallery());
         venueEntity.setLocation(venue.getLocation());
         venueEntity.setRating(venue.getRating());
         venueEntity.setReviews(venue.getReviews());

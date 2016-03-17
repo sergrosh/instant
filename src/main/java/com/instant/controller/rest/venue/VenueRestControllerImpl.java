@@ -34,7 +34,7 @@ public class VenueRestControllerImpl implements VenueRestController {
                                  @RequestParam(value = "offset",
                                          required = false,
                                          defaultValue = "0") Integer offset) {
-        return venueService.getVenues(limit, offset);
+        return venueService.findVenues(limit, offset);
     }
 
     @Override
@@ -46,7 +46,7 @@ public class VenueRestControllerImpl implements VenueRestController {
     @Override
     public Venue getVenue(@ApiParam(value = "id of venue to fetch", required = true)
                           @PathVariable("id") String id) {
-        return venueService.getVenueById(id);
+        return venueService.findVenueById(id);
     }
 
     @Override

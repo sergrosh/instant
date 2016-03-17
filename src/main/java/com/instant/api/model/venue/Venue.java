@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import java.util.List;
 
@@ -18,9 +19,21 @@ public class Venue extends NewVenue {
     @JsonProperty("id")
     private String id;
 
+    @JsonProperty("user")
+    @NotEmpty
+    private String userId;
+
     @ApiModelProperty(required = false, value = "")
     @JsonProperty("location")
     private double[] location;
+
+    @ApiModelProperty(required = false, value = "")
+    @JsonProperty("menu")
+    private List<String> menu;
+
+    @ApiModelProperty(required = false, value = "")
+    @JsonProperty("gallery")
+    private List<String> gallery;
 
     @ApiModelProperty(required = false, value = "")
     @JsonProperty("favourite")
@@ -37,4 +50,21 @@ public class Venue extends NewVenue {
     @ApiModelProperty(required = false, value = "")
     @JsonProperty("likes")
     private int likes;
+
+    public void addDish(String newDish){
+        List<String> menu = getMenu();
+        menu.add(newDish);
+    }
+
+    public void addImage(String imageId){
+        List<String> gallery = getGallery();
+        gallery.add(imageId);
+    }
+
+    public void addReview(Review review){
+        List<Review> reviews = getReviews();
+        reviews.add(review);
+    }
+
+
 }

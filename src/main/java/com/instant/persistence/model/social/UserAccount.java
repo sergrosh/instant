@@ -33,6 +33,10 @@ public class UserAccount extends BaseAuditableEntity implements SocialUserDetail
 
     private boolean trustedAccount;
 
+    private Set<String> myVenues;
+
+    private Set<String> reviewed;
+
     private Set<String> favouritesVenues;
 
     public UserAccount() {
@@ -108,12 +112,38 @@ public class UserAccount extends BaseAuditableEntity implements SocialUserDetail
         this.trustedAccount = trustedAccount;
     }
 
+    public Set<String> getMyVenues() {
+        return myVenues;
+    }
+
+    public void setMyVenues(Set<String> myVenues) {
+        this.myVenues = myVenues;
+    }
+
+    public Set<String> getReviewed() {
+        return reviewed;
+    }
+
+    public void setReviewed(Set<String> reviewed) {
+        this.reviewed = reviewed;
+    }
+
     public Set<String> getFavouritesVenues() {
         return favouritesVenues;
     }
 
     public void setFavouritesVenues(Set<String> favouritesVenues) {
         this.favouritesVenues = favouritesVenues;
+    }
+
+    public boolean addMyVenue(String venueId) {
+        Set<String> venues = getMyVenues();
+        return venues.add(venueId);
+    }
+
+    public boolean addReviewedVenue(String venueId) {
+        Set<String> venues = getReviewed();
+        return venues.add(venueId);
     }
 
     public boolean addFavouriteVenue(String venueId) {
@@ -123,6 +153,8 @@ public class UserAccount extends BaseAuditableEntity implements SocialUserDetail
             venues.remove(venueId);
         return added;
     }
+
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

@@ -10,6 +10,7 @@ import com.instant.persistence.repository.CityRepository;
 import com.instant.persistence.repository.VenueRepository;
 import com.instant.service.favourites.FavouritesService;
 import com.instant.service.search.SearchService;
+import com.instant.service.venue.VenueService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.support.ConfigurableConversionService;
 import org.springframework.data.domain.PageRequest;
@@ -41,13 +42,13 @@ public class SearchController {
     VenueRepository venueRepository;
 
     @Autowired
+    VenueService venueService;
+
+    @Autowired
     CityRepository cityRepository;
     @Autowired
     SearchService searchService;
-    @Autowired
-    MongoOperations mongoOperations;
-    @Autowired
-    FavouritesService favouritesService;
+
     @Autowired
     private PaginationBean paginationBean;
     @Autowired
@@ -64,7 +65,7 @@ public class SearchController {
      * @param sortingType - sorting type
      * @return model and view
      */
-    @RequestMapping(Mappings.CLIENTS)
+    @RequestMapping(Mappings.VENUES)
     public ModelAndView search(@RequestParam("query") String query,
                                @RequestParam(value = "category", required = false, defaultValue = "") String category,
                                @RequestParam(value = "view", required = false, defaultValue = "1") Integer view,
@@ -79,25 +80,16 @@ public class SearchController {
             modelAndView = new ModelAndView("fragments/itemlist_product_list :: itemlist_product_list");
         }
         if (StringUtils.isEmpty(query)) {
-            List<VenueEntity> venueEntities = venueRepository.findByCityAndPublished(city, true, paginationBean.defaultPageable(pageNum - 1)).getContent();
-            modelAndView.addObject("venues", venueEntities.stream().map(e -> conversionService.convert(e, Venue.class))
-                    .collect(Collectors.toList()));
-            return modelAndView;
+            modelAndView.addObject("venues", venueService.findByCityAndPublished(city,pageNum));
         } else {
             Query searchQuery = searchService.getQuery(query, city, category, reviews, speciality,
                     sortingType, paginationBean.defaultPageable(pageNum - 1));
-            List<VenueEntity> venueEntities = mongoOperations.find(searchQuery, VenueEntity.class);
-
-            List<Venue> venues = favouritesService.checkAndGetVenues(venueEntities.stream().map(e -> conversionService.convert(e, Venue.class))
-                    .collect(Collectors.toList()));
+            List<Venue> venues = venueService.findBySearchQuery(searchQuery);
             modelAndView.addObject("venues", venues);
 
-            if (venueEntities.size() < paginationBean.getPageSize()) {
-                List<VenueEntity> extraVenueEntities = venueRepository.findByCity(city,
-                        new PageRequest(pageNum, paginationBean.getPageSize() - venues.size(), new Sort(Sort.Direction.DESC, "name"))).getContent();
-                List<Venue> extraVenues = favouritesService.checkAndGetVenues(extraVenueEntities.stream().map(e -> conversionService.convert(e, Venue.class))
-                        .collect(Collectors.toList()));
-                modelAndView.addObject("extraVenues", extraVenues);
+            if (venues.size() < paginationBean.getPageSize()) {
+
+                modelAndView.addObject("extraVenues", venueService.findExtraVenues(city,pageNum,venues.size()));
             }
 
             modelAndView.addObject("searchString", query);
