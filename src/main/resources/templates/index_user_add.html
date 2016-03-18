@@ -157,5 +157,52 @@
 })
 </script>
 
+<script th:inline="javascript" type="text/javascript">
+    /*<![CDATA[*/
+
+    (function ($) {
+    $.fn.serializeFormJSON = function () {
+            var o = {};
+            var a = this.serializeArray();
+            $.each(a, function () {
+                if (o[this.name]) {
+                    if (!o[this.name].push) {
+                        o[this.name] = [o[this.name]];
+                    }
+                    o[this.name].push(this.value || '');
+                } else {
+                    o[this.name] = this.value || '';
+                }
+            });
+            return o;
+        };
+    })(jQuery);
+
+    $( "#form-add-venue-information" ).submit(function( event ) {
+      var url;
+      event.preventDefault();
+      $.ajax({
+                type : "POST",
+                url : "/user/add_new/",
+                data : JSON.stringify($("#form-add-venue-information").serializeFormJSON()),
+                dataType : 'json',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                    },
+                success : function(data) {
+                    console.log(data);
+                    console.log(data.id);
+                    url = "/user/add_new/" + String(data.id);
+                    window.location.href = url;
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    console.log("some error");
+                }
+            });
+    });
+    /*]]>*/
+</script>
+
 </body>
 </html>

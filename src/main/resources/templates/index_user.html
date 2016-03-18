@@ -30,7 +30,7 @@
         <div class="col-md-12">
             <div th:replace="fragments/header :: header"></div>
             <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" style="display: table; padding-top: 10px; padding-bottom: 10px;">
-                <p style="font-size: 12px; display: table-cell; vertical-align: middle; text-align:right; margin-right: 15px;"> <a href="#">Home</a> > <a href="#">Account</a></p>
+                <p style="font-size: 12px; display: table-cell; vertical-align: middle; text-align:right; margin-right: 15px;"> <a href="#" th:href="@{/}">Home</a> > <a href="#" th:href="@{/user}">Account</a></p>
             </div>
             <div class="row" style="">
                 <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" id="itemlist_results" style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:0px; padding-right:0px; padding-bottom: 0px;">
@@ -133,7 +133,7 @@
                                             </p>
                                         </div>
                                         <div class="myrow" style="    text-align: center;">
-                                            <span> 33 </span><i class="fa fa-cutlery" alt="Venues" style="font-weight: bold; font-size: 1.2em;"></i> &#8226; <span> 33 </span> <img src="/img/heart-outline-full.png" alt="Favourites" style="width:20px; height:20px;"/> &#8226; <span> 33 </span> <i class="fa fa-star" alt="Reviews" style="font-weight: bold; font-size: 1.2em; color: #feab6c;"></i>
+                                            <span th:text="${user.myVenues}==null ? 0 : ${user.myVenues.size()}"> 33 </span><i class="fa fa-cutlery" alt="Venues" style="font-weight: bold; font-size: 1.2em;"></i> &#8226; <span th:text="${user.favouritesVenues}==null ? 0 : ${user.favouritesVenues.size()}"> 33 &ensp;</span> <img src="/img/heart-outline-full.png" alt="Favourites" style="width:20px; height:20px;"/> &#8226; <span th:text="${user.reviewed}==null ? 0 : ${user.reviewed.size()}"> 33 </span> <i class="fa fa-star" alt="Reviews" style="font-weight: bold; font-size: 1.2em; color: #feab6c;"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -142,6 +142,7 @@
                     </div>
                 </div>
             </div>
+            <!-- My venues-->
             <div class="row" style="padding-top: 20px;">
                 <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:0px; padding-right:0px; padding-bottom: 0px;">
 
@@ -244,7 +245,7 @@
                                         <div class="myrow" style="vertical-align:middle; text-align:left;">
                                             <p>
                                                 Venue owner? Here you can see all the venues you have added with their latest information, reviews and comments and the current state of venues under acceptance process.
-                                                For more information please check <a href="#">here</a>.
+                                                For more information please check <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" title="Registering a venue" data-content="*Click anywhere to dismiss! And here's some amazing content. It's very engaging. Right?">here</a>.
                                             </p>
                                         </div>
                                     </div>
@@ -343,8 +344,8 @@
 
                             </style>
 
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                <div class="row" style="    padding-top: 20px; padding-bottom: 20px; text-align: center;">
+                            <div th:switch="${user.myVenues}==null ? ${true} : ${false}" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div th:case="${true}" class="row" style="    padding-top: 20px; padding-bottom: 20px; text-align: center;">
                                     <p>
                                         <span style="font-weight: 600;">No venues were found.</span>
                                         <br/>
@@ -414,6 +415,7 @@
 
                 </div>
             </div>
+            <!-- My Favourites-->
             <div class="row" style="padding-top: 20px;">
                 <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:0px; padding-right:0px; padding-bottom: 0px;">
 
@@ -614,8 +616,8 @@
 
                             </style>
 
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                <div class="row" style="    padding-top: 20px; padding-bottom: 20px; text-align: center;">
+                            <div th:switch="${user.favouritesVenues}==null ? ${true} : ${false}" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div th:case="${true}" class="row" style="    padding-top: 20px; padding-bottom: 20px; text-align: center;">
                                     <p>
                                         <span style="font-weight: 600;"> <img src="/img/heart-outline.png" style="width:20px; height:20px;"/> No favourited venues were found.</span>
                                         <br/>
@@ -683,6 +685,7 @@
 
                 </div>
             </div>
+            <!-- My reviewed-->
             <div class="row" style="padding-top: 20px;">
                 <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:0px; padding-right:0px; padding-bottom: 0px;">
 
@@ -883,8 +886,8 @@
 
                             </style>
 
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                <div class="row" style="    padding-top: 20px; padding-bottom: 20px; text-align: center;">
+                            <div th:switch="${user.reviewed}==null ? ${true} : ${false}" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div th:case="${true}" class="row" style="    padding-top: 20px; padding-bottom: 20px; text-align: center;">
                                     <p>
                                         <span style="font-weight: 600;"> <i class="fa fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #feab6c;"></i> No reviews were found.</span>
                                         <br/>
@@ -976,6 +979,12 @@
         url = url + data;
         $("#itemlist_results").load(url);
     }
+
+
+    $(document).ready(function(){
+        $('[data-toggle="popover"]').popover();
+    });
+
 /*]]>*/
 
 </script>
@@ -1040,6 +1049,7 @@
     });
 })
 </script>
+
 
 </body>
 </html>
