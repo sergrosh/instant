@@ -2,6 +2,7 @@ package com.instant.controller;
 
 import com.instant.api.model.venue.NewVenue;
 import com.instant.api.model.venue.Venue;
+import com.instant.persistence.model.social.UserAccount;
 import com.instant.service.user.UserAccountService;
 import com.instant.service.venue.VenueService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,11 +47,15 @@ public class UserController {
     @RequestMapping(value = ADD_NEW, method = RequestMethod.POST)
     public Venue getNewUserAddVenuFragment(@RequestBody NewVenue newVenue) {
         Venue venue = venueService.saveVenue(newVenue);
+        UserAccount currentUser = userAccountService.getCurrentUser();
+        currentUser.addMyVenue(venue.getId());
         return venue;
     }
 
     @RequestMapping(value = ADD_NEW + Mappings.ID, method = RequestMethod.GET)
-    public String getNewUserAddVenuFragmentContinued(Model model) {
+    public String getNewUserAddVenuFragmentContinued(@PathVariable("id") String id, Model model) {
+        if(!userAccountService.getCurrentUser().getMyVenues().contains(id))
+            return Mappings.ERROR_PATH;
         model.addAttribute(REGISTER_VENUE, "index_user_add_second_page");
         return "index_user_add";
     }
