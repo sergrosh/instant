@@ -55,6 +55,12 @@ public class UserAccountServiceImpl implements UserAccountService {
     }
 
     @Override
+    public UserAccount updateUserAccount(UserAccount userAccount) {
+        return this.accountRepository.save(userAccount);
+    }
+
+
+    @Override
     public UserAccount addRole(String userId, UserRoleType role) throws UsernameNotFoundException {
         UserAccount account = loadUserByUserId(userId);
         Set<UserRoleType> roleSet = new HashSet<>();
@@ -65,6 +71,7 @@ public class UserAccountServiceImpl implements UserAccountService {
         account.setRoles(roleSet.toArray(new UserRoleType[roleSet.size()]));
         return this.accountRepository.save(account);
     }
+
 
     @Override
     public UserAccount removeRole(String userId, UserRoleType role) throws UsernameNotFoundException {

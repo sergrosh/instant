@@ -24,6 +24,14 @@ public interface UserAccountService extends SocialUserDetailsService, UserDetail
     UserAccount createUserAccount(ConnectionData data, UserProfile profile);
 
     /**
+     * Update existing User account entity
+     *
+     * @param userAccount
+     * @return
+     */
+    UserAccount updateUserAccount(UserAccount userAccount);
+
+    /**
      * Add role to user account.
      *
      * @param userId

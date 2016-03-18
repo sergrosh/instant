@@ -49,6 +49,7 @@ public class UserController {
         Venue venue = venueService.saveVenue(newVenue);
         UserAccount currentUser = userAccountService.getCurrentUser();
         currentUser.addMyVenue(venue.getId());
+        userAccountService.updateUserAccount(currentUser);
         return venue;
     }
 
