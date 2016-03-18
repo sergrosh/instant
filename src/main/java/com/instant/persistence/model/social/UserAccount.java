@@ -7,6 +7,7 @@ import org.springframework.social.security.SocialUserDetails;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -113,6 +114,8 @@ public class UserAccount extends BaseAuditableEntity implements SocialUserDetail
     }
 
     public Set<String> getMyVenues() {
+        if(myVenues==null)
+            myVenues=new HashSet<>();
         return myVenues;
     }
 
@@ -121,6 +124,8 @@ public class UserAccount extends BaseAuditableEntity implements SocialUserDetail
     }
 
     public Set<String> getReviewed() {
+        if(reviewed==null)
+            reviewed=new HashSet<>();
         return reviewed;
     }
 
@@ -129,6 +134,8 @@ public class UserAccount extends BaseAuditableEntity implements SocialUserDetail
     }
 
     public Set<String> getFavouritesVenues() {
+        if(favouritesVenues==null)
+            favouritesVenues=new HashSet<>();
         return favouritesVenues;
     }
 
@@ -153,7 +160,6 @@ public class UserAccount extends BaseAuditableEntity implements SocialUserDetail
             venues.remove(venueId);
         return added;
     }
-
 
 
     @Override

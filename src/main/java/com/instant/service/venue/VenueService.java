@@ -23,7 +23,7 @@ public interface VenueService {
 
     void deleteVenue(String id);
 
-    List<Venue> findByCityAndPublished(String city,int pageNum);
+    List<Venue> findByCityAndPublished(String city, int pageNum);
 
     List<Venue> findBySearchQuery(Query searchQuery);
 

@@ -1,7 +1,6 @@
 package com.instant.config;
 
 import com.instant.controller.Mappings;
-import com.instant.persistence.model.social.UserRoleType;
 import com.instant.persistence.repository.social.RememberMeTokenRepository;
 import com.instant.persistence.repository.social.impl.MongoPersistentTokenRepositoryImpl;
 import com.instant.service.user.UserAccountService;
@@ -74,8 +73,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(Mappings.UPLOAD_VENUE_IMAGE).authenticated()
                 .antMatchers(Mappings.DELETE_VENUE_IMAGE).authenticated()
                 .antMatchers(Mappings.VENUES + "/**").permitAll()
-                .antMatchers(Mappings.REST+Mappings.VENUE+ "/**").permitAll()
-                .antMatchers(Mappings.REST+Mappings.SEARCH + "/**").permitAll()
+                .antMatchers(Mappings.REST + Mappings.VENUE + "/**").permitAll()
+                .antMatchers(Mappings.REST + Mappings.SEARCH + "/**").permitAll()
                 .antMatchers(Mappings.VENUE + "/**").permitAll()
                 .antMatchers("/home/**").permitAll()
                 .antMatchers("/suggestions/**").permitAll()

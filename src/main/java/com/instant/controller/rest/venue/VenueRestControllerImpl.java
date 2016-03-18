@@ -20,7 +20,7 @@ import java.util.List;
 @Slf4j
 @RestController
 @CrossOrigin(origins = "http://localhost:9000")
-@RequestMapping(value = Mappings.REST+Mappings.VENUE)
+@RequestMapping(value = Mappings.REST + Mappings.VENUE)
 public class VenueRestControllerImpl implements VenueRestController {
 
     @Autowired

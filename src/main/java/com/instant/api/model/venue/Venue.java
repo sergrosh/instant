@@ -51,17 +51,17 @@ public class Venue extends NewVenue {
     @JsonProperty("likes")
     private int likes;
 
-    public void addDish(String newDish){
+    public void addDish(String newDish) {
         List<String> menu = getMenu();
         menu.add(newDish);
     }
 
-    public void addImage(String imageId){
+    public void addImage(String imageId) {
         List<String> gallery = getGallery();
         gallery.add(imageId);
     }
 
-    public void addReview(Review review){
+    public void addReview(Review review) {
         List<Review> reviews = getReviews();
         reviews.add(review);
     }

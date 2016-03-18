@@ -1,6 +1,5 @@
 package com.instant.persistence.model.venue;
 
-import com.instant.api.model.venue.Dish;
 import com.instant.api.model.venue.Review;
 import lombok.Data;
 import org.springframework.data.annotation.Id;

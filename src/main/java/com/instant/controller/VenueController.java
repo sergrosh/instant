@@ -15,7 +15,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.support.ConfigurableConversionService;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Map;
@@ -66,18 +69,18 @@ public class VenueController {
         return modelAndView;
     }
 
-    @RequestMapping(Mappings.ID+"/add_review")
-    public ModelAndView addReview(@PathVariable("id") String id, @RequestBody Review review){
+    @RequestMapping(Mappings.ID + "/add_review")
+    public ModelAndView addReview(@PathVariable("id") String id, @RequestBody Review review) {
         Venue venue = venueService.findVenueById(id);
         venue.addReview(review);
         venueService.updateVenue(venue);
-        ModelAndView modelAndView=new ModelAndView("index_" + TilesDefinition.VENUE);
+        ModelAndView modelAndView = new ModelAndView("index_" + TilesDefinition.VENUE);
         modelAndView.addObject("venue", venue);
         modelAndView.addObject("view", "item_main_view");
         return modelAndView;
     }
 
-    @RequestMapping(Mappings.ID+"/{block}")
+    @RequestMapping(Mappings.ID + "/{block}")
     public ModelAndView getItemBlockByIdViaUrl(@PathVariable(value = "id") String id, @PathVariable(value = "block") String block) {
         ModelAndView modelAndView;
         if (StringUtils.isEmpty(id)) {

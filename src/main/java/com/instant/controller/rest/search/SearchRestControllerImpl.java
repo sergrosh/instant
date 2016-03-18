@@ -5,21 +5,18 @@ import com.instant.api.model.venue.Venue;
 import com.instant.common.PaginationBean;
 import com.instant.controller.Mappings;
 import com.instant.persistence.model.venue.VenueEntity;
-import com.instant.persistence.repository.CityRepository;
 import com.instant.persistence.repository.VenueRepository;
 import com.instant.service.favourites.FavouritesService;
 import com.instant.service.search.SearchService;
-import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.support.ConfigurableConversionService;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Query;
-import org.springframework.data.mongodb.core.query.TextCriteria;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -30,8 +27,8 @@ import java.util.stream.Collectors;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:9000")
-@RequestMapping(value = Mappings.REST+Mappings.SEARCH)
-public class SearchRestControllerImpl implements SearchRestController{
+@RequestMapping(value = Mappings.REST + Mappings.SEARCH)
+public class SearchRestControllerImpl implements SearchRestController {
 
     @Autowired
     VenueRepository venueRepository;
@@ -67,8 +64,8 @@ public class SearchRestControllerImpl implements SearchRestController{
 
             List<Venue> venues = favouritesService.checkAndGetVenues(venueEntities.stream().map(e -> conversionService.convert(e, Venue.class))
                     .collect(Collectors.toList()));
-           return venues;
+            return venues;
 
-            }
+        }
     }
 }

@@ -7,11 +7,11 @@ public interface Mappings {
 
     //MVC
     String HOME = "/home";
-    String ID="/{id}";
+    String ID = "/{id}";
     String VENUES = "/venues";
     String VENUE = "/venue";
     String SAVE = "/save";
-    String FAVOURITE =  "/{id}/favourite";
+    String FAVOURITE = "/{id}/favourite";
 
     String UPLOAD_VENUE_IMAGE = "/upload/venue/image";
     String DELETE_VENUE_IMAGE = "/delete/venue/image";
@@ -24,8 +24,8 @@ public interface Mappings {
     String USER_ADD = "/user/add";
 
     //REST
-    String REST="/rest";
-    String SEARCH="/search";
+    String REST = "/rest";
+    String SEARCH = "/search";
 
     String FB = "/facebook";
     String FB_FEED = FB + "/feed";

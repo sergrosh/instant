@@ -25,9 +25,9 @@ public class UserController {
     @Autowired
     UserAccountService userAccountService;
 
-    private static final String ADD_NEW="/add_new";
-    private static final String EDIT_VENUE="/edit/venue";
-    private static final String REGISTER_VENUE="register_venue_page";
+    private static final String ADD_NEW = "/add_new";
+    private static final String EDIT_VENUE = "/edit/venue";
+    private static final String REGISTER_VENUE = "register_venue_page";
 
     @RequestMapping
     public String getUser(Model model) {
@@ -54,7 +54,7 @@ public class UserController {
 
     @RequestMapping(value = ADD_NEW + Mappings.ID, method = RequestMethod.GET)
     public String getNewUserAddVenuFragmentContinued(@PathVariable("id") String id, Model model) {
-        if(!userAccountService.getCurrentUser().getMyVenues().contains(id))
+        if (!userAccountService.getCurrentUser().getMyVenues().contains(id))
             return Mappings.ERROR_PATH;
         model.addAttribute(REGISTER_VENUE, "index_user_add_second_page");
         return "index_user_add";
@@ -70,7 +70,7 @@ public class UserController {
     @RequestMapping(EDIT_VENUE + Mappings.ID)
     public String editVenue(@PathVariable("id") String id, Model model) {
         Venue venue = venueService.findVenueById(id);
-        model.addAttribute("venue",venue);
+        model.addAttribute("venue", venue);
         model.addAttribute(REGISTER_VENUE, "index_user_add_second_page");
         return "index_user_edit";
     }
@@ -88,7 +88,6 @@ public class UserController {
 //        model.addAttribute("register_venue_page", "index_user_add_second_page");
 //        return "index_user_edit";
 //    }
-
 
 
 }

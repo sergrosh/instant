@@ -151,7 +151,7 @@ public class VenueServiceImpl implements VenueService {
 
     @Override
     public List<Venue> findByCityAndPublished(String city, int pageNum) {
-        List<VenueEntity>venueEntities = venueRepository.findByCityAndPublished(city, true, paginationBean.defaultPageable(pageNum - 1)).getContent();
+        List<VenueEntity> venueEntities = venueRepository.findByCityAndPublished(city, true, paginationBean.defaultPageable(pageNum - 1)).getContent();
         List<Venue> venues = favouritesService.checkAndGetVenues(
                 venueEntities.stream().map(e -> conversionService.convert(e, Venue.class)).collect(Collectors.toList()));
         return venues;
@@ -162,11 +162,11 @@ public class VenueServiceImpl implements VenueService {
         List<VenueEntity> venueEntities = mongoOperations.find(searchQuery, VenueEntity.class);
         List<Venue> venues = favouritesService.checkAndGetVenues(
                 venueEntities.stream().map(e -> conversionService.convert(e, Venue.class))
-                .collect(Collectors.toList()));
+                        .collect(Collectors.toList()));
         return venues;
     }
 
-    public List<Venue> findExtraVenues(String city, int pageNum, int size){
+    public List<Venue> findExtraVenues(String city, int pageNum, int size) {
         List<VenueEntity> extraVenueEntities = venueRepository.findByCity(city,
                 new PageRequest(pageNum, paginationBean.getPageSize() - size, new Sort(Sort.Direction.DESC, "name"))).getContent();
         List<Venue> extraVenues = favouritesService.checkAndGetVenues(extraVenueEntities.stream().map(e -> conversionService.convert(e, Venue.class))

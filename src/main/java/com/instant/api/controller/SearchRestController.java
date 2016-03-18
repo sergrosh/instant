@@ -9,16 +9,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
-import static com.instant.controller.rest.SwaggerMessages.ERROR_400;
-import static com.instant.controller.rest.SwaggerMessages.ERROR_500_MSG;
-import static com.instant.controller.rest.SwaggerMessages.SUCCESS;
+import static com.instant.controller.rest.SwaggerMessages.*;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 /**
  * @author sroshchupkin
  */
 
-@Api(value = Mappings.REST+Mappings.SEARCH, description = "API to search")
+@Api(value = Mappings.REST + Mappings.SEARCH, description = "API to search")
 public interface SearchRestController {
 
     @ApiOperation(

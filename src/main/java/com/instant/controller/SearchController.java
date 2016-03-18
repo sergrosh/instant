@@ -5,17 +5,13 @@ import com.instant.api.model.venue.Venues;
 import com.instant.common.PaginationBean;
 import com.instant.persistence.model.city.Cities;
 import com.instant.persistence.model.city.City;
-import com.instant.persistence.model.venue.VenueEntity;
 import com.instant.persistence.repository.CityRepository;
 import com.instant.persistence.repository.VenueRepository;
-import com.instant.service.favourites.FavouritesService;
 import com.instant.service.search.SearchService;
 import com.instant.service.venue.VenueService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.support.ConfigurableConversionService;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -80,7 +76,7 @@ public class SearchController {
             modelAndView = new ModelAndView("fragments/itemlist_product_list :: itemlist_product_list");
         }
         if (StringUtils.isEmpty(query)) {
-            modelAndView.addObject("venues", venueService.findByCityAndPublished(city,pageNum));
+            modelAndView.addObject("venues", venueService.findByCityAndPublished(city, pageNum));
         } else {
             Query searchQuery = searchService.getQuery(query, city, category, reviews, speciality,
                     sortingType, paginationBean.defaultPageable(pageNum - 1));
@@ -89,7 +85,7 @@ public class SearchController {
 
             if (venues.size() < paginationBean.getPageSize()) {
 
-                modelAndView.addObject("extraVenues", venueService.findExtraVenues(city,pageNum,venues.size()));
+                modelAndView.addObject("extraVenues", venueService.findExtraVenues(city, pageNum, venues.size()));
             }
 
             modelAndView.addObject("searchString", query);
