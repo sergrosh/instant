@@ -344,8 +344,8 @@
 
                             </style>
 
-                            <div th:switch="${user.myVenues}==null ? ${true} : ${false}" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                <div th:case="${true}" class="row" style="    padding-top: 20px; padding-bottom: 20px; text-align: center;">
+                            <div th:switch="${user.myVenues.size()}>0 ? ${true} : ${false}" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div th:case="${false}" class="row" style="    padding-top: 20px; padding-bottom: 20px; text-align: center;">
                                     <p>
                                         <span style="font-weight: 600;">No venues were found.</span>
                                         <br/>
@@ -408,6 +408,9 @@
                                         </p>
 
                                     </div>
+                                </div>
+                                <div th:case="${true}" class="row" style="    padding-top: 20px; padding-bottom: 20px; text-align: center;">
+                                    <p th:text="${user.myVenues.size()}"></p>
                                 </div>
                             </div>
                         </div>
@@ -616,8 +619,8 @@
 
                             </style>
 
-                            <div th:switch="${user.favouritesVenues}==null ? ${true} : ${false}" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                <div th:case="${true}" class="row" style="    padding-top: 20px; padding-bottom: 20px; text-align: center;">
+                            <div th:switch="${user.favouritesVenues.size()}>0 ? ${true} : ${false}" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div th:case="${false}" class="row" style="    padding-top: 20px; padding-bottom: 20px; text-align: center;">
                                     <p>
                                         <span style="font-weight: 600;"> <img src="/img/heart-outline.png" style="width:20px; height:20px;"/> No favourited venues were found.</span>
                                         <br/>
@@ -678,6 +681,9 @@
                                         </p>
 
                                     </div>
+                                </div>
+                                <div th:case="${true}" class="row" style="    padding-top: 20px; padding-bottom: 20px; text-align: center;">
+                                    <p th:text="${user.favouritesVenues.size()}"></p>
                                 </div>
                             </div>
                         </div>
@@ -886,8 +892,8 @@
 
                             </style>
 
-                            <div th:switch="${user.reviewed}==null ? ${true} : ${false}" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                <div th:case="${true}" class="row" style="    padding-top: 20px; padding-bottom: 20px; text-align: center;">
+                            <div th:switch="${user.reviewed.size()}>0 ? ${true} : ${false}" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div th:case="${false}" class="row" style="    padding-top: 20px; padding-bottom: 20px; text-align: center;">
                                     <p>
                                         <span style="font-weight: 600;"> <i class="fa fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #feab6c;"></i> No reviews were found.</span>
                                         <br/>
@@ -948,6 +954,9 @@
                                         </p>
 
                                     </div>
+                                </div>
+                                <div th:case="${false}" class="row" style="    padding-top: 20px; padding-bottom: 20px; text-align: center;">
+                                    <p th:text="${user.reviewed.size()}"></p>
                                 </div>
                             </div>
                         </div>
