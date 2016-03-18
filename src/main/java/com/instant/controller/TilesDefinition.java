@@ -8,5 +8,7 @@ public interface TilesDefinition {
     String LANDING = "landing";
     String VENUE = "venue";
     String ACCOUNT = "account";
-    String USER = "user";
+    String USER = "index_user";
+    String USER_ADD_NEW_VENUE="index_user_add";
+    String USER_EDIT_VENUE="index_user_edit";
 }

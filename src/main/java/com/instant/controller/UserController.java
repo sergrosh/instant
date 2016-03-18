@@ -33,14 +33,14 @@ public class UserController {
     public String getUser(Model model) {
         model.addAttribute("accounts_section", "accounts_dashboard");
         model.addAttribute("user", userAccountService.getCurrentUser());
-        return "index_user";
+        return TilesDefinition.USER;
     }
 
     @RequestMapping(value = ADD_NEW, method = RequestMethod.GET)
     public String getNewUserAddVenuFragment(Model model) {
         ModelAndView view = new ModelAndView(TilesDefinition.LANDING);
         model.addAttribute(REGISTER_VENUE, "index_user_add_first_page");
-        return "index_user_add";
+        return TilesDefinition.USER_ADD_NEW_VENUE;
     }
 
     @ResponseBody
@@ -58,7 +58,7 @@ public class UserController {
         if (!userAccountService.getCurrentUser().getMyVenues().contains(id))
             return Mappings.ERROR_PATH;
         model.addAttribute(REGISTER_VENUE, "index_user_add_second_page");
-        return "index_user_add";
+        return TilesDefinition.USER_ADD_NEW_VENUE;
     }
 
     @ResponseBody
@@ -73,7 +73,7 @@ public class UserController {
         Venue venue = venueService.findVenueById(id);
         model.addAttribute("venue", venue);
         model.addAttribute(REGISTER_VENUE, "index_user_add_second_page");
-        return "index_user_edit";
+        return TilesDefinition.USER_EDIT_VENUE;
     }
 
     @ResponseBody
