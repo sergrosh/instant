@@ -6,6 +6,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import org.hibernate.validator.constraints.NotEmpty;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -50,6 +51,24 @@ public class Venue extends NewVenue {
     @ApiModelProperty(required = false, value = "")
     @JsonProperty("likes")
     private int likes;
+
+    public List<String> getMenu(){
+        if(menu==null)
+            menu=new ArrayList<>();
+        return menu;
+    }
+
+    public List<String> getGallery(){
+        if(gallery==null)
+            gallery=new ArrayList<>();
+        return gallery;
+    }
+
+    public List<Review> getReviews(){
+        if(reviews==null)
+            reviews=new ArrayList<>();
+        return reviews;
+    }
 
     public void addDish(String newDish) {
         List<String> menu = getMenu();
