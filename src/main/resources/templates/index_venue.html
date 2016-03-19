@@ -1540,7 +1540,7 @@
 
 </script>
 
-<script>
+<script th:inline="javascript" type="text/javascript">
     $(document).ready(function(){
 
     <!--var mq = window.matchMedia( "(max-width: 400px)" );-->
@@ -1560,10 +1560,18 @@
 
             if(favourite==true){
                 $('.favourite_heart > img').attr('src', '/img/heart-outline-full.png');
+
             }
             if(favourite==false){
                 $('.favourite_heart > img').attr('src', '/img/heart-outline.png');
             }
+
+            var favUrl = /*[[${venue.id}]]*/;
+
+            $.ajax({
+                type : "POST",
+                url : favUrl + "/favourite"
+            });
     });
 })
 </script>
