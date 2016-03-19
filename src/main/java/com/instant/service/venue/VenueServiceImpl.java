@@ -1,6 +1,7 @@
 package com.instant.service.venue;
 
 import com.instant.api.model.venue.NewVenue;
+import com.instant.api.model.venue.Review;
 import com.instant.api.model.venue.Venue;
 import com.instant.common.PaginationBean;
 import com.instant.exception.InternalServerException;
@@ -134,6 +135,21 @@ public class VenueServiceImpl implements VenueService {
             throw new InternalServerException();
         }
         return conversionService.convert(venueEntity, Venue.class);
+    }
+
+    @Override
+    public void updateRating(String id) {
+        VenueEntity venueEntity = venueRepository.findById(id);
+        double rating=0;
+        List<Review> reviews=venueEntity.getReviews();
+        if(reviews.size()>0){
+            for (Review review : reviews){
+                rating+=review.getRating();
+            }
+            rating=rating/reviews.size();
+        }
+        venueEntity.setRating(rating);
+        venueRepository.save(venueEntity);
     }
 
     @Override

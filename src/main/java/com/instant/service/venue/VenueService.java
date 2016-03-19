@@ -21,6 +21,8 @@ public interface VenueService {
 
     Venue updateVenue(Venue venue);
 
+    void updateRating(String id);
+
     void deleteVenue(String id);
 
     List<Venue> findByCityAndPublished(String city, int pageNum);
