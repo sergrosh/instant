@@ -4,6 +4,7 @@ import com.instant.api.model.venue.NewVenue;
 import com.instant.api.model.venue.Review;
 import com.instant.api.model.venue.Venue;
 import com.instant.persistence.model.city.City;
+import com.instant.persistence.model.social.UserAccount;
 import com.instant.persistence.model.venue.VenueEntity;
 import com.instant.persistence.repository.CityRepository;
 import com.instant.persistence.repository.VenueRepository;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Map;
+import java.util.Set;
 
 /**
  * @author sroshchupkin
@@ -52,13 +54,21 @@ public class VenueController {
 
 
     @RequestMapping(Mappings.ID)
-    public ModelAndView getNewItemByIdViaUrl(@PathVariable(value = "id") String id) {
+    public ModelAndView getItemById(@PathVariable(value = "id") String id) {
         ModelAndView modelAndView;
         if (StringUtils.isEmpty(id)) {
             modelAndView = new ModelAndView(TilesDefinition.HOME);
             return modelAndView;
         } else {
             modelAndView = new ModelAndView("index_" + TilesDefinition.VENUE);
+            Venue venue = venueService.findVenueById(id);
+            UserAccount userAccount = userAccountService.getCurrentUser();
+            if(userAccount!=null){
+                if(userAccount.getReviewed().contains(id))
+                    venue.setReviewed(true);
+                if(userAccount.getFavouritesVenues().contains(id))
+                    venue.setFavourite(true);
+            }
             modelAndView.addObject("venue", venueService.findVenueById(id));
             modelAndView.addObject("view", "item_main_view");
         }
@@ -68,10 +78,15 @@ public class VenueController {
 
     @RequestMapping(Mappings.ID + "/add_review")
     public ModelAndView addReview(@PathVariable("id") String id, @RequestBody Review review) {
-        Venue venue = venueService.findVenueById(id);
-        venue.addReview(review);
-        venueService.updateVenue(venue);
+        UserAccount userAccount = userAccountService.getCurrentUser();
         ModelAndView modelAndView = new ModelAndView("index_" + TilesDefinition.VENUE);
+        Venue venue = venueService.findVenueById(id);
+        if(!userAccount.getReviewed().contains(id)){
+            venue.addReview(review);
+            venueService.updateVenue(venue);
+            userAccount.addReviewedVenue(id);
+            userAccountService.updateUserAccount(userAccount);
+        }
         modelAndView.addObject("venue", venue);
         modelAndView.addObject("view", "item_main_view");
         return modelAndView;
@@ -129,6 +144,20 @@ public class VenueController {
     @ResponseBody
     @RequestMapping(value = Mappings.FAVOURITE, method = RequestMethod.POST)
     public boolean addToFavourites(@PathVariable("id") String id) {
-        return userAccountService.getCurrentUser().addFavouriteVenue(id);
+        UserAccount userAccount = userAccountService.getCurrentUser();
+        if(userAccount!=null){
+            Set<String> favouritesVenues = userAccount.getFavouritesVenues();
+            if(favouritesVenues.contains(id)){
+                favouritesVenues.remove(id);
+                userAccountService.updateUserAccount(userAccount);
+                return false;
+            }
+            else {
+                favouritesVenues.add(id);
+                userAccountService.updateUserAccount(userAccount);
+                return true;
+            }
+        }
+        return false;
     }
 }

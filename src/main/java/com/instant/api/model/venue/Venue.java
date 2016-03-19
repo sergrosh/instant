@@ -41,6 +41,10 @@ public class Venue extends NewVenue {
     private boolean favourite;
 
     @ApiModelProperty(required = false, value = "")
+    @JsonProperty("reviewed")
+    private boolean reviewed;
+
+    @ApiModelProperty(required = false, value = "")
     @JsonProperty("rating")
     private double rating;
 
