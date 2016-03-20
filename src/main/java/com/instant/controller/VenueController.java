@@ -69,7 +69,7 @@ public class VenueController {
                 if(userAccount.getFavouritesVenues().contains(id))
                     venue.setFavourite(true);
             }
-            modelAndView.addObject("venue", venueService.findVenueById(id));
+            modelAndView.addObject("venue", venue);
             modelAndView.addObject("view", "item_main_view");
         }
         clickoutsUpdateService.updateClickoutMap(id);
