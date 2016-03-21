@@ -257,11 +257,11 @@
                                                     <div class="container2" style="width:100%">
                                                         <div class="column" style="width:50%; vertical-align:middle;text-align:left;">
                                                             <p style="    margin-bottom: 5px;">
-                                                                <i class="fa fa-star-o instant_i" style="font-weight: bold; color: #feab6c;"></i>
-                                                                <i class="fa fa-star-o instant_i" style="font-weight: bold; color: #feab6c;"></i>
-                                                                <i class="fa fa-star-o instant_i" style="font-weight: bold; color: #feab6c;"></i>
-                                                                <i class="fa fa-star-o instant_i" style="font-weight: bold; color: #feab6c;"></i>
-                                                                <i class="fa fa-star-o instant_i" style="font-weight: bold; color: #feab6c;"></i>
+                                                                <i class="fa instant_i" th:classappend="${venue.rating} > 0? fa-star : fa-star-o" style="font-weight: bold; color: #feab6c;"></i>
+                                                                <i class="fa instant_i" th:classappend="${venue.rating} > 1? fa-star : fa-star-o" style="font-weight: bold; color: #feab6c;"></i>
+                                                                <i class="fa instant_i" th:classappend="${venue.rating} > 2? fa-star : fa-star-o" style="font-weight: bold; color: #feab6c;"></i>
+                                                                <i class="fa instant_i" th:classappend="${venue.rating} > 3? fa-star : fa-star-o" style="font-weight: bold; color: #feab6c;"></i>
+                                                                <i class="fa instant_i" th:classappend="${venue.rating} > 4? fa-star : fa-star-o" style="font-weight: bold; color: #feab6c;"></i>
                                                                 <span> - null</span>
                                                             </p>
                                                         </div>
@@ -304,8 +304,9 @@
 
                                             </div>
                                             <div class="column" style="vertical-align:middle;text-align:center;">
-                                                <a href="javascript:void(0);" class="favourite_heart">
-                                                    <img class="instant_heart" src="/img/heart-outline.png"  style="margin-left:10px;margin-right:10px"/>
+                                                <a href="javascript:void(0);" class="favourite_heart" th:switch="${venue.favourite} ? ${true} : ${false}">
+                                                    <img th:case="${false}" class="instant_heart" src="/img/heart-outline.png"  style="margin-left:10px;margin-right:10px"/>
+                                                    <img th:case="${true}" class="instant_heart" src="/img/heart-outline-full.png"  style="margin-left:10px;margin-right:10px"/>
                                                 </a>
                                             </div>
                                         </div>
@@ -356,7 +357,7 @@
             <!--</div>-->
 
             <!-- About Block start -->
-            <div class="row add_rating_block" style="padding-top: 20px;">
+            <div th:switch="${venue.reviewed} ? ${true} : ${false}" th:case="${false}" class="row add_rating_block" style="padding-top: 20px;">
                 <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:0px; padding-right:0px; padding-bottom: 0px;">
                     <div class="row" style="margin-left: 20px; margin-right: 20px;">
                         <div class="row">
@@ -461,12 +462,12 @@
                                             </p>
                                         </div>
                                         <div class="myrow" style="vertical-align:middle; text-align:left;">
-                                            <div class="row" style="    padding-top: 10px;">
+                                            <div class="row" style="padding-top: 10px;">
                                                 <div class="col-md-12">
                                                     <p>
                                                         <span style="font-weight: 600;">Rating</span>
                                                         <br/>
-                                                        <select id="example">
+                                                        <select id="review_rating" name="review_rating">
                                                             <option value="1">1</option>
                                                             <option value="2">2</option>
                                                             <option value="3">3</option>
@@ -482,14 +483,14 @@
                                                         <span style="font-weight: 600;">Review(Optional):</span>
                                                         <br/>
                                                         <textarea class="form-control" rows="1"
-                                                                  style="width: 100%; resize:vertical;" id="venue_description"
-                                                                  name="VENUE_DESCRIPTION" placeholder=""></textarea>
+                                                                  style="width: 100%; resize:vertical;" id="review_description"
+                                                                  name="review_description" placeholder=""></textarea>
                                                     </p>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <button name="applyReviewButton" class="btn btn-primary"
+                                                    <button name="applyReviewButton" id="applyReviewButton" class="btn btn-primary"
                                                             type="button">Add Review
                                                     </button>
                                                 </div>
@@ -1528,7 +1529,7 @@
 <script th:inline="javascript" type="text/javascript">
 /*<![CDATA[*/
     $(function() {
-      $('#example').barrating({
+      $('#review_rating').barrating({
         theme: 'fontawesome-stars'
       });
    });
@@ -1555,23 +1556,39 @@
 
 
     var favourite=false;
-        $('.favourite_heart').click(function(){
-            favourite=!favourite;
+    $('.favourite_heart').click(function(){
+        if($('.favourite_heart > img').attr('src')== '/img/heart-outline-full.png'){
+            $('.favourite_heart > img').attr('src', '/img/heart-outline.png');
+        }
+        else{
+            $('.favourite_heart > img').attr('src', '/img/heart-outline-full.png');
+        }
 
-            if(favourite==true){
-                $('.favourite_heart > img').attr('src', '/img/heart-outline-full.png');
+        var favUrl = /*[[${venue.id}]]*/;
 
-            }
-            if(favourite==false){
-                $('.favourite_heart > img').attr('src', '/img/heart-outline.png');
-            }
+        $.ajax({
+            type : "POST",
+            url : favUrl + "/favourite"
+        });
+    });
 
-            var favUrl = /*[[${venue.id}]]*/;
-
-            $.ajax({
-                type : "POST",
-                url : favUrl + "/favourite"
-            });
+    $("#applyReviewButton").click(function(){
+        var revUrl = /*[[${venue.id}]]*/;
+        var usrId = /*[[${#authentication.principal.userId}]]*/;
+        $.ajax({
+            type : "POST",
+            dataType : 'json',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                    },
+            url : revUrl + "/add_review",
+            data : JSON.stringify ({
+                        "rating": $("#review_rating").val(),
+                        "text" : $("#review_description").val(),
+                        "userId" : usrId
+                    })
+        });
     });
 })
 </script>
