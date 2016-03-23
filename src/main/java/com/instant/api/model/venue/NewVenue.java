@@ -37,7 +37,7 @@ public class NewVenue implements Serializable {
     @JsonProperty("category")
     private String category;
 
-    @ApiModelProperty(required = true, value = "")
+    @ApiModelProperty(required = false, value = "")
     @JsonProperty("company")
     private String company;
 
@@ -70,7 +70,7 @@ public class NewVenue implements Serializable {
     private String facebookPage;
 
 
-    @ApiModelProperty(required = true, value = "")
+    @ApiModelProperty(required = false, value = "")
     @JsonProperty("website")
     private String website;
 
@@ -84,7 +84,7 @@ public class NewVenue implements Serializable {
 
     @ApiModelProperty(value = "")
     @JsonProperty("description")
-    @Length(min = 3, max = 300, message = "Description should be at least 10 characters but less than 300")
+    @Length(min = 3, max = 600, message = "Description should be at least 10 characters but less than 600")
     @NotEmpty
     private String description;
 

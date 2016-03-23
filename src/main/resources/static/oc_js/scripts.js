@@ -13,3 +13,34 @@ $(function(){
     });
 
 });
+
+
+$(function(){
+    $('.btn.add-schedule').click(function(){
+        if($(".row.schedule_row.second").css('display') == 'none'){
+                $(".row.schedule_row.second").css('display', 'block');
+                return;
+            }
+
+            if($(".row.schedule_row.third").css('display') == 'none'){
+                $(".row.schedule_row.third").css('display', 'block');
+                $(".btn.add-schedule").addClass('disabled');
+                return;
+            }
+    })
+});
+
+$(function(){
+    $('.btn.add-menu-category').click(function(){
+        if($(".row.menu_category.second").css('display') == 'none'){
+                $(".row.menu_category.second").css('display', 'block');
+                return;
+            }
+
+            if($(".row.menu_category.third").css('display') == 'none'){
+                $(".row.menu_category.third").css('display', 'block');
+                $(".btn.add-menu-category").addClass('disabled');
+                return;
+            }
+    })
+});
