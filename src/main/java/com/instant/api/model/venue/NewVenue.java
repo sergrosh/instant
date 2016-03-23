@@ -68,6 +68,10 @@ public class NewVenue implements Serializable {
     @ApiModelProperty(required = true, value = "")
     @JsonProperty("facebookpage")
     private String facebookPage;
+
+
+    @ApiModelProperty(required = true, value = "")
+    @JsonProperty("website")
     private String website;
 
     @ApiModelProperty(required = true, value = "")
