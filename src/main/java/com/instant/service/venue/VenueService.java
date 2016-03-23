@@ -5,6 +5,7 @@ import com.instant.api.model.venue.Venue;
 import org.springframework.data.mongodb.core.query.Query;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * @author sroshchupkin
@@ -18,6 +19,8 @@ public interface VenueService {
     Venue saveVenue(NewVenue newVenue);
 
     Venue findVenueById(String id);
+
+    Set<Venue> findVenuesByIds(Set<String> ids);
 
     Venue updateVenue(Venue venue);
 

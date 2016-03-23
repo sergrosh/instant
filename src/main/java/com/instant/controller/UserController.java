@@ -11,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Set;
+
 /**
  * @author sroshchupkin
  */
@@ -33,6 +35,12 @@ public class UserController {
     public String getUser(Model model) {
         model.addAttribute("accounts_section", "accounts_dashboard");
         model.addAttribute("user", userAccountService.getCurrentUser());
+        Set<Venue> myVenues=venueService.findVenuesByIds(userAccountService.getCurrentUser().getMyVenues());
+        Set<Venue> favouriteVenues= venueService.findVenuesByIds(userAccountService.getCurrentUser().getFavouritesVenues());
+        Set<Venue> reviewedVenues= venueService.findVenuesByIds(userAccountService.getCurrentUser().getReviewed());
+        model.addAttribute("myVenues", myVenues);
+        model.addAttribute("favouriteVenues", favouriteVenues);
+        model.addAttribute("reviewedVenues", reviewedVenues);
         return TilesDefinition.USER;
     }
 

@@ -15,6 +15,7 @@ import java.util.List;
 @Service
 public class SearchServiceImpl implements SearchService {
 
+    @Override
     public Query getQuery(String query, String city, String category, double rating,
                           List<String> speciality, String sortingType, Pageable page) {
 

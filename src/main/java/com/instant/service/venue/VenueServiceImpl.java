@@ -25,7 +25,10 @@ import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
@@ -119,6 +122,28 @@ public class VenueServiceImpl implements VenueService {
         }
         return conversionService.convert(venueEntity, Venue.class);
     }
+
+    @Override
+    public Set<Venue> findVenuesByIds(Set<String> ids) {
+        Set<Venue> venues = new HashSet<>();
+        for(String id:ids){
+            VenueEntity venueEntity;
+            try {
+                venueEntity = venueRepository.findOne(id);
+            } catch (Exception e) {
+                log.error("Internal exception", e);
+                throw new InternalServerException();
+            }
+
+            if (venueEntity == null) {
+                log.error("Venue with id {} not found", id);
+                throw new NotFoundException();
+            }
+             venues.add(conversionService.convert(venueEntity, Venue.class));
+        }
+        return venues;
+    }
+
 
     @Override
     public Venue updateVenue(Venue venue) {
