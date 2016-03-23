@@ -383,7 +383,7 @@
                                         <div style="float: right;"></div>
                                         <div class="form-group">
                                             <label for="usr">Speciality 1</label>
-                                            <select required="required" class="form-control" id="venue_category" name="speciality">
+                                            <select required="required" class="form-control speciality-1" id="venue_category" name="speciality">
                                                 <option disabled="disabled" selected="selected"> -- select an option -- </option>
                                                 <option value="restaurant">Restorant</option>
                                                 <option value="club">Pub</option>
@@ -401,7 +401,7 @@
                                         <div style="float: right;"></div>
                                         <div class="form-group">
                                             <label for="usr">Speciality 2</label>
-                                            <select required="required" class="form-control" id="venue_category" name="speciality">
+                                            <select required="required" class="form-control speciality-2" id="venue_category" name="speciality">
                                                 <option disabled="disabled" selected="selected"> -- select an option -- </option>
                                                 <option value="restaurant">Restorant</option>
                                                 <option value="club">Pub</option>
@@ -418,7 +418,7 @@
                                         <div style="float: right;"></div>
                                         <div class="form-group">
                                             <label for="usr">Speciality 3</label>
-                                            <select required="required" class="form-control" id="venue_category" name="speciality">
+                                            <select required="required" class="form-control speciality-3" id="venue_category" name="speciality">
                                                 <option disabled="disabled" selected="selected"> -- select an option -- </option>
                                                 <option value="restaurant">Restorant</option>
                                                 <option value="club">Pub</option>
@@ -689,11 +689,11 @@
                                     </div>
                                     <div class="col-md-6">
                                         <!-- name field-->
-                                        <div style="float: right;">if applicable*</div>
-                                        <div class="form-group">
-                                            <label for="usr">State:</label>
-                                            <input type="text" class="form-control" id="usr"/>
-                                        </div>
+                                        <!--<div style="float: right;">if applicable*</div>-->
+                                        <!--<div class="form-group">-->
+                                            <!--<label for="usr">State:</label>-->
+                                            <!--<input type="text" class="form-control" id="usr"/>-->
+                                        <!--</div>-->
 
                                         <div style="float: right;"></div>
                                         <div class="form-group">
@@ -822,7 +822,6 @@
                     <div class="row instantborder" style="margin-left: 0px; margin-right: 0px;"></div>
                     <div class="row" style="margin-left: 20px; margin-right: 20px;">
                         <div class="row">
-
                             <style type="text/css">
 
                                 @media (max-width: 490px) {
@@ -883,7 +882,6 @@
 
 
                             </style>
-
                             <style type="text/css">
                                 .container {
                                 display: table !important;
@@ -909,7 +907,6 @@
                                 }
 
                             </style>
-
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                 <div class="row" style="    padding-top: 20px;">
                                     <div class="col-md-6">
@@ -917,7 +914,7 @@
                                         <div style="float: right;"></div>
                                         <div class="form-group">
                                             <label for="usr">Primary Landline Number:</label>
-                                            <input type="text" class="form-control" id="usr"/>
+                                            <input type="text" class="form-control" id="usr" name="phoneprimary"/>
                                         </div>
                                         <!-- field end-->
 
@@ -925,7 +922,7 @@
                                         <div style="float: right;"></div>
                                         <div class="form-group">
                                             <label for="usr">Primary Mobile Number:</label>
-                                            <input type="text" class="form-control" id="usr"/>
+                                            <input type="text" class="form-control" id="usr" name="mobileprimary"/>
                                             <p class="help-block">Optional association to the venue name.</p>
                                         </div>
                                         <!-- field end-->
@@ -934,7 +931,7 @@
                                         <div style="float: right;"></div>
                                         <div class="form-group">
                                             <label for="usr">WhatsApp Number:</label>
-                                            <input type="text" class="form-control" id="usr"/>
+                                            <input type="text" class="form-control" id="usr" name="whatsapp"/>
                                             <p class="help-block">Optional association to the venue name.</p>
                                         </div>
                                         <!-- field end-->
@@ -944,7 +941,7 @@
                                         <div style="float: right;"></div>
                                         <div class="form-group">
                                             <label for="usr">Secondary Landline Number:</label>
-                                            <input type="text" class="form-control" id="usr"/>
+                                            <input type="text" class="form-control" id="usr" name="phonesecondary"/>
                                             <p class="help-block">Optional association to the venue name.</p>
                                         </div>
                                         <!-- field end-->
@@ -953,7 +950,7 @@
                                         <div style="float: right;"></div>
                                         <div class="form-group">
                                             <label for="usr">Secondary Mobile Number:</label>
-                                            <input type="text" class="form-control" id="usr"/>
+                                            <input type="text" class="form-control" id="usr" name="mobilesecondary"/>
                                             <p class="help-block">Optional association to the venue name.</p>
                                         </div>
                                         <!-- field end-->
@@ -965,7 +962,7 @@
                                         <div style="float: right;"></div>
                                         <div class="form-group">
                                             <label for="usr">Email:</label>
-                                            <input type="text" class="form-control" id="usr"/>
+                                            <input type="text" class="form-control" id="usr" name="email"/>
                                             <p class="help-block">Optional association to the venue name.</p>
                                         </div>
                                         <!-- field end-->
@@ -974,7 +971,7 @@
                                         <div style="float: right;"></div>
                                         <div class="form-group">
                                             <label for="usr">Website:</label>
-                                            <input type="text" class="form-control" id="usr"/>
+                                            <input type="text" class="form-control" id="usr" name="website"/>
                                             <p class="help-block">Optional association to the venue name.</p>
                                         </div>
                                         <!-- field end-->
@@ -984,7 +981,7 @@
                                         <div style="float: right;"></div>
                                         <div class="form-group">
                                             <label for="usr">Facebook Page:</label>
-                                            <input type="text" class="form-control" id="usr"/>
+                                            <input type="text" class="form-control" id="usr" name="facebookpage"/>
                                             <p class="help-block">Optional association to the venue name.</p>
                                         </div>
                                         <!-- field end-->
@@ -1303,40 +1300,178 @@
 
                                     </div>
                                 </div>
+
+                                <!-- Days-->
+
+                                <!-- Monday-->
                                 <div class="row" style="padding-top: 20px;">
-                                    <div class="col-md-4">
+                                    <div class="col-md-2">
                                         <!-- name field-->
                                         <div style="float: right;"></div>
                                         <div class="form-group">
-                                            <label for="usr">Open Hours:</label>
+                                            <label for="usr">Day:</label>
                                             <p style="text-align:center;">Monday</p>
                                         </div>
                                         <!-- field end-->
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-2">
                                         <!-- name field-->
                                         <div style="float: right;"></div>
                                         <div class="form-group">
-                                            <label for="usr">Start time:</label>
-                                            <input type="text" class="form-control" id="usr"/>
+                                            <label for="usr">From:</label>
+                                            <select class="form-control" id="venue_category" name="open_time">
+                                                <option disabled="disabled" selected="selected"> -- hour -- </option>
+                                                <option value="4">07:00</option>
+                                                <option value="4">08:00</option>
+                                                <option value="4">09:00</option>
+                                                <option value="4">10:00</option>
+                                                <option value="4">11:00</option>
+                                                <option value="4">12:00</option>
+                                                <option value="4">13:00</option>
+                                                <option value="4">14:00</option>
+                                                <option value="4">15:00</option>
+                                                <option value="4">16:00</option>
+                                                <option value="4">17:00</option>
+                                                <option value="4">18:00</option>
+                                                <option value="4">19:00</option>
+                                                <option value="4">20:00</option>
+                                                <option value="4">21:00</option>
+                                                <option value="4">22:00</option>
+                                                <option value="4">23:00</option>
+                                                <option value="0">00:00</option>
+                                                <option value="1">01:00</option>
+                                                <option value="2">02:00</option>
+                                                <option value="3">03:00</option>
+                                                <option value="4">04:00</option>
+                                                <option value="4">05:00</option>
+                                                <option value="4">06:00</option>
+                                            </select>
                                         </div>
                                         <!-- field end-->
 
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-2">
                                         <!-- name field-->
                                         <div style="float: right;"></div>
                                         <div class="form-group">
-                                            <label for="usr">End time:</label>
-                                            <input type="text" class="form-control" id="usr"/>
+                                            <label for="usr">Until:</label>
+                                            <select class="form-control" id="venue_category" name="close_time">
+                                                <option disabled="disabled" selected="selected"> -- hour -- </option>
+                                                <option value="4">07:00</option>
+                                                <option value="4">08:00</option>
+                                                <option value="4">09:00</option>
+                                                <option value="4">10:00</option>
+                                                <option value="4">11:00</option>
+                                                <option value="4">12:00</option>
+                                                <option value="4">13:00</option>
+                                                <option value="4">14:00</option>
+                                                <option value="4">15:00</option>
+                                                <option value="4">16:00</option>
+                                                <option value="4">17:00</option>
+                                                <option value="4">18:00</option>
+                                                <option value="4">19:00</option>
+                                                <option value="4">20:00</option>
+                                                <option value="4">21:00</option>
+                                                <option value="4">22:00</option>
+                                                <option value="4">23:00</option>
+                                                <option value="0">00:00</option>
+                                                <option value="1">01:00</option>
+                                                <option value="2">02:00</option>
+                                                <option value="3">03:00</option>
+                                                <option value="4">04:00</option>
+                                                <option value="4">05:00</option>
+                                                <option value="4">06:00</option>
+                                            </select>
+                                        </div>
+                                        <!-- field end-->
+
+                                    </div>
+                                    <div class="col-md-2">
+                                        <!-- name field-->
+                                        <div style="float: right;"></div>
+                                        <div class="form-group">
+                                            <label for="usr"></label>
+                                            <p style="text-align:center;">Also</p>
+                                        </div>
+                                        <!-- field end-->
+                                    </div>
+                                    <div class="col-md-2">
+                                        <!-- name field-->
+                                        <div style="float: right;"></div>
+                                        <div class="form-group">
+                                            <label for="usr">From:</label>
+                                            <select class="form-control" id="venue_category" name="open_time">
+                                                <option disabled="disabled" selected="selected"> -- hour -- </option>
+                                                <option value="4">07:00</option>
+                                                <option value="4">08:00</option>
+                                                <option value="4">09:00</option>
+                                                <option value="4">10:00</option>
+                                                <option value="4">11:00</option>
+                                                <option value="4">12:00</option>
+                                                <option value="4">13:00</option>
+                                                <option value="4">14:00</option>
+                                                <option value="4">15:00</option>
+                                                <option value="4">16:00</option>
+                                                <option value="4">17:00</option>
+                                                <option value="4">18:00</option>
+                                                <option value="4">19:00</option>
+                                                <option value="4">20:00</option>
+                                                <option value="4">21:00</option>
+                                                <option value="4">22:00</option>
+                                                <option value="4">23:00</option>
+                                                <option value="0">00:00</option>
+                                                <option value="1">01:00</option>
+                                                <option value="2">02:00</option>
+                                                <option value="3">03:00</option>
+                                                <option value="4">04:00</option>
+                                                <option value="4">05:00</option>
+                                                <option value="4">06:00</option>
+                                            </select>
+                                        </div>
+                                        <!-- field end-->
+
+                                    </div>
+                                    <div class="col-md-2">
+                                        <!-- name field-->
+                                        <div style="float: right;"></div>
+                                        <div class="form-group">
+                                            <label for="usr">Until:</label>
+                                            <select class="form-control" id="venue_category" name="close_time">
+                                                <option disabled="disabled" selected="selected"> -- hour -- </option>
+                                                <option value="4">07:00</option>
+                                                <option value="4">08:00</option>
+                                                <option value="4">09:00</option>
+                                                <option value="4">10:00</option>
+                                                <option value="4">11:00</option>
+                                                <option value="4">12:00</option>
+                                                <option value="4">13:00</option>
+                                                <option value="4">14:00</option>
+                                                <option value="4">15:00</option>
+                                                <option value="4">16:00</option>
+                                                <option value="4">17:00</option>
+                                                <option value="4">18:00</option>
+                                                <option value="4">19:00</option>
+                                                <option value="4">20:00</option>
+                                                <option value="4">21:00</option>
+                                                <option value="4">22:00</option>
+                                                <option value="4">23:00</option>
+                                                <option value="0">00:00</option>
+                                                <option value="1">01:00</option>
+                                                <option value="2">02:00</option>
+                                                <option value="3">03:00</option>
+                                                <option value="4">04:00</option>
+                                                <option value="4">05:00</option>
+                                                <option value="4">06:00</option>
+                                            </select>
                                         </div>
                                         <!-- field end-->
 
                                     </div>
                                 </div>
 
-                                <div class="row">
-                                    <div class="col-md-4">
+                                <!-- Tuesday-->
+                                <div class="row" style="padding-top: 20px;">
+                                    <div class="col-md-2">
                                         <!-- name field-->
                                         <div style="float: right;"></div>
                                         <div class="form-group">
@@ -1345,30 +1480,164 @@
                                         </div>
                                         <!-- field end-->
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-2">
                                         <!-- name field-->
                                         <div style="float: right;"></div>
                                         <div class="form-group">
-                                            <label for="usr">Start time:</label>
-                                            <input type="text" class="form-control" id="usr"/>
+                                            <label for="usr">From:</label>
+                                            <select class="form-control" id="venue_category" name="open_time">
+                                                <option disabled="disabled" selected="selected"> -- hour -- </option>
+                                                <option value="4">07:00</option>
+                                                <option value="4">08:00</option>
+                                                <option value="4">09:00</option>
+                                                <option value="4">10:00</option>
+                                                <option value="4">11:00</option>
+                                                <option value="4">12:00</option>
+                                                <option value="4">13:00</option>
+                                                <option value="4">14:00</option>
+                                                <option value="4">15:00</option>
+                                                <option value="4">16:00</option>
+                                                <option value="4">17:00</option>
+                                                <option value="4">18:00</option>
+                                                <option value="4">19:00</option>
+                                                <option value="4">20:00</option>
+                                                <option value="4">21:00</option>
+                                                <option value="4">22:00</option>
+                                                <option value="4">23:00</option>
+                                                <option value="0">00:00</option>
+                                                <option value="1">01:00</option>
+                                                <option value="2">02:00</option>
+                                                <option value="3">03:00</option>
+                                                <option value="4">04:00</option>
+                                                <option value="4">05:00</option>
+                                                <option value="4">06:00</option>
+                                            </select>
                                         </div>
                                         <!-- field end-->
 
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-2">
                                         <!-- name field-->
                                         <div style="float: right;"></div>
                                         <div class="form-group">
-                                            <label for="usr">End time:</label>
-                                            <input type="text" class="form-control" id="usr"/>
+                                            <label for="usr">Until:</label>
+                                            <select class="form-control" id="venue_category" name="close_time">
+                                                <option disabled="disabled" selected="selected"> -- hour -- </option>
+                                                <option value="4">07:00</option>
+                                                <option value="4">08:00</option>
+                                                <option value="4">09:00</option>
+                                                <option value="4">10:00</option>
+                                                <option value="4">11:00</option>
+                                                <option value="4">12:00</option>
+                                                <option value="4">13:00</option>
+                                                <option value="4">14:00</option>
+                                                <option value="4">15:00</option>
+                                                <option value="4">16:00</option>
+                                                <option value="4">17:00</option>
+                                                <option value="4">18:00</option>
+                                                <option value="4">19:00</option>
+                                                <option value="4">20:00</option>
+                                                <option value="4">21:00</option>
+                                                <option value="4">22:00</option>
+                                                <option value="4">23:00</option>
+                                                <option value="0">00:00</option>
+                                                <option value="1">01:00</option>
+                                                <option value="2">02:00</option>
+                                                <option value="3">03:00</option>
+                                                <option value="4">04:00</option>
+                                                <option value="4">05:00</option>
+                                                <option value="4">06:00</option>
+                                            </select>
+                                        </div>
+                                        <!-- field end-->
+
+                                    </div>
+                                    <div class="col-md-2">
+                                        <!-- name field-->
+                                        <div style="float: right;"></div>
+                                        <div class="form-group">
+                                            <label for="usr"></label>
+                                            <p style="text-align:center;">Also</p>
+                                        </div>
+                                        <!-- field end-->
+                                    </div>
+                                    <div class="col-md-2">
+                                        <!-- name field-->
+                                        <div style="float: right;"></div>
+                                        <div class="form-group">
+                                            <label for="usr">From:</label>
+                                            <select class="form-control" id="venue_category" name="open_time">
+                                                <option disabled="disabled" selected="selected"> -- hour -- </option>
+                                                <option value="4">07:00</option>
+                                                <option value="4">08:00</option>
+                                                <option value="4">09:00</option>
+                                                <option value="4">10:00</option>
+                                                <option value="4">11:00</option>
+                                                <option value="4">12:00</option>
+                                                <option value="4">13:00</option>
+                                                <option value="4">14:00</option>
+                                                <option value="4">15:00</option>
+                                                <option value="4">16:00</option>
+                                                <option value="4">17:00</option>
+                                                <option value="4">18:00</option>
+                                                <option value="4">19:00</option>
+                                                <option value="4">20:00</option>
+                                                <option value="4">21:00</option>
+                                                <option value="4">22:00</option>
+                                                <option value="4">23:00</option>
+                                                <option value="0">00:00</option>
+                                                <option value="1">01:00</option>
+                                                <option value="2">02:00</option>
+                                                <option value="3">03:00</option>
+                                                <option value="4">04:00</option>
+                                                <option value="4">05:00</option>
+                                                <option value="4">06:00</option>
+                                            </select>
+                                        </div>
+                                        <!-- field end-->
+
+                                    </div>
+                                    <div class="col-md-2">
+                                        <!-- name field-->
+                                        <div style="float: right;"></div>
+                                        <div class="form-group">
+                                            <label for="usr">Until:</label>
+                                            <select class="form-control" id="venue_category" name="close_time">
+                                                <option disabled="disabled" selected="selected"> -- hour -- </option>
+                                                <option value="4">07:00</option>
+                                                <option value="4">08:00</option>
+                                                <option value="4">09:00</option>
+                                                <option value="4">10:00</option>
+                                                <option value="4">11:00</option>
+                                                <option value="4">12:00</option>
+                                                <option value="4">13:00</option>
+                                                <option value="4">14:00</option>
+                                                <option value="4">15:00</option>
+                                                <option value="4">16:00</option>
+                                                <option value="4">17:00</option>
+                                                <option value="4">18:00</option>
+                                                <option value="4">19:00</option>
+                                                <option value="4">20:00</option>
+                                                <option value="4">21:00</option>
+                                                <option value="4">22:00</option>
+                                                <option value="4">23:00</option>
+                                                <option value="0">00:00</option>
+                                                <option value="1">01:00</option>
+                                                <option value="2">02:00</option>
+                                                <option value="3">03:00</option>
+                                                <option value="4">04:00</option>
+                                                <option value="4">05:00</option>
+                                                <option value="4">06:00</option>
+                                            </select>
                                         </div>
                                         <!-- field end-->
 
                                     </div>
                                 </div>
 
-                                <div class="row">
-                                    <div class="col-md-4">
+                                <!-- Wednesday-->
+                                <div class="row" style="padding-top: 20px;">
+                                    <div class="col-md-2">
                                         <!-- name field-->
                                         <div style="float: right;"></div>
                                         <div class="form-group">
@@ -1377,30 +1646,164 @@
                                         </div>
                                         <!-- field end-->
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-2">
                                         <!-- name field-->
                                         <div style="float: right;"></div>
                                         <div class="form-group">
-                                            <label for="usr">Start time:</label>
-                                            <input type="text" class="form-control" id="usr"/>
+                                            <label for="usr">From:</label>
+                                            <select class="form-control" id="venue_category" name="open_time">
+                                                <option disabled="disabled" selected="selected"> -- hour -- </option>
+                                                <option value="4">07:00</option>
+                                                <option value="4">08:00</option>
+                                                <option value="4">09:00</option>
+                                                <option value="4">10:00</option>
+                                                <option value="4">11:00</option>
+                                                <option value="4">12:00</option>
+                                                <option value="4">13:00</option>
+                                                <option value="4">14:00</option>
+                                                <option value="4">15:00</option>
+                                                <option value="4">16:00</option>
+                                                <option value="4">17:00</option>
+                                                <option value="4">18:00</option>
+                                                <option value="4">19:00</option>
+                                                <option value="4">20:00</option>
+                                                <option value="4">21:00</option>
+                                                <option value="4">22:00</option>
+                                                <option value="4">23:00</option>
+                                                <option value="0">00:00</option>
+                                                <option value="1">01:00</option>
+                                                <option value="2">02:00</option>
+                                                <option value="3">03:00</option>
+                                                <option value="4">04:00</option>
+                                                <option value="4">05:00</option>
+                                                <option value="4">06:00</option>
+                                            </select>
                                         </div>
                                         <!-- field end-->
 
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-2">
                                         <!-- name field-->
                                         <div style="float: right;"></div>
                                         <div class="form-group">
-                                            <label for="usr">End time:</label>
-                                            <input type="text" class="form-control" id="usr"/>
+                                            <label for="usr">Until:</label>
+                                            <select class="form-control" id="venue_category" name="close_time">
+                                                <option disabled="disabled" selected="selected"> -- hour -- </option>
+                                                <option value="4">07:00</option>
+                                                <option value="4">08:00</option>
+                                                <option value="4">09:00</option>
+                                                <option value="4">10:00</option>
+                                                <option value="4">11:00</option>
+                                                <option value="4">12:00</option>
+                                                <option value="4">13:00</option>
+                                                <option value="4">14:00</option>
+                                                <option value="4">15:00</option>
+                                                <option value="4">16:00</option>
+                                                <option value="4">17:00</option>
+                                                <option value="4">18:00</option>
+                                                <option value="4">19:00</option>
+                                                <option value="4">20:00</option>
+                                                <option value="4">21:00</option>
+                                                <option value="4">22:00</option>
+                                                <option value="4">23:00</option>
+                                                <option value="0">00:00</option>
+                                                <option value="1">01:00</option>
+                                                <option value="2">02:00</option>
+                                                <option value="3">03:00</option>
+                                                <option value="4">04:00</option>
+                                                <option value="4">05:00</option>
+                                                <option value="4">06:00</option>
+                                            </select>
+                                        </div>
+                                        <!-- field end-->
+
+                                    </div>
+                                    <div class="col-md-2">
+                                        <!-- name field-->
+                                        <div style="float: right;"></div>
+                                        <div class="form-group">
+                                            <label for="usr"></label>
+                                            <p style="text-align:center;">Also</p>
+                                        </div>
+                                        <!-- field end-->
+                                    </div>
+                                    <div class="col-md-2">
+                                        <!-- name field-->
+                                        <div style="float: right;"></div>
+                                        <div class="form-group">
+                                            <label for="usr">From:</label>
+                                            <select class="form-control" id="venue_category" name="open_time">
+                                                <option disabled="disabled" selected="selected"> -- hour -- </option>
+                                                <option value="4">07:00</option>
+                                                <option value="4">08:00</option>
+                                                <option value="4">09:00</option>
+                                                <option value="4">10:00</option>
+                                                <option value="4">11:00</option>
+                                                <option value="4">12:00</option>
+                                                <option value="4">13:00</option>
+                                                <option value="4">14:00</option>
+                                                <option value="4">15:00</option>
+                                                <option value="4">16:00</option>
+                                                <option value="4">17:00</option>
+                                                <option value="4">18:00</option>
+                                                <option value="4">19:00</option>
+                                                <option value="4">20:00</option>
+                                                <option value="4">21:00</option>
+                                                <option value="4">22:00</option>
+                                                <option value="4">23:00</option>
+                                                <option value="0">00:00</option>
+                                                <option value="1">01:00</option>
+                                                <option value="2">02:00</option>
+                                                <option value="3">03:00</option>
+                                                <option value="4">04:00</option>
+                                                <option value="4">05:00</option>
+                                                <option value="4">06:00</option>
+                                            </select>
+                                        </div>
+                                        <!-- field end-->
+
+                                    </div>
+                                    <div class="col-md-2">
+                                        <!-- name field-->
+                                        <div style="float: right;"></div>
+                                        <div class="form-group">
+                                            <label for="usr">Until:</label>
+                                            <select class="form-control" id="venue_category" name="close_time">
+                                                <option disabled="disabled" selected="selected"> -- hour -- </option>
+                                                <option value="4">07:00</option>
+                                                <option value="4">08:00</option>
+                                                <option value="4">09:00</option>
+                                                <option value="4">10:00</option>
+                                                <option value="4">11:00</option>
+                                                <option value="4">12:00</option>
+                                                <option value="4">13:00</option>
+                                                <option value="4">14:00</option>
+                                                <option value="4">15:00</option>
+                                                <option value="4">16:00</option>
+                                                <option value="4">17:00</option>
+                                                <option value="4">18:00</option>
+                                                <option value="4">19:00</option>
+                                                <option value="4">20:00</option>
+                                                <option value="4">21:00</option>
+                                                <option value="4">22:00</option>
+                                                <option value="4">23:00</option>
+                                                <option value="0">00:00</option>
+                                                <option value="1">01:00</option>
+                                                <option value="2">02:00</option>
+                                                <option value="3">03:00</option>
+                                                <option value="4">04:00</option>
+                                                <option value="4">05:00</option>
+                                                <option value="4">06:00</option>
+                                            </select>
                                         </div>
                                         <!-- field end-->
 
                                     </div>
                                 </div>
 
-                                <div class="row">
-                                    <div class="col-md-4">
+                                <!-- Thursday-->
+                                <div class="row" style="padding-top: 20px;">
+                                    <div class="col-md-2">
                                         <!-- name field-->
                                         <div style="float: right;"></div>
                                         <div class="form-group">
@@ -1409,30 +1812,164 @@
                                         </div>
                                         <!-- field end-->
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-2">
                                         <!-- name field-->
                                         <div style="float: right;"></div>
                                         <div class="form-group">
-                                            <label for="usr">Start time:</label>
-                                            <input type="text" class="form-control" id="usr"/>
+                                            <label for="usr">From:</label>
+                                            <select class="form-control" id="venue_category" name="open_time">
+                                                <option disabled="disabled" selected="selected"> -- hour -- </option>
+                                                <option value="4">07:00</option>
+                                                <option value="4">08:00</option>
+                                                <option value="4">09:00</option>
+                                                <option value="4">10:00</option>
+                                                <option value="4">11:00</option>
+                                                <option value="4">12:00</option>
+                                                <option value="4">13:00</option>
+                                                <option value="4">14:00</option>
+                                                <option value="4">15:00</option>
+                                                <option value="4">16:00</option>
+                                                <option value="4">17:00</option>
+                                                <option value="4">18:00</option>
+                                                <option value="4">19:00</option>
+                                                <option value="4">20:00</option>
+                                                <option value="4">21:00</option>
+                                                <option value="4">22:00</option>
+                                                <option value="4">23:00</option>
+                                                <option value="0">00:00</option>
+                                                <option value="1">01:00</option>
+                                                <option value="2">02:00</option>
+                                                <option value="3">03:00</option>
+                                                <option value="4">04:00</option>
+                                                <option value="4">05:00</option>
+                                                <option value="4">06:00</option>
+                                            </select>
                                         </div>
                                         <!-- field end-->
 
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-2">
                                         <!-- name field-->
                                         <div style="float: right;"></div>
                                         <div class="form-group">
-                                            <label for="usr">End time:</label>
-                                            <input type="text" class="form-control" id="usr"/>
+                                            <label for="usr">Until:</label>
+                                            <select class="form-control" id="venue_category" name="close_time">
+                                                <option disabled="disabled" selected="selected"> -- hour -- </option>
+                                                <option value="4">07:00</option>
+                                                <option value="4">08:00</option>
+                                                <option value="4">09:00</option>
+                                                <option value="4">10:00</option>
+                                                <option value="4">11:00</option>
+                                                <option value="4">12:00</option>
+                                                <option value="4">13:00</option>
+                                                <option value="4">14:00</option>
+                                                <option value="4">15:00</option>
+                                                <option value="4">16:00</option>
+                                                <option value="4">17:00</option>
+                                                <option value="4">18:00</option>
+                                                <option value="4">19:00</option>
+                                                <option value="4">20:00</option>
+                                                <option value="4">21:00</option>
+                                                <option value="4">22:00</option>
+                                                <option value="4">23:00</option>
+                                                <option value="0">00:00</option>
+                                                <option value="1">01:00</option>
+                                                <option value="2">02:00</option>
+                                                <option value="3">03:00</option>
+                                                <option value="4">04:00</option>
+                                                <option value="4">05:00</option>
+                                                <option value="4">06:00</option>
+                                            </select>
+                                        </div>
+                                        <!-- field end-->
+
+                                    </div>
+                                    <div class="col-md-2">
+                                        <!-- name field-->
+                                        <div style="float: right;"></div>
+                                        <div class="form-group">
+                                            <label for="usr"></label>
+                                            <p style="text-align:center;">Also</p>
+                                        </div>
+                                        <!-- field end-->
+                                    </div>
+                                    <div class="col-md-2">
+                                        <!-- name field-->
+                                        <div style="float: right;"></div>
+                                        <div class="form-group">
+                                            <label for="usr">From:</label>
+                                            <select class="form-control" id="venue_category" name="open_time">
+                                                <option disabled="disabled" selected="selected"> -- hour -- </option>
+                                                <option value="4">07:00</option>
+                                                <option value="4">08:00</option>
+                                                <option value="4">09:00</option>
+                                                <option value="4">10:00</option>
+                                                <option value="4">11:00</option>
+                                                <option value="4">12:00</option>
+                                                <option value="4">13:00</option>
+                                                <option value="4">14:00</option>
+                                                <option value="4">15:00</option>
+                                                <option value="4">16:00</option>
+                                                <option value="4">17:00</option>
+                                                <option value="4">18:00</option>
+                                                <option value="4">19:00</option>
+                                                <option value="4">20:00</option>
+                                                <option value="4">21:00</option>
+                                                <option value="4">22:00</option>
+                                                <option value="4">23:00</option>
+                                                <option value="0">00:00</option>
+                                                <option value="1">01:00</option>
+                                                <option value="2">02:00</option>
+                                                <option value="3">03:00</option>
+                                                <option value="4">04:00</option>
+                                                <option value="4">05:00</option>
+                                                <option value="4">06:00</option>
+                                            </select>
+                                        </div>
+                                        <!-- field end-->
+
+                                    </div>
+                                    <div class="col-md-2">
+                                        <!-- name field-->
+                                        <div style="float: right;"></div>
+                                        <div class="form-group">
+                                            <label for="usr">Until:</label>
+                                            <select class="form-control" id="venue_category" name="close_time">
+                                                <option disabled="disabled" selected="selected"> -- hour -- </option>
+                                                <option value="4">07:00</option>
+                                                <option value="4">08:00</option>
+                                                <option value="4">09:00</option>
+                                                <option value="4">10:00</option>
+                                                <option value="4">11:00</option>
+                                                <option value="4">12:00</option>
+                                                <option value="4">13:00</option>
+                                                <option value="4">14:00</option>
+                                                <option value="4">15:00</option>
+                                                <option value="4">16:00</option>
+                                                <option value="4">17:00</option>
+                                                <option value="4">18:00</option>
+                                                <option value="4">19:00</option>
+                                                <option value="4">20:00</option>
+                                                <option value="4">21:00</option>
+                                                <option value="4">22:00</option>
+                                                <option value="4">23:00</option>
+                                                <option value="0">00:00</option>
+                                                <option value="1">01:00</option>
+                                                <option value="2">02:00</option>
+                                                <option value="3">03:00</option>
+                                                <option value="4">04:00</option>
+                                                <option value="4">05:00</option>
+                                                <option value="4">06:00</option>
+                                            </select>
                                         </div>
                                         <!-- field end-->
 
                                     </div>
                                 </div>
 
-                                <div class="row">
-                                    <div class="col-md-4">
+                                <!-- Friday-->
+                                <div class="row" style="padding-top: 20px;">
+                                    <div class="col-md-2">
                                         <!-- name field-->
                                         <div style="float: right;"></div>
                                         <div class="form-group">
@@ -1441,30 +1978,164 @@
                                         </div>
                                         <!-- field end-->
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-2">
                                         <!-- name field-->
                                         <div style="float: right;"></div>
                                         <div class="form-group">
-                                            <label for="usr">Start time:</label>
-                                            <input type="text" class="form-control" id="usr"/>
+                                            <label for="usr">From:</label>
+                                            <select class="form-control" id="venue_category" name="open_time">
+                                                <option disabled="disabled" selected="selected"> -- hour -- </option>
+                                                <option value="4">07:00</option>
+                                                <option value="4">08:00</option>
+                                                <option value="4">09:00</option>
+                                                <option value="4">10:00</option>
+                                                <option value="4">11:00</option>
+                                                <option value="4">12:00</option>
+                                                <option value="4">13:00</option>
+                                                <option value="4">14:00</option>
+                                                <option value="4">15:00</option>
+                                                <option value="4">16:00</option>
+                                                <option value="4">17:00</option>
+                                                <option value="4">18:00</option>
+                                                <option value="4">19:00</option>
+                                                <option value="4">20:00</option>
+                                                <option value="4">21:00</option>
+                                                <option value="4">22:00</option>
+                                                <option value="4">23:00</option>
+                                                <option value="0">00:00</option>
+                                                <option value="1">01:00</option>
+                                                <option value="2">02:00</option>
+                                                <option value="3">03:00</option>
+                                                <option value="4">04:00</option>
+                                                <option value="4">05:00</option>
+                                                <option value="4">06:00</option>
+                                            </select>
                                         </div>
                                         <!-- field end-->
 
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-2">
                                         <!-- name field-->
                                         <div style="float: right;"></div>
                                         <div class="form-group">
-                                            <label for="usr">End time:</label>
-                                            <input type="text" class="form-control" id="usr"/>
+                                            <label for="usr">Until:</label>
+                                            <select class="form-control" id="venue_category" name="close_time">
+                                                <option disabled="disabled" selected="selected"> -- hour -- </option>
+                                                <option value="4">07:00</option>
+                                                <option value="4">08:00</option>
+                                                <option value="4">09:00</option>
+                                                <option value="4">10:00</option>
+                                                <option value="4">11:00</option>
+                                                <option value="4">12:00</option>
+                                                <option value="4">13:00</option>
+                                                <option value="4">14:00</option>
+                                                <option value="4">15:00</option>
+                                                <option value="4">16:00</option>
+                                                <option value="4">17:00</option>
+                                                <option value="4">18:00</option>
+                                                <option value="4">19:00</option>
+                                                <option value="4">20:00</option>
+                                                <option value="4">21:00</option>
+                                                <option value="4">22:00</option>
+                                                <option value="4">23:00</option>
+                                                <option value="0">00:00</option>
+                                                <option value="1">01:00</option>
+                                                <option value="2">02:00</option>
+                                                <option value="3">03:00</option>
+                                                <option value="4">04:00</option>
+                                                <option value="4">05:00</option>
+                                                <option value="4">06:00</option>
+                                            </select>
+                                        </div>
+                                        <!-- field end-->
+
+                                    </div>
+                                    <div class="col-md-2">
+                                        <!-- name field-->
+                                        <div style="float: right;"></div>
+                                        <div class="form-group">
+                                            <label for="usr"></label>
+                                            <p style="text-align:center;">Also</p>
+                                        </div>
+                                        <!-- field end-->
+                                    </div>
+                                    <div class="col-md-2">
+                                        <!-- name field-->
+                                        <div style="float: right;"></div>
+                                        <div class="form-group">
+                                            <label for="usr">From:</label>
+                                            <select class="form-control" id="venue_category" name="open_time">
+                                                <option disabled="disabled" selected="selected"> -- hour -- </option>
+                                                <option value="4">07:00</option>
+                                                <option value="4">08:00</option>
+                                                <option value="4">09:00</option>
+                                                <option value="4">10:00</option>
+                                                <option value="4">11:00</option>
+                                                <option value="4">12:00</option>
+                                                <option value="4">13:00</option>
+                                                <option value="4">14:00</option>
+                                                <option value="4">15:00</option>
+                                                <option value="4">16:00</option>
+                                                <option value="4">17:00</option>
+                                                <option value="4">18:00</option>
+                                                <option value="4">19:00</option>
+                                                <option value="4">20:00</option>
+                                                <option value="4">21:00</option>
+                                                <option value="4">22:00</option>
+                                                <option value="4">23:00</option>
+                                                <option value="0">00:00</option>
+                                                <option value="1">01:00</option>
+                                                <option value="2">02:00</option>
+                                                <option value="3">03:00</option>
+                                                <option value="4">04:00</option>
+                                                <option value="4">05:00</option>
+                                                <option value="4">06:00</option>
+                                            </select>
+                                        </div>
+                                        <!-- field end-->
+
+                                    </div>
+                                    <div class="col-md-2">
+                                        <!-- name field-->
+                                        <div style="float: right;"></div>
+                                        <div class="form-group">
+                                            <label for="usr">Until:</label>
+                                            <select class="form-control" id="venue_category" name="close_time">
+                                                <option disabled="disabled" selected="selected"> -- hour -- </option>
+                                                <option value="4">07:00</option>
+                                                <option value="4">08:00</option>
+                                                <option value="4">09:00</option>
+                                                <option value="4">10:00</option>
+                                                <option value="4">11:00</option>
+                                                <option value="4">12:00</option>
+                                                <option value="4">13:00</option>
+                                                <option value="4">14:00</option>
+                                                <option value="4">15:00</option>
+                                                <option value="4">16:00</option>
+                                                <option value="4">17:00</option>
+                                                <option value="4">18:00</option>
+                                                <option value="4">19:00</option>
+                                                <option value="4">20:00</option>
+                                                <option value="4">21:00</option>
+                                                <option value="4">22:00</option>
+                                                <option value="4">23:00</option>
+                                                <option value="0">00:00</option>
+                                                <option value="1">01:00</option>
+                                                <option value="2">02:00</option>
+                                                <option value="3">03:00</option>
+                                                <option value="4">04:00</option>
+                                                <option value="4">05:00</option>
+                                                <option value="4">06:00</option>
+                                            </select>
                                         </div>
                                         <!-- field end-->
 
                                     </div>
                                 </div>
 
-                                <div class="row">
-                                    <div class="col-md-4">
+                                <!-- Saturday -->
+                                <div class="row" style="padding-top: 20px;">
+                                    <div class="col-md-2">
                                         <!-- name field-->
                                         <div style="float: right;"></div>
                                         <div class="form-group">
@@ -1473,30 +2144,164 @@
                                         </div>
                                         <!-- field end-->
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-2">
                                         <!-- name field-->
                                         <div style="float: right;"></div>
                                         <div class="form-group">
-                                            <label for="usr">Start time:</label>
-                                            <input type="text" class="form-control" id="usr"/>
+                                            <label for="usr">From:</label>
+                                            <select class="form-control" id="venue_category" name="open_time">
+                                                <option disabled="disabled" selected="selected"> -- hour -- </option>
+                                                <option value="4">07:00</option>
+                                                <option value="4">08:00</option>
+                                                <option value="4">09:00</option>
+                                                <option value="4">10:00</option>
+                                                <option value="4">11:00</option>
+                                                <option value="4">12:00</option>
+                                                <option value="4">13:00</option>
+                                                <option value="4">14:00</option>
+                                                <option value="4">15:00</option>
+                                                <option value="4">16:00</option>
+                                                <option value="4">17:00</option>
+                                                <option value="4">18:00</option>
+                                                <option value="4">19:00</option>
+                                                <option value="4">20:00</option>
+                                                <option value="4">21:00</option>
+                                                <option value="4">22:00</option>
+                                                <option value="4">23:00</option>
+                                                <option value="0">00:00</option>
+                                                <option value="1">01:00</option>
+                                                <option value="2">02:00</option>
+                                                <option value="3">03:00</option>
+                                                <option value="4">04:00</option>
+                                                <option value="4">05:00</option>
+                                                <option value="4">06:00</option>
+                                            </select>
                                         </div>
                                         <!-- field end-->
 
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-2">
                                         <!-- name field-->
                                         <div style="float: right;"></div>
                                         <div class="form-group">
-                                            <label for="usr">End time:</label>
-                                            <input type="text" class="form-control" id="usr"/>
+                                            <label for="usr">Until:</label>
+                                            <select class="form-control" id="venue_category" name="close_time">
+                                                <option disabled="disabled" selected="selected"> -- hour -- </option>
+                                                <option value="4">07:00</option>
+                                                <option value="4">08:00</option>
+                                                <option value="4">09:00</option>
+                                                <option value="4">10:00</option>
+                                                <option value="4">11:00</option>
+                                                <option value="4">12:00</option>
+                                                <option value="4">13:00</option>
+                                                <option value="4">14:00</option>
+                                                <option value="4">15:00</option>
+                                                <option value="4">16:00</option>
+                                                <option value="4">17:00</option>
+                                                <option value="4">18:00</option>
+                                                <option value="4">19:00</option>
+                                                <option value="4">20:00</option>
+                                                <option value="4">21:00</option>
+                                                <option value="4">22:00</option>
+                                                <option value="4">23:00</option>
+                                                <option value="0">00:00</option>
+                                                <option value="1">01:00</option>
+                                                <option value="2">02:00</option>
+                                                <option value="3">03:00</option>
+                                                <option value="4">04:00</option>
+                                                <option value="4">05:00</option>
+                                                <option value="4">06:00</option>
+                                            </select>
+                                        </div>
+                                        <!-- field end-->
+
+                                    </div>
+                                    <div class="col-md-2">
+                                        <!-- name field-->
+                                        <div style="float: right;"></div>
+                                        <div class="form-group">
+                                            <label for="usr"></label>
+                                            <p style="text-align:center;">Also</p>
+                                        </div>
+                                        <!-- field end-->
+                                    </div>
+                                    <div class="col-md-2">
+                                        <!-- name field-->
+                                        <div style="float: right;"></div>
+                                        <div class="form-group">
+                                            <label for="usr">From:</label>
+                                            <select class="form-control" id="venue_category" name="open_time">
+                                                <option disabled="disabled" selected="selected"> -- hour -- </option>
+                                                <option value="4">07:00</option>
+                                                <option value="4">08:00</option>
+                                                <option value="4">09:00</option>
+                                                <option value="4">10:00</option>
+                                                <option value="4">11:00</option>
+                                                <option value="4">12:00</option>
+                                                <option value="4">13:00</option>
+                                                <option value="4">14:00</option>
+                                                <option value="4">15:00</option>
+                                                <option value="4">16:00</option>
+                                                <option value="4">17:00</option>
+                                                <option value="4">18:00</option>
+                                                <option value="4">19:00</option>
+                                                <option value="4">20:00</option>
+                                                <option value="4">21:00</option>
+                                                <option value="4">22:00</option>
+                                                <option value="4">23:00</option>
+                                                <option value="0">00:00</option>
+                                                <option value="1">01:00</option>
+                                                <option value="2">02:00</option>
+                                                <option value="3">03:00</option>
+                                                <option value="4">04:00</option>
+                                                <option value="4">05:00</option>
+                                                <option value="4">06:00</option>
+                                            </select>
+                                        </div>
+                                        <!-- field end-->
+
+                                    </div>
+                                    <div class="col-md-2">
+                                        <!-- name field-->
+                                        <div style="float: right;"></div>
+                                        <div class="form-group">
+                                            <label for="usr">Until:</label>
+                                            <select class="form-control" id="venue_category" name="close_time">
+                                                <option disabled="disabled" selected="selected"> -- hour -- </option>
+                                                <option value="4">07:00</option>
+                                                <option value="4">08:00</option>
+                                                <option value="4">09:00</option>
+                                                <option value="4">10:00</option>
+                                                <option value="4">11:00</option>
+                                                <option value="4">12:00</option>
+                                                <option value="4">13:00</option>
+                                                <option value="4">14:00</option>
+                                                <option value="4">15:00</option>
+                                                <option value="4">16:00</option>
+                                                <option value="4">17:00</option>
+                                                <option value="4">18:00</option>
+                                                <option value="4">19:00</option>
+                                                <option value="4">20:00</option>
+                                                <option value="4">21:00</option>
+                                                <option value="4">22:00</option>
+                                                <option value="4">23:00</option>
+                                                <option value="0">00:00</option>
+                                                <option value="1">01:00</option>
+                                                <option value="2">02:00</option>
+                                                <option value="3">03:00</option>
+                                                <option value="4">04:00</option>
+                                                <option value="4">05:00</option>
+                                                <option value="4">06:00</option>
+                                            </select>
                                         </div>
                                         <!-- field end-->
 
                                     </div>
                                 </div>
 
-                                <div class="row">
-                                    <div class="col-md-4">
+                                <!-- Sunday-->
+                                <div class="row" style="padding-top: 20px;">
+                                    <div class="col-md-2">
                                         <!-- name field-->
                                         <div style="float: right;"></div>
                                         <div class="form-group">
@@ -1505,22 +2310,155 @@
                                         </div>
                                         <!-- field end-->
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-2">
                                         <!-- name field-->
                                         <div style="float: right;"></div>
                                         <div class="form-group">
-                                            <label for="usr">Start time:</label>
-                                            <input type="text" class="form-control" id="usr"/>
+                                            <label for="usr">From:</label>
+                                            <select class="form-control" id="venue_category" name="open_time">
+                                                <option disabled="disabled" selected="selected"> -- hour -- </option>
+                                                <option value="4">07:00</option>
+                                                <option value="4">08:00</option>
+                                                <option value="4">09:00</option>
+                                                <option value="4">10:00</option>
+                                                <option value="4">11:00</option>
+                                                <option value="4">12:00</option>
+                                                <option value="4">13:00</option>
+                                                <option value="4">14:00</option>
+                                                <option value="4">15:00</option>
+                                                <option value="4">16:00</option>
+                                                <option value="4">17:00</option>
+                                                <option value="4">18:00</option>
+                                                <option value="4">19:00</option>
+                                                <option value="4">20:00</option>
+                                                <option value="4">21:00</option>
+                                                <option value="4">22:00</option>
+                                                <option value="4">23:00</option>
+                                                <option value="0">00:00</option>
+                                                <option value="1">01:00</option>
+                                                <option value="2">02:00</option>
+                                                <option value="3">03:00</option>
+                                                <option value="4">04:00</option>
+                                                <option value="4">05:00</option>
+                                                <option value="4">06:00</option>
+                                            </select>
                                         </div>
                                         <!-- field end-->
 
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-2">
                                         <!-- name field-->
                                         <div style="float: right;"></div>
                                         <div class="form-group">
-                                            <label for="usr">End time:</label>
-                                            <input type="text" class="form-control" id="usr"/>
+                                            <label for="usr">Until:</label>
+                                            <select class="form-control" id="venue_category" name="close_time">
+                                                <option disabled="disabled" selected="selected"> -- hour -- </option>
+                                                <option value="4">07:00</option>
+                                                <option value="4">08:00</option>
+                                                <option value="4">09:00</option>
+                                                <option value="4">10:00</option>
+                                                <option value="4">11:00</option>
+                                                <option value="4">12:00</option>
+                                                <option value="4">13:00</option>
+                                                <option value="4">14:00</option>
+                                                <option value="4">15:00</option>
+                                                <option value="4">16:00</option>
+                                                <option value="4">17:00</option>
+                                                <option value="4">18:00</option>
+                                                <option value="4">19:00</option>
+                                                <option value="4">20:00</option>
+                                                <option value="4">21:00</option>
+                                                <option value="4">22:00</option>
+                                                <option value="4">23:00</option>
+                                                <option value="0">00:00</option>
+                                                <option value="1">01:00</option>
+                                                <option value="2">02:00</option>
+                                                <option value="3">03:00</option>
+                                                <option value="4">04:00</option>
+                                                <option value="4">05:00</option>
+                                                <option value="4">06:00</option>
+                                            </select>
+                                        </div>
+                                        <!-- field end-->
+
+                                    </div>
+                                    <div class="col-md-2">
+                                        <!-- name field-->
+                                        <div style="float: right;"></div>
+                                        <div class="form-group">
+                                            <label for="usr"></label>
+                                            <p style="text-align:center;">Also</p>
+                                        </div>
+                                        <!-- field end-->
+                                    </div>
+                                    <div class="col-md-2">
+                                        <!-- name field-->
+                                        <div style="float: right;"></div>
+                                        <div class="form-group">
+                                            <label for="usr">From:</label>
+                                            <select class="form-control" id="venue_category" name="open_time">
+                                                <option disabled="disabled" selected="selected"> -- hour -- </option>
+                                                <option value="4">07:00</option>
+                                                <option value="4">08:00</option>
+                                                <option value="4">09:00</option>
+                                                <option value="4">10:00</option>
+                                                <option value="4">11:00</option>
+                                                <option value="4">12:00</option>
+                                                <option value="4">13:00</option>
+                                                <option value="4">14:00</option>
+                                                <option value="4">15:00</option>
+                                                <option value="4">16:00</option>
+                                                <option value="4">17:00</option>
+                                                <option value="4">18:00</option>
+                                                <option value="4">19:00</option>
+                                                <option value="4">20:00</option>
+                                                <option value="4">21:00</option>
+                                                <option value="4">22:00</option>
+                                                <option value="4">23:00</option>
+                                                <option value="0">00:00</option>
+                                                <option value="1">01:00</option>
+                                                <option value="2">02:00</option>
+                                                <option value="3">03:00</option>
+                                                <option value="4">04:00</option>
+                                                <option value="4">05:00</option>
+                                                <option value="4">06:00</option>
+                                            </select>
+                                        </div>
+                                        <!-- field end-->
+
+                                    </div>
+                                    <div class="col-md-2">
+                                        <!-- name field-->
+                                        <div style="float: right;"></div>
+                                        <div class="form-group">
+                                            <label for="usr">Until:</label>
+                                            <select class="form-control" id="venue_category" name="close_time">
+                                                <option disabled="disabled" selected="selected"> -- hour -- </option>
+                                                <option value="4">07:00</option>
+                                                <option value="4">08:00</option>
+                                                <option value="4">09:00</option>
+                                                <option value="4">10:00</option>
+                                                <option value="4">11:00</option>
+                                                <option value="4">12:00</option>
+                                                <option value="4">13:00</option>
+                                                <option value="4">14:00</option>
+                                                <option value="4">15:00</option>
+                                                <option value="4">16:00</option>
+                                                <option value="4">17:00</option>
+                                                <option value="4">18:00</option>
+                                                <option value="4">19:00</option>
+                                                <option value="4">20:00</option>
+                                                <option value="4">21:00</option>
+                                                <option value="4">22:00</option>
+                                                <option value="4">23:00</option>
+                                                <option value="0">00:00</option>
+                                                <option value="1">01:00</option>
+                                                <option value="2">02:00</option>
+                                                <option value="3">03:00</option>
+                                                <option value="4">04:00</option>
+                                                <option value="4">05:00</option>
+                                                <option value="4">06:00</option>
+                                            </select>
                                         </div>
                                         <!-- field end-->
 

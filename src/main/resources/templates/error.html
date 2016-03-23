@@ -104,30 +104,9 @@
         </div>
     </div>
 
-    <div class="row footer">
-        <div class="col-md-3"></div>
-        <div class="col-md-6" style="margin-top:10px;">
-            <div>
-                <p style="max-width: 728px; text-align: center; margin: 21px auto; color: #999; line-height: normal; font-size: 12px;">
-                    instant lets you search stuff and do other stuff. There are 5,382 stuff open in City Name. Search
-                    stuff in City Name with instant. Be social. Have fun.</p>
-            </div>
-            <div>
-                <hr style="line-height: 1em; margin: 21px 14px; width: auto; box-sizing: border-box; border-top: 1px #ccc solid;"/>
-            </div>
-
-            <div>
-                <hr style="line-height: 1em; margin: 21px 14px; width: auto; box-sizing: border-box; border-top: 1px #ccc solid;"/>
-            </div>
-
-            <div>
-                <p style="max-width: 728px; text-align: center; margin: 21px auto; color: #999; line-height: normal; font-size: 12px;">
-                    Copyright © xxxx–2016, instant. instant ® is a registered trademark of Instant Shpk.</p>
-            </div>
-
-        </div>
-        <div class="col-md-3"></div>
-    </div>
+    <p style="text-align: center; margin-top:50px; color: #999; line-height: normal; font-size: 17px;" th:utext="#{seo.top.message}">Hand picked by <span style="font-family: 'Pacifico', cursive; font-weight: 400;">instant</span>, just for you!</p>
+    <div th:replace="fragments/seo :: seo"></div>
+    <div th:replace="fragments/footer :: footer"></div>
 </div>
 
 

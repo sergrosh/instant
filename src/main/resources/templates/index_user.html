@@ -413,14 +413,14 @@
                                     <button style="margin-bottom:15px;" id="registerVenueButton" name="registerVenue" onclick="location.href='/user/add_new/';" class="btn btn-primary" type="button">Register Venue
                                     </button>
                                     <!--<p th:text="${user.myVenues.size()}"></p>-->
-                                    <div th:each="venue : ${user.myVenues}" style="text-align: left;" class="col-md-12">
+                                    <div th:each="venue : ${myVenues}" style="text-align: left;" class="col-md-12">
                                         <div style="float: right; font-size: 10px;">
-                                            <a href="#" th:href="@{/user/edit/venue/{id}(id=${venue})}">Edit</a>
+                                            <a href="#" th:href="@{/user/edit/venue/{id}(id=${venue.id})}">Edit</a>
                                         </div>
                                         <p>
                                             <span style="font-weight: 600; font-size: 10px;">Name</span>
                                             <br/>
-                                            <span th:text="${venue}">My Awesome Little Restaurant</span>
+                                            <span th:text="${venue.name}">My Awesome Little Restaurant</span>
                                         </p>
                                     </div>
                                 </div>
@@ -698,14 +698,14 @@
                                     <!--<button style="margin-bottom:15px;" id="registerVenueButton" name="registerVenue" onclick="location.href='/user/add_new/';" class="btn btn-primary" type="button">Register Venue-->
                                     <!--</button>-->
                                     <!--<p th:text="${user.myVenues.size()}"></p>-->
-                                    <div th:each="venue : ${user.favouritesVenues}" style="text-align: left;" class="col-md-12">
+                                    <div th:each="venue : ${favouriteVenues}" style="text-align: left;" class="col-md-12">
                                         <!--<div style="float: right; font-size: 10px;">-->
                                             <!--<a href="#" th:href="@{/edit/venue/{id}(id=${venue})}">Edit</a>-->
                                         <!--</div>-->
                                         <p>
                                             <span style="font-weight: 600; font-size: 10px;">Name</span>
                                             <br/>
-                                            <span th:text="${venue}">My Awesome Little Restaurant</span>
+                                            <span th:text="${venue.name}">My Awesome Little Restaurant</span>
                                         </p>
                                     </div>
                                 </div>
@@ -983,14 +983,14 @@
                                     <!--<button style="margin-bottom:15px;" id="registerVenueButton" name="registerVenue" onclick="location.href='/user/add_new/';" class="btn btn-primary" type="button">Register Venue-->
                                     <!--</button>-->
                                     <!--<p th:text="${user.myVenues.size()}"></p>-->
-                                    <div th:each="venue : ${user.reviewed}" style="text-align: left;" class="col-md-12">
+                                    <div th:each="venue : ${reviewedVenues}" style="text-align: left;" class="col-md-12">
                                         <!--<div style="float: right; font-size: 10px;">-->
                                         <!--<a href="#" th:href="@{/edit/venue/{id}(id=${venue})}">Edit</a>-->
                                         <!--</div>-->
                                         <p>
                                             <span style="font-weight: 600; font-size: 10px;">Name</span>
                                             <br/>
-                                            <span th:text="${venue}">My Awesome Little Restaurant</span>
+                                            <span th:text="${venue.name}">My Awesome Little Restaurant</span>
                                         </p>
                                     </div>
                                 </div>

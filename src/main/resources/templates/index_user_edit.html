@@ -136,7 +136,36 @@
 
 <script th:inline="javascript" type="text/javascript">
 /*<![CDATA[*/
-
+    $(document).ready(function(){
+        var venue = /*[[${venue}]]*/;
+        $("input[name='name']").val(venue.name);
+        $("input[name='company']").val(venue.company);
+        $("select[name='category']").val(venue.category);
+        $("textarea[name='description']").val(venue.description);
+        $(".speciality-1").val(venue.speciality[0]);
+        $(".speciality-2").val(venue.speciality[1]);
+        $(".speciality-3").val(venue.speciality[2]);
+        $("input[name='address']").val(venue.address);
+        $("select[name='city']").val(venue.city);
+        $("select[name='country']").val(venue.country);
+        $("input[name='phoneprimary']").val(venue.phoneprimary);
+        $("input[name='phonesecondary']").val(venue.phonesecondary);
+        $("input[name='mobileprimary']").val(venue.mobileprimary);
+        $("input[name='mobilesecondary']").val(venue.mobilesecondary);
+        $("input[name='whatsapp']").val(venue.whatsapp);
+        $("input[name='facebookpage']").val(venue.facebookpage);
+        $("input[name='email']").val(venue.email);
+        $("input[name='website']").val(venue.website);
+        $("input[name='parking']").val(venue.parking);
+        $("select[name='smoking']").val(venue.smoking);
+        $("select[name='disabled']").val(venue.disabled);
+        $("select[name='wifi']").val(venue.wifi);
+        $("select[name='outdoor']").val(venue.outdoor);
+        $("select[name='kidsplayground']").val(venue.kidsplayground);
+        $("select[name='takeaway']").val(venue.takeaway);
+        $("input[name='name']").val(venue.name);
+        $("input[name='name']").val(venue.name);
+    });
 /*]]>*/
 
 </script>
