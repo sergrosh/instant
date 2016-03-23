@@ -415,7 +415,7 @@
                                     <!--<p th:text="${user.myVenues.size()}"></p>-->
                                     <div th:each="venue : ${user.myVenues}" style="text-align: left;" class="col-md-12">
                                         <div style="float: right; font-size: 10px;">
-                                            <a href="#" th:href="@{/edit/venue/{id}(id=${venue})}">Edit</a>
+                                            <a href="#" th:href="@{/user/edit/venue/{id}(id=${venue})}">Edit</a>
                                         </div>
                                         <p>
                                             <span style="font-weight: 600; font-size: 10px;">Name</span>
