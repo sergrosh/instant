@@ -163,8 +163,13 @@
         $("select[name='outdoor']").val(venue.outdoor);
         $("select[name='kidsplayground']").val(venue.kidsplayground);
         $("select[name='takeaway']").val(venue.takeaway);
-        $("input[name='name']").val(venue.name);
-        $("input[name='name']").val(venue.name);
+        var arrVal = String(venue.openHours).split("-");
+        $("select[name='opening-time_r1_d1']").val(arrVal[0]);
+        $("select[name='opening-time_r1_d2']").val(arrVal[1]);
+        $("select[name='opening-time_r1_h1']").val(arrVal[2]);
+        $("select[name='opening-time_r1_h2']").val(arrVal[3]);
+        $("select[name='opening-time_r1_h3']").val(arrVal[4]);
+        $("select[name='opening-time_r1_h4']").val(arrVal[5]);
     });
 /*]]>*/
 

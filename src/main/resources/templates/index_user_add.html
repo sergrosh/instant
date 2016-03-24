@@ -165,7 +165,7 @@
             var o = {};
             var a = this.serializeArray();
             $.each(a, function () {
-                if(!this.name.toLowerCase().indexOf("opening-time") >= 0){
+                if(this.name.indexOf("opening-time") < 0){
                     if (o[this.name]) {
                         if (!o[this.name].push) {
                             o[this.name] = [o[this.name]];
@@ -177,7 +177,7 @@
                 }
             });
             //o.push('openhours');
-            o['openhours'].push('Open ' + $("select[name='opening-time_r1_d1']") + ' till ' + $("select[name='opening-time_r1_d2']") + ' from ' + $("select[name='opening-time_r1_h1']") + ' to ' + $("select[name='opening-time_r1_h2']") + ' and from ' + $("select[name='opening-time_r1_h3']") + ' to ' + $("select[name='opening-time_r1_h4']"));
+            o['openhours'] = $("select[name='opening-time_r1_d1']").val() + '-' + $("select[name='opening-time_r1_d2']").val() + '-' + $("select[name='opening-time_r1_h1']").val() + '-' + $("select[name='opening-time_r1_h2']").val() + '-' + $("select[name='opening-time_r1_h3']").val() + '-' + $("select[name='opening-time_r1_h4']").val();
             return o;
         };
     })(jQuery);
