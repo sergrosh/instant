@@ -19,6 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.support.ConfigurableConversionService;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoOperations;
@@ -68,12 +69,11 @@ public class VenueServiceImpl implements VenueService {
 
 
     @Override
-    public List<Venue> findVenues(Integer limit, Integer offset) {
-        List<Venue> venues;
+    public Page<VenueEntity> findVenues(Integer limit, Integer offset) {
+        Page<VenueEntity> venues;
+
         try {
-            venues = venueRepository.findAll(new PageRequest(offset, limit)).getContent()
-                    .stream().map(e -> conversionService.convert(e, Venue.class))
-                    .collect(Collectors.toList());
+            venues = venueRepository.findAll(new PageRequest(offset, limit));
         } catch (Exception e) {
             log.error("internal error", e);
             throw new InternalServerException();

@@ -2,6 +2,8 @@ package com.instant.service.venue;
 
 import com.instant.api.model.venue.NewVenue;
 import com.instant.api.model.venue.Venue;
+import com.instant.persistence.model.venue.VenueEntity;
+import org.springframework.data.domain.Page;
 import org.springframework.data.mongodb.core.query.Query;
 
 import java.util.List;
@@ -14,7 +16,7 @@ import java.util.Set;
 
 public interface VenueService {
 
-    List<Venue> findVenues(Integer limit, Integer offset);
+    Page<VenueEntity> findVenues(Integer limit, Integer offset);
 
     Venue saveVenue(NewVenue newVenue);
 

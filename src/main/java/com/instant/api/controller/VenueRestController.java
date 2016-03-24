@@ -2,6 +2,7 @@ package com.instant.api.controller;
 
 import com.instant.api.model.venue.NewVenue;
 import com.instant.api.model.venue.Venue;
+import com.instant.api.model.venue.VenueResponse;
 import com.instant.controller.Mappings;
 import io.swagger.annotations.*;
 import org.springframework.web.bind.annotation.*;
@@ -37,7 +38,7 @@ public interface VenueRestController {
             @ApiResponse(code = 400, message = ERROR_400),
             @ApiResponse(code = 500, message = ERROR_500_MSG)})
     @RequestMapping(method = RequestMethod.GET, produces = {APPLICATION_JSON_VALUE})
-    List<Venue> getVenues(
+    VenueResponse getVenues(
             @ApiParam(value = "maximum number of results to return. Default is 20. Limit should be less then 1000.") @RequestParam(value = "limit",
                     required = false,
                     defaultValue = "20") Integer limit,

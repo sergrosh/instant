@@ -1,6 +1,7 @@
 package com.instant.api.model.venue;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.instant.api.model.ItemModel;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -14,7 +15,7 @@ import java.util.List;
 
 @ApiModel(description = "")
 @Data
-public class NewVenue implements Serializable {
+public class NewVenue implements Serializable, ItemModel {
 
     @TextIndexed(weight = 3)
     @ApiModelProperty(required = true, value = "")
