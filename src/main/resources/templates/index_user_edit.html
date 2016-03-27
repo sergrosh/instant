@@ -148,28 +148,50 @@
         $("input[name='address']").val(venue.address);
         $("select[name='city']").val(venue.city);
         $("select[name='country']").val(venue.country);
-        $("input[name='phoneprimary']").val(venue.phoneprimary);
-        $("input[name='phonesecondary']").val(venue.phonesecondary);
-        $("input[name='mobileprimary']").val(venue.mobileprimary);
-        $("input[name='mobilesecondary']").val(venue.mobilesecondary);
-        $("input[name='whatsapp']").val(venue.whatsapp);
-        $("input[name='facebookpage']").val(venue.facebookpage);
+        $("input[name='phoneprimary']").val(venue.phonePrimary);
+        $("input[name='phonesecondary']").val(venue.phoneSecondary);
+        $("input[name='mobileprimary']").val(venue.mobilePrimary);
+        $("input[name='mobilesecondary']").val(venue.mobileSecondary);
+        $("input[name='whatsapp']").val(venue.whatsApp);
+        $("input[name='facebookpage']").val(venue.facebookPage);
         $("input[name='email']").val(venue.email);
         $("input[name='website']").val(venue.website);
-        $("input[name='parking']").val(venue.parking);
-        $("select[name='smoking']").val(venue.smoking);
+        $("textarea[name='parking']").val(venue.parkingDetails);
+        $("select[name='smoking']").val(venue.smokingAvailability);
         $("select[name='disabled']").val(venue.disabled);
-        $("select[name='wifi']").val(venue.wifi);
-        $("select[name='outdoor']").val(venue.outdoor);
-        $("select[name='kidsplayground']").val(venue.kidsplayground);
+        $("select[name='wifi']").val(venue.wifiAvailability);
+        $("select[name='outdoor']").val(venue.outdoorEnvironment);
+        $("select[name='kidsplayground']").val(venue.kidsPlayground);
         $("select[name='takeaway']").val(venue.takeaway);
-        var arrVal = String(venue.openHours).split("-");
-        $("select[name='opening-time_r1_d1']").val(arrVal[0]);
-        $("select[name='opening-time_r1_d2']").val(arrVal[1]);
-        $("select[name='opening-time_r1_h1']").val(arrVal[2]);
-        $("select[name='opening-time_r1_h2']").val(arrVal[3]);
-        $("select[name='opening-time_r1_h3']").val(arrVal[4]);
-        $("select[name='opening-time_r1_h4']").val(arrVal[5]);
+        var arrVal = String(venue.openHours).split("&&");
+        if(arrVal[0].length > 0){
+            $("select[name='opening-time_r1_d1']").val(arrVal[0]);
+            $("select[name='opening-time_r1_d2']").val(arrVal[1]);
+            $("select[name='opening-time_r1_h1']").val(arrVal[2]);
+            $("select[name='opening-time_r1_h2']").val(arrVal[3]);
+            $("select[name='opening-time_r1_h3']").val(arrVal[4]);
+            $("select[name='opening-time_r1_h4']").val(arrVal[5]);
+        }
+        if(arrVal[1].length > 0){
+            $(".row.schedule_row.second").css('display', 'block');
+            $("select[name='opening-time_r2_d1']").val(arrVal[0]);
+            $("select[name='opening-time_r2_d2']").val(arrVal[1]);
+            $("select[name='opening-time_r2_h1']").val(arrVal[2]);
+            $("select[name='opening-time_r2_h2']").val(arrVal[3]);
+            $("select[name='opening-time_r2_h3']").val(arrVal[4]);
+            $("select[name='opening-time_r2_h4']").val(arrVal[5]);
+        }
+        if(arrVal[2].length > 0){
+            $(".row.schedule_row.third").css('display', 'block');
+            $("select[name='opening-time_r3_d1']").val(arrVal[0]);
+            $("select[name='opening-time_r3_d2']").val(arrVal[1]);
+            $("select[name='opening-time_r3_h1']").val(arrVal[2]);
+            $("select[name='opening-time_r3_h2']").val(arrVal[3]);
+            $("select[name='opening-time_r3_h3']").val(arrVal[4]);
+            $("select[name='opening-time_r3_h4']").val(arrVal[5]);
+        }
+
+
     });
 /*]]>*/
 

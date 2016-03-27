@@ -31,132 +31,23 @@
         <div class="col-md-12">
             <div th:replace="fragments/header :: header"></div>
 
+            <!-- Breadcrumbs -->
             <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" style="display: table; padding-top: 10px; padding-bottom: 10px;">
                 <p style="font-size: 12px; display: table-cell; vertical-align: middle; text-align:left; margin-left: 15px; width:50%;"> <a href="#">&#60; Back to search</a></p>
-                <p style="font-size: 12px; display: table-cell; vertical-align: middle; text-align:right; margin-right: 15px; width:50%;"> <a href="#">Albania</a> > <a href="#">Durres</a> > <span th:text="${venue.name}"></span></p>
+                <p style="font-size: 12px; display: table-cell; vertical-align: middle; text-align:right; margin-right: 15px; width:50%;"> <a href="#" th:text="${venue.country}">Albania</a> > <a href="#" th:text="${venue.city}">Durres</a> > <span th:text="${venue.name}"></span></p>
             </div>
 
+            <!-- Venue Page Header-->
             <div class="row" style="">
                 <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" id="itemlist_results" style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:0px; padding-right:0px; padding-bottom: 0px;">
-
-                    <!--<div th:replace="fragments/itemlist_product_list :: itemlist_product_list"></div>-->
-
                     <div class="row" style="margin-left: 20px; margin-right: 20px;">
                         <div class="row">
-
                             <style type="text/css">
 
                                 @media (max-width: 490px) {
                                 .hidethisshit{
                                 display:none;
                                 }
-                                }
-
-                                @media (max-width:400px){
-                                    img.main_img{
-                                        height:80px;
-                                        width:100px;
-                                    }
-
-                                    .container.main_container{
-                                        padding-left:0px;
-                                        padding-right:0px;
-                                        width: 100%;
-                                    }
-
-                                    i.instant_i{
-                                        font-size:1em;
-                                    }
-
-                                    img.instant_heart{
-                                        height:30px;
-                                    }
-
-                                    strong.instant_title{
-                                        font-size: 20px;
-                                        line-height:0.8;
-                                    }
-
-                                    sup.instant_by{
-                                        display:none;
-                                        width:0px;
-                                        height:0px;
-                                    }
-
-                                    div.instant_speciality > img {
-                                        display:none;
-                                    }
-
-                                    div.instant_desc > p{
-                                        display:none;
-                                        width:0px;
-                                        height:0px;
-                                    }
-
-                                    div.instant_desc{
-                                        width:0px;
-                                        height:0px;
-                                    }
-
-                                    div.instant_speciality{
-                                        width:0px;
-                                        height:0px;
-                                    }
-
-                                    span.shown_large_view_map{
-                                        display:none;
-                                        width:0px;
-                                        height:0px;
-                                    }
-
-                                    i.hidden_large_view_map{
-                                        display:inline;
-                                    }
-
-                                }
-
-                                @media (min-width:400px){
-                                    i.instant_i{
-                                        font-size:1.2em;
-                                    }
-
-                                    img.instant_heart{
-                                    height:50px;
-                                    }
-
-                                    strong.instant_title{
-                                        font-size: 23px;
-                                        line-height:1;
-                                    }
-
-                                    sup.instant_by{
-                                        display:inline;
-                                    }
-
-
-                                    div.instant_speciality > img {
-                                        display:inline;
-                                    }
-
-
-                                    div.instant_desc{
-                                        display:inline;
-                                    }
-
-                                    div.instant_speciality {
-                                        width:50%;
-                                    }
-
-                                    i.hidden_large_view_map{
-                                    display:none;
-                                    width:0px;
-                                    height:0px;
-                                    }
-
-                                    span.shown_large_view_map{
-                                    display:inline;
-                                    }
-
                                 }
 
 
@@ -210,6 +101,137 @@
                                 .instantborder{border-top:1px solid rgba(204, 204, 204, 0.57);}
 
 
+                            </style>
+                            <style type="text/css">
+                                .container {
+                                display: table !important;
+                                }
+                                .container2 {
+                                display: table !important;
+                                padding-right:0px !important;
+                                padding-left:0px !important;
+                                }
+                                .column {
+                                display: table-cell !important;
+
+                                }
+
+                                .myrow {
+                                display: table-row !important;
+                                }
+
+                                @media all {
+                                .container{
+                                width:inherit;
+                                }
+                                }
+
+                            </style>
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="row" style="    padding-top: 20px; padding-bottom: 10px;">
+                                    <div class="container " style="width:100%">
+                                        <div style="float:right;">
+                                            <a href="javascript:void(0);" class="favourite_heart" th:switch="${venue.favourite} ? ${true} : ${false}">
+
+                                                <div th:case="${false}">
+                                                    <img class="instant_heart" src="/img/heart-outline.png"  style="margin-right:10px; height: 30px;"/>
+                                                </div>
+                                                <div th:case="${true}">
+                                                    <img class="instant_heart" src="/img/heart-outline-full.png"  style="margin-right:10px; height: 30px;"/>
+                                                </div>
+
+                                            </a>
+                                        </div>
+                                        <div class="myrow" style="vertical-align:middle; text-align:center;">
+                                            <img class="main_img" src="http://lorempixel.com/180/140" style="border-radius: 5px;"/>
+                                        </div>
+                                        <div class="myrow" style="vertical-align:middle; text-align:center;">
+                                            <h3 th:text="${venue.name}" style="    margin-bottom: 0px;margin-top: 10px;">
+                                                name
+                                            </h3>
+                                        </div>
+                                        <div class="myrow" style="vertical-align:middle; text-align:center;">
+                                            <p style="    margin-bottom: 5px;">
+                                                <span th:text="|${venue.category} &#8226; |"></span>
+                                                <i class="fa instant_i" th:classappend="${venue.rating} > 0? fa-star : fa-star-o" style="font-weight: bold; color: #feab6c;"></i>
+                                                <i class="fa instant_i" th:classappend="${venue.rating} > 1? fa-star : fa-star-o" style="font-weight: bold; color: #feab6c;"></i>
+                                                <i class="fa instant_i" th:classappend="${venue.rating} > 2? fa-star : fa-star-o" style="font-weight: bold; color: #feab6c;"></i>
+                                                <i class="fa instant_i" th:classappend="${venue.rating} > 3? fa-star : fa-star-o" style="font-weight: bold; color: #feab6c;"></i>
+                                                <i class="fa instant_i" th:classappend="${venue.rating} > 4? fa-star : fa-star-o" style="font-weight: bold; color: #feab6c;"></i>
+                                                <span th:text="|&#8226; ${venue.city}|"></span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row instantborder" style="margin-left: 0px; margin-right: 0px;"></div>
+                    <div class="row" style="margin-left: 20px; margin-right: 20px;">
+                        <div class="row">
+
+                            <style type="text/css">
+
+                                @media (max-width: 490px) {
+                                .hidethisshit{
+                                display:none;
+                                }
+                                }
+
+
+                                @import url('http://fonts.googleapis.com/css?family=Noto+Sans:400,700');
+
+
+                                /* The ribbons */
+
+                                .corner-ribbon{
+                                /* width: 50px; */
+                                width: 40px;
+                                background: #e43;
+                                position: absolute;
+                                top: 25px;
+                                left: -50px;
+                                text-align: center;
+                                /* line-height: 30px; */
+                                line-height: 20px;
+                                letter-spacing: 1px;
+                                color: #f0f0f0;
+                                font-size:0.7em;
+                                font-weight:bold;
+                                border-radius:0.5em;
+                                }
+
+                                /* Custom styles */
+
+                                .corner-ribbon.sticky{
+                                margin-left: 135px;
+                                margin-top: 5px;
+                                }
+
+                                .corner-ribbon.shadow{
+                                box-shadow: 0 0 3px rgba(0,0,0,.3);
+                                }
+
+
+                                .corner-ribbon.top-right{
+                                top: 2px;
+                                right: inherit;
+                                left: inherit;
+                                }
+
+
+                                /* Colors */
+
+
+                                .corner-ribbon.open{background:#406C9B;}
+                                .corner-ribbon.closed{background:red;}
+
+                                .instantborder{border-top:1px solid rgba(204, 204, 204, 0.57);}
+
+
+                            </style>
+
+                            <style type="text/css">
                                 .container {
                                 display: table !important;
                                 }
@@ -237,79 +259,12 @@
 
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                 <div class="row" style="    padding-top: 20px; padding-bottom: 20px;">
-                                    <div class="container main_container">
-                                        <div class="column">
-                                            <img class="main_img" src="http://lorempixel.com/180/140"/>
-                                        </div>
-                                        <div class="column" style="vertical-align:middle;">
-                                            <div class="column" style="    padding-left: 10px; padding-right: 20px;">
-
-                                                <div class="myrow">
-                                                    <a style="text-decoration: none;" href="/new_item/56be6f94d4c696e216899792">
-                                                        <p style="margin-bottom: 5px;">
-                                                            <strong class="instant_title" style="color: #444; font-height:16px;font-style:normal;">tew</strong>
-                                                            <sup class="instant_by" style="font-style:bold; color: #999999;"> by asd</sup>
-                                                        </p>
-                                                    </a>
-                                                </div>
-
-                                                <div class="myrow" style="background-color:white;">
-                                                    <div class="container2" style="width:100%">
-                                                        <div class="column" style="width:50%; vertical-align:middle;text-align:left;">
-                                                            <p style="    margin-bottom: 5px;">
-                                                                <i class="fa instant_i" th:classappend="${venue.rating} > 0? fa-star : fa-star-o" style="font-weight: bold; color: #feab6c;"></i>
-                                                                <i class="fa instant_i" th:classappend="${venue.rating} > 1? fa-star : fa-star-o" style="font-weight: bold; color: #feab6c;"></i>
-                                                                <i class="fa instant_i" th:classappend="${venue.rating} > 2? fa-star : fa-star-o" style="font-weight: bold; color: #feab6c;"></i>
-                                                                <i class="fa instant_i" th:classappend="${venue.rating} > 3? fa-star : fa-star-o" style="font-weight: bold; color: #feab6c;"></i>
-                                                                <i class="fa instant_i" th:classappend="${venue.rating} > 4? fa-star : fa-star-o" style="font-weight: bold; color: #feab6c;"></i>
-                                                                <span> - null</span>
-                                                            </p>
-                                                        </div>
-                                                        <div class="column instant_speciality" style="vertical-align:middle;text-align:right; ">
-                                                            <img src="/img/pizza_icon.jpg" style="width:25px; height:25px;"/>
-                                                            <img src="/img/cake_icon.jpg" style="width:25px; height:25px;"/>
-                                                            <img src="/img/pizza_icon.jpg" style="width:25px; height:25px;"/>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="myrow instant_desc">
-                                                    <!-- th:text="${venue.description}" -->
-                                                    <p>
-                                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-                                                        Cum sociis natoque penatibus et magnis dis atoque penatib atoque penatib atoque penatib ...
-                                                    </p>
-                                                </div>
-
-                                                <div class="myrow" style="background-color:white;">
-                                                    <div class="container2" style="width:100%">
-                                                        <div class="column" style="width:50%; vertical-align:middle;text-align:left;">
-                                                            <p style="margin-bottom: 0px; color:#777777;">
-                                                                <i class="fa fa-map-marker"></i>
-                                                                <span>asd</span>
-                                                                <a href="/new_item/56be6f94d4c696e216899792/map">
-                                                                    <span class="shown_large_view_map" style="color:#648EB7"> - View in Map</span>
-                                                                    <i class="fa fa-map-o hidden_large_view_map"></i>
-                                                                </a>
-                                                            </p>
-                                                        </div>
-                                                        <div class="column" style="width:50%; vertical-align:middle;text-align:right;">
-                                                            <p style="margin-bottom: 0px; color:#777777;">
-                                                                <i class="fa fa-mobile"></i>
-                                                                <span>Mobile: <strong style="color: black;">0049 15775983187</strong></span>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                            <div class="column" style="vertical-align:middle;text-align:center;">
-                                                <a href="javascript:void(0);" class="favourite_heart" th:switch="${venue.favourite} ? ${true} : ${false}">
-                                                    <img th:case="${false}" class="instant_heart" src="/img/heart-outline.png"  style="margin-left:10px;margin-right:10px"/>
-                                                    <img th:case="${true}" class="instant_heart" src="/img/heart-outline-full.png"  style="margin-left:10px;margin-right:10px"/>
-                                                </a>
-                                            </div>
-                                        </div>
+                                    <div class="col-md-12">
+                                        <p>
+                                            <span style="font-weight: 600;">Venue Description:</span>
+                                            <br/>
+                                            <span th:text="${venue.description}">Restaurant</span>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -318,50 +273,11 @@
                 </div>
             </div>
 
-            <!-- TODO Test under main row anchor navigation-->
-            <!--<div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" style="display: table; padding-top: 10px; padding-bottom: 10px;">-->
-                <!--<div class="row">-->
-                    <!--<div class="container" style="width:80%;">-->
-                        <!--<div class="column" style="width:25%; text-align: center;">-->
-                            <!--<a style="text-decoration: none;" href="/new_item/56be6f94d4c696e216899792">-->
-                                <!--<p style="    margin-bottom: 5px;">-->
-                                    <!--<strong style="color: #444; font-size: 12px; font-height:16px;line-height:1;font-style:normal;">About</strong>-->
-                                    <!--&lt;!&ndash;<sup style="font-style:bold; color: #999999;"> by asd</sup>&ndash;&gt;-->
-                                <!--</p>-->
-                            <!--</a>-->
-                        <!--</div>-->
-                        <!--<div class="column" style="width:25%; text-align: center;">-->
-                            <!--<a style="text-decoration: none;" href="/new_item/56be6f94d4c696e216899792">-->
-                                <!--<p style="    margin-bottom: 5px;">-->
-                                    <!--<strong style="color: #444; font-size: 12px; font-height:16px;line-height:1;font-style:normal;">Gallery</strong>-->
-                                <!--</p>-->
-                            <!--</a>-->
-                        <!--</div>-->
-                        <!--<div class="column" style="width:25%; text-align: center;">-->
-                            <!--<a style="text-decoration: none;" href="/new_item/56be6f94d4c696e216899792">-->
-                                <!--<p style="    margin-bottom: 5px;">-->
-                                    <!--<strong style="color: #444; font-size: 12px; font-height:16px;line-height:1;font-style:normal;">Menu</strong>-->
-                                <!--</p>-->
-                            <!--</a>-->
-                        <!--</div>-->
-                        <!--<div class="column" style="width:25%; text-align: center;">-->
-                            <!--<a style="text-decoration: none;" href="/new_item/56be6f94d4c696e216899792">-->
-                                <!--<p style="    margin-bottom: 5px;">-->
-                                    <!--<strong style="color: #444; font-size: 12px; font-height:16px;line-height:1;font-style:normal;">Reviews</strong>-->
-                                <!--</p>-->
-                            <!--</a>-->
-                        <!--</div>-->
-
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-
-            <!-- About Block start -->
+            <!-- Review Block start -->
             <div th:switch="${venue.reviewed} ? ${true} : ${false}" th:case="${false}" class="row add_rating_block" style="padding-top: 20px;">
                 <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:0px; padding-right:0px; padding-bottom: 0px;">
                     <div class="row" style="margin-left: 20px; margin-right: 20px;">
                         <div class="row">
-
                             <style type="text/css">
 
                                 @media (max-width: 490px) {
@@ -422,7 +338,6 @@
 
 
                             </style>
-
                             <style type="text/css">
                                 .container {
                                 display: table !important;
@@ -448,7 +363,6 @@
                                 }
 
                             </style>
-
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                 <div class="row" style="    padding-top: 20px; padding-bottom: 10px;">
                                     <div class="container " style="width:100%">
@@ -456,6 +370,102 @@
                                             <div class="review close_btn" style="float: right; font-size:11px;color: #999; cursor: pointer;">Close</div>
                                             <h3 style="margin-top:0px;" th:text="|Review ${venue.name}|">Review</h3>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row instantborder" style="margin-left: 0px; margin-right: 0px;"></div>
+                    <div class="row">
+                        <style type="text/css">
+
+                            @media (max-width: 490px) {
+                            .hidethisshit{
+                            display:none;
+                            }
+                            }
+
+
+                            @import url('http://fonts.googleapis.com/css?family=Noto+Sans:400,700');
+
+
+                            /* The ribbons */
+
+                            .corner-ribbon{
+                            /* width: 50px; */
+                            width: 40px;
+                            background: #e43;
+                            position: absolute;
+                            top: 25px;
+                            left: -50px;
+                            text-align: center;
+                            /* line-height: 30px; */
+                            line-height: 20px;
+                            letter-spacing: 1px;
+                            color: #f0f0f0;
+                            font-size:0.7em;
+                            font-weight:bold;
+                            border-radius:0.5em;
+                            }
+
+                            /* Custom styles */
+
+                            .corner-ribbon.sticky{
+                            margin-left: 135px;
+                            margin-top: 5px;
+                            }
+
+                            .corner-ribbon.shadow{
+                            box-shadow: 0 0 3px rgba(0,0,0,.3);
+                            }
+
+
+                            .corner-ribbon.top-right{
+                            top: 2px;
+                            right: inherit;
+                            left: inherit;
+                            }
+
+
+                            /* Colors */
+
+
+                            .corner-ribbon.open{background:#406C9B;}
+                            .corner-ribbon.closed{background:red;}
+
+                            .instantborder{border-top:1px solid rgba(204, 204, 204, 0.57);}
+
+
+                        </style>
+                        <style type="text/css">
+                            .container {
+                            display: table !important;
+                            }
+                            .container2 {
+                            display: table !important;
+                            padding-right:0px !important;
+                            padding-left:0px !important;
+                            }
+                            .column {
+                            display: table-cell !important;
+
+                            }
+
+                            .myrow {
+                            display: table-row !important;
+                            }
+
+                            @media all {
+                            .container{
+                            width:inherit;
+                            }
+                            }
+
+                        </style>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="row" style="    padding-top: 20px; padding-bottom: 10px;">
+                                <div class="col-md-12">
+                                    <div class="container " style="width:100%">
                                         <div class="myrow" style="vertical-align:middle; text-align:left;">
                                             <p>
                                                 Your opinion counts! You can add your review for this venue, and help others reach the best venues.
@@ -503,14 +513,13 @@
                     </div>
                 </div>
             </div>
-            <!-- About Block end -->
+            <!-- Review Block end -->
 
             <!-- About Block start -->
             <div class="row" style="padding-top: 20px;">
                 <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:0px; padding-right:0px; padding-bottom: 0px;">
                     <div class="row" style="margin-left: 20px; margin-right: 20px;">
                         <div class="row">
-
                             <style type="text/css">
 
                                 @media (max-width: 490px) {
@@ -571,7 +580,6 @@
 
 
                             </style>
-
                             <style type="text/css">
                                 .container {
                                 display: table !important;
@@ -597,22 +605,11 @@
                                 }
 
                             </style>
-
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                 <div class="row" style="    padding-top: 20px; padding-bottom: 10px;">
                                     <div class="container " style="width:100%">
                                         <div class="myrow" style="vertical-align:middle; text-align:left;">
-                                            <h3 style="margin-top:0px;" th:text="|About ${venue.name}|">About</h3>
-                                        </div>
-                                        <div class="myrow" style="vertical-align:middle; text-align:left;">
-                                            <p th:text="${venue.description}">
-                                                Del Frisco's Grille is located in the heart of Mid-Town at Rockefeller Center.
-                                                A bit more casual than Del Frisco's Double Eagle Steakhouse, The Grille offers Hand Cut Prime Steaks,
-                                                Fire Roasted Flat-breads, Hearty Salads, Fresh Seafood, and much more.... We offer a 700 bottle selection wine list,
-                                                that offers a taste for every palate. Join us on our outdoor patio on the historic Rockefeller Plaza, or inside at
-                                                the bar or one of our comfortable tables and experience our signature hospitality. Outdoor seating available on a
-                                                first come first serve basis.
-                                            </p>
+                                            <h3 style="margin-top:0px;">Venue Details</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -622,7 +619,6 @@
                     <div class="row instantborder" style="margin-left: 0px; margin-right: 0px;"></div>
                     <div class="row" style="margin-left: 20px; margin-right: 20px;">
                         <div class="row">
-
                             <style type="text/css">
 
                                 @media (max-width: 490px) {
@@ -683,7 +679,6 @@
 
 
                             </style>
-
                             <style type="text/css">
                                 .container {
                                 display: table !important;
@@ -709,139 +704,73 @@
                                 }
 
                             </style>
-
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                 <div class="row" style="    padding-top: 20px; padding-bottom: 20px;">
                                     <div class="col-md-6">
                                         <p>
-                                            <span style="font-weight: 600;">Venue Category:</span>
+                                            <span style="font-weight: 600;">Category:</span>
                                             <br/>
                                             <span th:text="${venue.category}">Restaurant</span>
                                         </p>
                                         <p>
                                             <span style="font-weight: 600;">Specialities:</span>
                                             <br/>
-                                            <span th:text="${venue.specialities}">Meat, Fish</span>
+                                            <span th:text="${venue.speciality[0] !=null ? venue.speciality[0] : '' + venue.speciality[1]!=null ? ', ' + venue.speciality[1] : '' + venue.speciality[2]!=null ? ', ' + venue.speciality[2] : ''}">Meat, Fish</span>
                                         </p>
                                         <p>
-                                            <span style="font-weight: 600;">Hours of Operation:</span>
+                                            <span style="font-weight: 600;">Opening Hours:</span>
                                             <br/>
-                                            <span>Lunch/Dinner: Monday - Saturday: 11:00am - 11:00pm, Sunday: 11:00am - 9:00pm</span>
-                                        </p>
-                                        <p>
-                                            <span style="font-weight: 600;">Payment Options</span>
-                                            <br/>
-                                            <span>AMEX, Discover, MasterCard, Visa</span>
-                                        </p>
-                                        <p>
-                                            <span style="font-weight: 600;">Price Range:</span>
-                                            <br/>
-                                            <span>$10 to $50</span>
-                                        </p>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <p>
-                                            <span style="font-weight: 600;">Fix Numbers:</span>
-                                            <br/>
-                                            <span>052225965, 052236507</span>
-                                        </p>
-                                        <p>
-                                            <span style="font-weight: 600;">Mobile Numbers:</span>
-                                            <br/>
-                                            <span>0692113629, 0692148557</span>
-                                        </p>
-                                        <p>
-                                            <span style="font-weight: 600;">Website:</span>
-                                            <br/>
-                                            <a th:href="@{venue.website}" target="_blank" th:text="${venue.website}">http://www.delfriscosgrille.com/</a>
+                                            <span class="details openHours jsfunc">-</span>
                                         </p>
                                         <p>
                                             <span style="font-weight: 600;">Parking Details:</span>
                                             <br/>
-                                            <span>Parking on street available at select times.  Parking garages on 51st Street East and West of our Location.</span>
+                                            <span th:text="${venue.parkingDetails.length()}>0 ? ${venue.parkingDetails} : '-'">Parking on street available at select times.  Parking garages on 51st Street East and West of our Location.</span>
                                         </p>
                                         <p>
                                             <span style="font-weight: 600;">Additional:</span>
                                             <br/>
-                                            <span>Bar Dining, Bar/Lounge, Beer, Full Bar, Non-Smoking Restaurant, Patio/Outdoor Dining, Private Room, Takeout, View, Wheelchair Access, Wine</span>
+                                            <span th:text="${ venue.wifiAvailability!=null ? 'Wifi ' + venue.wifiAvailability : '' + venue.smokingAvailability!=null ? ', Smoking ' + venue.smokingAvailability : '' + venue.accessForDisabled!=null ? ', Wheelchair access ' + venue.accessForDisabled : '' + venue.takeAwayAvailability!=null ? ', Food Take-Away ' + venue.takeAwayAvailability : '' + venue.outdoorEnvironment!=null ? ', Outdoor Environment ' + venue.outdoorEnvironment : '' + venue.kidsPlayground!=null ? ', Playground for kids ' + venue.kidsPlayground : ''}">Bar Dining, Bar/Lounge, Beer, Full Bar, Non-Smoking Restaurant, Patio/Outdoor Dining, Private Room, Takeout, View, Wheelchair Access, Wine</span>
                                         </p>
-
                                     </div>
-                                    <!--<div class="container ">-->
-                                        <!--<div class="myrow" style="vertical-align:middle; text-align:left;">-->
-                                            <!--<h3 style="margin-top:0px;" th:text="|About ${venue.name}|">About</h3>-->
-                                        <!--</div>-->
-                                        <!--<div class="myrow" style="vertical-align:middle; text-align:left;">-->
-                                            <!--<p>-->
-                                                <!--Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.-->
-                                                <!--Cum sociis natoque penatibus et magnis dis atoque penatib atoque penatib atoque penatib ...-->
-                                            <!--</p>-->
-                                        <!--</div>-->
-                                        <!--<div class="column" style="vertical-align:middle;">-->
-                                            <!--<div class="column" style="    padding-left: 10px; padding-right: 20px;">-->
-
-                                                <!--<div class="myrow">-->
-                                                    <!--<a style="text-decoration: none;" href="/new_item/56be6f94d4c696e216899792">-->
-                                                        <!--<p style="    margin-bottom: 5px;">-->
-                                                            <!--<strong style="color: #444; font-size: 23px; font-height:16px;line-height:1;font-style:normal;">tew</strong>-->
-                                                            <!--<sup style="font-style:bold; color: #999999;"> by asd</sup>-->
-                                                        <!--</p>-->
-                                                    <!--</a>-->
-                                                <!--</div>-->
-
-                                                <!--<div class="myrow" style="background-color:white;">-->
-                                                    <!--<div class="container2" style="width:100%">-->
-                                                        <!--<div class="column" style="width:50%; vertical-align:middle;text-align:left;">-->
-                                                            <!--<p style="    margin-bottom: 5px;">-->
-                                                                <!--<i class="fa fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #feab6c;"></i>-->
-                                                                <!--<i class="fa fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #feab6c;"></i>-->
-                                                                <!--<i class="fa fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #feab6c;"></i>-->
-                                                                <!--<i class="fa fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #feab6c;"></i>-->
-                                                                <!--<i class="fa fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #feab6c;"></i>-->
-                                                                <!--<span> - null</span>-->
-                                                            <!--</p>-->
-                                                        <!--</div>-->
-                                                        <!--<div class="column" style="width:50%; vertical-align:middle;text-align:right; ">-->
-                                                            <!--<img src="/img/pizza_icon.jpg" style="width:25px; height:25px;"/>-->
-                                                            <!--<img src="/img/cake_icon.jpg" style="width:25px; height:25px;"/>-->
-                                                            <!--<img src="/img/pizza_icon.jpg" style="width:25px; height:25px;"/>-->
-                                                        <!--</div>-->
-                                                    <!--</div>-->
-                                                <!--</div>-->
-
-                                                <!--<div class="myrow" style="">-->
-                                                    <!--&lt;!&ndash; th:text="${venue.description}" &ndash;&gt;-->
-                                                    <!--<p>-->
-                                                        <!--Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.-->
-                                                        <!--Cum sociis natoque penatibus et magnis dis atoque penatib atoque penatib atoque penatib ...-->
-                                                    <!--</p>-->
-                                                <!--</div>-->
-
-                                                <!--<div class="myrow" style="background-color:white;">-->
-                                                    <!--<div class="container2" style="width:100%">-->
-                                                        <!--<div class="column" style="width:50%; vertical-align:middle;text-align:left;">-->
-                                                            <!--<p style="margin-bottom: 0px; color:#777777;">-->
-                                                                <!--<i class="fa fa-map-marker"></i>-->
-                                                                <!--<span>asd</span>-->
-                                                                <!--<a href="/new_item/56be6f94d4c696e216899792/map"><span style="color:#648EB7"> - View in Map</span></a></p>-->
-                                                        <!--</div>-->
-                                                        <!--<div class="column" style="width:50%; vertical-align:middle;text-align:right;">-->
-                                                            <!--<p style="margin-bottom: 0px; color:#777777;">-->
-                                                                <!--<i class="fa fa-mobile"></i>-->
-                                                                <!--<span>Mobile: <strong style="color: black;">0049 15775983187</strong></span>-->
-                                                            <!--</p>-->
-                                                        <!--</div>-->
-                                                    <!--</div>-->
-                                                <!--</div>-->
-
-                                            <!--</div>-->
-                                            <!--<div class="column" style="vertical-align:middle;text-align:center;">-->
-                                                <!--<a href="javascript:void(0);" class="favourite_heart">-->
-                                                    <!--<img src="/img/heart-outline.png"  style="margin-left:10px;height:50px;margin-right:10px"/>-->
-                                                <!--</a>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
+                                    <div class="col-md-6">
+                                        <!-- Address-->
+                                        <p>
+                                            <span style="font-weight: 600;">Address:</span>
+                                            <br/>
+                                            <span th:text="|${venue.address}, ${venue.city}, ${venue.country}">-</span>
+                                        </p>
+                                        <!-- Landline Contact-->
+                                        <p>
+                                            <span style="font-weight: 600;">Contact (Landline):</span>
+                                            <br/>
+                                            <span th:text="${venue.phoneSecondary} !=null ? ${venue.phonePrimary} + ', ' + ${venue.phoneSecondary} : ${venue.phonePrimary}">-</span>
+                                        </p>
+                                        <!-- Mobile Contact-->
+                                        <p>
+                                            <span style="font-weight: 600;">Contact (Mobile):</span>
+                                            <br/>
+                                            <span th:text="${venue.mobileSecondary} !=null ? ${venue.mobilePrimary} + ', ' + ${venue.mobileSecondary} : ${venue.mobilePrimary}">-</span>
+                                        </p>
+                                        <!-- Website-->
+                                        <p>
+                                            <span style="font-weight: 600;">Website:</span>
+                                            <br/>
+                                            <a th:href="${venue.website}!=null ? (${venue.website.contains('http://')} == true ? ${venue.website} : 'http://' + ${venue.website}) : '-'" target="_blank" th:text="${venue.website}!=null ? (${venue.website.contains('http://')} == true ? ${venue.website} : 'http://' + ${venue.website}) : '-'">http://www.delfriscosgrille.com/</a>
+                                        </p>
+                                        <!-- Facebook-->
+                                        <p>
+                                            <span style="font-weight: 600;"><i style="color:#3B5998; font-size: 1.5em; padding-right: 4px;" class="fa fa-facebook"></i>Facebook:</span>
+                                            <br/>
+                                            <a th:href="${venue.facebookPage}!=null ? (${venue.facebookPage.contains('http://')} == true ? ${venue.facebookPage} : 'http://' + ${venue.facebookPage}) : '-'" target="_blank" th:text="${venue.facebookPage}!=null ? (${venue.facebookPage.contains('http://')} == true ? ${venue.facebookPage} : 'http://' + ${venue.facebookPage}) : '-'">http://www.delfriscosgrille.com/</a>
+                                        </p>
+                                        <!-- Email-->
+                                        <p>
+                                            <span style="font-weight: 600;">Email:</span>
+                                            <br/>
+                                            <a th:href="${venue.email}!=null ? ${venue.email.replace('@', ' [at] ')} : '-'" target="_blank" th:text="${venue.email}!=null ? ${venue.email.replace('@', ' [at] ')} : '-'">http://www.delfriscosgrille.com/</a>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -855,7 +784,6 @@
                 <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:0px; padding-right:0px; padding-bottom: 0px;">
                     <div class="row" style="margin-left: 20px; margin-right: 20px;">
                         <div class="row">
-
                             <style type="text/css">
 
                                 @media (max-width: 490px) {
@@ -916,7 +844,6 @@
 
 
                             </style>
-
                             <style type="text/css">
                                 .container {
                                 display: table !important;
@@ -942,7 +869,6 @@
                                 }
 
                             </style>
-
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                 <div class="row" style="    padding-top: 20px; padding-bottom: 10px;">
                                     <div class="container ">
@@ -963,7 +889,6 @@
                     <div class="row instantborder" style="margin-left: 0px; margin-right: 0px;"></div>
                     <div class="row" style="margin-left: 20px; margin-right: 20px;">
                         <div class="row">
-
                             <style type="text/css">
 
                                 @media (max-width: 490px) {
@@ -1024,7 +949,6 @@
 
 
                             </style>
-
                             <style type="text/css">
                                 .container {
                                 display: table !important;
@@ -1050,139 +974,13 @@
                                 }
 
                             </style>
-
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                <div class="row" style="    padding-top: 20px; padding-bottom: 20px;">
-                                    <div class="col-md-6">
-                                        <p>
-                                            <span style="font-weight: 600;">Venue Category:</span>
-                                            <br/>
-                                            <span>Restaurant</span>
-                                        </p>
-                                        <p>
-                                            <span style="font-weight: 600;">Specialities:</span>
-                                            <br/>
-                                            <span>Meat, Fish</span>
-                                        </p>
-                                        <p>
-                                            <span style="font-weight: 600;">Hours of Operation:</span>
-                                            <br/>
-                                            <span>Lunch/Dinner: Monday - Saturday: 11:00am - 11:00pm, Sunday: 11:00am - 9:00pm</span>
-                                        </p>
-                                        <p>
-                                            <span style="font-weight: 600;">Payment Options</span>
-                                            <br/>
-                                            <span>AMEX, Discover, MasterCard, Visa</span>
-                                        </p>
-                                        <p>
-                                            <span style="font-weight: 600;">Price Range:</span>
-                                            <br/>
-                                            <span>$10 to $50</span>
+                                <div class="row" style="    padding-top: 20px; padding-bottom: 20px;" th:switch="${venue.gallery.size()}==0 ? ${true} : ${false}">
+                                    <div class="col-md-12" th:case="${true}">
+                                        <p style="text:align:center;">
+                                            <span style="font-weight: 600;">No images added yet!</span>
                                         </p>
                                     </div>
-                                    <div class="col-md-6">
-                                        <p>
-                                            <span style="font-weight: 600;">Fix Numbers:</span>
-                                            <br/>
-                                            <span>052225965, 052236507</span>
-                                        </p>
-                                        <p>
-                                            <span style="font-weight: 600;">Mobile Numbers:</span>
-                                            <br/>
-                                            <span>0692113629, 0692148557</span>
-                                        </p>
-                                        <p>
-                                            <span style="font-weight: 600;">Website:</span>
-                                            <br/>
-                                            <a href="http://www.delfriscosgrille.com/" target="_blank">http://www.delfriscosgrille.com/</a>
-                                        </p>
-                                        <p>
-                                            <span style="font-weight: 600;">Parking Details:</span>
-                                            <br/>
-                                            <span>Parking on street available at select times.  Parking garages on 51st Street East and West of our Location.</span>
-                                        </p>
-                                        <p>
-                                            <span style="font-weight: 600;">Additional:</span>
-                                            <br/>
-                                            <span>Bar Dining, Bar/Lounge, Beer, Full Bar, Non-Smoking Restaurant, Patio/Outdoor Dining, Private Room, Takeout, View, Wheelchair Access, Wine</span>
-                                        </p>
-
-                                    </div>
-                                    <!--<div class="container ">-->
-                                    <!--<div class="myrow" style="vertical-align:middle; text-align:left;">-->
-                                    <!--<h3 style="margin-top:0px;" th:text="|About ${venue.name}|">About</h3>-->
-                                    <!--</div>-->
-                                    <!--<div class="myrow" style="vertical-align:middle; text-align:left;">-->
-                                    <!--<p>-->
-                                    <!--Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.-->
-                                    <!--Cum sociis natoque penatibus et magnis dis atoque penatib atoque penatib atoque penatib ...-->
-                                    <!--</p>-->
-                                    <!--</div>-->
-                                    <!--<div class="column" style="vertical-align:middle;">-->
-                                    <!--<div class="column" style="    padding-left: 10px; padding-right: 20px;">-->
-
-                                    <!--<div class="myrow">-->
-                                    <!--<a style="text-decoration: none;" href="/new_item/56be6f94d4c696e216899792">-->
-                                    <!--<p style="    margin-bottom: 5px;">-->
-                                    <!--<strong style="color: #444; font-size: 23px; font-height:16px;line-height:1;font-style:normal;">tew</strong>-->
-                                    <!--<sup style="font-style:bold; color: #999999;"> by asd</sup>-->
-                                    <!--</p>-->
-                                    <!--</a>-->
-                                    <!--</div>-->
-
-                                    <!--<div class="myrow" style="background-color:white;">-->
-                                    <!--<div class="container2" style="width:100%">-->
-                                    <!--<div class="column" style="width:50%; vertical-align:middle;text-align:left;">-->
-                                    <!--<p style="    margin-bottom: 5px;">-->
-                                    <!--<i class="fa fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #feab6c;"></i>-->
-                                    <!--<i class="fa fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #feab6c;"></i>-->
-                                    <!--<i class="fa fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #feab6c;"></i>-->
-                                    <!--<i class="fa fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #feab6c;"></i>-->
-                                    <!--<i class="fa fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #feab6c;"></i>-->
-                                    <!--<span> - null</span>-->
-                                    <!--</p>-->
-                                    <!--</div>-->
-                                    <!--<div class="column" style="width:50%; vertical-align:middle;text-align:right; ">-->
-                                    <!--<img src="/img/pizza_icon.jpg" style="width:25px; height:25px;"/>-->
-                                    <!--<img src="/img/cake_icon.jpg" style="width:25px; height:25px;"/>-->
-                                    <!--<img src="/img/pizza_icon.jpg" style="width:25px; height:25px;"/>-->
-                                    <!--</div>-->
-                                    <!--</div>-->
-                                    <!--</div>-->
-
-                                    <!--<div class="myrow" style="">-->
-                                    <!--&lt;!&ndash; th:text="${venue.description}" &ndash;&gt;-->
-                                    <!--<p>-->
-                                    <!--Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.-->
-                                    <!--Cum sociis natoque penatibus et magnis dis atoque penatib atoque penatib atoque penatib ...-->
-                                    <!--</p>-->
-                                    <!--</div>-->
-
-                                    <!--<div class="myrow" style="background-color:white;">-->
-                                    <!--<div class="container2" style="width:100%">-->
-                                    <!--<div class="column" style="width:50%; vertical-align:middle;text-align:left;">-->
-                                    <!--<p style="margin-bottom: 0px; color:#777777;">-->
-                                    <!--<i class="fa fa-map-marker"></i>-->
-                                    <!--<span>asd</span>-->
-                                    <!--<a href="/new_item/56be6f94d4c696e216899792/map"><span style="color:#648EB7"> - View in Map</span></a></p>-->
-                                    <!--</div>-->
-                                    <!--<div class="column" style="width:50%; vertical-align:middle;text-align:right;">-->
-                                    <!--<p style="margin-bottom: 0px; color:#777777;">-->
-                                    <!--<i class="fa fa-mobile"></i>-->
-                                    <!--<span>Mobile: <strong style="color: black;">0049 15775983187</strong></span>-->
-                                    <!--</p>-->
-                                    <!--</div>-->
-                                    <!--</div>-->
-                                    <!--</div>-->
-
-                                    <!--</div>-->
-                                    <!--<div class="column" style="vertical-align:middle;text-align:center;">-->
-                                    <!--<a href="javascript:void(0);" class="favourite_heart">-->
-                                    <!--<img src="/img/heart-outline.png"  style="margin-left:10px;height:50px;margin-right:10px"/>-->
-                                    <!--</a>-->
-                                    <!--</div>-->
-                                    <!--</div>-->
-                                    <!--</div>-->
                                 </div>
                             </div>
                         </div>
@@ -1191,8 +989,214 @@
             </div>
             <!-- Gallery Block end -->
 
-            <!-- Menu Block start-->
+            <!-- Map Block start -->
             <div class="row" style="padding-top: 20px;">
+                <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:0px; padding-right:0px; padding-bottom: 0px;">
+                    <div class="row" style="margin-left: 20px; margin-right: 20px;">
+                        <div class="row">
+                            <style type="text/css">
+
+                                @media (max-width: 490px) {
+                                .hidethisshit{
+                                display:none;
+                                }
+                                }
+
+
+                                @import url('http://fonts.googleapis.com/css?family=Noto+Sans:400,700');
+
+
+                                /* The ribbons */
+
+                                .corner-ribbon{
+                                /* width: 50px; */
+                                width: 40px;
+                                background: #e43;
+                                position: absolute;
+                                top: 25px;
+                                left: -50px;
+                                text-align: center;
+                                /* line-height: 30px; */
+                                line-height: 20px;
+                                letter-spacing: 1px;
+                                color: #f0f0f0;
+                                font-size:0.7em;
+                                font-weight:bold;
+                                border-radius:0.5em;
+                                }
+
+                                /* Custom styles */
+
+                                .corner-ribbon.sticky{
+                                margin-left: 135px;
+                                margin-top: 5px;
+                                }
+
+                                .corner-ribbon.shadow{
+                                box-shadow: 0 0 3px rgba(0,0,0,.3);
+                                }
+
+
+                                .corner-ribbon.top-right{
+                                top: 2px;
+                                right: inherit;
+                                left: inherit;
+                                }
+
+
+                                /* Colors */
+
+
+                                .corner-ribbon.open{background:#406C9B;}
+                                .corner-ribbon.closed{background:red;}
+
+                                .instantborder{border-top:1px solid rgba(204, 204, 204, 0.57);}
+
+
+                            </style>
+                            <style type="text/css">
+                                .container {
+                                display: table !important;
+                                }
+                                .container2 {
+                                display: table !important;
+                                padding-right:0px !important;
+                                padding-left:0px !important;
+                                }
+                                .column {
+                                display: table-cell !important;
+
+                                }
+
+                                .myrow {
+                                display: table-row !important;
+                                }
+
+                                @media all {
+                                .container{
+                                width:inherit;
+                                }
+                                }
+
+                            </style>
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="row" style="    padding-top: 20px; padding-bottom: 10px;">
+                                    <div class="container " style="width:100%;">
+                                        <div class="myrow" style="vertical-align:middle; text-align:left;">
+                                            <h3 style="margin-top:0px;">Map</h3>
+                                        </div>
+                                        <div class="myrow" style="vertical-align:middle; text-align:left;">
+                                            <p th:text="|Address: ${venue.address}|"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row instantborder" style="margin-left: 0px; margin-right: 0px;"></div>
+                    <div class="row" style="margin-left: 20px; margin-right: 20px;">
+                        <div class="row">
+                            <style type="text/css">
+
+                                @media (max-width: 490px) {
+                                .hidethisshit{
+                                display:none;
+                                }
+                                }
+
+
+                                @import url('http://fonts.googleapis.com/css?family=Noto+Sans:400,700');
+
+
+                                /* The ribbons */
+
+                                .corner-ribbon{
+                                /* width: 50px; */
+                                width: 40px;
+                                background: #e43;
+                                position: absolute;
+                                top: 25px;
+                                left: -50px;
+                                text-align: center;
+                                /* line-height: 30px; */
+                                line-height: 20px;
+                                letter-spacing: 1px;
+                                color: #f0f0f0;
+                                font-size:0.7em;
+                                font-weight:bold;
+                                border-radius:0.5em;
+                                }
+
+                                /* Custom styles */
+
+                                .corner-ribbon.sticky{
+                                margin-left: 135px;
+                                margin-top: 5px;
+                                }
+
+                                .corner-ribbon.shadow{
+                                box-shadow: 0 0 3px rgba(0,0,0,.3);
+                                }
+
+
+                                .corner-ribbon.top-right{
+                                top: 2px;
+                                right: inherit;
+                                left: inherit;
+                                }
+
+
+                                /* Colors */
+
+
+                                .corner-ribbon.open{background:#406C9B;}
+                                .corner-ribbon.closed{background:red;}
+
+                                .instantborder{border-top:1px solid rgba(204, 204, 204, 0.57);}
+
+
+                            </style>
+                            <style type="text/css">
+                                .container {
+                                display: table !important;
+                                }
+                                .container2 {
+                                display: table !important;
+                                padding-right:0px !important;
+                                padding-left:0px !important;
+                                }
+                                .column {
+                                display: table-cell !important;
+
+                                }
+
+                                .myrow {
+                                display: table-row !important;
+                                }
+
+                                @media all {
+                                .container{
+                                width:inherit;
+                                }
+                                }
+
+                            </style>
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="row" style="    padding-top: 20px; padding-bottom: 20px;">
+                                    <div class="col-md-12">
+                                        <!-- style="    height: 500px; width:100%;overflow: auto;"-->
+                                        <div id="googleMap" style="height: 300px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Map Block end -->
+
+            <!-- Menu Block start-->
+            <div class="row" style="padding-top: 20px; display:none;">
                 <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:0px; padding-right:0px; padding-bottom: 0px;">
                     <div class="row" style="margin-left: 20px; margin-right: 20px;">
                         <div class="row">
@@ -1458,6 +1462,259 @@
             </div>
             <!-- Menu Block end-->
 
+            <!-- Review Block start -->
+            <div class="row" style="padding-top: 20px;">
+                <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:0px; padding-right:0px; padding-bottom: 0px;">
+                    <div class="row" style="margin-left: 20px; margin-right: 20px;">
+                        <div class="row">
+
+                            <style type="text/css">
+
+                                @media (max-width: 490px) {
+                                .hidethisshit{
+                                display:none;
+                                }
+                                }
+
+
+                                @import url('http://fonts.googleapis.com/css?family=Noto+Sans:400,700');
+
+
+                                /* The ribbons */
+
+                                .corner-ribbon{
+                                /* width: 50px; */
+                                width: 40px;
+                                background: #e43;
+                                position: absolute;
+                                top: 25px;
+                                left: -50px;
+                                text-align: center;
+                                /* line-height: 30px; */
+                                line-height: 20px;
+                                letter-spacing: 1px;
+                                color: #f0f0f0;
+                                font-size:0.7em;
+                                font-weight:bold;
+                                border-radius:0.5em;
+                                }
+
+                                /* Custom styles */
+
+                                .corner-ribbon.sticky{
+                                margin-left: 135px;
+                                margin-top: 5px;
+                                }
+
+                                .corner-ribbon.shadow{
+                                box-shadow: 0 0 3px rgba(0,0,0,.3);
+                                }
+
+
+                                .corner-ribbon.top-right{
+                                top: 2px;
+                                right: inherit;
+                                left: inherit;
+                                }
+
+
+                                /* Colors */
+
+
+                                .corner-ribbon.open{background:#406C9B;}
+                                .corner-ribbon.closed{background:red;}
+
+                                .instantborder{border-top:1px solid rgba(204, 204, 204, 0.57);}
+
+
+                            </style>
+
+                            <style type="text/css">
+                                .container {
+                                display: table !important;
+                                }
+                                .container2 {
+                                display: table !important;
+                                padding-right:0px !important;
+                                padding-left:0px !important;
+                                }
+                                .column {
+                                display: table-cell !important;
+
+                                }
+
+                                .myrow {
+                                display: table-row !important;
+                                }
+
+                                @media all {
+                                .container{
+                                width:inherit;
+                                }
+                                }
+
+                            </style>
+
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="row" style="    padding-top: 20px; padding-bottom: 10px;">
+                                    <div class="container ">
+                                        <div class="myrow" style="vertical-align:middle; text-align:left;">
+                                            <h3 style="margin-top:0px;">Reviews</h3>
+                                        </div>
+                                        <div class="myrow" style="vertical-align:middle; text-align:left;">
+                                            <p>
+                                                Disclaimer: The content of this block and the pictures associated with the venue are third party content and not part of instant. Flag content you think is innapropriate and
+                                                we will review them again.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row instantborder" style="margin-left: 0px; margin-right: 0px;"></div>
+                    <div class="row" style="margin-left: 20px; margin-right: 20px;">
+                        <div class="row">
+                            <style type="text/css">
+
+                                @media (max-width: 490px) {
+                                .hidethisshit{
+                                display:none;
+                                }
+                                }
+
+
+                                @import url('http://fonts.googleapis.com/css?family=Noto+Sans:400,700');
+
+
+                                /* The ribbons */
+
+                                .corner-ribbon{
+                                /* width: 50px; */
+                                width: 40px;
+                                background: #e43;
+                                position: absolute;
+                                top: 25px;
+                                left: -50px;
+                                text-align: center;
+                                /* line-height: 30px; */
+                                line-height: 20px;
+                                letter-spacing: 1px;
+                                color: #f0f0f0;
+                                font-size:0.7em;
+                                font-weight:bold;
+                                border-radius:0.5em;
+                                }
+
+                                /* Custom styles */
+
+                                .corner-ribbon.sticky{
+                                margin-left: 135px;
+                                margin-top: 5px;
+                                }
+
+                                .corner-ribbon.shadow{
+                                box-shadow: 0 0 3px rgba(0,0,0,.3);
+                                }
+
+
+                                .corner-ribbon.top-right{
+                                top: 2px;
+                                right: inherit;
+                                left: inherit;
+                                }
+
+
+                                /* Colors */
+
+
+                                .corner-ribbon.open{background:#406C9B;}
+                                .corner-ribbon.closed{background:red;}
+
+                                .instantborder{border-top:1px solid rgba(204, 204, 204, 0.57);}
+
+
+                            </style>
+                            <style type="text/css">
+                                .container {
+                                display: table !important;
+                                }
+                                .container2 {
+                                display: table !important;
+                                padding-right:0px !important;
+                                padding-left:0px !important;
+                                }
+                                .column {
+                                display: table-cell !important;
+
+                                }
+
+                                .myrow {
+                                display: table-row !important;
+                                }
+
+                                @media all {
+                                .container{
+                                width:inherit;
+                                }
+                                }
+
+                            </style>
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" th:switch="${venue.reviews.size()}>0 ? ${true} : ${false}">
+                                <div class="row" style="    padding-top: 20px; padding-bottom: 20px;" th:case="${true}">
+                                    <div class="col-md-6" style="text-align:center;">
+                                        <p>
+                                            <span style="    font-weight: 200;font-size: 4em;" th:text="${venue.rating}">3.5</span>
+                                            <br/>
+                                            <span th:text="|(${venue.reviews.size()} reviews)|">405 reviews</span>
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6" th:each="review : ${venue.reviews}" style="    padding-top: 25px; text-align: center;">
+                                        <p>
+                                            <span>
+                                                <i class="fa instant_i" th:classappend="${review.rating} > 0? fa-star : fa-star-o" style="font-weight: bold; color: #feab6c;"></i>
+                                                <i class="fa instant_i" th:classappend="${review.rating} > 1? fa-star : fa-star-o" style="font-weight: bold; color: #feab6c;"></i>
+                                                <i class="fa instant_i" th:classappend="${review.rating} > 2? fa-star : fa-star-o" style="font-weight: bold; color: #feab6c;"></i>
+                                                <i class="fa instant_i" th:classappend="${review.rating} > 3? fa-star : fa-star-o" style="font-weight: bold; color: #feab6c;"></i>
+                                                <i class="fa instant_i" th:classappend="${review.rating} > 4? fa-star : fa-star-o" style="font-weight: bold; color: #feab6c;"></i>
+                                            </span>
+                                            <br/>
+                                            <span th:text='|"${review.text}"|' style="font-style:italic">review message</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row" style="    padding-top: 20px; padding-bottom: 20px;" th:case="${false}">
+                                    <div class="col-md-12">
+                                        <p style="text:align:center;">
+                                            <span style="font-weight: 600;">No reviews added yet!</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Review Block end -->
+
+            <div class="row" style="padding-top: 20px;">
+                <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1" style="border: 1px solid rgba(204, 204, 204, 0.57); background-color: white; padding-left:0px; padding-right:0px; padding-bottom: 0px;">
+                    <div class="row" style="margin-left: 20px; margin-right: 20px;">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="row" style="    padding-top: 20px; padding-bottom: 20px;">
+                                    <div class="col-md-12">
+                                        <div id="disqus_thread"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
         </div>
     </div>
     <p style="text-align: center; margin-top:50px; color: #999; line-height: normal; font-size: 17px;">Hand picked by <span style="font-family: 'Pacifico', cursive; font-weight: 400;">instant</span>, just for you!</p>
@@ -1470,7 +1727,7 @@
 <script src="js/bootstrap.min.js" th:src="@{/oc_js/bootstrap.min.js}"></script>
 <script src="js/scripts.js" th:src="@{/oc_js/scripts.js}"></script>
 <script src="js/search.js" th:src="@{/oc_js/search.js}"></script>
-<script src="js/localization.js" th:src="@{/oc_js/localization.js}"></script>
+<!--<script src="js/localization.js" th:src="@{/oc_js/localization.js}"></script>-->
 <script th:src="@{/oc_js/bootstrap-multiselect.js}"></script>
 <script th:src="@{/oc_js/jquery.barrating.min.js}"></script>
 
@@ -1557,11 +1814,11 @@
 
     var favourite=false;
     $('.favourite_heart').click(function(){
-        if($('.favourite_heart > img').attr('src')== '/img/heart-outline-full.png'){
-            $('.favourite_heart > img').attr('src', '/img/heart-outline.png');
+        if($('.favourite_heart > div > img').attr('src')== '/img/heart-outline-full.png'){
+            $('.favourite_heart > div > img').attr('src', '/img/heart-outline.png');
         }
         else{
-            $('.favourite_heart > img').attr('src', '/img/heart-outline-full.png');
+            $('.favourite_heart > div > img').attr('src', '/img/heart-outline-full.png');
         }
 
         var favUrl = /*[[${venue.id}]]*/;
@@ -1589,8 +1846,101 @@
                         "userId" : usrId
                     })
         });
+        $( ".row.add_rating_block" ).remove();
+
     });
 })
+</script>
+
+
+<script>
+    /**
+    * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+
+    s.src = '//instant-app.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+<script th:inline="javascript">
+/*<![CDATA[*/
+    $(function(){
+        var openingHours = /*[[${venue.openHours}]]*/ '';
+        var openingHoursLinesArray = openingHours.split('&&');
+        var first = '';
+        var second = '';
+        var third = '';
+        if(openingHoursLinesArray[0].length > 0){
+            var openingHoursLineArray = openingHoursLinesArray[0].split('-');
+            if(openingHoursLineArray.length < 6){
+                first = openingHoursLineArray[0] + ' to ' + openingHoursLineArray[1] + ' from ' + openingHoursLineArray[2] + ' until ' + openingHoursLineArray[3];
+            }
+            else{
+                first = openingHoursLineArray[0] + ' to ' + openingHoursLineArray[1] + ' from ' + openingHoursLineArray[2] + ' until ' + openingHoursLineArray[3] + ' and from ' + openingHoursLineArray[4] + ' until ' + openingHoursLineArray[5];
+            }
+        }
+        if(openingHoursLinesArray[1].length > 0){
+            var openingHoursLineArray = openingHoursLinesArray[1].split('-');
+            if(openingHoursLineArray.length < 6){
+                second = ', ' + openingHoursLineArray[0] + ' to ' + openingHoursLineArray[1] + ' from ' + openingHoursLineArray[2] + ' until ' + openingHoursLineArray[3];
+            }
+            else{
+                second = ', ' + openingHoursLineArray[0] + ' to ' + openingHoursLineArray[1] + ' from ' + openingHoursLineArray[2] + ' until ' + openingHoursLineArray[3] + ' and from ' + openingHoursLineArray[4] + ' until ' + openingHoursLineArray[5];
+            }
+        }
+        if(openingHoursLinesArray[2].length > 0){
+            var openingHoursLineArray = openingHoursLinesArray[2].split('-');
+            if(openingHoursLineArray.length < 6){
+                third = ', ' + openingHoursLineArray[0] + ' to ' + openingHoursLineArray[1] + ' from ' + openingHoursLineArray[2] + ' until ' + openingHoursLineArray[3];
+            }
+            else{
+                third = ', ' + openingHoursLineArray[0] + ' to ' + openingHoursLineArray[1] + ' from ' + openingHoursLineArray[2] + ' until ' + openingHoursLineArray[3] + ' and from ' + openingHoursLineArray[4] + ' until ' + openingHoursLineArray[5];
+            }
+        }
+
+        $('.details.openHours.jsfunc').text(first + second + third);
+    });
+    /*]]>*/
+
+</script>
+
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script th:inline="javascript">
+/*<![CDATA[*/
+    //var long = /*[[${venue.location[0]}]]*/ 51.508742;
+    //var lat = /*[[${venue.location[1]}]]*/ -0.120850;
+    var long = 51.508742;
+    var lat = -0.120850;
+    var myCenter=new google.maps.LatLng(long,lat);
+    function initialize() {
+      var mapProp = {
+        center:new google.maps.LatLng(long,lat),
+        zoom:15,
+        mapTypeId:google.maps.MapTypeId.ROADMAP
+      };
+      var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+      var marker=new google.maps.Marker({
+      position:myCenter,
+      });
+
+    marker.setMap(map);
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+        /*]]>*/
 </script>
 
 </body>
