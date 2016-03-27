@@ -267,17 +267,22 @@
 
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="row instantborder" style="    padding-top: 20px; padding-bottom: 20px;">
-                <div class="container">
-                    <div class="column">
-
-                        <img src="http://imgec.trivago.com/itemimages/47/21/47210_v2_mc.jpeg"/>
+                <div class="container" style="width:100%;">
+                    <!-- Mobile -->
+                    <!-- img 120 80-->
+                    <!-- column width 120-->
+                    <div class="column" style="width: 185px;">
+                        <img src="http://lorempixel.com/182/126" style="border-radius: 5px;"/>
                     </div>
-                    <div class="column" style="vertical-align:middle;">
+                    <div class="column" style="vertical-align:top;">
                         <div class="column" style="    padding-left: 10px; padding-right: 20px;">
 
                             <div class="myrow">
                                 <a style="text-decoration: none;" th:href="@{/new_item/{id}(id=${venue.id})}">
                                     <p style="    margin-bottom: 5px;">
+                                        <!-- Mobile -->
+                                        <!-- font size = 15px-->
+                                        <!-- sup removed-->
                                         <strong style="color: #444; font-size: 23px; font-height:16px;line-height:1;font-style:normal;" th:text="${venue.name}">Venue Name</strong>
                                         <sup style="font-style:bold; color: #999999;" th:text="| by ${venue.company}|"> by Company</sup>
                                     </p>
@@ -288,51 +293,59 @@
                                 <div class="container2" style="width:100%">
                                     <div class="column" style="width:50%; vertical-align:middle;text-align:left;">
                                         <p style="    margin-bottom: 5px;">
+                                            <!-- Mobile-->
+                                            <!-- font-size: 1em;-->
                                             <i class="fa" th:classappend="${venue.rating} > 0? fa-star : fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #feab6c;"></i>
                                             <i class="fa" th:classappend="${venue.rating} > 1? fa-star : fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #feab6c;"></i>
                                             <i class="fa" th:classappend="${venue.rating} > 2? fa-star : fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #feab6c;"></i>
                                             <i class="fa" th:classappend="${venue.rating} > 3? fa-star : fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #feab6c;"></i>
                                             <i class="fa" th:classappend="${venue.rating} > 4? fa-star : fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #feab6c;"></i>
+                                            <!-- Mobile-->
+                                            <!-- font-size: 11px;-->
                                             <span th:text="| - ${venue.category}|">- Restaurant</span>
                                         </p>
                                     </div>
-                                    <div class="column" style="width:50%; vertical-align:middle;text-align:right; ">
-                                        <img src="/img/pizza_icon.jpg" th:src="@{/img/pizza_icon.jpg}" style="width:25px; height:25px;"/>
-                                        <img src="/img/cake_icon.jpg" th:src="@{/img/cake_icon.jpg}" style="width:25px; height:25px;"/>
-                                        <img src="/img/pizza_icon.jpg" th:src="@{/img/pizza_icon.jpg}" style="width:25px; height:25px;"/>
-                                    </div>
+                                    <!--<div class="column" style="width:50%; vertical-align:middle;text-align:right; ">-->
+                                        <!--<img src="/img/pizza_icon.jpg" th:src="@{/img/pizza_icon.jpg}" style="width:25px; height:25px;"/>-->
+                                        <!--<img src="/img/cake_icon.jpg" th:src="@{/img/cake_icon.jpg}" style="width:25px; height:25px;"/>-->
+                                        <!--<img src="/img/pizza_icon.jpg" th:src="@{/img/pizza_icon.jpg}" style="width:25px; height:25px;"/>-->
+                                    <!--</div>-->
                                 </div>
                             </div>
 
-                            <div class="myrow" style="">
-                                <!-- th:text="${venue.description}" -->
-                                <p >
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-                                Cum sociis natoque penatibus et magnis dis atoque penatib atoque penatib atoque penatib ...
-                                </p>
-                            </div>
+                            <!--<div class="myrow" style="">-->
+                                <!--&lt;!&ndash; th:text="${venue.description}" &ndash;&gt;-->
+                                <!--<p >-->
+                                    <!--Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.-->
+                                    <!--Cum sociis natoque penatibus et magnis dis atoque penatib atoque penatib atoque penatib ...-->
+                                <!--</p>-->
+                            <!--</div>-->
 
                             <div class="myrow" style="background-color:white;">
                                 <div class="container2" style="width:100%">
                                     <div class="column" style="width:50%; vertical-align:middle;text-align:left;">
                                         <p style="margin-bottom: 0px; color:#777777;">
-                                            <i class="fa fa-map-marker"></i>
-                                            <span th:text="${venue.address}">Eller Str. 184, 40227 Dusseldorf</span>
-                                            <a th:href="@{/new_item/{id}/map(id=${venue.id})}"><span style="color:#648EB7"> - View in Map</span></a></p>
-                                    </div>
-                                    <div class="column" style="width:50%; vertical-align:middle;text-align:right;">
-                                        <p style="margin-bottom: 0px; color:#777777;">
-                                            <i class="fa fa-mobile"></i>
-                                            <span>Mobile: <strong style="color: black;">0049 15775983187</strong></span>
+                                            <!--<i class="fa fa-map-marker"></i>-->
+                                            <!-- Mobile -->
+                                            <!-- font-size: 11px;-->
+                                            <span th:text="|${venue.address}, ${venue.city}|">Eller Str. 184, 40227 Dusseldorf</span>
                                         </p>
                                     </div>
+                                    <!--<div class="column" style="width:50%; vertical-align:middle;text-align:right;">-->
+                                        <!--<p style="margin-bottom: 0px; color:#777777;">-->
+                                            <!--<i class="fa fa-mobile"></i>-->
+                                            <!--<span>Mobile: <strong style="color: black;">0049 15775983187</strong></span>-->
+                                        <!--</p>-->
+                                    <!--</div>-->
                                 </div>
                             </div>
-
                         </div>
+                    </div>
+
+                    <div style="float:right;">
                         <div class="column" style="vertical-align:middle;text-align:center;">
                             <a th:href="@{/new_item/{id}(id=${venue.id})}">
-                                <img src="/img/next-arrow.png" th:src="@{/img/next-arrow.png}" style="margin-left:10px;height:50px;margin-right:10px"/>
+                                <img src="/img/next-arrow.png" th:src="@{/img/next-arrow.png}" style="margin-left:10px;height:35px;margin-right:10px"/>
                             </a>
                         </div>
                     </div>
