@@ -263,46 +263,110 @@
             }
             }
 
+            div.item-container:hover{
+                background:#F8F8F9;
+            }
+
+            @media (max-width: 550px) {
+                div.image-column{
+                    width: 120px;
+                }
+                img.img-big{
+                    display:none;
+                }
+
+                img.img-small{
+                    display:block;
+                }
+
+                i.fa{
+                font-size: 1em;
+                }
+
+                sup.item-company{
+                display:none;
+                }
+
+                .item-name{
+                font-size: 15px;
+                }
+
+                .item-category, .item-address{
+                    font-size:11px;
+                }
+            }
+
+            @media (min-width: 551px) {
+                div.image-column{
+                    width: 185px;;
+                }
+
+                img.img-big{
+                    display:block;
+                }
+
+                img.img-small{
+                    display:none;
+                }
+
+                i.fa{
+                    font-size: 1.2em;
+                }
+
+                sup.item-company{
+                    display:inline;
+                }
+
+                .item-name{
+                font-size: 23px;
+                }
+
+
+
+            }
+
+
         </style>
 
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="row instantborder" style="    padding-top: 20px; padding-bottom: 20px;">
-                <div class="container" style="width:100%;">
+                <div class="container item-container" style="width:100%; ">
                     <!-- Mobile -->
                     <!-- img 120 80-->
                     <!-- column width 120-->
-                    <div class="column" style="width: 185px;">
-                        <img src="http://lorempixel.com/182/126" style="border-radius: 5px;"/>
+                    <div class="column image-column" style="">
+                        <img src="http://lorempixel.com/182/126" class="img-big" style="border-radius: 5px;"/>
+                        <img src="http://lorempixel.com/120/80" class="img-small" style="border-radius: 5px;"/>
                     </div>
                     <div class="column" style="vertical-align:top;">
                         <div class="column" style="    padding-left: 10px; padding-right: 20px;">
 
                             <div class="myrow">
-                                <a style="text-decoration: none;" th:href="@{/new_item/{id}(id=${venue.id})}">
+                                <a style="text-decoration: none;" th:href="@{/venue/{id}(id=${venue.id})}">
                                     <p style="    margin-bottom: 5px;">
                                         <!-- Mobile -->
                                         <!-- font size = 15px-->
                                         <!-- sup removed-->
-                                        <strong style="color: #444; font-size: 23px; font-height:16px;line-height:1;font-style:normal;" th:text="${venue.name}">Venue Name</strong>
-                                        <sup style="font-style:bold; color: #999999;" th:text="| by ${venue.company}|"> by Company</sup>
+                                        <strong class="item-name" style="color: #444; font-height:16px;line-height:1;font-style:normal;" th:text="${venue.name}">Venue Name</strong>
+                                        <sup class="item-company" style="font-style:bold; color: #999999;" th:text="| by ${venue.company}|"> by Company</sup>
                                     </p>
                                 </a>
                             </div>
 
-                            <div class="myrow" style="background-color:white;">
+                            <div class="myrow">
                                 <div class="container2" style="width:100%">
                                     <div class="column" style="width:50%; vertical-align:middle;text-align:left;">
                                         <p style="    margin-bottom: 5px;">
                                             <!-- Mobile-->
                                             <!-- font-size: 1em;-->
-                                            <i class="fa" th:classappend="${venue.rating} > 0? fa-star : fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #feab6c;"></i>
-                                            <i class="fa" th:classappend="${venue.rating} > 1? fa-star : fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #feab6c;"></i>
-                                            <i class="fa" th:classappend="${venue.rating} > 2? fa-star : fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #feab6c;"></i>
-                                            <i class="fa" th:classappend="${venue.rating} > 3? fa-star : fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #feab6c;"></i>
-                                            <i class="fa" th:classappend="${venue.rating} > 4? fa-star : fa-star-o" style="font-weight: bold; font-size: 1.2em; color: #feab6c;"></i>
+                                            <i class="fa" th:classappend="${venue.rating} > 0? fa-star : fa-star-o" style="font-weight: bold; color: #feab6c;"></i>
+                                            <i class="fa" th:classappend="${venue.rating} > 1? fa-star : fa-star-o" style="font-weight: bold; color: #feab6c;"></i>
+                                            <i class="fa" th:classappend="${venue.rating} > 2? fa-star : fa-star-o" style="font-weight: bold; color: #feab6c;"></i>
+                                            <i class="fa" th:classappend="${venue.rating} > 3? fa-star : fa-star-o" style="font-weight: bold; color: #feab6c;"></i>
+                                            <i class="fa" th:classappend="${venue.rating} > 4? fa-star : fa-star-o" style="font-weight: bold; color: #feab6c;"></i>
                                             <!-- Mobile-->
                                             <!-- font-size: 11px;-->
-                                            <span th:text="| - ${venue.category}|">- Restaurant</span>
+                                            <span class="item-category" th:text="| - ${venue.category}|">- Restaurant</span>
                                         </p>
                                     </div>
                                     <!--<div class="column" style="width:50%; vertical-align:middle;text-align:right; ">-->
@@ -321,14 +385,14 @@
                                 <!--</p>-->
                             <!--</div>-->
 
-                            <div class="myrow" style="background-color:white;">
+                            <div class="myrow">
                                 <div class="container2" style="width:100%">
                                     <div class="column" style="width:50%; vertical-align:middle;text-align:left;">
                                         <p style="margin-bottom: 0px; color:#777777;">
                                             <!--<i class="fa fa-map-marker"></i>-->
                                             <!-- Mobile -->
                                             <!-- font-size: 11px;-->
-                                            <span th:text="|${venue.address}, ${venue.city}|">Eller Str. 184, 40227 Dusseldorf</span>
+                                            <span class="item-address" th:text="|${venue.address}, ${venue.city}|">Eller Str. 184, 40227 Dusseldorf</span>
                                         </p>
                                     </div>
                                     <!--<div class="column" style="width:50%; vertical-align:middle;text-align:right;">-->
@@ -341,13 +405,10 @@
                             </div>
                         </div>
                     </div>
-
-                    <div style="float:right;">
-                        <div class="column" style="vertical-align:middle;text-align:center;">
-                            <a th:href="@{/new_item/{id}(id=${venue.id})}">
-                                <img src="/img/next-arrow.png" th:src="@{/img/next-arrow.png}" style="margin-left:10px;height:35px;margin-right:10px"/>
-                            </a>
-                        </div>
+                    <div class="column" style="vertical-align:middle;text-align:center;">
+                        <a th:href="@{/venue/{id}(id=${venue.id})}">
+                            <img src="/img/next-arrow.png" th:src="@{/img/next-arrow.png}" style="margin-left:10px;height:35px;margin-right:10px"/>
+                        </a>
                     </div>
                 </div>
             </div>
