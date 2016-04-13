@@ -462,9 +462,9 @@
                             }
 
                         </style>
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" th:switch="${user} != null ? ${true} : ${false}">
                             <div class="row" style="    padding-top: 20px; padding-bottom: 10px;">
-                                <div class="col-md-12">
+                                <div class="col-md-12" th:case="${true}">
                                     <div class="container " style="width:100%">
                                         <div class="myrow" style="vertical-align:middle; text-align:left;">
                                             <p>
@@ -505,6 +505,15 @@
                                                     </button>
                                                 </div>
                                             </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12" th:case="${false}">
+                                    <div class="container " style="width:100%">
+                                        <div class="myrow" style="vertical-align:middle; text-align:left;">
+                                            <p style="font-weight: 600;">
+                                                Please login to leave a review!
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -1830,8 +1839,11 @@
 
     $("#applyReviewButton").click(function(){
         var revUrl = /*[[${venue.id}]]*/;
-        var usrId = /*[[${#authentication.principal.userId}]]*/;
-        $.ajax({
+        var usrId="notAuthorised";
+        if(/*[[${user}]]*/ != null){
+            usrId = /*[[${user != null ? user.userId : 'notAuthorised'}]]*/;
+
+            $.ajax({
             type : "POST",
             dataType : 'json',
                 headers: {
@@ -1844,8 +1856,9 @@
                         "text" : $("#review_description").val(),
                         "userId" : usrId
                     })
-        });
-        $( ".row.add_rating_block" ).remove();
+            });
+            $( ".row.add_rating_block" ).remove();
+        }
 
     });
 })

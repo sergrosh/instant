@@ -70,6 +70,7 @@ public class VenueController {
                     venue.setFavourite(true);
             }
             modelAndView.addObject("venue", venue);
+            modelAndView.addObject("user", userAccountService.getCurrentUser());
             modelAndView.addObject("view", "item_main_view");
         }
         clickoutsUpdateService.updateClickoutMap(id);
